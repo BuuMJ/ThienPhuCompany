@@ -4,6 +4,8 @@
   "description": "Thien Phu Company",
   "main": "index.js",
   "scripts": {
+    "start": "nodemon --inspect src/index.js",
+    "watch": "node-sass --watch src/resources/scss/app.scss src/public/css/app.css",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -19,5 +21,18 @@
   "bugs": {
     "url": "https://github.com/BuuMJ/ThienPhuCompany/issues"
   },
-  "homepage": "https://github.com/BuuMJ/ThienPhuCompany#readme"
+  "homepage": "https://github.com/BuuMJ/ThienPhuCompany#readme",
+  "dependencies": {
+    "cookie-parser": "^1.4.6",
+    "express": "^4.18.2",
+    "express-handlebars": "^7.0.7",
+    "express-session": "^1.17.3",
+    "handlebars-helpers": "^0.10.0",
+    "method-override": "^3.0.0",
+    "morgan": "^1.10.0",
+    "node-sass": "^9.0.0",
+    "nodemon": "^3.0.1",
+    "passport": "^0.6.0",
+    "sass": "^1.63.6"
+  }
 }

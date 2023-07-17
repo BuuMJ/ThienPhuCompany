@@ -1,0 +1,50 @@
+.container-home {
+    width: 100vw;
+    height: 100vh;
+    overflow-y: scroll;
+    scroll-snap-type: y mandatory;
+    scroll-behavior: smooth;
+    scroll-padding-top: 1px; 
+}
+.container-home::-webkit-scrollbar {
+    width: 0;
+  }
+  
+  .container-home::-webkit-scrollbar-track {
+    background-color: transparent; /* Màu nền của thanh cuộn */
+  }
+  
+  .container-home::-webkit-scrollbar-thumb {
+    background-color: transparent; /* Màu thanh cuộn */
+  }
+
+.container-home .card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    position: sticky;
+    top: 0;
+    scroll-snap-align: start;
+}
+
+.container-home .card img {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+.container-home .card .card-content {
+    z-index: 2;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
