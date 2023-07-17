@@ -1,0 +1,23 @@
+{
+  "name": "thienphucompany",
+  "version": "1.0.0",
+  "description": "Thien Phu Company",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BuuMJ/ThienPhuCompany.git"
+  },
+  "keywords": [
+    "thien",
+    "phu"
+  ],
+  "author": "Thien Phu",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/BuuMJ/ThienPhuCompany/issues"
+  },
+  "homepage": "https://github.com/BuuMJ/ThienPhuCompany#readme"
+}
