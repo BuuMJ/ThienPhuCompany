@@ -1,3 +1,56 @@
-@keyframes show-overflow {
-    from { overflow: hidden; }
+@keyframes scaleIn {
+  0% {
+    transform: scale(0.9);
   }
+  100% {
+    transform: scale(1);
+  }
+}
+@keyframes typewriter {
+  0% {
+    width: 100%;
+  }
+  100% {
+    width: 0;
+  }
+}
+@keyframes doorDown{
+  from {
+    transform: translateY(-200%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+@keyframes upDoor{
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(-200%);
+  }
+}
+@keyframes doorUp{
+  from {
+    transform: translateY(200%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+@keyframes downDoor{
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(200%);
+  }
+}
+@keyframes showText{
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}

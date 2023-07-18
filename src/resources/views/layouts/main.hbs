@@ -9,8 +9,14 @@
     <title>{{title}}</title>
 </head>
 <body>
+    <div class="loading">
+        <div class="door-up"></div>
+        <div class="text">
+            <span>Thiên Phú</span>
+        </div>
+        <div class="door-down"></div>
+    </div>
     <div class="app">
-
         {{> header}}
 
         {{{body}}}
@@ -19,4 +25,30 @@
         
     </div>
 </body>
+<script>
+  window.addEventListener("load", function() {
+  var loadingDiv = document.querySelector(".loading");
+  var doorUpDiv = document.querySelector(".door-up");
+  var doorDownDiv = document.querySelector(".door-down");
+  var textSpan = document.querySelector('.loading .text span');
+
+  document.querySelector('.link').addEventListener('click', function(event) {
+    event.preventDefault();
+    
+    loadingDiv.style.display = "flex";
+    setTimeout(function() {
+      textSpan.style.display = 'inline-block';
+    }, 1500);
+    setTimeout(function() {
+      doorUpDiv.classList.add("upDoor");
+      doorDownDiv.classList.add("downDoor");
+      textSpan.style.display = 'none';
+    }, 4000);
+    setTimeout(function() {
+      loadingDiv.style.display = "none";
+      window.location.href = event.target.href; 
+    }, 5000);
+  });
+});
+</script>
 </html>

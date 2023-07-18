@@ -20,6 +20,10 @@
     align-items: center;
     position: relative;
 }
+.navbar-right a {
+    color: $primarycolor;
+    text-decoration: none;
+}
 .navbar-right img{
     width: 200px;
     height: 200%;

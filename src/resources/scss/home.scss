@@ -1,50 +1,99 @@
-.container-home {
-    width: 100vw;
-    height: 100vh;
-    overflow-y: scroll;
-    scroll-snap-type: y mandatory;
-    scroll-behavior: smooth;
-    scroll-padding-top: 1px; 
+.sidebar-list__items {
+  position: fixed;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0,0,0,0.2);
+  padding: 20px;
+  z-index: 10;
+  box-shadow: 4px 4px 20px rgba(255,255,255,0.2);
 }
+.sidebar-item {
+  list-style-type: none;
+  margin-bottom: 16px;
+  cursor: pointer;
+}
+.sidebar-item a {
+  color: white;
+  text-decoration: none;
+  font-size: 24px;
+  transition: .5s;
+}
+.sidebar-item a:hover {
+  color: #e3b76e;
+}
+.sidebar-item a.active,
+.sidebar-item.active a {
+  color: #e3b76e;
+  position: relative;
+}
+.sidebar-item a.active::after{
+  content: "";
+  position: absolute;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background-color: transparent;
+  border: 1px solid #e3b76e;
+  top: -1px;
+  left: 54%;
+  transform: translatex(-50%);
+  z-index: 9;
+}
+.container-home {
+  width: 100vw;
+  height: 100vh;
+  overflow-y: scroll;
+  scroll-snap-type: y mandatory;
+  scroll-behavior: smooth;
+  scroll-padding-top: 1px;
+}
+
 .container-home::-webkit-scrollbar {
-    width: 0;
-  }
-  
-  .container-home::-webkit-scrollbar-track {
-    background-color: transparent; /* Màu nền của thanh cuộn */
-  }
-  
-  .container-home::-webkit-scrollbar-thumb {
-    background-color: transparent; /* Màu thanh cuộn */
-  }
+  width: 0;
+}
+
+.container-home::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
+.container-home::-webkit-scrollbar-thumb {
+  background-color: transparent;
+}
 
 .container-home .card {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100vw;
-    height: 100vh;
-    position: sticky;
-    top: 0;
-    scroll-snap-align: start;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  scroll-snap-align: start;
+  position: relative;
+  transition: transform 2s;
 }
 
 .container-home .card img {
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    left: 0;
-    top: 0;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
 }
 
 .container-home .card .card-content {
-    z-index: 2;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: absolute;
-    left: 0;
-    top: 0;
+  z-index: 2;
+  width: 80%;
+  height: 100%;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  overflow: hidden;
+}
+.typewriter {
+  display: inline-block;
+  white-space: nowrap;
+  overflow: hidden;
+  animation-name: typewriter;
+  animation-duration: 5s;
+  animation-direction: reverse;
 }
