@@ -46,11 +46,11 @@
     transform: translateY(200%);
   }
 }
-@keyframes showText{
-  from {
-    opacity: 0;
+@keyframes typewriterCompany {
+  0% {
+    width: 100%;
   }
-  to {
-    opacity: 1;
+  100% {
+    width: 0;
   }
 }

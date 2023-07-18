@@ -194,11 +194,11 @@
   to {
     transform: translateY(200%); } }
 
-@keyframes showText {
-  from {
-    opacity: 0; }
-  to {
-    opacity: 1; } }
+@keyframes typewriterCompany {
+  0% {
+    width: 100%; }
+  100% {
+    width: 0; } }
 
 * {
   padding: 0;
@@ -211,7 +211,7 @@ body {
 .loading {
   width: 100%;
   height: 100vh;
-  display: none;
+  display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
@@ -220,44 +220,47 @@ body {
   z-index: 200;
   overflow: hidden; }
 
-.loading .door-up {
+.loading .upDoor {
   width: 100%;
   height: 50%;
   background-color: #bc9f6e;
-  animation-name: doorDown;
+  animation-name: upDoor;
   animation-timing-function: ease-in-out;
-  animation-duration: 1.5s; }
+  animation-duration: 2s;
+  animation-delay: 1.7s; }
 
-.loading .door-down {
+.loading .downDoor {
   width: 100%;
   height: 50%;
   background-color: #bc9f6e;
-  animation-name: doorUp;
+  animation-name: downDoor;
   animation-timing-function: ease-in-out;
-  animation-duration: 1.5s; }
+  animation-duration: 2s;
+  animation-delay: 1.7s; }
 
 .loading .text {
   color: white;
   font-size: 100px;
-  font-weight: 70;
+  font-weight: 700;
   letter-spacing: 2px;
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%); }
+  transform: translate(-50%, -50%);
+  z-index: 202; }
 
 .loading .text span {
-  display: none;
+  display: inline-block;
   white-space: nowrap;
   overflow: hidden;
-  animation: typewriter 1.5s steps(9) reverse; }
+  animation: typewriterCompany 1.5s steps(9) reverse; }
 
-.upDoor {
+.door-up {
   animation-name: upDoor !important;
   animation-timing-function: ease-in-out !important;
   animation-duration: 1.5s !important; }
 
-.downDoor {
+.door-down {
   animation-name: downDoor !important;
   animation-timing-function: ease-in-out !important;
   animation-duration: 1.5s !important; }
