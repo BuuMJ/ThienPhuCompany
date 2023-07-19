@@ -8,6 +8,10 @@
   z-index: 10;
   box-shadow: 4px 4px 20px rgba(255,255,255,0.2);
 }
+.sidebar-list__items #sidebar-list{
+  padding: unset;
+  margin: unset; 
+}
 .sidebar-item {
   list-style-type: none;
   margin-bottom: 16px;
@@ -35,7 +39,7 @@
   border-radius: 50%;
   background-color: transparent;
   border: 1px solid #e3b76e;
-  top: -1px;
+  top: 0;
   left: 54%;
   transform: translatex(-50%);
   z-index: 9;
@@ -46,7 +50,6 @@
   overflow-y: scroll;
   scroll-snap-type: y mandatory;
   scroll-behavior: smooth;
-  scroll-padding-top: 1px;
 }
 
 .container-home::-webkit-scrollbar {
@@ -68,10 +71,16 @@
   width: 100vw;
   height: 100vh;
   scroll-snap-align: start;
+  scroll-snap-stop: always;
   position: relative;
   transition: transform 2s;
 }
-
+.container-home .card #carouselExampleInterval,
+.container-home .card #carouselExampleInterval .carousel-inner,
+.container-home .card #carouselExampleInterval .carousel-inner .carousel-item{
+  width: 100%;
+  height: 100%;
+}
 .container-home .card img {
   width: 100%;
   height: 100%;

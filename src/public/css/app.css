@@ -8,6 +8,10 @@
   z-index: 10;
   box-shadow: 4px 4px 20px rgba(255, 255, 255, 0.2); }
 
+.sidebar-list__items #sidebar-list {
+  padding: unset;
+  margin: unset; }
+
 .sidebar-item {
   list-style-type: none;
   margin-bottom: 16px;
@@ -35,7 +39,7 @@
   border-radius: 50%;
   background-color: transparent;
   border: 1px solid #e3b76e;
-  top: -1px;
+  top: 0;
   left: 54%;
   transform: translatex(-50%);
   z-index: 9; }
@@ -45,8 +49,7 @@
   height: 100vh;
   overflow-y: scroll;
   scroll-snap-type: y mandatory;
-  scroll-behavior: smooth;
-  scroll-padding-top: 1px; }
+  scroll-behavior: smooth; }
 
 .container-home::-webkit-scrollbar {
   width: 0; }
@@ -64,8 +67,15 @@
   width: 100vw;
   height: 100vh;
   scroll-snap-align: start;
+  scroll-snap-stop: always;
   position: relative;
   transition: transform 2s; }
+
+.container-home .card #carouselExampleInterval,
+.container-home .card #carouselExampleInterval .carousel-inner,
+.container-home .card #carouselExampleInterval .carousel-inner .carousel-item {
+  width: 100%;
+  height: 100%; }
 
 .container-home .card img {
   width: 100%;
@@ -111,22 +121,24 @@
   height: 100%;
   display: flex;
   align-items: center;
-  position: relative; }
-
-.navbar-right a {
+  position: relative;
   color: #bc9f6e;
   text-decoration: none; }
 
 .navbar-right img {
-  width: 200px;
-  height: 200%;
-  transform: translateX(25%); }
+  width: 150px;
+  height: 100%;
+  transform: translateX(60%);
+  cursor: pointer; }
 
 .navbar-right .name-company {
-  font-size: 36px;
+  font-size: 40px;
+  font-weight: 700;
   position: absolute;
-  right: 26%;
-  letter-spacing: 2.5px; }
+  right: 37%;
+  letter-spacing: 4px;
+  word-spacing: 1.5px;
+  cursor: pointer; }
 
 .navbar-left {
   width: 60%;
@@ -153,10 +165,32 @@
   text-decoration: none;
   transition: .3s;
   font-size: 16px;
-  font-weight: 400; }
+  font-weight: 400;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%; }
 
 .navbar-left .primary-navbar li a:hover {
   color: #bc9f6e; }
+
+.navbar .touched {
+  color: #bc9f6e !important;
+  cursor: default; }
+
+.navbar-left .touched {
+  color: #bc9f6e !important;
+  cursor: default;
+  position: relative; }
+
+.navbar-left .touched::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background-color: #bc9f6e; }
 
 @keyframes scaleIn {
   0% {
@@ -208,7 +242,8 @@
 body {
   font-family: Roboto,Arial,Helvetica,sans-serif; }
 
-.loading {
+.loading,
+.loading-href {
   width: 100%;
   height: 100vh;
   display: flex;
@@ -219,6 +254,9 @@ body {
   top: 0;
   z-index: 200;
   overflow: hidden; }
+
+.loading-href {
+  display: none; }
 
 .loading .upDoor {
   width: 100%;
@@ -255,12 +293,18 @@ body {
   overflow: hidden;
   animation: typewriterCompany 1.5s steps(9) reverse; }
 
-.door-up {
-  animation-name: upDoor !important;
-  animation-timing-function: ease-in-out !important;
-  animation-duration: 1.5s !important; }
-
 .door-down {
-  animation-name: downDoor !important;
-  animation-timing-function: ease-in-out !important;
-  animation-duration: 1.5s !important; }
+  width: 100%;
+  height: 50%;
+  background-color: #bc9f6e;
+  animation-name: doorDown;
+  animation-timing-function: ease;
+  animation-duration: 1.5s; }
+
+.door-up {
+  width: 100%;
+  height: 50%;
+  background-color: #bc9f6e;
+  animation-name: doorUp;
+  animation-timing-function: ease;
+  animation-duration: 1.5s; }

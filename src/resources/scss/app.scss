@@ -11,7 +11,8 @@
 body{
     font-family: Roboto,Arial,Helvetica,sans-serif;;
 }
-.loading{
+.loading,
+.loading-href{
     width: 100%;
     height: 100vh;
     display: flex;
@@ -22,6 +23,9 @@ body{
     top: 0;
     z-index: 200;
     overflow: hidden;
+}
+.loading-href{
+    display: none;
 }
 .loading .upDoor{
     width: 100%;
@@ -58,13 +62,19 @@ body{
     overflow: hidden;
     animation: typewriterCompany 1.5s steps(9) reverse;
 }
-.door-up{
-    animation-name: upDoor !important;
-    animation-timing-function: ease-in-out !important;
-    animation-duration: 1.5s !important;
-}
 .door-down{
-    animation-name: downDoor !important;
-    animation-timing-function: ease-in-out !important;
-    animation-duration: 1.5s !important;
+    width: 100%;
+    height: 50%;
+    background-color: $primarycolor;
+    animation-name: doorDown;
+    animation-timing-function: ease;
+    animation-duration: 1.5s;
+}
+.door-up{
+    width: 100%;
+    height: 50%;
+    background-color: $primarycolor;
+    animation-name: doorUp;
+    animation-timing-function: ease;
+    animation-duration: 1.5s;
 }

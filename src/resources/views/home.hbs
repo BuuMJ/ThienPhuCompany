@@ -9,10 +9,27 @@
 </div>
 <div class="container-home">
   <div id="1" class="card">
-    <img src="/img/logotest.jpeg" alt="">
-    <div class="card-content">
-      <span class="typewriter">Xây dựng với xi măng Thiên Phú, An toàn với gia đình bạn</span>
+      <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
+  <div class="carousel-inner">
+    <div class="carousel-item active" data-bs-interval="5000">
+      <img src="/img/home2.jpg" class="d-block w-100" alt="...">
     </div>
+    <div class="carousel-item" data-bs-interval="2000">
+      <img src="/img/home3.jpg" class="d-block w-100" alt="...">
+    </div>
+    <div class="carousel-item">
+      <img src="/img/home1.jpg" class="d-block w-100" alt="...">
+    </div>
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
   </div>
   <div id="2" class="card">
     <img src="/img/logotest2.jpeg" alt="">
@@ -50,35 +67,40 @@ var fourthItemSidebar = document.querySelector('.sidebar-list__items .sidebar-it
 var fifthItemSidebar = document.querySelector('.sidebar-list__items .sidebar-item a.fifth');
 
 function scrollContent() {
-    if (containerHome.scrollTop == 0) {
-        firstItemSidebar.classList.add('active');
-        secondItemSidebar.classList.remove('active');
-    } else if (containerHome.scrollTop > 470 && containerHome.scrollTop < 940) {
-        firstItemSidebar.classList.remove('active');
-        secondItemSidebar.classList.add('active');
-        thirdItemSidebar.classList.remove('active');
-        fourthItemSidebar.classList.remove('active');
-        fifthItemSidebar.classList.remove('active');
-    } else if (containerHome.scrollTop >= 950 && containerHome.scrollTop < 1539) {
-        firstItemSidebar.classList.remove('active');
-        secondItemSidebar.classList.remove('active');
-        thirdItemSidebar.classList.add('active');
-        fourthItemSidebar.classList.remove('active');
-        fifthItemSidebar.classList.remove('active');
-    } else if (containerHome.scrollTop > 1540 && containerHome.scrollTop < 2500) {
-        firstItemSidebar.classList.remove('active');
-        secondItemSidebar.classList.remove('active');
-        thirdItemSidebar.classList.remove('active');
-        fourthItemSidebar.classList.add('active');
-        fifthItemSidebar.classList.remove('active');
-    } else if (containerHome.scrollTop >= 2500) {
-        firstItemSidebar.classList.remove('active');
-        secondItemSidebar.classList.remove('active');
-        thirdItemSidebar.classList.remove('active');
-        fourthItemSidebar.classList.remove('active');
-        fifthItemSidebar.classList.add('active');
-    }
+  var containerRect = containerHome.getBoundingClientRect();
+  var containerHeight = (containerRect.height) - 10;
+  var scrollPosition = containerHome.scrollTop;
+
+  if (scrollPosition < containerHeight ) {
+    firstItemSidebar.classList.add('active');
+    secondItemSidebar.classList.remove('active');
+  } else if (scrollPosition > containerHeight && scrollPosition <= 2 * containerHeight + 1) {
+    firstItemSidebar.classList.remove('active');
+    secondItemSidebar.classList.add('active');
+    thirdItemSidebar.classList.remove('active');
+    fourthItemSidebar.classList.remove('active');
+    fifthItemSidebar.classList.remove('active');
+  } else if (scrollPosition > 2 * containerHeight - 1 && scrollPosition <= 3 * containerHeight + 1) {
+    firstItemSidebar.classList.remove('active');
+    secondItemSidebar.classList.remove('active');
+    thirdItemSidebar.classList.add('active');
+    fourthItemSidebar.classList.remove('active');
+    fifthItemSidebar.classList.remove('active');
+  } else if (scrollPosition > 3 * containerHeight - 1 && scrollPosition <= 4 * containerHeight + 1) {
+    firstItemSidebar.classList.remove('active');
+    secondItemSidebar.classList.remove('active');
+    thirdItemSidebar.classList.remove('active');
+    fourthItemSidebar.classList.add('active');
+    fifthItemSidebar.classList.remove('active');
+  } else if (scrollPosition > 4 * containerHeight ) {
+    firstItemSidebar.classList.remove('active');
+    secondItemSidebar.classList.remove('active');
+    thirdItemSidebar.classList.remove('active');
+    fourthItemSidebar.classList.remove('active');
+    fifthItemSidebar.classList.add('active');
+  }
 }
+
 </script>
 
 
