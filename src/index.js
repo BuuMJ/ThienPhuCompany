@@ -62,7 +62,7 @@ app.use(
 );
 
 //connect DB
-// db.connect();
+db.connect();
 
 app.use(express.static(path.join(__dirname, "public")));
 app.use(express.static("uploads"));
