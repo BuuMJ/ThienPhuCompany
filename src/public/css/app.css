@@ -77,11 +77,12 @@
 
 .container-home .card {
   display: flex;
-  justify-content: center;
+  flex-direction: row;
+  justify-content: space-around;
   align-items: center;
   width: 100vw;
   height: 100vh;
-  scroll-snap-align: end;
+  scroll-snap-align: center;
   scroll-snap-stop: always;
   position: relative; }
 
@@ -93,10 +94,7 @@
 
 .container-home .card img {
   width: 100%;
-  height: 100%;
-  position: absolute;
-  left: 0;
-  top: 0; }
+  height: 100%; }
 
 .container-home .card .card-content {
   z-index: 2;
@@ -107,13 +105,163 @@
   align-items: center;
   overflow: hidden; }
 
-.typewriter {
-  display: inline-block;
-  white-space: nowrap;
-  overflow: hidden;
-  animation-name: typewriter;
-  animation-duration: 5s;
-  animation-direction: reverse; }
+.container-home .card-slogan {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100%;
+  background-color: #dcdcdc; }
+
+.container-home .card-slogan .card-content {
+  width: 80%;
+  height: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  align-items: center; }
+
+.container-home .card-slogan .card-content span.primary-text {
+  font-size: 30px;
+  font-weight: 400;
+  margin: 0 0 12px 0; }
+
+.container-home .card-slogan .card-content span.primary-text b {
+  color: #bc9f6e; }
+
+.container-home .card-slogan .card-content span.slogan {
+  font-size: 36px;
+  font-weight: 700;
+  color: #d4d4d4;
+  background: linear-gradient(35deg, #999 20%, #666 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin: 12px 0 20px 0; }
+
+.container-home .card-slogan .card-choose {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 80%;
+  height: 50%; }
+
+.container-home .card-slogan .card-choose .primary-text {
+  color: #bc9f6e;
+  position: relative;
+  text-transform: uppercase;
+  font-size: 30px;
+  font-weight: 400;
+  padding: 8px 0; }
+
+.container-home .card-slogan .card-choose .primary-text::before {
+  content: "";
+  position: absolute;
+  width: 60%;
+  height: 2px;
+  background-color: #666;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%); }
+
+.container-home .card-slogan .card-choose .primary-text::after {
+  content: "";
+  position: absolute;
+  width: 25%;
+  height: 2px;
+  background-color: #ed2324;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%); }
+
+.container-home .card-slogan .card-choose .secondary-text {
+  font-size: 20px;
+  margin: 12px 0 18px 0;
+  text-align: center; }
+
+.container-home .card-slogan .card-choose .secondary-text b {
+  color: #bc9f6e; }
+
+.container-home .card-slogan .card-choose .main-choose {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%; }
+
+.container-home .card-slogan .card-choose .main-choose .item__main-choose {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 19%;
+  height: 200px; }
+
+.container-home .card-slogan .card-choose .main-choose .item__main-choose .material-symbols-outlined {
+  color: #bc9f6e;
+  font-size: 40px;
+  height: 25%;
+  text-align: center;
+  font-variation-settings: 'FILL' 0, 'wght' 700, 'GRAD' 200, 'opsz' 48; }
+
+.container-home .card-slogan .card-choose .main-choose .item__main-choose .title {
+  height: 20%;
+  font-size: 15px;
+  font-weight: 600;
+  text-align: center; }
+
+.container-home .card-slogan .card-choose .main-choose .item__main-choose .main-info {
+  height: 55%;
+  width: 90%;
+  font-size: 16px;
+  text-align: center; }
+
+.container-home .card-ads {
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; }
+
+.container-home .card-ads .main-ads {
+  height: 80%;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  background-color: #bc9f6e;
+  border-bottom-left-radius: 50%; }
+
+.container-home .card-ads .main-ads .header-ads {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
+  width: 20%;
+  height: 100%; }
+
+.container-home .card-ads .header-ads img {
+  width: 250px;
+  height: 30%;
+  transform: translateY(-60%); }
+
+.container-home .card-ads .header-ads span {
+  width: 250px;
+  font-size: 40px;
+  font-weight: 700;
+  color: white;
+  text-align: center;
+  transform: translateY(-160%); }
+
+.container-home .card-ads .main-ads .body-ads {
+  width: 80%;
+  height: 100%; }
+
+.container-home .card-ads .footer-ads {
+  width: 100%;
+  height: 20%; }
 
 .navbar {
   width: 100%;
