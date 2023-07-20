@@ -73,7 +73,13 @@
   scroll-snap-align: start;
   scroll-snap-stop: always;
   position: relative;
-  transition: transform 2s;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.4s, transform 0.4s;
+}
+.container-home .card.active {
+  opacity: 1;
+  transform: translateY(0);
 }
 .container-home .card #carouselExampleInterval,
 .container-home .card #carouselExampleInterval .carousel-inner,
