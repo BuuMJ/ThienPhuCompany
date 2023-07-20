@@ -81,16 +81,9 @@
   align-items: center;
   width: 100vw;
   height: 100vh;
-  scroll-snap-align: start;
+  scroll-snap-align: end;
   scroll-snap-stop: always;
-  position: relative;
-  opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 0.4s, transform 0.4s; }
-
-.container-home .card.active {
-  opacity: 1;
-  transform: translateY(0); }
+  position: relative; }
 
 .container-home .card #carouselExampleInterval,
 .container-home .card #carouselExampleInterval .carousel-inner,

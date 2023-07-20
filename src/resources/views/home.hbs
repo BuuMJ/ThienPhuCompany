@@ -56,26 +56,7 @@
     </div>
   </div>
 </div>
-<!-- Thêm thư viện ScrollMagic -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.8/ScrollMagic.min.js"></script>
-
-<!-- Thêm thư viện GSAP -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
-
 <script>
-    const controller = new ScrollMagic.Controller();
-  const cards = document.querySelectorAll('.card');
-
-  cards.forEach((card) => {
-    // Tạo một ScrollMagic Scene cho mỗi card
-    const scene = new ScrollMagic.Scene({
-      triggerElement: card,
-      triggerHook: 0.8, 
-      reverse: false, 
-    })
-      .setClassToggle(card, 'active') // Thêm hoặc xoá class 'active' khi hiệu ứng được kích hoạt
-      .addTo(controller); // Thêm Scene vào ScrollMagic Controller
-  });
 var containerHome = document.querySelector('.container-home');
 containerHome.addEventListener('scroll', scrollContent);
 

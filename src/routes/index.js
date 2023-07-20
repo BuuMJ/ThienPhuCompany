@@ -4,9 +4,11 @@ const productRouter = require("./product")
 const eventRouter = require("./event")
 const contactRouter = require("./contact")
 const awardRouter = require("./award")
+const createEventRouter = require("./createEvent")
 
 function route(app){
     app.use('/about', aboutRouter)
+    app.use('/create', createEventRouter)
     app.use('/award', awardRouter)
     app.use('/event', eventRouter)
     app.use('/contact', contactRouter)
