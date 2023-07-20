@@ -67,7 +67,7 @@
   scroll-behavior: smooth; }
 
 .container-home::-webkit-scrollbar {
-  width: 0; }
+  display: none; }
 
 .container-home::-webkit-scrollbar-track {
   background-color: transparent; }
@@ -203,7 +203,7 @@
   font-size: 40px;
   height: 25%;
   text-align: center;
-  font-variation-settings: 'FILL' 0, 'wght' 700, 'GRAD' 200, 'opsz' 48; }
+  font-variation-settings: 'FILL' 0, 'wght' 700, 'GRAD' 200, 'opsz' 48; }
 
 .container-home .card-slogan .card-choose .main-choose .item__main-choose .title {
   height: 20%;
@@ -218,50 +218,88 @@
   text-align: center; }
 
 .container-home .card-ads {
-  background-color: #fff;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center; }
+  align-items: center;
+  position: relative; }
+
+.container-home .card-ads img.trucks {
+  position: absolute;
+  top: 53%;
+  right: 40%;
+  width: 350px;
+  height: 110px; }
+
+.container-home .card-ads img.product {
+  position: absolute;
+  top: 38%;
+  right: -3%;
+  width: 850px;
+  height: 500px; }
 
 .container-home .card-ads .main-ads {
-  height: 80%;
-  width: 100%;
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  background-color: #bc9f6e;
-  border-bottom-left-radius: 50%; }
+  background: url("/img/headerads.jpg") center/cover no-repeat;
+  width: 100%;
+  height: 70%; }
 
-.container-home .card-ads .main-ads .header-ads {
+.container-home .card-ads .main-ads .logo {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 30%;
+  height: 25%; }
+
+.container-home .card-ads .main-ads .logo img {
+  width: 280px;
+  height: 180px; }
+
+.container-home .card-ads .main-ads .logo .text {
+  display: flex;
+  flex-direction: column; }
+
+.container-home .card-ads .main-ads .logo .text span {
+  font-size: 36px;
+  font-weight: 700;
+  color: #bc9f6e;
+  text-transform: uppercase; }
+
+.container-home .card-ads .footer-ads {
+  height: 40%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center; }
+
+.container-home .card-ads .footer-ads .slogan {
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  align-items: start;
+  height: 53%;
+  width: 100%;
+  font-size: 36px;
+  font-weight: 700;
+  padding-left: 26px; }
+
+.container-home .card-ads .footer-ads .slogan span b {
+  color: #bc9f6e; }
+
+.container-home .card-ads .footer-ads .hotline {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: start;
-  width: 20%;
-  height: 100%; }
-
-.container-home .card-ads .header-ads img {
-  width: 250px;
-  height: 30%;
-  transform: translateY(-60%); }
-
-.container-home .card-ads .header-ads span {
-  width: 250px;
-  font-size: 40px;
-  font-weight: 700;
-  color: white;
-  text-align: center;
-  transform: translateY(-160%); }
-
-.container-home .card-ads .main-ads .body-ads {
-  width: 80%;
-  height: 100%; }
-
-.container-home .card-ads .footer-ads {
   width: 100%;
-  height: 20%; }
+  height: 45%;
+  font-size: 30px;
+  padding: 0 26px; }
 
 .navbar {
   width: 100%;
