@@ -1,0 +1,15 @@
+.container-about{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.container-about .parallax{
+    width: 100%;
+    height: 100vh;
+}
+.container-about .parallax .background{
+    background: url('/img/aboutthienphu.jpg') center / cover no-repeat;
+    width: 100%;
+    height: 100%;
+}

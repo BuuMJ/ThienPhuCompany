@@ -56,7 +56,12 @@
     </div>
   </div>
 </div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/smooth-scroll/16.1.3/smooth-scroll.min.js"></script>
 <script>
+  const scroll = new SmoothScroll('a[href*="#"]', {
+    speed: 800, // Tốc độ cuộn (milisecond)
+    speedAsDuration: true // Tính tốc độ cuộn làm dựa trên thời gian (true) hoặc số lượng pixel (false)
+  });
 var containerHome = document.querySelector('.container-home');
 containerHome.addEventListener('scroll', scrollContent);
 
@@ -100,7 +105,6 @@ function scrollContent() {
     fifthItemSidebar.classList.add('active');
   }
 }
-
 </script>
 
 
