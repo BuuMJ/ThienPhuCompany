@@ -154,7 +154,7 @@ function scrollContent() {
   var cardSlogan = document.querySelector('.card-slogan');
   var cardEvent = document.querySelector('.card-event');
   // first card
-  if (scrollPosition < containerHeight ) {
+  if (scrollPosition < containerHeight - 750 ) {
     firstItemSidebar.classList.add('active');
     secondItemSidebar.classList.remove('active');
 
@@ -185,7 +185,7 @@ function scrollContent() {
     cardEvent.querySelector('.visited a').style.cssText = 'transform: translateY(200%);';
   } 
   // second card 
-  else if (scrollPosition > containerHeight && scrollPosition <= 2 * containerHeight + 1) {
+  else if (scrollPosition > containerHeight && scrollPosition <= 2 * containerHeight - 880) {
     firstItemSidebar.classList.remove('active');
     secondItemSidebar.classList.add('active');
     thirdItemSidebar.classList.remove('active');
@@ -219,7 +219,7 @@ function scrollContent() {
     cardEvent.querySelector('.visited a').style.cssText = 'transform: translateY(200%);';
   }
   // third card 
-  else if (scrollPosition > 2 * containerHeight - 1 && scrollPosition <= 3 * containerHeight + 1) {
+  else if (scrollPosition > 2 * containerHeight && scrollPosition <= 3 * containerHeight - 700) {
     firstItemSidebar.classList.remove('active');
     secondItemSidebar.classList.remove('active');
     thirdItemSidebar.classList.add('active');
@@ -253,7 +253,7 @@ function scrollContent() {
     cardEvent.querySelector('.visited a').style.cssText = 'transform: translateY(200%);';
   }
   // fourth card 
-  else if (scrollPosition > 3 * containerHeight - 1 && scrollPosition <= 4 * containerHeight + 1) {
+  else if (scrollPosition > 3 * containerHeight  && scrollPosition <= 4 * containerHeight - 700) {
     firstItemSidebar.classList.remove('active');
     secondItemSidebar.classList.remove('active');
     thirdItemSidebar.classList.remove('active');
