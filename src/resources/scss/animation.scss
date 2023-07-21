@@ -54,3 +54,58 @@
     width: 0;
   }
 }
+@keyframes RunAway {
+  from {
+    transform: translateX(500%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+@keyframes scaleLogo{
+  0%{
+    transform: scale(0);
+  }
+  80%{
+    transform: scale(1.5,1.5);
+  }
+  100%{
+    transform: scale(1);
+  }
+}
+@keyframes transform{
+  from{
+    transform: translateY(500%);
+  }
+  to{
+    transform: translateY(0);
+  }
+}
+@keyframes doubleAnimation{
+  from{
+    transform: translateX(300%), scale(0);
+  }
+  to{
+    transform: translateX(0) scale(1,1);
+  }
+}
+@keyframes opacityTrans{
+  from{
+    transform: translateX(-200%);
+    opacity: 0;
+  }
+  to{
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+@keyframes nameCompany{
+  from {
+    transform: translateY(261%);
+    opacity: 0;
+  }
+  to{
+    transform: translateY(0);
+    opacity: 1;
+  }
+}

@@ -117,12 +117,14 @@
     </div>
   </div>
   <div id="5" class="card card-event">
-      <span>Tin Tức <b>Sự Kiện</b></span>
+      <span class="primary-text">Tin Tức <b>Sự Kiện</b></span>
       <div class="list-event">
         {{#each event}}
         <div class="event">
+          <div class="background">
           <img src="{{this.image1}}" alt="">
-          <span class="time">{{this.createdAt}}</span>
+          </div>
+          <span class="time">22/07/2023</span>
           <span class="title">{{this.title}}</span>
           <span class="content">{{this.text1}}</span>
         </div>
@@ -148,33 +150,174 @@ function scrollContent() {
   var containerHeight = (containerRect.height) - 10;
   var scrollPosition = containerHome.scrollTop;
   var cardADS = document.querySelector('.card-ads');
+  var cardIntro = document.querySelector('.card-intro');
+  var cardSlogan = document.querySelector('.card-slogan');
+  var cardEvent = document.querySelector('.card-event');
+  // first card
   if (scrollPosition < containerHeight ) {
     firstItemSidebar.classList.add('active');
     secondItemSidebar.classList.remove('active');
-  } else if (scrollPosition > containerHeight && scrollPosition <= 2 * containerHeight + 1) {
+
+    cardADS.querySelector('.trucks').style.cssText = 'animation: unset';
+    cardADS.querySelector('.main-ads .logo img').style.cssText = 'animation: unset;';
+    cardADS.querySelector('.product').style.cssText = 'animation: unset;';
+    cardADS.querySelector('.footer-ads .slogan').style.cssText = 'transform: translatey(500%)';
+    cardADS.querySelector('.footer-ads .hotline').style.cssText = 'transform: translatey(500%))';
+    cardADS.querySelector('.main-ads .logo .text span').style.cssText = 'animation: unset;';
+
+    cardIntro.querySelector('.right').style.cssText = 'animation: unset;';
+    cardIntro.querySelector('.left').style.cssText = 'animation: unset;';
+    
+    cardSlogan.querySelector('.card-content .primary-text').style.cssText = 'transform: translateX(-300%);';
+    cardSlogan.querySelector('.card-content .slogan').style.cssText = 'transform: translateX(500%);';
+    cardSlogan.querySelector('.card-choose .primary-text').style.cssText = 'transform: translateY(-500%);';
+    cardSlogan.querySelector('.card-choose .secondary-text').style.cssText = 'transform: translateY(-1000%);';
+    const itemMainChooseList = document.querySelectorAll('.card-slogan .card-choose .main-choose .item__main-choose');
+      itemMainChooseList.forEach((item, index) => {
+        item.style.transform = 'translateY(500%)';
+      });
+
+    cardEvent.querySelector('.primary-text').style.cssText = 'transform: translateY(-500%);';
+    const eventElements = cardEvent.querySelectorAll('.list-event .event');
+    eventElements.forEach((element) => {
+      element.style.cssText = 'transform: translateY(500%);';
+    });
+    cardEvent.querySelector('.visited a').style.cssText = 'transform: translateY(200%);';
+  } 
+  // second card 
+  else if (scrollPosition > containerHeight && scrollPosition <= 2 * containerHeight + 1) {
     firstItemSidebar.classList.remove('active');
     secondItemSidebar.classList.add('active');
     thirdItemSidebar.classList.remove('active');
     fourthItemSidebar.classList.remove('active');
     fifthItemSidebar.classList.remove('active');
-  } else if (scrollPosition > 2 * containerHeight - 1 && scrollPosition <= 3 * containerHeight + 1) {
+
+    cardADS.querySelector('.trucks').style.cssText = 'animation-name: RunAway; animation-duration: 1.5s; animation-fill-mode: forwards; animation-delay: 0.3s';
+    cardADS.querySelector('.main-ads .logo img').style.cssText = 'animation-name: scaleLogo; animation-duration: 1.5s; animation-fill-mode: forwards;';
+    cardADS.querySelector('.product').style.cssText = 'animation-name: RunAway; animation-duration: 1.5s; animation-fill-mode: forwards;';
+    cardADS.querySelector('.footer-ads .slogan').style.cssText = 'transform: translatey(0)';
+    cardADS.querySelector('.footer-ads .hotline').style.cssText = 'transform: translatey(0)';
+    cardADS.querySelector('.main-ads .logo .text span').style.cssText = 'animation-name: nameCompany; animation-duration: 1.5s; animation-fill-mode: forwards; animation-delay: 1.5s';
+
+    cardIntro.querySelector('.right').style.cssText = 'animation: unset;';
+    cardIntro.querySelector('.left').style.cssText = 'animation: unset;';
+
+    cardSlogan.querySelector('.card-content .primary-text').style.cssText = 'transform: translateX(-300%);';
+    cardSlogan.querySelector('.card-content .slogan').style.cssText = 'transform: translateX(500%);';
+    cardSlogan.querySelector('.card-choose .primary-text').style.cssText = 'transform: translateY(-500%);';
+    cardSlogan.querySelector('.card-choose .secondary-text').style.cssText = 'transform: translateY(-1000%);';
+    const itemMainChooseList = document.querySelectorAll('.card-slogan .card-choose .main-choose .item__main-choose');
+      itemMainChooseList.forEach((item, index) => {
+        item.style.transform = 'translateY(500%)';
+      });
+
+    cardEvent.querySelector('.primary-text').style.cssText = 'transform: translateY(-500%);';
+    const eventElements = cardEvent.querySelectorAll('.list-event .event');
+    eventElements.forEach((element) => {
+      element.style.cssText = 'transform: translateY(500%);';
+    });
+    cardEvent.querySelector('.visited a').style.cssText = 'transform: translateY(200%);';
+  }
+  // third card 
+  else if (scrollPosition > 2 * containerHeight - 1 && scrollPosition <= 3 * containerHeight + 1) {
     firstItemSidebar.classList.remove('active');
     secondItemSidebar.classList.remove('active');
     thirdItemSidebar.classList.add('active');
     fourthItemSidebar.classList.remove('active');
     fifthItemSidebar.classList.remove('active');
-  } else if (scrollPosition > 3 * containerHeight - 1 && scrollPosition <= 4 * containerHeight + 1) {
+
+    cardADS.querySelector('.trucks').style.cssText = 'animation: unset';
+    cardADS.querySelector('.main-ads .logo img').style.cssText = 'animation: unset;';
+    cardADS.querySelector('.product').style.cssText = 'animation: unset;';
+    cardADS.querySelector('.footer-ads .slogan').style.cssText = 'transform: translatey(500%)';
+    cardADS.querySelector('.footer-ads .hotline').style.cssText = 'transform: translatey(500%))';
+    cardADS.querySelector('.main-ads .logo .text span').style.cssText = 'animation: unset;';
+    
+    cardIntro.querySelector('.right').style.cssText = 'animation-name: doubleAnimation; animation-duration: 1.5s; animation-fill-mode: forwards;'
+    cardIntro.querySelector('.left').style.cssText = 'animation-name: opacityTrans; animation-duration: 1.5s; animation-fill-mode: forwards; animation-delay: 1s;'
+
+    cardSlogan.querySelector('.card-content .primary-text').style.cssText = 'transform: translateX(-300%);';
+    cardSlogan.querySelector('.card-content .slogan').style.cssText = 'transform: translateX(500%);';
+    cardSlogan.querySelector('.card-choose .primary-text').style.cssText = 'transform: translateY(-500%);';
+    cardSlogan.querySelector('.card-choose .secondary-text').style.cssText = 'transform: translateY(-1000%);';
+    const itemMainChooseList = document.querySelectorAll('.card-slogan .card-choose .main-choose .item__main-choose');
+      itemMainChooseList.forEach((item, index) => {
+        item.style.transform = 'translateY(500%)';
+      });
+    
+    cardEvent.querySelector('.primary-text').style.cssText = 'transform: translateY(-500%);';
+    const eventElements = cardEvent.querySelectorAll('.list-event .event');
+    eventElements.forEach((element) => {
+      element.style.cssText = 'transform: translateY(500%);';
+    });
+    cardEvent.querySelector('.visited a').style.cssText = 'transform: translateY(200%);';
+  }
+  // fourth card 
+  else if (scrollPosition > 3 * containerHeight - 1 && scrollPosition <= 4 * containerHeight + 1) {
     firstItemSidebar.classList.remove('active');
     secondItemSidebar.classList.remove('active');
     thirdItemSidebar.classList.remove('active');
     fourthItemSidebar.classList.add('active');
     fifthItemSidebar.classList.remove('active');
-  } else if (scrollPosition > 4 * containerHeight ) {
+
+    cardADS.querySelector('.trucks').style.cssText = 'animation: unset';
+    cardADS.querySelector('.main-ads .logo img').style.cssText = 'animation: unset;';
+    cardADS.querySelector('.product').style.cssText = 'animation: unset;';
+    cardADS.querySelector('.footer-ads .slogan').style.cssText = 'transform: translatey(500%)';
+    cardADS.querySelector('.footer-ads .hotline').style.cssText = 'animation: unset;';
+
+    cardIntro.querySelector('.right').style.cssText = 'animation: unset;';
+    cardIntro.querySelector('.left').style.cssText = 'animation: unset;';
+
+    cardSlogan.querySelector('.card-content .primary-text').style.cssText = 'transform: translateX(0);';
+    cardSlogan.querySelector('.card-content .slogan').style.cssText = 'transform: translateX(0);';
+    cardSlogan.querySelector('.card-choose .primary-text').style.cssText = 'transform: translateY(0);';
+    cardSlogan.querySelector('.card-choose .secondary-text').style.cssText = 'transform: translateY(0);';
+    const itemMainChooseList = document.querySelectorAll('.card-slogan .card-choose .main-choose .item__main-choose');
+      itemMainChooseList.forEach((item, index) => {
+        item.style.transform = 'translateY(0)';
+      });
+
+    cardEvent.querySelector('.primary-text').style.cssText = 'transform: translateY(-500%);';
+    const eventElements = cardEvent.querySelectorAll('.list-event .event');
+    eventElements.forEach((element) => {
+      element.style.cssText = 'transform: translateY(500%);';
+    });
+    cardEvent.querySelector('.visited a').style.cssText = 'transform: translateY(200%);';
+  }
+  // fifth card 
+  else if (scrollPosition > 4 * containerHeight ) {
     firstItemSidebar.classList.remove('active');
     secondItemSidebar.classList.remove('active');
     thirdItemSidebar.classList.remove('active');
     fourthItemSidebar.classList.remove('active');
     fifthItemSidebar.classList.add('active');
+
+    cardADS.querySelector('.trucks').style.cssText = 'animation: unset';
+    cardADS.querySelector('.main-ads .logo img').style.cssText = 'animation: unset;';
+    cardADS.querySelector('.product').style.cssText = 'animation: unset;';
+    cardADS.querySelector('.footer-ads .slogan').style.cssText = 'transform: translatey(500%)';
+    cardADS.querySelector('.footer-ads .hotline').style.cssText = 'transform: translatey(500%))';
+    cardADS.querySelector('.main-ads .logo .text span').style.cssText = 'animation: unset;';
+
+    cardIntro.querySelector('.right').style.cssText = 'animation: unset;';
+    cardIntro.querySelector('.left').style.cssText = 'animation: unset;';
+
+    cardSlogan.querySelector('.card-content .primary-text').style.cssText = 'transform: translateX(-300%);';
+    cardSlogan.querySelector('.card-content .slogan').style.cssText = 'transform: translateX(500%);';
+    cardSlogan.querySelector('.card-choose .primary-text').style.cssText = 'transform: translateY(-500%);';
+    cardSlogan.querySelector('.card-choose .secondary-text').style.cssText = 'transform: translateY(-1000%);';
+    const itemMainChooseList = document.querySelectorAll('.card-slogan .card-choose .main-choose .item__main-choose');
+      itemMainChooseList.forEach((item, index) => {
+        item.style.transform = 'translateY(500%)';
+      });
+    
+    cardEvent.querySelector('.primary-text').style.cssText = 'transform: translateY(0);';
+    const eventElements = cardEvent.querySelectorAll('.list-event .event');
+    eventElements.forEach((element) => {
+      element.style.cssText = 'transform: translateY(0);';
+    });
+    cardEvent.querySelector('.visited a').style.cssText = 'transform: translateY(0);';
   }
 }
 </script>

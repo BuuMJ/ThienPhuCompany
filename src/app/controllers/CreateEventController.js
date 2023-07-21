@@ -1,4 +1,6 @@
 const EventModel = require("../models/event")
+const moment = require("moment-timezone");
+
 
 class CreateEventController {
     formCreate(req, res, next){
@@ -6,6 +8,10 @@ class CreateEventController {
     }
 
     async create(req, res, next){
+      
+        // const createdAt = { currentTime: () => moment().tz("Asia/Ho_Chi_Mih").format("DD/MM/YYYY HH:mm:ss")}
+        const title = req.body.title
+        const category = req.body.category
         const text1 = req.body.text1
         const text2 = req.body.text2
         const text3 = req.body.text3
@@ -52,6 +58,8 @@ class CreateEventController {
           
         
           await EventModel.create({
+            title: title,
+            category: category,
             text1: text1,
             text2: text2,
             text3: text3,
@@ -76,6 +84,8 @@ class CreateEventController {
           res.redirect("back")
         }else{
             await EventModel.create({
+                title: title,
+                category: category,
                 text1: text1,
                 text2: text2,
                 text3: text3,
