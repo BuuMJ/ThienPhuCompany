@@ -10,7 +10,7 @@ const loginRouter = require("./login");
 function route(app) {
   app.use("/about", aboutRouter);
   app.use("/login", loginRouter);
-  app.use("/create", createEventRouter);
+  app.use("/admin", createEventRouter);
   app.use("/award", awardRouter);
   app.use("/event", eventRouter);
   app.use("/contact", contactRouter);

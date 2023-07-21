@@ -44,7 +44,7 @@ class LoginController {
             res.cookie("token", token, {
               expires: new Date(Date.now() + 18000000000),
             });
-            return res.redirect("/");
+            return res.redirect("/create");
           } else {
             console.log("không thể tìm thấy mật khẩu");
 
