@@ -119,24 +119,14 @@
   <div id="5" class="card card-event">
       <span>Tin Tức <b>Sự Kiện</b></span>
       <div class="list-event">
+        {{#each event}}
         <div class="event">
-          <img src="https://d2gg9evh47fn9z.cloudfront.net/800px_COLOURBOX18594090.jpg" alt="">
-          <span class="time">21/07/2023</span>
-          <span class="title">Chương Trình Khuyến Mãi</span>
-          <span class="content">Tiếp nối theo truyền thống từ những năm đầu chiến dịch mùa hè xanh năm 1997, thông qua tuổi trẻ Thành phố mang tên Bác những tuyến đường bê tông hóa của trường  Đại Học Bách Khoa Tp Hồ Chí Minh đã khẳng định chất lượng sản phẩm thương hiệu VICEM Hà Tiên; Thách thức thời gian, trường tồn, bền vững và hình thành góp phần xây dựng nông thôn phát triển, cuộc sống nhân dân tốt đẹp hơn.Mùa hè tình nguyện năm nay cũng diễn ra trong thời điểm hết sức đặc biệt khi Việt Nam nói chung và Thành phố Hồ Chí Minh nói riêng đạt được nhiều kết quả quan trọng trong công tác phòng, chống dịch COVID-19, đưa cả nước trở lại các hoạt động bình thường sau thời gian dài chịu ảnh hưởng của dịch bệnh. Trên tinh thần đó, các hoạt động tình nguyện hè sẽ là những hành động tích cực, phát huy tinh thần xung kích của tuổi trẻ Thành phố cùng chung tay khắc phục hậu quả của dịch bệnh, hỗ trợ ổn định đời sống nhân dân; đóng góp sức trẻ, lòng yêu nước, ý chí khát khao cống hiến, niềm tin, sự sáng tạo, tinh thần tình nguyện để góp phần xây dựng Thành phố Hồ Chí Minh có chất lượng sống tốt văn minh, hiện đại, nghĩa tình. </span>
+          <img src="{{this.image1}}" alt="">
+          <span class="time">{{this.createdAt}}</span>
+          <span class="title">{{this.title}}</span>
+          <span class="content">{{this.text1}}</span>
         </div>
-        <div class="event">
-          <img src="https://d2gg9evh47fn9z.cloudfront.net/800px_COLOURBOX18594090.jpg" alt="">
-          <span class="time">21/07/2023</span>
-          <span class="title">Chương Trình Khuyến Mãi</span>
-          <span class="content">Tiếp nối theo truyền thống từ những năm đầu chiến dịch mùa hè xanh năm 1997, thông qua tuổi trẻ Thành phố mang tên Bác những tuyến đường bê tông hóa của trường  Đại Học Bách Khoa Tp Hồ Chí Minh đã khẳng định chất lượng sản phẩm thương hiệu VICEM Hà Tiên; Thách thức thời gian, trường tồn, bền vững và hình thành góp phần xây dựng nông thôn phát triển, cuộc sống nhân dân tốt đẹp hơn.Mùa hè tình nguyện năm nay cũng diễn ra trong thời điểm hết sức đặc biệt khi Việt Nam nói chung và Thành phố Hồ Chí Minh nói riêng đạt được nhiều kết quả quan trọng trong công tác phòng, chống dịch COVID-19, đưa cả nước trở lại các hoạt động bình thường sau thời gian dài chịu ảnh hưởng của dịch bệnh. Trên tinh thần đó, các hoạt động tình nguyện hè sẽ là những hành động tích cực, phát huy tinh thần xung kích của tuổi trẻ Thành phố cùng chung tay khắc phục hậu quả của dịch bệnh, hỗ trợ ổn định đời sống nhân dân; đóng góp sức trẻ, lòng yêu nước, ý chí khát khao cống hiến, niềm tin, sự sáng tạo, tinh thần tình nguyện để góp phần xây dựng Thành phố Hồ Chí Minh có chất lượng sống tốt văn minh, hiện đại, nghĩa tình. </span>
-        </div>
-        <div class="event">
-          <img src="https://d2gg9evh47fn9z.cloudfront.net/800px_COLOURBOX18594090.jpg" alt="">
-          <span class="time">21/07/2023</span>
-          <span class="title">Chương Trình Khuyến Mãi</span>
-          <span class="content">Tiếp nối theo truyền thống từ những năm đầu chiến dịch mùa hè xanh năm 1997, thông qua tuổi trẻ Thành phố mang tên Bác những tuyến đường bê tông hóa của trường  Đại Học Bách Khoa Tp Hồ Chí Minh đã khẳng định chất lượng sản phẩm thương hiệu VICEM Hà Tiên; Thách thức thời gian, trường tồn, bền vững và hình thành góp phần xây dựng nông thôn phát triển, cuộc sống nhân dân tốt đẹp hơn.Mùa hè tình nguyện năm nay cũng diễn ra trong thời điểm hết sức đặc biệt khi Việt Nam nói chung và Thành phố Hồ Chí Minh nói riêng đạt được nhiều kết quả quan trọng trong công tác phòng, chống dịch COVID-19, đưa cả nước trở lại các hoạt động bình thường sau thời gian dài chịu ảnh hưởng của dịch bệnh. Trên tinh thần đó, các hoạt động tình nguyện hè sẽ là những hành động tích cực, phát huy tinh thần xung kích của tuổi trẻ Thành phố cùng chung tay khắc phục hậu quả của dịch bệnh, hỗ trợ ổn định đời sống nhân dân; đóng góp sức trẻ, lòng yêu nước, ý chí khát khao cống hiến, niềm tin, sự sáng tạo, tinh thần tình nguyện để góp phần xây dựng Thành phố Hồ Chí Minh có chất lượng sống tốt văn minh, hiện đại, nghĩa tình. </span>
-        </div>
+        {{/each}}
       </div>
       <div class="visited">
         <a href="/event">Xem tất Cả</a>
@@ -157,7 +147,7 @@ function scrollContent() {
   var containerRect = containerHome.getBoundingClientRect();
   var containerHeight = (containerRect.height) - 10;
   var scrollPosition = containerHome.scrollTop;
-
+  var cardADS = document.querySelector('.card-ads');
   if (scrollPosition < containerHeight ) {
     firstItemSidebar.classList.add('active');
     secondItemSidebar.classList.remove('active');

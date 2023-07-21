@@ -73,7 +73,7 @@ class CreateEventController {
             image9: image9,
             image10: image10,
           })
-          res.redirect("/home")
+          res.redirect("back")
         }else{
             await EventModel.create({
                 text1: text1,
@@ -87,7 +87,7 @@ class CreateEventController {
                 text9: text9,
                 text10: text10,
               })
-              res.redirect("/home")
+              res.redirect("back")
         }  
     }
 
