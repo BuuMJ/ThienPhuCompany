@@ -1,6 +1,6 @@
-class AboutController{
-    about(req, res, next){
-        res.render("about")
-    }
+class AboutController {
+  about(req, res, next) {
+    res.render("about");
+  }
 }
-module.exports = new AboutController
+module.exports = new AboutController();
