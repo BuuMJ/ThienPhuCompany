@@ -16,22 +16,6 @@ class CreateEventController {
     const text8 = req.body.text8;
     const text9 = req.body.text9;
     const text10 = req.body.text10;
-    console.log(text1);
-    console.log(text1);
-    console.log(text1);
-    console.log(text1);
-    console.log(text1);
-    console.log(text1);
-    console.log(text1);
-    console.log(text1);
-    console.log(text1);
-    console.log(text1);
-    console.log(text1);
-    console.log(text1);
-    console.log(text1);
-    console.log(text1);
-    console.log(text1);
-    console.log(text1);
     if (req.files) {
       const image1 = req.files["image1"]
         ? req.files["image1"][0].filename

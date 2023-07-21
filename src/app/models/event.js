@@ -1,5 +1,4 @@
 const mongoose = require("mongoose");
-const moment = require("moment-timezone");
 
 const Schema = mongoose.Schema;
 
@@ -28,7 +27,9 @@ const Event = new Schema(
     image8: String,
     image9: String,
     image10: String,
-    createdAt: String,
+  },
+  {
+    timestamps: true,
   },
   {
     collection: "event",
