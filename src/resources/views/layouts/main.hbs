@@ -40,10 +40,10 @@
   var textSpan = document.querySelector('.loading .text span');
   setTimeout(function(){
     textSpan.style.display = 'none'
-  }, 1650);
+  }, 2150);
   setTimeout(function(){
     loadingDiv.style.display = 'none'
-  }, 2800);
+  }, 4000);
   });
 var links = document.querySelectorAll('.link');
 var navbarRightLinks = document.querySelectorAll('.navbar-right .link');
@@ -66,7 +66,7 @@ links.forEach(function(link) {
     }
     setTimeout(function() {
       window.location.href = targetHref;
-    }, 2000);
+    }, 1600);
   });
 });
 window.addEventListener('load', function() {

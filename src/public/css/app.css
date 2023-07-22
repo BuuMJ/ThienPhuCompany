@@ -35,17 +35,20 @@
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  height: 100vh;
-  width: 100%; }
+  height: 700px;
+  width: 100%;
+  overflow: hidden; }
 
 .container-about .body-about .about-intro .background-building {
   width: 50%;
-  height: 100vh; }
+  height: 100%; }
 
 .container-about .body-about .about-intro .background-building img {
   width: 100%;
   height: 100%;
-  padding: 1px; }
+  padding: 1px;
+  transform: translateX(-100%);
+  transition: transform 1.3s; }
 
 .container-about .body-about .about-intro .introduce {
   display: flex;
@@ -54,7 +57,9 @@
   align-items: start;
   width: 50%;
   height: 100%;
-  padding: 0 130px 0 70px; }
+  padding: 0 130px 0 70px;
+  transform: translateY(100%);
+  transition: transform 2s; }
 
 .container-about .body-about .about-intro .introduce .primary-text {
   color: #bc9f6e;
@@ -69,6 +74,151 @@
   font-weight: 400;
   word-spacing: 1.5px;
   margin: 12px 0; }
+
+.container-about .body-about .about-vision,
+.container-about .body-about .about-mission {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 550px;
+  overflow: hidden; }
+
+.container-about .body-about .about-vision .text,
+.container-about .body-about .about-mission .text {
+  padding: 0 130px 0 70px;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
+  height: 100%;
+  transition: transform 2s; }
+
+.container-about .body-about .about-vision .text {
+  transform: translateY(-100%); }
+
+.container-about .body-about .about-mission .text {
+  transform: translateY(100%); }
+
+.container-about .body-about .about-vision .text .title,
+.container-about .body-about .about-mission .text .title {
+  font-size: 40px;
+  font-weight: 700;
+  color: #bc9f6e; }
+
+.container-about .body-about .about-vision .text span.vision-text,
+.container-about .body-about .about-mission .text span.mission-text {
+  font-size: 20px;
+  font-weight: 400;
+  word-spacing: 1.5px;
+  letter-spacing: 1.5px; }
+
+.container-about .body-about .about-vision img,
+.container-about .body-about .about-mission img {
+  width: 50%;
+  height: 100%;
+  transition: transform 1.3s; }
+
+.container-about .body-about .about-vision img {
+  transform: translateX(100%); }
+
+.container-about .body-about .about-mission img {
+  transform: translateX(-100%); }
+
+.container-about .body-about .about-values {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  overflow: hidden; }
+
+.container-about .body-about .about-values .header {
+  width: 100%;
+  height: 600px;
+  background: url("/img/values.jpg") center/cover no-repeat;
+  filter: grayscale(1);
+  transition: filter 3.5s; }
+
+.container-about .body-about .about-values .text {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%; }
+
+.container-about .body-about .about-values .text .card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 18%;
+  padding: 6px 8px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  transform: translateY(100%);
+  transition: .5s; }
+
+.container-about .body-about .about-values .text .card:first-child {
+  transition: transform 2s; }
+
+.container-about .body-about .about-values .text .card:nth-child(2) {
+  transition: transform 2.2s; }
+
+.container-about .body-about .about-values .text .card:nth-child(3) {
+  transition: transform 2.4s; }
+
+.container-about .body-about .about-values .text .card:nth-child(4) {
+  transition: transform 2.6s; }
+
+.container-about .body-about .about-values .text .card:nth-child(5) {
+  transition: transform 2.8s; }
+
+.container-about .body-about .about-values .text .card:hover {
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3); }
+
+.container-about .body-about .about-values .text .card .value-img {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 150px; }
+
+.container-about .body-about .about-values .text .card .value-img img.values {
+  width: 70%;
+  height: 90%; }
+
+.container-about .body-about .about-values .text .card .main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%; }
+
+.container-about .body-about .about-values .text .card .main span.title {
+  font-size: 20px;
+  font-weight: 700;
+  color: #bc9f6e;
+  text-align: center;
+  margin: 4px 0;
+  text-transform: uppercase; }
+
+.container-about .body-about .about-values .text .card .main span.content {
+  font-size: 18px;
+  font-weight: 400;
+  text-align: center;
+  padding: 6px 12px;
+  height: 285px; }
+
+.container-about .body-about .about-values .text .card .main span.title-quality {
+  background: linear-gradient(35deg, #00dc7f 20%, #00a861 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent; }
+
+.container-about .body-about .about-values .text .card .main span.title-renew {
+  background: linear-gradient(35deg, #06b8ff 20%, #426fff 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent; }
 
 .sidebar-list__items {
   position: fixed;
@@ -553,7 +703,9 @@
 .container-home .card-event .list-event .event .content {
   font-size: 18px;
   font-weight: 400;
-  height: 29%;
+  height: 29%; }
+
+.container-home .card-event .list-event .event .content span {
   overflow: hidden;
   display: -webkit-box;
   -webkit-line-clamp: 5;
@@ -741,6 +893,8 @@
 @keyframes typewriterCompany {
   0% {
     width: 100%; }
+  10% {
+    width: 100%; }
   100% {
     width: 0; } }
 
@@ -816,8 +970,8 @@ body {
   background-color: #bc9f6e;
   animation-name: upDoor;
   animation-timing-function: ease-in-out;
-  animation-duration: 2s;
-  animation-delay: 1.7s; }
+  animation-duration: 3s;
+  animation-delay: 2.4s; }
 
 .loading .downDoor {
   width: 100%;
@@ -825,8 +979,8 @@ body {
   background-color: #bc9f6e;
   animation-name: downDoor;
   animation-timing-function: ease-in-out;
-  animation-duration: 2s;
-  animation-delay: 1.7s; }
+  animation-duration: 3s;
+  animation-delay: 2.4s; }
 
 .loading .text {
   color: white;
@@ -843,7 +997,10 @@ body {
   display: inline-block;
   white-space: nowrap;
   overflow: hidden;
-  animation: typewriterCompany 1.5s steps(8) reverse; }
+  width: 0;
+  animation: typewriterCompany 1.6s steps(9) reverse;
+  animation-timing-function: ease-in-out;
+  animation-delay: .8s; }
 
 .door-down {
   width: 100%;

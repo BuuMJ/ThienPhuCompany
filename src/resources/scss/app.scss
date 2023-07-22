@@ -34,8 +34,8 @@ body{
     background-color: $primarycolor;
     animation-name: upDoor;
     animation-timing-function: ease-in-out;
-    animation-duration: 2s;
-    animation-delay: 1.7s;
+    animation-duration: 3s;
+    animation-delay: 2.4s;
 }
 .loading .downDoor{
     width: 100%;
@@ -43,8 +43,8 @@ body{
     background-color: $primarycolor;
     animation-name: downDoor;
     animation-timing-function: ease-in-out;
-    animation-duration: 2s;
-    animation-delay: 1.7s;
+    animation-duration: 3s;
+    animation-delay: 2.4s;
 }
 .loading .text{
     color: white;
@@ -61,7 +61,10 @@ body{
     display: inline-block;
     white-space: nowrap;
     overflow: hidden;
-    animation: typewriterCompany 1.5s steps(8) reverse;
+    width: 0;
+    animation: typewriterCompany 1.6s steps(9) reverse;
+    animation-timing-function: ease-in-out;
+    animation-delay: .8s;
 }
 .door-down{
     width: 100%;
