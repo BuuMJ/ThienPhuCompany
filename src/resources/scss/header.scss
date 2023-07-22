@@ -12,6 +12,7 @@
     position: fixed;
     top: 0;
     z-index: 100;
+    padding: unset;
 }
 .navbar-right {
     width: 40%;
@@ -48,6 +49,7 @@
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
+    margin: unset;
 }
 .navbar-left .primary-navbar li {
     width: 20%;
@@ -67,6 +69,8 @@
     justify-content: center;
     align-items: center;
     height: 100%;
+    width: 100%;
+    text-align: center;
 }
 .navbar-left .primary-navbar li a:hover{
     color: $primarycolor;
@@ -84,8 +88,9 @@
     content: "";
     position: absolute;
     bottom: 0;
-    left: 0;
-    width: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 50%;
     height: 3px;
     background-color: $primarycolor;
 }

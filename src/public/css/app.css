@@ -1,18 +1,74 @@
 @charset "UTF-8";
 .container-about {
+  height: 100vh;
+  overflow-y: auto;
+  overflow-x: hidden;
+  perspective: 10px; }
+
+.container-about header {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+  transform-style: preserve-3d;
+  z-index: -1; }
+
+.container-about header img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+  transform: translateZ(-10px) scale(2); }
+
+.container-about .body-about {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center; }
+  align-items: center;
+  background-color: white; }
 
-.container-about .parallax {
-  width: 100%;
+.container-about .body-about .about-intro {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100%; }
+
+.container-about .body-about .about-intro .background-building {
+  width: 50%;
   height: 100vh; }
 
-.container-about .parallax .background {
-  background: url("/img/aboutthienphu.jpg") center/cover no-repeat;
+.container-about .body-about .about-intro .background-building img {
   width: 100%;
-  height: 100%; }
+  height: 100%;
+  padding: 1px; }
+
+.container-about .body-about .about-intro .introduce {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
+  width: 50%;
+  height: 100%;
+  padding: 0 130px 0 70px; }
+
+.container-about .body-about .about-intro .introduce .primary-text {
+  color: #bc9f6e;
+  font-size: 50px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  text-transform: uppercase; }
+
+.container-about .body-about .about-intro .introduce .secondary-text {
+  color: black;
+  font-size: 20px;
+  font-weight: 400;
+  word-spacing: 1.5px;
+  margin: 12px 0; }
 
 .sidebar-list__items {
   position: fixed;
@@ -273,7 +329,7 @@
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  background: url("/img/headerads.jpg") center/cover no-repeat;
+  background: url("/img/adsbackground.jpg") center/cover no-repeat;
   width: 100%;
   height: 70%; }
 
@@ -367,8 +423,9 @@
   text-transform: uppercase; }
 
 .container-home .card-intro .left span.intro {
-  font-size: 16px;
-  letter-spacing: 1.5px; }
+  font-size: 20px;
+  letter-spacing: 1.2px;
+  word-spacing: 1.5px; }
 
 .container-home .card-intro .left a {
   height: 40px;
@@ -562,7 +619,8 @@
   overflow: hidden;
   position: fixed;
   top: 0;
-  z-index: 100; }
+  z-index: 100;
+  padding: unset; }
 
 .navbar-right {
   width: 40%;
@@ -598,7 +656,8 @@
   display: flex;
   flex-direction: row;
   justify-content: space-around;
-  align-items: center; }
+  align-items: center;
+  margin: unset; }
 
 .navbar-left .primary-navbar li {
   width: 20%;
@@ -617,7 +676,9 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100%; }
+  height: 100%;
+  width: 100%;
+  text-align: center; }
 
 .navbar-left .primary-navbar li a:hover {
   color: #bc9f6e; }
@@ -635,8 +696,9 @@
   content: "";
   position: absolute;
   bottom: 0;
-  left: 0;
-  width: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 50%;
   height: 3px;
   background-color: #bc9f6e; }
 
@@ -704,7 +766,7 @@
 
 @keyframes doubleAnimation {
   from {
-    transform: translateX(300%), scale(0); }
+    transform: translateX(200%), scale(0); }
   to {
     transform: translateX(0) scale(1, 1); } }
 
