@@ -1,0 +1,180 @@
+.container-footer{
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #dcdcdc;
+    scroll-snap-align: center;
+    scroll-snap-stop: always;
+}
+.container-footer .header-footer{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 30%;
+    margin-bottom: 24px;
+    margin-top: 68px;
+}
+.container-footer .header-footer img{
+    width: 250px;
+    height: 150px;
+}
+.container-footer .header-footer .name-company{
+    font-size: 44px;
+    letter-spacing: 1.5px;
+    word-spacing: 1.5px;
+    font-weight: 700;
+    color: $primarycolor;
+    text-transform: uppercase;
+}
+.container-footer .header-footer .slogan{
+    font-size: 18px;
+    font-weight: 500;
+    color: #d4d4d4;
+    background: linear-gradient(35deg,#666  20%, #999 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-transform: uppercase;
+    
+}
+.container-footer .main-footer{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 40%;
+    margin-top: 18px;
+}
+.container-footer .coppy-right{
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    align-items: center;
+    width: 100%;
+    height: 30%;
+    color: white;
+    font-size: 18px;
+}
+.container-footer .coppy-right span{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 20%;
+    background-color: rgba(0, 0, 0, 0.8);
+    align-self: flex-end;
+}
+.container-footer .main-footer .email-contact{
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    width: 65%;
+    height: 100%;
+}
+.container-footer .main-footer .email-contact > *,
+.container-footer .main-footer .info-contact > * {
+    margin: 12px 0;
+}
+.container-footer .main-footer .email-contact span.primary-text,
+.container-footer .main-footer .info-contact span.primary-text {
+    font-size: 30px;
+    font-weight: 700;
+    height: 15%;
+}
+.container-footer .main-footer .email-contact .list-box{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 100%;
+    align-self: flex-end;
+    height: 60%;
+}
+.container-footer .main-footer .email-contact .list-box .box-input{
+    width: 30%;
+    margin: 12px 20px;
+    position: relative;
+    display: flex;
+    justify-content: end;
+    align-items: end;
+}
+.container-footer .main-footer .email-contact .list-box .box-input input{
+    width: 100%;
+    height: 60px;
+    background-color: transparent;
+    border: 1px solid black;
+    font-size: 14px;
+    font-weight: 600;
+    padding: 4px 22px 4px 20px;
+}
+.container-footer .main-footer .email-contact .list-box .box-input input:focus-visible{
+    border-radius: unset;
+    border: 1px solid black;
+    outline: unset;
+}
+.container-footer .main-footer .email-contact .list-box .box-input label{
+    position: absolute;
+    background-color: #dcdcdc;
+    top: 50%;
+    left: 6%;
+    transform: translateY(-50%);
+    font-size: 14px;
+    font-weight: 600;
+    transition: .5s;
+}
+.container-footer .main-footer .email-contact .list-box .box-input input:focus ~ label,
+.container-footer .main-footer .email-contact .list-box .box-input input:valid ~ label{
+    top: 1.5%;
+    color: #675a44;
+}
+.container-footer .main-footer .email-contact button{
+    background-color: transparent;
+    border: 1px solid black;
+    font-size: 18px;
+    font-weight: 600;
+    padding: 6px 18px;
+    text-align: center;
+    box-shadow: 1px 10px 8px 0px rgba(0, 0, 0, 0.8);
+    transition: .5s;
+}
+.container-footer .main-footer .email-contact button:active{
+    box-shadow: unset;
+}
+.container-footer .main-footer .info-contact{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+    width: 35%;
+    height: 100%;
+}
+.container-footer .main-footer .info-contact .address,
+.container-footer .main-footer .info-contact .hotline,
+.container-footer .main-footer .info-contact .email {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+    width: 100%;
+    height: 20%;
+}
+.container-footer .main-footer .info-contact .address .title,
+.container-footer .main-footer .info-contact .hotline .title,
+.container-footer .main-footer .info-contact .email .title{
+    font-size: 26px;
+    font-weight: 600;
+    margin: 8px 0 14px 0;
+}
+.container-footer .main-footer .info-contact .address .content,
+.container-footer .main-footer .info-contact .hotline .content,
+.container-footer .main-footer .info-contact .email .content{
+    font-size: 22px;
+}

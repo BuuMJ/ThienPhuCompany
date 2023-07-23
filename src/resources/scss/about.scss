@@ -41,10 +41,13 @@
 .container-about .body-about .about-intro .background-building {
     width: 50%;
     height: 100%;
+    display: flex;
+    justify-content: end;
+    align-items: center;
 }
 .container-about .body-about .about-intro .background-building img{
-    width: 100%;
-    height: 100%;
+    width: 85%;
+    height: 85%;
     padding: 1px;
     transform: translateX(-100%);
     transition: transform 1.3s;
@@ -56,7 +59,7 @@
     align-items: start;
     width: 50%;
     height: 100%;
-    padding: 0 130px 0 70px;
+    padding: 0 130px 0 85px;
     transform: translateY(100%);
     transition: transform 2s;
 }
@@ -69,10 +72,13 @@
 }
 .container-about .body-about .about-intro .introduce .secondary-text{
     color: black;
-    font-size: 20px;
+    font-size: 19px;
     font-weight: 400;
     word-spacing: 1.5px;
     margin: 12px 0;
+    text-align: justify;
+    font-family: 'Open Sans', sans-serif;
+    font-family: 'Raleway', sans-serif;
 }
 .container-about .body-about .about-vision,
 .container-about .body-about .about-mission{
@@ -96,9 +102,11 @@
 }
 .container-about .body-about .about-vision .text{
     transform: translateY(-100%);
+    padding: 0 70px 0 136px;
 }
 .container-about .body-about .about-mission .text{
     transform: translateY(100%);
+    padding: 0 130px 0 85px;
 }
 .container-about .body-about .about-vision .text .title,
 .container-about .body-about .about-mission .text .title{
@@ -112,18 +120,35 @@
     font-weight: 400;
     word-spacing: 1.5px;
     letter-spacing: 1.5px;
+    text-align: justify;
+    font-family: 'Open Sans', sans-serif;
+    font-family: 'Raleway', sans-serif;
+}
+.container-about .body-about .about-vision  .background-vision,
+.container-about .body-about .about-mission .background-mission{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    height: 100%;
+}
+.container-about .body-about .about-vision  .background-vision{
+    justify-content: start;
+}
+.container-about .body-about .about-mission .background-mission{
+    justify-content: end;
 }
 .container-about .body-about .about-vision  img,
 .container-about .body-about .about-mission img{
-    width: 50%;
-    height: 100%;
+    width: 85%;
+    height: 85%;
     transition: transform 1.3s;
 }
 .container-about .body-about .about-vision  img{
-    transform: translateX(100%);
+    transform: translateX(150%);
 }
 .container-about .body-about .about-mission img{
-    transform: translateX(-100%);
+    transform: translateX(-150%);
 }
 .container-about .body-about .about-values{
     display: flex;
@@ -134,8 +159,8 @@
     overflow: hidden;
 }
 .container-about .body-about .about-values .header{
-    width: 100%;
-    height: 600px;
+    width: 85%;
+    height: 500px;
     background: url('/img/values.jpg') center / cover no-repeat;
     filter: grayscale(1);
     transition: filter 3.5s;
@@ -143,7 +168,7 @@
 .container-about .body-about .about-values .text{
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: center;
     align-items: center;
     width: 100%;
 }
@@ -152,11 +177,12 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 18%;
+    width: 15%;
     padding: 6px 8px;
     box-shadow: 0 5px 15px rgba(0,0,0,0.1);
     transform: translateY(100%);
     transition: .5s;
+    margin: 0 16px;
 }
 .container-about .body-about .about-values .text .card:first-child{
     transition: transform 2s;
@@ -195,7 +221,7 @@
     width: 100%;
 }
 .container-about .body-about .about-values .text .card .main span.title{
-    font-size: 20px;
+    font-size: 18px;
     font-weight: 700;
     color: $primarycolor;
     text-align: center;
@@ -203,11 +229,14 @@
     text-transform: uppercase;
 }
 .container-about .body-about .about-values .text .card .main span.content{
-    font-size: 18px;
+    font-size: 15.5px;
     font-weight: 400;
     text-align: center;
     padding: 6px 12px;
-    height: 285px;
+    height: 130px;
+    text-align: justify;
+    font-family: 'Open Sans', sans-serif;
+    font-family: 'Raleway', sans-serif;
 }
 .container-about .body-about .about-values .text .card .main span.title-quality{
     background: linear-gradient(35deg,#00dc7f 20%,#00a861 100%);
