@@ -74,8 +74,8 @@
     color: black;
     font-size: 19px;
     font-weight: 400;
-    word-spacing: 1.5px;
-    margin: 12px 0;
+    word-spacing: 1.3px;
+    margin: 6px 0;
     text-align: justify;
     font-family: 'Open Sans', sans-serif;
     font-family: 'Raleway', sans-serif;
@@ -118,8 +118,7 @@
 .container-about .body-about .about-mission .text span.mission-text {
     font-size: 20px;
     font-weight: 400;
-    word-spacing: 1.5px;
-    letter-spacing: 1.5px;
+    word-spacing: 1.3px;
     text-align: justify;
     font-family: 'Open Sans', sans-serif;
     font-family: 'Raleway', sans-serif;
@@ -177,12 +176,12 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 15%;
+    width: 14%;
     padding: 6px 8px;
     box-shadow: 0 5px 15px rgba(0,0,0,0.1);
     transform: translateY(100%);
     transition: .5s;
-    margin: 0 16px;
+    margin: 0 24px;
 }
 .container-about .body-about .about-values .text .card:first-child{
     transition: transform 2s;
@@ -207,10 +206,10 @@
     justify-content: center;
     align-items: center;
     width: 100%;
-    height: 150px;
+    height: 130px;
 }
 .container-about .body-about .about-values .text .card .value-img img.values {
-    width: 70%;
+    width: 60%;
     height: 90%;
 }
 .container-about .body-about .about-values .text .card .main{
@@ -233,7 +232,7 @@
     font-weight: 400;
     text-align: center;
     padding: 6px 12px;
-    height: 130px;
+    height: 110px;
     text-align: justify;
     font-family: 'Open Sans', sans-serif;
     font-family: 'Raleway', sans-serif;
