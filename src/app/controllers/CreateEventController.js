@@ -16,6 +16,8 @@ class CreateEventController {
     const text8 = req.body.text8;
     const text9 = req.body.text9;
     const text10 = req.body.text10;
+    const title = req.body.title;
+    const category = req.body.category;
 
     if (req.files) {
       const image1 = req.files["image1"]
@@ -50,6 +52,8 @@ class CreateEventController {
         : undefined;
 
       await EventModel.create({
+        category: category,
+        title: title,
         text1: text1,
         text2: text2,
         text3: text3,
@@ -74,6 +78,8 @@ class CreateEventController {
       res.redirect("back");
     } else {
       await EventModel.create({
+        category: category,
+        title: title,
         text1: text1,
         text2: text2,
         text3: text3,
