@@ -506,16 +506,17 @@
   height: 29%;
   
 }
-.container-home .card-event .list-event .event .content span{
+.container-home .card-event .list-event .event .content span {
   overflow: hidden;
   display: -webkit-box;
   -webkit-line-clamp: 5;
   -webkit-box-orient: vertical;
-  text-align: justify;
   word-wrap: break-word;
   word-break: break-all;
-  display: inline-block;
+  text-align: justify;
+  white-space: pre-line;
 }
+
 .container-home .card-event .visited{
   display: flex;
   justify-content: center;
