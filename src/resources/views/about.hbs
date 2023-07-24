@@ -14,22 +14,14 @@
                 <span class="secondary-text">Cùng Thiên Phú khám phá sự đa dạng và tiềm năng của xi măng, hãy để chúng tôi hỗ trợ bạn trong mọi dự án xây dựng và mang đến thành công bền vững cho công trình của bạn</span>  
             </div>
         </div>
-        <div class="about-vision">
-            <div class="text">
+        <div class="main-vm">
+            <div class="about-vision">
                 <span class="title">Tầm Nhìn</span>
-                <span class="vision-text">Trở thành đối tác phân phối xi măng hàng đầu trong ngành xây dựng ở tỉnh Khánh Hòa, Việt Nam, đồng hành cùng sự phát triển bền vững của cộng đồng và đóng góp vào việc xây dựng môi trường sống tốt đẹp hơn.</span>
+                <span class="content">Trở thành đối tác phân phối xi măng hàng đầu trong ngành xây dựng ở tỉnh Khánh Hòa, Việt Nam, đồng hành cùng sự phát triển bền vững của cộng đồng và đóng góp vào việc xây dựng môi trường sống tốt đẹp hơn.</span>
             </div>
-            <div class="background-vision">
-                <img src="/img/vision.jpg" alt="">
-            </div>
-        </div>
-        <div class="about-mission">
-            <div class="background-mission">
-                <img src="/img/mission.jpg" alt="">
-            </div>
-            <div class="text">
+            <div class="about-mission">
                 <span class="title">Sứ Mệnh</span>
-                <span class="mission-text">Chúng tôi cố gắng trở thành đối tác ưu tiên của các công ty xây dựng, kiến trúc sư, kỹ sư và nhà phát triển bằng cách cung cấp các sản phẩm xi măng chất lượng cao, thúc đẩy các hoạt động bền vững và thúc đẩy đổi mới trong ngành xây dựng.</span>
+                <span class="content">Chúng tôi cố gắng trở thành đối tác ưu tiên của các công ty xây dựng, kiến trúc sư, kỹ sư và nhà phát triển bằng cách cung cấp các sản phẩm xi măng chất lượng cao, thúc đẩy các hoạt động bền vững và thúc đẩy đổi mới trong ngành xây dựng.</span>
             </div>
         </div>
         <div class="about-values">
@@ -83,6 +75,7 @@
             </div>
         </div>
    </div>
+{{> footer}}
 </div>
 <script>
   document.querySelector('.container-about').onscroll = function() {
@@ -97,26 +90,21 @@
       introduce.style.cssText = 'transform: translateY(0)';
       document.querySelector('.container-about .body-about .about-intro .background-building img').style.cssText = 'transform: translatex(0)';
     } else {
-      introduce.style.cssText = 'transform: translateY(100%)';
-      document.querySelector('.container-about .body-about .about-intro .background-building img').style.cssText = 'transform: translatex(-100%)';
+      introduce.style.cssText = 'transform: translateY(200%)';
+      document.querySelector('.container-about .body-about .about-intro .background-building img').style.cssText = 'transform: translatex(-200%)';
     }
     if (document.querySelector('.container-about').scrollTop > aboutIntroHeight + 200) {
-        document.querySelector('.container-about .body-about .about-vision .text').style.cssText = 'transform: translateY(0)';
-        document.querySelector('.container-about .body-about .about-vision img').style.cssText = 'transform: translatex(0)';
+        document.querySelector('.container-about .body-about .main-vm .about-vision .title').style.cssText = 'transform: translatey(0)';
+        document.querySelector('.container-about .body-about .main-vm .about-vision .content').style.cssText = 'transform: translatey(0)';
+        document.querySelector('.container-about .body-about .main-vm .about-mission .title').style.cssText = 'transform: translatey(0)';
+        document.querySelector('.container-about .body-about .main-vm .about-mission .content').style.cssText = 'transform: translatey(0)';
     } else {
-        document.querySelector('.container-about .body-about .about-vision .text').style.cssText = 'transform: translateY(-100%)';
-        document.querySelector('.container-about .body-about .about-vision img').style.cssText = 'transform: translatex(150%)';
-
+        document.querySelector('.container-about .body-about .main-vm .about-vision .title').style.cssText = 'transform: translatey(-200%)';
+        document.querySelector('.container-about .body-about .main-vm .about-vision .content').style.cssText = 'transform: translatey(200%)';
+        document.querySelector('.container-about .body-about .main-vm .about-mission .title').style.cssText = 'transform: translatey(-200%)';
+        document.querySelector('.container-about .body-about .main-vm .about-mission .content').style.cssText = 'transform: translatey(200%)';
     }
-    if (document.querySelector('.container-about').scrollTop > aboutIntroHeight + 800) {
-        document.querySelector('.container-about .body-about .about-mission .text').style.cssText = 'transform: translateY(0)';
-        document.querySelector('.container-about .body-about .about-mission img').style.cssText = 'transform: translatex(0)';
-    } else {
-        document.querySelector('.container-about .body-about .about-mission .text').style.cssText = 'transform: translateY(100%)';
-        document.querySelector('.container-about .body-about .about-mission img').style.cssText = 'transform: translatex(-150%)';
-
-    }
-    if (document.querySelector('.container-about').scrollTop > aboutIntroHeight + 1700) {
+    if (document.querySelector('.container-about').scrollTop > aboutIntroHeight + 1000) {
         document.querySelector('.container-about .body-about .about-values .header').style.cssText = 'filter: grayscale(0)';
          const cardElements = document.querySelectorAll('.container-about .body-about .about-values .text .card');
             cardElements.forEach((element) => {

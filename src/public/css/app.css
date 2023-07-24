@@ -3,7 +3,8 @@
   height: 100vh;
   overflow-y: auto;
   overflow-x: hidden;
-  perspective: 10px; }
+  perspective: 10px;
+  scroll-behavior: smooth; }
 
 .container-about header {
   position: relative;
@@ -50,7 +51,7 @@
   width: 85%;
   height: 85%;
   padding: 1px;
-  transform: translateX(-100%);
+  transform: translateX(-200%);
   transition: transform 1.3s; }
 
 .container-about .body-about .about-intro .introduce {
@@ -61,7 +62,7 @@
   width: 50%;
   height: 100%;
   padding: 0 130px 0 85px;
-  transform: translateY(100%);
+  transform: translateY(200%);
   transition: transform 2s; }
 
 .container-about .body-about .about-intro .introduce .primary-text {
@@ -81,74 +82,44 @@
   font-family: 'Open Sans', sans-serif;
   font-family: 'Raleway', sans-serif; }
 
-.container-about .body-about .about-vision,
-.container-about .body-about .about-mission {
+.container-about .body-about .main-vm {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   width: 100%;
-  height: 550px;
-  overflow: hidden; }
+  height: 400px;
+  background-color: #dcdcdc; }
 
-.container-about .body-about .about-vision .text,
-.container-about .body-about .about-mission .text {
-  padding: 0 130px 0 70px;
-  width: 50%;
+.container-about .body-about .main-vm .about-vision,
+.container-about .body-about .main-vm .about-mission {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: start;
-  height: 100%;
-  transition: transform 2s; }
+  width: 85%;
+  height: 50%;
+  overflow: hidden; }
 
-.container-about .body-about .about-vision .text {
-  transform: translateY(-100%);
-  padding: 0 70px 0 136px; }
-
-.container-about .body-about .about-mission .text {
-  transform: translateY(100%);
-  padding: 0 130px 0 85px; }
-
-.container-about .body-about .about-vision .text .title,
-.container-about .body-about .about-mission .text .title {
+.container-about .body-about .main-vm .about-vision .title,
+.container-about .body-about .main-vm .about-mission .title {
+  color: #bc9f6e;
   font-size: 40px;
   font-weight: 700;
-  color: #bc9f6e; }
+  text-transform: uppercase;
+  margin: 12px 0;
+  transform: translateY(-200%);
+  transition: transform 1s; }
 
-.container-about .body-about .about-vision .text span.vision-text,
-.container-about .body-about .about-mission .text span.mission-text {
-  font-size: 20px;
+.container-about .body-about .main-vm .about-vision .content,
+.container-about .body-about .main-vm .about-mission .content {
+  font-size: 19px;
   font-weight: 400;
   word-spacing: 1.3px;
+  margin: 12px 0;
   text-align: justify;
-  font-family: 'Open Sans', sans-serif;
-  font-family: 'Raleway', sans-serif; }
-
-.container-about .body-about .about-vision .background-vision,
-.container-about .body-about .about-mission .background-mission {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 50%;
-  height: 100%; }
-
-.container-about .body-about .about-vision .background-vision {
-  justify-content: start; }
-
-.container-about .body-about .about-mission .background-mission {
-  justify-content: end; }
-
-.container-about .body-about .about-vision img,
-.container-about .body-about .about-mission img {
-  width: 85%;
-  height: 85%;
-  transition: transform 1.3s; }
-
-.container-about .body-about .about-vision img {
-  transform: translateX(150%); }
-
-.container-about .body-about .about-mission img {
-  transform: translateX(-150%); }
+  transform: translateY(200%);
+  transition: transform 1s; }
 
 .container-about .body-about .about-values {
   display: flex;
@@ -163,7 +134,8 @@
   height: 500px;
   background: url("/img/values.jpg") center/cover no-repeat;
   filter: grayscale(1);
-  transition: filter 3.5s; }
+  transition: filter 3.5s;
+  margin-top: 30px; }
 
 .container-about .body-about .about-values .text {
   display: flex;
@@ -700,7 +672,7 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  width: 30%;
+  width: 28%;
   height: 100%;
   transform: translateY(500%); }
 
