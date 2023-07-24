@@ -48,9 +48,8 @@
   align-items: center; }
 
 .container-about .body-about .about-intro .background-building img {
-  width: 85%;
-  height: 85%;
-  padding: 1px;
+  width: 80%;
+  height: 80%;
   transform: translateX(-200%);
   transition: transform 1.3s; }
 
