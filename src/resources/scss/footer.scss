@@ -115,6 +115,9 @@
     font-weight: 600;
     padding: 4px 22px 4px 20px;
 }
+.container-footer .main-footer .email-contact .list-box .box-input input:-webkit-autofill { 
+    -webkit-background-clip: text;
+}
 .container-footer .main-footer .email-contact .list-box .box-input input:focus-visible{
     border-radius: unset;
     border: 1px solid black;
