@@ -146,6 +146,12 @@
   border: 1px solid #d0d0d0;
   outline: unset; }
 
+.container-contact .main-contact .contact-us .fullname input:autofill {
+  background-color: transparent; }
+
+.container-contact .main-contact .contact-us .fullname input:-webkit-autofill {
+  background-color: transparent; }
+
 .container-contact .main-contact .contact-us .fullname input:focus ~ label,
 .container-contact .main-contact .contact-us .fullname input:valid ~ label {
   top: 4%;
