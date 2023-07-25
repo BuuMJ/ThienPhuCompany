@@ -1,6 +1,6 @@
 .navbar{
     width: 100%;
-    height: 70px;
+    height: 85px;
     color: $primarycolor;
     background-color: rgba(255,255,255,0.7);
     box-shadow: 2px 2px 10px rgba(0,0,0,0.2);
@@ -23,20 +23,30 @@
     color: $primarycolor;
     text-decoration: none;
 }
-.navbar-right img{
+.navbar-right a {
     width: 150px;
     height: 100%;
     transform: translateX(60%);
-    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
-.navbar-right .name-company{
+.navbar-right a img{
+    width: 100%;
+    height: 85%;
+    text-decoration: none;
+}
+.navbar-right a.name-company{
     font-size: 40px;
     font-weight: 700;
     position: absolute;
     right: 37%;
     letter-spacing: 4px;
     word-spacing: 1.5px;
-    cursor: pointer;
+    text-decoration: none;
+    color: $primarycolor;
+    width: unset;
+    transform: unset;
 }
 .navbar-left{
     width: 60%;
@@ -63,7 +73,7 @@
     color: #666;
     text-decoration: none;
     transition: .3s;
-    font-size: 16px;
+    font-size: 18px;
     font-weight: 400;
     display: flex;
     justify-content: center;
