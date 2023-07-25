@@ -31,17 +31,15 @@ class HomeController {
     const mailOptions = {
       from: `"${name}" <${mail}>`,
       to: "duoc6694@gmail.com", // list of receivers
-      subject: "Đăng ký nhận tư vấn thông tin sản phẩm", // Subject line
+      subject: "Có một đăng kí nhận thông tin sản phẩm mới", // Subject line
       html: `
-      <p>Xin chào,</p>
-      <p>Khác hàng đã đăng ký nhận tư vấn thông tin sản phẩm với thông tin như sau:</p>
+      <p>Khách hàng đã đăng ký nhận tư vấn thông tin sản phẩm với thông tin như sau:</p>
       <ol>
         <li>Tên khách hàng: ${name}</li>
         <li>Email: ${mail}</li>
         <li>Số điện thoại liên hệ: ${phone}</li>
         <li>Địa chỉ liên hệ: ${address}</li>
       </ol>
-      <p>Cảm ơn bạn đã đăng ký.</p>
     `,
     };
     transporter.sendMail(mailOptions, function (err, info) {
