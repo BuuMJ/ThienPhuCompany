@@ -1,4 +1,191 @@
 @charset "UTF-8";
+.container-contact {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%; }
+
+.container-contact header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 380px;
+  background: linear-gradient(to right, #bc9f6e33, #0080FF33), url("/img/contactheader.avif") center/cover no-repeat; }
+
+.container-contact header span {
+  font-size: 50px;
+  font-weight: 600;
+  color: white; }
+
+.container-contact .main-contact {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%; }
+
+.container-contact .main-contact .header-main {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  font-size: 26px;
+  font-weight: 600;
+  width: 100%; }
+
+.container-contact .main-contact .header-main span.primary-title {
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 1.3px;
+  width: 100%;
+  margin: 30px 0; }
+
+.container-contact .main-contact .header-bottom {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 100%; }
+
+.container-contact .main-contact .header-bottom .address {
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  align-items: start;
+  width: 20%;
+  height: 120px;
+  margin: 0 20px; }
+
+.container-contact .main-contact .header-bottom .address i {
+  font-size: 45px;
+  padding-right: 16px; }
+
+.container-contact .main-contact .header-bottom .address .info-address {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: start;
+  font-size: 18px;
+  padding-left: 16px;
+  position: relative;
+  height: 81px; }
+
+.container-contact .main-contact .header-bottom .address .info-address::after {
+  content: "";
+  position: absolute;
+  width: 3px;
+  height: 100%;
+  background-color: #dbdbdb;
+  top: 0;
+  left: 0;
+  z-index: 2; }
+
+.container-contact .main-contact .header-bottom .address .info-address::before {
+  content: "";
+  position: absolute;
+  width: 3px;
+  height: 40%;
+  background-color: #bc9f6e;
+  top: 0;
+  left: 0;
+  z-index: 3; }
+
+.container-contact .main-contact .header-bottom .address .info-address .title {
+  font-weight: 600; }
+
+.container-contact .main-contact .header-bottom .address .info-address .content {
+  text-align: justify;
+  font-weight: 400; }
+
+.container-contact .main-contact .contact-us {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  width: 60%;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+  margin-bottom: 30px; }
+
+.container-contact .main-contact .contact-us > * {
+  padding: 14px 0; }
+
+.container-contact .main-contact .contact-us span.title {
+  font-size: 26px;
+  font-weight: 600;
+  width: 80%;
+  padding-top: 24px; }
+
+.container-contact .main-contact .contact-us .fullname {
+  width: 39%;
+  height: 80px;
+  position: relative;
+  margin: 0 12px; }
+
+.container-contact .main-contact .contact-us .fullname input {
+  width: 100%;
+  height: 80%;
+  padding: 6px 12px 6px 8px;
+  border: 1px solid #d0d0d0; }
+
+.container-contact .main-contact .contact-us .fullname label {
+  font-size: 15px;
+  color: #495057;
+  font-weight: 600;
+  position: absolute;
+  top: 30%;
+  left: 2%;
+  background-color: white;
+  transition: .5s; }
+
+.container-contact .main-contact .contact-us .fullname input:focus-visible {
+  border-radius: unset;
+  border: 1px solid #d0d0d0;
+  outline: unset; }
+
+.container-contact .main-contact .contact-us .fullname input:focus ~ label,
+.container-contact .main-contact .contact-us .fullname input:valid ~ label {
+  top: 4%;
+  color: black; }
+
+.container-contact .main-contact .contact-us .content-contact {
+  width: 80%;
+  height: 200px; }
+
+.container-contact .main-contact .contact-us .content-contact textarea {
+  resize: none;
+  border: 1px solid #d0d0d0;
+  padding: 6px 12px 6px 8px;
+  width: 100%;
+  height: 100%; }
+
+.container-contact .main-contact .contact-us .content-contact textarea:focus-visible {
+  border-radius: unset;
+  border: 1px solid #d0d0d0;
+  outline: unset; }
+
+.container-contact .main-contact .contact-us .action-submit {
+  width: 80%;
+  padding-bottom: 24px; }
+
+.container-contact .main-contact .contact-us .action-submit button {
+  width: 100%;
+  height: 40px;
+  background-color: #bc9f6e;
+  color: white;
+  font-weight: 600;
+  text-transform: uppercase;
+  border: 1px solid #bc9f6e;
+  outline: unset;
+  transition: .3s; }
+
+.container-contact .main-contact .contact-us .action-submit button:hover {
+  background-color: white;
+  color: #bc9f6e; }
+
 .container-about {
   height: 100vh;
   overflow-y: auto;
@@ -870,6 +1057,62 @@
   height: 3px;
   background-color: #bc9f6e; }
 
+.container-footer__contact {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: end;
+  width: 100%;
+  height: 270px;
+  color: white;
+  background-color: #bc9f6e; }
+
+.container-footer__contact > * {
+  margin-right: 100px; }
+
+.container-footer__contact .header {
+  height: 80%;
+  width: 65%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid white; }
+
+.container-footer__contact .header .company-name {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
+  width: 30%;
+  height: 100%;
+  font-size: 30px;
+  font-weight: 600; }
+
+.container-footer__contact .header .company-name img {
+  width: 80%;
+  height: 60%;
+  transform: translateX(-25%); }
+
+.container-footer__contact .header .slogan {
+  font-size: 20px;
+  font-weight: 600; }
+
+.container-footer__contact .footer {
+  display: flex;
+  align-items: center;
+  width: 65%;
+  height: 20%;
+  font-size: 16px;
+  font-weight: 400;
+  text-transform: uppercase; }
+
+.container-footer__contact .footer span {
+  padding: 12px 0; }
+
+.container-footer__contact .footer span b {
+  font-weight: 600; }
+
 .container-footer {
   height: 100vh;
   width: 100%;
@@ -970,7 +1213,7 @@
   height: 60%; }
 
 .container-footer .main-footer .email-contact .list-box .box-input {
-  width: 30%;
+  width: 33%;
   margin: 12px 20px;
   position: relative;
   display: flex;
