@@ -85,15 +85,72 @@
   scroll-snap-stop: always;
   position: relative;
 }
-.container-home .card #carouselExampleInterval,
-.container-home .card #carouselExampleInterval .carousel-inner,
-.container-home .card #carouselExampleInterval .carousel-inner .carousel-item{
+.container-home .card-first .swiper {
   width: 100%;
   height: 100%;
 }
-.container-home .card img {
+
+.container-home .card-first .swiper .swiper-wrapper .swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container-home .card-first .swiper .swiper-wrapper .swiper-slide .img {
+  display: block;
   width: 100%;
   height: 100%;
+  object-fit: cover;
+}
+.container-home .card-first .swiper .swiper-wrapper .swiper-slide .img-1{
+  background: linear-gradient(to right, #bc9f6e33, #00000033), url('/img/home2.jpg') center / cover no-repeat;
+}
+.container-home .card-first .swiper .swiper-wrapper .swiper-slide .img-2{
+  background: linear-gradient(to right, #bc9f6e33, #00000033), url('/img/home3.jpg') center / cover no-repeat;
+}
+.container-home .card-first .swiper .swiper-wrapper .swiper-slide .img-3{
+  background: linear-gradient(to right, #bc9f6e33, #00000033), url('/img/home1.jpg') center / cover no-repeat;
+}
+.container-home .card-first .swiper .swiper-button-next,
+.container-home .card-first .swiper .swiper-button-prev{
+  color: #0080FF;
+}
+.container-home .card-first .swiper .swiper-button-next::after{
+  margin-right: 80px;
+}
+.container-home .card-first .swiper .swiper-button-prev::after{
+  margin-left: 80px;
+}
+.container-home .card-first .swiper .autoplay-progress {
+  position: absolute;
+  right: 16px;
+  bottom: 16px;
+  z-index: 10;
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  color: #0080FF;
+}
+
+.container-home .card-first .swiper .autoplay-progress svg {
+  --progress: 0;
+  position: absolute;
+  left: 0;
+  top: 0px;
+  z-index: 10;
+  width: 100%;
+  height: 100%;
+  stroke-width: 4px;
+  stroke: #0080FF;
+  fill: none;
+  stroke-dashoffset: calc(125.6 * (1 - var(--progress)));
+  stroke-dasharray: 125.6;
+  transform: rotate(-90deg);
 }
 .container-home .card .card-content {
   z-index: 2;
@@ -690,4 +747,11 @@
 }
 .container-home .card-product .main__card-product .swiper .swiper-slide .product .longthanhpcb40{
   background: linear-gradient(to bottom, transparent, rgba(0,0,0,0.3)), url('/img/backgroundlongthanhpcb40.jpg') center / cover no-repeat;
+}
+.container-home .card-product .main__card-product .swiper .swiper-button-next,
+.container-home .card-product .main__card-product .swiper .swiper-button-prev{
+  color: #d9a752;
+}
+.container-home .card-product .main__card-product .swiper .swiper-pagination .swiper-pagination-bullet{
+  background-color: $primarycolor;
 }
