@@ -1,0 +1,75 @@
+<div class="container-pcb40">
+    <header>
+        <span><a class="backproductpage" href="/product">SẢN PHẨM</a> / XI MĂNG HÀ TIÊN PCB40</span>
+    </header>
+    <div class="main-pcb40">
+        <div class="header-pcb40">
+            <div class="card-pcb40">
+                <div class="background"></div>
+                <img src="/img/hatienpcb40.png" alt="">
+            </div>
+            <div class="info-pcb40">
+                <span class="name-pcb40">PORTLAND HỖN HỢP PCB40</span>
+                <span class="description">Xi măng Vicem Hà Tiên PCB40 là hỗn hợp bột mịn chứa nhiều thành phần khoáng chất Được sản xuất bằng cách khai thác và tuyển chọn các khoáng vật từ đá vôi và đất sét chứa silica và alumina, nung ở nhiệt độ 1450 OC, làm lạnh nhanh hình thành Clinker. Clinker sau đó được nghiền mịn với thạch cao, và các phụ gia hoạt tính khác như Puzzolan, đá vôi,…</span>
+                <div class="contact-pcb40">
+                    <span class="box-contact-us"><a class="contact-us" href="/contact">LIÊN HỆ VỚI CHÚNG TÔI</a></span>
+                    <a href="tel:02583875686" class="hotline">
+                        <span class="material-symbols-outlined">
+                        phone_in_talk
+                        </span>
+                        <span>0258 3 875 686</span>
+                    </a>
+                    <a href="tel:02583875303" class="hotline">
+                        <span class="material-symbols-outlined">
+                        phone_in_talk
+                        </span>
+                        <span>0258 3 875 303</span>
+                    </a>
+                    <a href="tel:02583875163" class="hotline">
+                        <span class="material-symbols-outlined">
+                        phone_in_talk
+                        </span>
+                        <span>0258 3 875 163</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="detail-pcb40">
+            <span class="primary-title">THÔNG TIN SẢN PHẨM</span>
+            <div class="application">
+                <span class="title">ỨNG DỤNG</span>
+                <span class="application-content">Xi măng Vicem Hà Tiên PCB40 được sử dụng cho hầu hết các loại công trình từ nhà ở dân dụng đến các cao ốc văn phòng, các dự án…với yêu cầu về chất lượng bê tông không quá cao, không cần bê tông phát triển cường độ sớm quá nhanh, nhiệt thủy hóa thấp, chi phí thấp.</span>
+                <span class="application-content">Tùy theo điều kiện thực tế, Xi măng Vicem Hà Tiên PCB40 có thể được sử dụng để chế tạo bê tông thương phẩm có mác đến 50MPa hoặc các loại vữa xây tô cho công trình</span>
+            </div>
+            <div class="addvantage">
+                <span class="title">ƯU ĐIỂM</span>
+                <ul>
+                    <li>Giảm nguy cơ nứt bê tông co nhiệt thủy hóa</li>
+                    <li>Chế tạo vữa xây, tô có độ dẻo cao, cường độ cao</li>
+                </ul>
+            </div>
+            <div class="pack">
+                <span class="title">ĐÓNG GÓI THÀNH PHẨM</span>
+                <span class="pack-content">Bao 50kg</span>
+            </div>
+            <div class="standard">
+                <span class="title">TIÊU CHUẨN</span>
+                <span class="standard-content">Xi măng Vicem Hà Tiên PCB40 được sản xuất theo Tiêu chuẩn Việt Nam TCVN 6260 : 2009 có các chỉ tiêu cơ lý và thành phần hóa như sau:</span>
+                <span class="title-standard-img">TCVN 6260 : 2009 (PCB40)</span>
+                <img src="/img/standard-pcb40.jpg" alt="">
+            </div>
+        </div>
+    </div>
+    {{> footerproduct}}
+</div>
+<script>
+    var backProductPage = document.querySelector('.backproductpage');
+        backProductPage.addEventListener('click',()=>{
+            localStorage.setItem('touchedLink', '/product')
+        });
+    var goContactPage = document.querySelector('.contact-us');
+        goContactPage.addEventListener('click', () => {
+        localStorage.setItem('touchedLink', '/contact');
+    });
+    localStorage.clear()
+</script>
