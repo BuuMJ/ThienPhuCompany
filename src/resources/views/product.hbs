@@ -1,0 +1,160 @@
+<div class="container-product">
+    <header>
+        <span class="title-product">SẢN PHẨM / XI MĂNG</span>
+    </header>
+    <div class="main-product">
+        <div class="header__main-product">
+            <a href="#Tất-cả" class="all">Tất cả</a>
+            <a href="#Hà-Tiên" class="hatien">Hà Tiên</a>
+            <a href="#Loại-Khác" class="other">Loại Khác</a>
+        </div>
+        <section class="dots-container">
+            <div class="dot"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+        </section>
+        <div class="all-product">
+            <div class="product hatienpcb40">
+                <div class="background-product"></div>
+                <img src="/img/hatienpcb40.png" alt="">
+                <span class="name-product">Xi măng hà Tiên pcb40</span>
+                <a href="" class="visited-product">Xem chi tiết</a>
+            </div>
+            <div class="product dadungpcb40">
+                <div class="background-product"></div>
+                <img src="/img/dadungpcb40.png" alt="">
+                <span class="name-product">Xi măng Hà Tiên Đa dụng PCB40</span>
+                <a href="" class="visited-product">Xem chi tiết</a>
+            </div>
+            <div class="product pcb40-ms">
+                <div class="background-product"></div>
+                <img src="/img/pcb40-ms.png" alt="">
+                <span class="name-product">Xi măng Hà Tiên BỀN SULFAT PCB40-MS</span>
+                <a href="" class="visited-product">Xem chi tiết</a>
+            </div>
+            <div class="product scg">
+                <div class="background-product"></div>
+                <img src="/img/scg.png" alt="">
+                <span class="name-product">SCG super xi măng</span>
+                <a href="" class="visited-product">Xem chi tiết</a>
+            </div>
+            <div class="product longthanhpcb40">
+                <div class="background-product"></div>
+                <img src="/img/longthanhpcb40.png" alt="">
+                <span class="name-product">Xi măng Long Thành PCB40</span>
+                <a href="" class="visited-product">Xem chi tiết</a>
+            </div>
+        </div>
+        <div class="hatien-product">
+            <div class="product hatienpcb40">
+                <div class="background-product"></div>
+                <img src="/img/hatienpcb40.png" alt="">
+                <span class="name-product">Xi măng hà Tiên pcb40</span>
+                <a href="" class="visited-product">Xem chi tiết</a>
+            </div>
+            <div class="product dadungpcb40">
+                <div class="background-product"></div>
+                <img src="/img/dadungpcb40.png" alt="">
+                <span class="name-product">Xi măng Hà Tiên Đa dụng PCB40</span>
+                <a href="" class="visited-product">Xem chi tiết</a>
+            </div>
+            <div class="product pcb40-ms">
+                <div class="background-product"></div>
+                <img src="/img/pcb40-ms.png" alt="">
+                <span class="name-product">Xi măng Hà Tiên BỀN SULFAT PCB40-MS</span>
+                <a href="" class="visited-product">Xem chi tiết</a>
+            </div>
+        </div>
+        <div class="other-product">
+            <div class="product scg">
+                <div class="background-product"></div>
+                <img src="/img/scg.png" alt="">
+                <span class="name-product">SCG super xi măng</span>
+                <a href="" class="visited-product">Xem chi tiết</a>
+            </div>
+            <div class="product longthanhpcb40">
+                <div class="background-product"></div>
+                <img src="/img/longthanhpcb40.png" alt="">
+                <span class="name-product">Xi măng Long Thành PCB40</span>
+                <a href="" class="visited-product">Xem chi tiết</a>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    var allClick = document.querySelector('.all');
+    var HTClick = document.querySelector('.hatien');
+    var otherClick = document.querySelector('.other');
+    var allDisplay = document.querySelector('.all-product')
+    var HTDisplay = document.querySelector('.hatien-product');
+    var otherDisplay = document.querySelector('.other-product')
+    var loadingProduct = document.querySelector('.dots-container');
+    var titleProduct = document.querySelector('.title-product');
+    let allClickClicked = false;
+    let HTClickClicked = false;
+    let otherClickClicked = false;
+allClick.addEventListener('click', () => {
+  if (!allClickClicked) {
+    allClick.style.cssText = 'border-bottom: 3px solid #bc9f6e; cursor: default';
+    HTClick.style.cssText = 'border-bottom: unset; cursor: pointer';
+    otherClick.style.cssText = 'border-bottom: unset; cursor: pointer';
+    HTDisplay.style.display = 'none';
+    otherDisplay.style.display = 'none';
+    loadingProduct.style.display = 'flex';
+    setTimeout(function () {
+      loadingProduct.style.display = 'none';
+    }, 1850);
+    setTimeout(function () {
+      allDisplay.style.display = 'flex';
+    }, 1900);
+    allClickClicked = true;
+    HTClickClicked = false;
+    otherClickClicked = false;
+  }
+  titleProduct.innerHTML = 'SẢN PHẨM / XI MĂNG'
+});
+HTClick.addEventListener('click', () => {
+  if (!HTClickClicked) {
+    HTClick.style.cssText = 'border-bottom: 3px solid #bc9f6e; cursor: default';
+    allClick.style.cssText = 'border-bottom: unset; cursor: pointer';
+    otherClick.style.cssText = 'border-bottom: unset; cursor: pointer';
+    allDisplay.style.display = 'none';
+    otherDisplay.style.display = 'none';
+    loadingProduct.style.display = 'flex';
+    setTimeout(function () {
+      loadingProduct.style.display = 'none';
+    }, 1850);
+    setTimeout(function () {
+      HTDisplay.style.display = 'flex';
+    }, 1900);
+    HTClickClicked = true;
+    allClickClicked = false;
+    otherClickClicked = false;
+  }
+  titleProduct.innerHTML = 'SẢN PHẨM / XI MĂNG / HÀ TIÊN'
+});
+
+otherClick.addEventListener('click', () => {
+  if (!otherClickClicked) {
+    otherClick.style.cssText = 'border-bottom: 3px solid #bc9f6e; cursor: default';
+    allClick.style.cssText = 'border-bottom: unset; cursor: pointer';
+    HTClick.style.cssText = 'border-bottom: unset; cursor: pointer';
+    HTDisplay.style.display = 'none';
+    allDisplay.style.display = 'none';
+    loadingProduct.style.display = 'flex';
+    setTimeout(function () {
+      loadingProduct.style.display = 'none';
+    }, 1850);
+    setTimeout(function () {
+      otherDisplay.style.display = 'flex'
+    }, 1900);
+    otherClickClicked = true;
+    allClickClicked = false;
+    HTClickClicked = false;
+  }
+  titleProduct.innerHTML = 'SẢN PHẨM / XI MĂNG / lOẠI KHÁC'
+});
+
+</script>

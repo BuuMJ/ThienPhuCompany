@@ -1,4 +1,5 @@
 @import 'variable';
+@import 'product';
 @import 'contact';
 @import 'about';
 @import 'home';
@@ -16,6 +17,7 @@
 }
 body{
     font-family: Roboto,Arial,Helvetica,sans-serif;;
+    overflow-x: hidden;
 }
 .loading,
 .loading-href{

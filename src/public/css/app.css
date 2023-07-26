@@ -1,4 +1,199 @@
 @charset "UTF-8";
+.container-product {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%; }
+
+.container-product header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 426px;
+  background: linear-gradient(to left, #bc9f6e33, #0080FF33), url("/img/header-product.jpg") bottom/cover no-repeat; }
+
+.container-product header span {
+  font-size: 50px;
+  color: white;
+  font-weight: 600;
+  transform: translateY(50%); }
+
+.container-product .main-product {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  overflow: hidden; }
+
+.container-product .main-product .header__main-product {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 80px;
+  border-bottom: 1px solid #d7d7d7; }
+
+.container-product .main-product .header__main-product a {
+  font-size: 18px;
+  font-weight: 400;
+  margin: 0 24px;
+  text-decoration: none;
+  color: black;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 3px solid transparent;
+  width: 87px; }
+
+.container-product .main-product .header__main-product a.all {
+  border-bottom: 3px solid #bc9f6e;
+  cursor: default; }
+
+.container-product .main-product .all-product,
+.container-product .main-product .hatien-product,
+.container-product .main-product .other-product {
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  align-items: center;
+  flex-wrap: wrap;
+  width: 80%; }
+
+.container-product .main-product .hatien-product {
+  display: none; }
+
+.container-product .main-product .other-product {
+  display: none;
+  justify-content: center; }
+
+.container-product .main-product .all-product .product,
+.container-product .main-product .hatien-product .product,
+.container-product .main-product .other-product .product {
+  width: 30%;
+  height: 550px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  margin: 20px 20px 60px 20px;
+  position: relative; }
+
+.container-product .main-product .all-product .product .background-product,
+.container-product .main-product .hatien-product .product .background-product,
+.container-product .main-product .other-product .product .background-product {
+  width: 100%;
+  height: 80%;
+  z-index: -1;
+  transition: .5s; }
+
+.container-product .main-product .all-product .hatienpcb40 .background-product,
+.container-product .main-product .hatien-product .hatienpcb40 .background-product {
+  background: linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.3)), url("/img/backgroundpcb40.jpg") center/cover no-repeat; }
+
+.container-product .main-product .all-product .dadungpcb40 .background-product,
+.container-product .main-product .hatien-product .dadungpcb40 .background-product {
+  background: linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.3)), url("/img/backgrounddadung.jpg") center/cover no-repeat; }
+
+.container-product .main-product .all-product .pcb40-ms .background-product,
+.container-product .main-product .hatien-product .pcb40-ms .background-product {
+  background: linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.3)), url("/img/backgroundpcb40-ms.jpg") center/cover no-repeat; }
+
+.container-product .main-product .all-product .scg .background-product,
+.container-product .main-product .other-product .scg .background-product {
+  background: linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.3)), url("/img/backgroundscg.jpg") center/cover no-repeat; }
+
+.container-product .main-product .all-product .longthanhpcb40 .background-product,
+.container-product .main-product .other-product .longthanhpcb40 .background-product {
+  background: linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.3)), url("/img/backgroundlongthanhpcb40.jpg") center/cover no-repeat; }
+
+.container-product .main-product .all-product .product img,
+.container-product .main-product .hatien-product .product img,
+.container-product .main-product .other-product .product img {
+  width: 70%;
+  height: 60%;
+  transition: 0.5s;
+  position: absolute;
+  bottom: 20%;
+  margin: 0 auto; }
+
+.container-product .main-product .all-product .dadungpcb40 img,
+.container-product .main-product .hatien-product .dadungpcb40 img {
+  bottom: 19%; }
+
+.container-product .main-product .all-product .hatienpcb40 img,
+.container-product .main-product .hatien-product .hatienpcb40 img {
+  width: 50%; }
+
+.container-product .main-product .all-product .product:hover img,
+.container-product .main-product .hatien-product .product:hover img,
+.container-product .main-product .other-product .product:hover img {
+  transform: scale(1.1);
+  filter: drop-shadow(0 10px 30px rgba(255, 255, 255, 0.8)); }
+
+.container-product .main-product .all-product .product:hover .background-product,
+.container-product .main-product .hatien-product .product:hover .background-product,
+.container-product .main-product .other-product .product:hover .background-product {
+  filter: blur(5px); }
+
+.container-product .main-product .all-product .product span,
+.container-product .main-product .hatien-product .product span,
+.container-product .main-product .other-product .product span {
+  font-size: 18px;
+  font-weight: 600;
+  transition: .5s; }
+
+.container-product .main-product .all-product .product a.visited-product,
+.container-product .main-product .hatien-product .product a.visited-product,
+.container-product .main-product .other-product .product a.visited-product {
+  width: 30%;
+  height: 40px;
+  font-size: 16px;
+  font-weight: 500;
+  border: 1px solid #bc9f6e;
+  text-align: center;
+  text-decoration: none;
+  color: black;
+  transition: .3s;
+  padding: 8px 0; }
+
+.container-product .main-product .all-product .product a.visited-product:hover,
+.container-product .main-product .hatien-product .product a.visited-product:hover,
+.container-product .main-product .other-product .product a.visited-product:hover {
+  background-color: #bc9f6e;
+  color: white; }
+
+.dots-container {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+  margin: 30px 0; }
+
+.dot {
+  height: 20px;
+  width: 20px;
+  margin-right: 10px;
+  border-radius: 10px;
+  background-color: #bc9f6e;
+  animation: pulse 1.5s infinite ease-in-out; }
+
+.dot:last-child {
+  margin-right: 0; }
+
+.dot:nth-child(1) {
+  animation-delay: -0.3s; }
+
+.dot:nth-child(2) {
+  animation-delay: -0.1s; }
+
+.dot:nth-child(3) {
+  animation-delay: 0.1s; }
+
 .container-contact {
   display: flex;
   flex-direction: column;
@@ -11,7 +206,7 @@
   justify-content: center;
   align-items: center;
   width: 100%;
-  height: 380px;
+  height: 426px;
   background: linear-gradient(to right, #bc9f6e33, #0080FF33), url("/img/contactheader.avif") center/cover no-repeat; }
 
 .container-contact header span {
@@ -1049,7 +1244,8 @@
   height: 80%;
   margin: 0 16px;
   outline-offset: 4px;
-  outline: 4px solid #bc9f6e; }
+  outline: 4px solid #bc9f6e;
+  text-decoration: none; }
 
 .container-home .card-product .main__card-product .swiper .swiper-slide .product .first-product img,
 .container-home .card-product .main__card-product .swiper .swiper-slide .product .second-product img {
@@ -1521,6 +1717,20 @@
     transform: translateY(0);
     opacity: 1; } }
 
+@keyframes pulse {
+  0% {
+    transform: scale(0.8);
+    background-color: #f7daa9;
+    box-shadow: 0 0 0 0 rgba(247, 218, 169, 0.7); }
+  50% {
+    transform: scale(1.2);
+    background-color: #bc9f6e;
+    box-shadow: 0 0 0 10px rgba(178, 212, 252, 0); }
+  100% {
+    transform: scale(0.8);
+    background-color: #f7daa9;
+    box-shadow: 0 0 0 0 rgba(247, 218, 169, 0.7); } }
+
 * {
   padding: 0;
   margin: 0;
@@ -1530,7 +1740,8 @@
   background-color: rgba(0, 0, 0, 0.1); }
 
 body {
-  font-family: Roboto,Arial,Helvetica,sans-serif; }
+  font-family: Roboto,Arial,Helvetica,sans-serif;
+  overflow-x: hidden; }
 
 .loading,
 .loading-href {
