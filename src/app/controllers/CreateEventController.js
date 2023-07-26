@@ -2,7 +2,9 @@ const EventModel = require("../models/event");
 
 class CreateEventController {
   formCreate(req, res, next) {
-    res.render("createEvent");
+    res.render("createEvent", {
+      title: "Tạo Sự Kiện",
+    });
   }
 
   async create(req, res, next) {

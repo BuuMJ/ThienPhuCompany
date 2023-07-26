@@ -11,6 +11,7 @@ class HomeController {
     const event = await EventModel.find().sort({ createdAt: -1 }).limit(3);
     console.log(event);
     res.render("home", {
+      title: "Trang Chủ",
       event: mutipleMongooseToObject(event),
     });
   }

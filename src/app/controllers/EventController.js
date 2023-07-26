@@ -1,6 +1,8 @@
 class EventController {
   event(req, res, next) {
-    res.render("event");
+    res.render("event", {
+      title: "Sự Kiện",
+    });
   }
 }
 

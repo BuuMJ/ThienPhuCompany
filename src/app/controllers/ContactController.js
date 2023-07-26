@@ -2,7 +2,9 @@ const nodemailer = require("nodemailer");
 
 class ContactController {
   contact(req, res, next) {
-    res.render("contact");
+    res.render("contact", {
+      title: "Liên Hệ",
+    });
   }
 
   apicontact(req, res, next) {

@@ -12,7 +12,9 @@ class LoginController {
         password: hash,
       });
     });
-    res.render("login");
+    res.render("login", {
+      title: "Đăng Nhập",
+    });
   }
 
   index(req, res, next) {
