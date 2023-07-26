@@ -80,7 +80,8 @@
   justify-content: space-between;
   align-items: center;
   margin: 20px 20px 60px 20px;
-  position: relative; }
+  position: relative;
+  text-decoration: none; }
 
 .container-product .main-product .all-product .product .background-product,
 .container-product .main-product .hatien-product .product .background-product,
@@ -144,11 +145,12 @@
 .container-product .main-product .other-product .product span {
   font-size: 18px;
   font-weight: 600;
-  transition: .5s; }
+  transition: .5s;
+  color: black; }
 
-.container-product .main-product .all-product .product a.visited-product,
-.container-product .main-product .hatien-product .product a.visited-product,
-.container-product .main-product .other-product .product a.visited-product {
+.container-product .main-product .all-product .product span.visited-product,
+.container-product .main-product .hatien-product .product span.visited-product,
+.container-product .main-product .other-product .product span.visited-product {
   width: 30%;
   height: 40px;
   font-size: 16px;
@@ -160,9 +162,9 @@
   transition: .3s;
   padding: 8px 0; }
 
-.container-product .main-product .all-product .product a.visited-product:hover,
-.container-product .main-product .hatien-product .product a.visited-product:hover,
-.container-product .main-product .other-product .product a.visited-product:hover {
+.container-product .main-product .all-product .product span.visited-product:hover,
+.container-product .main-product .hatien-product .product span.visited-product:hover,
+.container-product .main-product .other-product .product span.visited-product:hover {
   background-color: #bc9f6e;
   color: white; }
 
