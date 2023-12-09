@@ -1,106 +1,84 @@
 .navbar{
-    width: 100%;
-    height: 85px;
-    color: $primarycolor;
-    background-color: rgba(255,255,255,0.7);
-    box-shadow: 2px 2px 10px rgba(0,0,0,0.2);
     display: flex;
-    flex-direction: row;
     justify-content: center;
-    align-self: center;
-    overflow: hidden;
+    align-items: center;
+    width: 100%;
+    height: 110px;
+    background-color: white;
     position: fixed;
     top: 0;
-    z-index: 100;
-    padding: unset;
+    left: 0;
+    z-index: 20;
 }
-.navbar-right {
-    width: 40%;
-    height: 100%;
+.navbar .navbar-inner{
     display: flex;
+    justify-content: space-between;
     align-items: center;
-    position: relative;
-    color: $primarycolor;
-    text-decoration: none;
-}
-.navbar-right a {
-    width: 150px;
-    height: 100%;
-    transform: translateX(60%);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-.navbar-right a img{
-    width: 100%;
-    height: 85%;
-    text-decoration: none;
-}
-.navbar-right a.name-company{
-    font-size: 40px;
-    font-weight: 700;
-    position: absolute;
-    right: 37%;
-    letter-spacing: 4px;
-    word-spacing: 1.5px;
-    text-decoration: none;
-    color: $primarycolor;
-    width: unset;
-    transform: unset;
-}
-.navbar-left{
     width: 60%;
     height: 100%;
 }
-.navbar-left .primary-navbar{
+.navbar .navbar-inner .navbar-right{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 25%;
+    height: 100%;
+}
+.navbar .navbar-inner .navbar-right .logo-company{
+    width: 40%;
+    height: 60%;
+}
+.navbar .navbar-inner .navbar-right .logo-company img{
     width: 100%;
     height: 100%;
+}
+.navbar .navbar-inner .navbar-right .name-company{
+    color: $primarycolor;
+    font-size: 22px;
+    font-weight: 700;
+    margin: 8px 0;
+    text-decoration: none;
+    height: 35%;
+    letter-spacing: 1.2px;
+}
+.navbar .navbar-inner .primary-navbar{
+    width: 75%;
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
-    margin: unset;
-}
-.navbar-left .primary-navbar li {
-    width: 20%;
     height: 100%;
+}
+.navbar .navbar-inner .primary-navbar li{
     list-style-type: none;
+    width: 15%;
+    height: 50%;
     display: flex;
     justify-content: center;
     align-items: center;
 }
-.navbar-left .primary-navbar li a{
-    color: #666;
+.navbar .navbar-inner .primary-navbar a{
     text-decoration: none;
-    transition: .3s;
-    font-size: 18px;
-    font-weight: 400;
+    color: black;
+    font-size: 14px;
+    font-weight: 700;
+    height: 80%;
+    width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100%;
-    width: 100%;
-    text-align: center;
+    transition: .5s;
+    text-transform: uppercase;
+    letter-spacing: 1px;
 }
-.navbar-left .primary-navbar li a:hover{
-    color: $primarycolor;
-}
-.navbar .touched {
-    color: $primarycolor !important;
+.navbar-inner .touched{
     cursor: default;
+    pointer-events: none;
 }
-.navbar-left .touched{
-    color: $primarycolor !important;
-    cursor: default;
-    position: relative;
-}
-.navbar-left .touched::after {
-    content: "";
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 50%;
-    height: 3px;
+.navbar-inner li a.touched,
+.navbar-inner li a:hover{
     background-color: $primarycolor;
+    color: white !important;
+    border-radius: 5px;
 }

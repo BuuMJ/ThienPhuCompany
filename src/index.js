@@ -11,8 +11,10 @@ const cookieParser = require("cookie-parser");
 const session = require("express-session");
 const methodOverride = require("method-override");
 const passport = require("passport");
-
 const helpers = require("handlebars-helpers");
+var Handlebars = require("handlebars");
+var MomentHandler = require("handlebars.moment");
+MomentHandler.registerHelpers(Handlebars);
 
 // Passport Configuration
 passport.serializeUser((user, done) => {
