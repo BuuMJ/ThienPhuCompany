@@ -14,11 +14,10 @@
     justify-content: center;
     align-items: center;
     width: 30%;
-    height: 30%;
 }
 .container-footer .header-footer img{
     width: 250px;
-    height: 150px;
+    height: 200px;
 }
 .container-footer .header-footer .name-company{
     font-size: 44px;
@@ -217,6 +216,7 @@
     padding-bottom: 12px;
     border-bottom: 1px solid #cccccc;
     width: 100%;
+    text-transform: uppercase;
 }
 .container-footer .main-footer .info-contact .address .content,
 .container-footer .main-footer .info-contact .hotline .content,
