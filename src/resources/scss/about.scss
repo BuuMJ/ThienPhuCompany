@@ -14,11 +14,69 @@
     justify-content: center;
     align-items: center;
     color: white;
+    position: relative;
     background: linear-gradient(45deg, rgba(0, 0, 0,0.6), rgba(188, 159, 110,0.4)), url('/img/aboutHeader.jpg') bottom / cover no-repeat;
 }
 .container-about header h1{
     font-size: 70px;
     font-weight: 700;
+}
+.container-about header .certification{
+    position: absolute;
+    width: 80%;
+    bottom: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.container-about header .certification .certi-box{
+    width: 48%;
+    height: 150px;
+    border-radius: 5px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    color: black;
+    box-shadow:0 2px 17px rgba(65, 62, 45, 0.3);
+    transform: translateY(50%);
+}
+.container-about header .certification .certi-box .img-certi{
+    width: 30%;
+    height: 100%;
+    overflow: hidden;
+}
+.container-about header .certification .certi-box .img-certi img.certi{
+    width: 100%;
+    height: 100%;
+    transition: .5s;
+}
+.container-about header .certification .certi-box .certi-content{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+    width: 70%;
+    height: 100%;
+    padding: 16px 20px;
+}
+.container-about header .certification .certi-box .certi-content h3.title{
+    height: 30%;
+    letter-spacing: 1.2;
+    transition: .5s;
+}
+.container-about header .certification .certi-box .certi-content p.content{
+    height: 70%;
+    line-height: 26px;
+    letter-spacing: 1.2;
+    text-align: justify;
+}
+.container-about header .certification .certi-box:hover h3.title{
+    color: $primarycolor;
+}
+.container-about header .certification .certi-box:hover img.certi{
+    transform: scale(1.2);
 }
 .container-about .main-about{
     display: flex;
@@ -32,7 +90,7 @@
     justify-content: center;
     align-items: start;
     width: 100%;
-    padding: 100px 0;
+    padding: 200px 0 100px 0;
     background-color: $backgroundColor;
 }
 .container-about .main-about .about-intro .image-intro{
@@ -192,6 +250,7 @@
     justify-content: center;
     align-items: center;
     width: 80%;
+    flex-wrap: wrap;
 }
 .container-about .main-about .vision-mission .left{
     display: flex;
@@ -250,6 +309,99 @@
     line-height: 28px;
     padding: 25px 30px;
     text-align: justify;
+}
+.container-about .main-about .vision-mission .awards{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 100px 0;
+}
+.container-about .main-about .vision-mission .awards img.award{
+    width: 120px;
+    height: 120px;
+    margin-bottom: 20px;
+}
+.container-about .main-about .vision-mission .awards h1.title{
+    background: -webkit-linear-gradient(45deg, #ffca69 4%, #bc9f6e 73%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    line-height: 30px;
+    padding-bottom: 20px;
+    letter-spacing: 1.2px;
+    position: relative;
+}
+.container-about .main-about .vision-mission .awards h1.title::after{
+    position: absolute;
+    content: "";
+    width: 60%;
+    height: 2px;
+    background: $titlecolor;
+    bottom: 0;
+    left: 50%;
+    right: 50%;
+    transform: translateX(-50%);
+}
+.container-about .main-about .vision-mission .awards .award-box{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    padding: 50px;
+    flex-wrap: wrap;
+}
+.container-about .main-about .vision-mission .awards .award-box .swiper {
+    width: 100%;
+    height: 100%;
+}
+.container-about .main-about .vision-mission .awards .award-box .swiper .swiper-slide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 33%;
+}
+.container-about .main-about .vision-mission .awards .award-box .award-card{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 500px;
+    border-radius: 5px;
+    overflow: hidden;
+    border: 1px solid rgb(229, 234, 243);
+    margin-bottom: 50px;
+}
+.container-about .main-about .vision-mission .awards .award-box .award-card .img-award{
+    width: 100%;
+    height: 70%;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.container-about .main-about .vision-mission .awards .award-box .award-card .img-award img{
+    width: 90%;
+    height: 90%;
+    transition: .5s;
+}
+.container-about .main-about .vision-mission .awards .award-box .award-card:hover .img-award img{
+    transform: scale(1.1);
+}
+.container-about .main-about .vision-mission .awards .award-box .award-card .bottom{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+    width: 100%;
+    height: 30%;
+    padding: 0 20px;
+}
+.container-about .main-about .vision-mission .awards .award-box .award-card .bottom h1{
+    color: $primarycolor;
+    letter-spacing: 2px;
+    margin-bottom: 12px;
 }
 .container-about .main-about .value{
     display: flex;
@@ -327,7 +479,7 @@
     color: white;
     font-size: 24px;
     font-weight: 700;
-    transition: all .7s;
+    transition: all .5s ease-in-out;
 }
 .container-about .main-about .value .box-value .card .icon-value.value2::after{
     content: "2";
@@ -346,7 +498,9 @@
     height: 50px;
     border-radius: 50%;
     transform: scale(0);
-    transition: all .7s;
+    transition: transform .4s ease-in-out;
+    transition-delay: .3s;
+    transition-property: transform;
     position: relative;
 }
 .container-about .main-about .value .box-value .card .icon-value .after{
@@ -370,7 +524,7 @@
     background-color: #bc9f6e;
     background-image: linear-gradient(62deg, #bc9f6e 0%, #ffe699 100%);
     transform: scale(0);
-    transition: all .5s;
+    transition: transform .6s ease-in-out;
 }
 .container-about .main-about .value .box-value .card .icon-value .after::before{
     position: absolute;
@@ -380,8 +534,9 @@
     border-radius: 50%;
     background-color: white;
     transform: scale(0);
-    transition: all .5s;
-    z-index: 3;
+    transition: transform .4s ease-in-out;
+    transition-delay: .2s;
+    transition-property: transform;
 }
 .container-about .main-about .value .box-value .card .icon-value:hover{
     outline: 2px dashed $primarycolor;
@@ -397,8 +552,11 @@
     z-index: 4;
     transform: scale(1);
 }
-.container-about .main-about .value .box-value .card .icon-value:hover .after::after,
+.container-about .main-about .value .box-value .card .icon-value:hover .after::after{
+    transform: scale(1);
+}
 .container-about .main-about .value .box-value .card .icon-value:hover .after::before{
+    z-index: 3;
     transform: scale(1);
 }
 .container-about .main-about .value .box-value .card h2{

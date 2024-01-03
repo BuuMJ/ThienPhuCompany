@@ -104,11 +104,16 @@
   font-size: 50px;
   margin: 0 0 8px 0 ;
 }
+.container-home .main-home .reason-choose-us .list-card .card img{
+  width: 50px;
+  height: 50px;
+}
 .container-home .main-home .reason-choose-us .list-card .card span.title{
   font-size: 20px;
   font-size: 600;
   margin: 6px 0;
   text-transform: capitalize;
+  height: 24px;
 }
 .container-home .main-home .reason-choose-us .list-card .card span.main-info{
   font-size: 16px;
@@ -116,6 +121,7 @@
   margin: 6px 0;
   text-align: center;
   letter-spacing: 1.2px;
+  height: 56px;
 }
 .container-home .main-home .about-us{
   display: flex;

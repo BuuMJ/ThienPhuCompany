@@ -48,3 +48,10 @@
         <span>© 2023 <b>Thiên Phú</b>. Tất cả các quyền được bảo lưu.</span>
       </div>
   </div>
+  <script>
+    const checkContactPage = window.location.pathname;
+    const hideFooterEmail = document.querySelector('.email-contact');
+    if(checkContactPage === '/contact'){
+        hideFooterEmail.style.display = 'none';
+    }
+</script>

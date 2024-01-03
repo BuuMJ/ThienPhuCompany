@@ -105,15 +105,18 @@ allClick.addEventListener('click', () => {
     loadingProduct.style.display = 'flex';
     setTimeout(function () {
       loadingProduct.style.display = 'none';
-    }, 1850);
+    }, 850);
     setTimeout(function () {
       allDisplay.style.display = 'flex';
-    }, 1900);
+    }, 900);
     allClickClicked = true;
     HTClickClicked = false;
     otherClickClicked = false;
   }
   titleProduct.innerHTML = 'SẢN PHẨM / XI MĂNG'
+  localStorage.setItem('all', 'show')
+  localStorage.setItem('HT', 'hide')
+  localStorage.setItem('Other', 'hide')
 });
 HTClick.addEventListener('click', () => {
   if (!HTClickClicked) {
@@ -125,15 +128,18 @@ HTClick.addEventListener('click', () => {
     loadingProduct.style.display = 'flex';
     setTimeout(function () {
       loadingProduct.style.display = 'none';
-    }, 1850);
+    }, 850);
     setTimeout(function () {
       HTDisplay.style.display = 'flex';
-    }, 1900);
+    }, 900);
     HTClickClicked = true;
     allClickClicked = false;
     otherClickClicked = false;
   }
   titleProduct.innerHTML = 'SẢN PHẨM / XI MĂNG / HÀ TIÊN'
+  localStorage.setItem('all', 'hide')
+  localStorage.setItem('HT', 'show')
+  localStorage.setItem('Other', 'hide')
 });
 
 otherClick.addEventListener('click', () => {
@@ -146,15 +152,69 @@ otherClick.addEventListener('click', () => {
     loadingProduct.style.display = 'flex';
     setTimeout(function () {
       loadingProduct.style.display = 'none';
-    }, 1850);
+    }, 850);
     setTimeout(function () {
       otherDisplay.style.display = 'flex'
-    }, 1900);
+    }, 900);
     otherClickClicked = true;
     allClickClicked = false;
     HTClickClicked = false;
   }
   titleProduct.innerHTML = 'SẢN PHẨM / XI MĂNG / lOẠI KHÁC'
+  localStorage.setItem('all', 'hide')
+  localStorage.setItem('HT', 'hide')
+  localStorage.setItem('Other', 'show')
 });
-
+document.addEventListener('DOMContentLoaded',()=>{
+  let checkAllDisplay = localStorage.getItem('all');
+  let checkHTDisplay = localStorage.getItem('HT');
+  let checkOtherDisplay = localStorage.getItem('Other');
+  if(checkAllDisplay === 'show'){
+    allClick.style.cssText = 'border-bottom: 3px solid #bc9f6e; cursor: default';
+    HTClick.style.cssText = 'border-bottom: unset; cursor: pointer';
+    otherClick.style.cssText = 'border-bottom: unset; cursor: pointer';
+    HTDisplay.style.display = 'none';
+    otherDisplay.style.display = 'none';
+    allDisplay.style.display = 'flex';
+    allClickClicked = true;
+    HTClickClicked = false;
+    otherClickClicked = false;
+    titleProduct.innerHTML = 'SẢN PHẨM / XI MĂNG'
+    localStorage.setItem('all', 'show')
+    localStorage.setItem('HT', 'hide')
+    localStorage.setItem('Other', 'hide')
+  }
+  if(checkHTDisplay === 'show'){
+    HTClick.style.cssText = 'border-bottom: 3px solid #bc9f6e; cursor: default';
+    allClick.style.cssText = 'border-bottom: unset; cursor: pointer';
+    otherClick.style.cssText = 'border-bottom: unset; cursor: pointer';
+    allDisplay.style.display = 'none';
+    otherDisplay.style.display = 'none';
+    HTDisplay.style.display = 'flex';
+    allDisplay.style.display = 'none';
+    otherDisplay.style.display = 'none';
+    HTClickClicked = true;
+    allClickClicked = false;
+    otherClickClicked = false;
+    titleProduct.innerHTML = 'SẢN PHẨM / XI MĂNG / HÀ TIÊN'
+    localStorage.setItem('all', 'hide')
+    localStorage.setItem('HT', 'show')
+    localStorage.setItem('Other', 'hide')
+  }
+  if(checkOtherDisplay === 'show'){
+    otherClick.style.cssText = 'border-bottom: 3px solid #bc9f6e; cursor: default';
+    allClick.style.cssText = 'border-bottom: unset; cursor: pointer';
+    HTClick.style.cssText = 'border-bottom: unset; cursor: pointer';
+    HTDisplay.style.display = 'none';
+    allDisplay.style.display = 'none';
+    otherDisplay.style.display = 'flex'
+    otherClickClicked = true;
+    allClickClicked = false;
+    HTClickClicked = false;
+    titleProduct.innerHTML = 'SẢN PHẨM / XI MĂNG / lOẠI KHÁC'
+    localStorage.setItem('all', 'hide')
+    localStorage.setItem('HT', 'hide')
+    localStorage.setItem('Other', 'show')
+  }
+})
 </script>
