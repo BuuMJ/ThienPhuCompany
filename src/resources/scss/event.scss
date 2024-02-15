@@ -1,0 +1,22 @@
+.container-event{
+    margin-top: 110px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+.container-event header{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 426px;
+    background: linear-gradient(to left, #bc9f6e33, #0080FF33), url('/img/news.jpg') bottom / cover no-repeat;
+}
+.container-event header span {
+    font-size: 50px;
+    color: white;
+    font-weight: 600;
+    transform: translateY(50%);
+}

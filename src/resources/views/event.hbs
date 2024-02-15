@@ -1,0 +1,18 @@
+<div class="container-event">
+    <header>
+        <span class="title-event">Tin Tức Và Khuyến Mãi</span>
+    </header>
+    <div class="main-event">
+        <div class="news">
+            {{#each event}}
+            <div class="card-news">
+                <img src="{{this.image1}}" alt="" class="header">
+                <h2>{{this.title}}</h2>
+            </div>
+            {{/each}}
+        </div>
+        <div class="support">
+
+        </div>
+    </div>
+</div>

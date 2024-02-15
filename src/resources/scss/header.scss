@@ -43,7 +43,6 @@
 }
 .navbar .navbar-inner .primary-navbar li{
     list-style-type: none;
-    width: 15%;
     height: 50%;
     display: flex;
     justify-content: center;
@@ -56,6 +55,7 @@
     font-weight: 700;
     height: 80%;
     width: 100%;
+    padding: 0 12px;
     display: flex;
     justify-content: center;
     align-items: center;

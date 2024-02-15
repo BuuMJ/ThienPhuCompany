@@ -97,9 +97,9 @@
     let otherClickClicked = false;
 allClick.addEventListener('click', () => {
   if (!allClickClicked) {
-    allClick.style.cssText = 'border-bottom: 3px solid #bc9f6e; cursor: default';
-    HTClick.style.cssText = 'border-bottom: unset; cursor: pointer';
-    otherClick.style.cssText = 'border-bottom: unset; cursor: pointer';
+    allClick.style.cssText = 'border-bottom: 3px solid #bc9f6e; cursor: default; color: #bc9f6e';
+    HTClick.style.cssText = 'border-bottom: unset; cursor: pointer; color: black;';
+    otherClick.style.cssText = 'border-bottom: unset; cursor: pointer; color: black;';
     HTDisplay.style.display = 'none';
     otherDisplay.style.display = 'none';
     loadingProduct.style.display = 'flex';
@@ -120,9 +120,9 @@ allClick.addEventListener('click', () => {
 });
 HTClick.addEventListener('click', () => {
   if (!HTClickClicked) {
-    HTClick.style.cssText = 'border-bottom: 3px solid #bc9f6e; cursor: default';
-    allClick.style.cssText = 'border-bottom: unset; cursor: pointer';
-    otherClick.style.cssText = 'border-bottom: unset; cursor: pointer';
+    HTClick.style.cssText = 'border-bottom: 3px solid #bc9f6e; cursor: default; color: #bc9f6e';
+    allClick.style.cssText = 'border-bottom: unset; cursor: pointer; color: black;';
+    otherClick.style.cssText = 'border-bottom: unset; cursor: pointer; color: black;';
     allDisplay.style.display = 'none';
     otherDisplay.style.display = 'none';
     loadingProduct.style.display = 'flex';
@@ -144,9 +144,9 @@ HTClick.addEventListener('click', () => {
 
 otherClick.addEventListener('click', () => {
   if (!otherClickClicked) {
-    otherClick.style.cssText = 'border-bottom: 3px solid #bc9f6e; cursor: default';
-    allClick.style.cssText = 'border-bottom: unset; cursor: pointer';
-    HTClick.style.cssText = 'border-bottom: unset; cursor: pointer';
+    otherClick.style.cssText = 'border-bottom: 3px solid #bc9f6e; cursor: default; color: #bc9f6e';
+    allClick.style.cssText = 'border-bottom: unset; cursor: pointer; color: black;';
+    HTClick.style.cssText = 'border-bottom: unset; cursor: pointer; color: black;';
     HTDisplay.style.display = 'none';
     allDisplay.style.display = 'none';
     loadingProduct.style.display = 'flex';
@@ -170,9 +170,9 @@ document.addEventListener('DOMContentLoaded',()=>{
   let checkHTDisplay = localStorage.getItem('HT');
   let checkOtherDisplay = localStorage.getItem('Other');
   if(checkAllDisplay === 'show'){
-    allClick.style.cssText = 'border-bottom: 3px solid #bc9f6e; cursor: default';
-    HTClick.style.cssText = 'border-bottom: unset; cursor: pointer';
-    otherClick.style.cssText = 'border-bottom: unset; cursor: pointer';
+    allClick.style.cssText = 'border-bottom: 3px solid #bc9f6e; cursor: default; color: #bc9f6e';
+    HTClick.style.cssText = 'border-bottom: unset; cursor: pointer; color: black;';
+    otherClick.style.cssText = 'border-bottom: unset; cursor: pointer; color: black;';
     HTDisplay.style.display = 'none';
     otherDisplay.style.display = 'none';
     allDisplay.style.display = 'flex';
@@ -185,9 +185,9 @@ document.addEventListener('DOMContentLoaded',()=>{
     localStorage.setItem('Other', 'hide')
   }
   if(checkHTDisplay === 'show'){
-    HTClick.style.cssText = 'border-bottom: 3px solid #bc9f6e; cursor: default';
-    allClick.style.cssText = 'border-bottom: unset; cursor: pointer';
-    otherClick.style.cssText = 'border-bottom: unset; cursor: pointer';
+    HTClick.style.cssText = 'border-bottom: 3px solid #bc9f6e; cursor: default; color: #bc9f6e';
+    allClick.style.cssText = 'border-bottom: unset; cursor: pointer; color: black;';
+    otherClick.style.cssText = 'border-bottom: unset; cursor: pointer; color: black;';
     allDisplay.style.display = 'none';
     otherDisplay.style.display = 'none';
     HTDisplay.style.display = 'flex';
@@ -202,9 +202,9 @@ document.addEventListener('DOMContentLoaded',()=>{
     localStorage.setItem('Other', 'hide')
   }
   if(checkOtherDisplay === 'show'){
-    otherClick.style.cssText = 'border-bottom: 3px solid #bc9f6e; cursor: default';
-    allClick.style.cssText = 'border-bottom: unset; cursor: pointer';
-    HTClick.style.cssText = 'border-bottom: unset; cursor: pointer';
+    otherClick.style.cssText = 'border-bottom: 3px solid #bc9f6e; cursor: default; color: #bc9f6e';
+    allClick.style.cssText = 'border-bottom: unset; cursor: pointer; color: black;';
+    HTClick.style.cssText = 'border-bottom: unset; cursor: pointer; color: black;';
     HTDisplay.style.display = 'none';
     allDisplay.style.display = 'none';
     otherDisplay.style.display = 'flex'
