@@ -11,6 +11,8 @@ class EventController {
     console.log(listNew);
     res.render("event", {
       title: "Sự Kiện",
+      listEvent,
+      listNew,
     });
   }
 }
