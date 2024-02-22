@@ -99,21 +99,22 @@
   margin: 30px 10px 0 10px;
   padding: 0 30px;
 }
-.container-home .main-home .reason-choose-us .list-card .card span.material-symbols-outlined{
-  color: $primarycolor;
-  font-size: 50px;
-  margin: 0 0 8px 0 ;
-}
+// .container-home .main-home .reason-choose-us .list-card .card span.material-symbols-outlined{
+//   color: $primarycolor;
+//   font-size: 50px;
+//   margin: 0 0 8px 0 ;
+// }
 .container-home .main-home .reason-choose-us .list-card .card img{
   width: 50px;
   height: 50px;
 }
 .container-home .main-home .reason-choose-us .list-card .card span.title{
   font-size: 20px;
-  font-size: 600;
+  font-weight: 600;
   margin: 6px 0;
   text-transform: capitalize;
   height: 24px;
+  padding: unset !important;
 }
 .container-home .main-home .reason-choose-us .list-card .card span.main-info{
   font-size: 16px;
@@ -122,6 +123,7 @@
   text-align: center;
   letter-spacing: 1.2px;
   height: 56px;
+  padding: unset !important;
 }
 .container-home .main-home .about-us{
   display: flex;
@@ -178,8 +180,7 @@
   justify-content: center;
   align-items: center;
   text-decoration: none;
-  width: 20%;
-  height: 60px;
+  padding: 16px 20px;
   border: 1px solid $primarycolor;
   font-weight: 600;
   font-size: 20px;
@@ -251,17 +252,17 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  align-items: center;
+  align-items: start;
   margin: 20px 20px 60px 20px;
-  position: relative;
+
   text-decoration: none;
 }
 .container-home .main-home .best-seller .list-product .product .background-product{
   width: 100%;
-  height: 80%;
-  z-index: -1;
+  height: 440px;
   transition: .5s;
   border-radius: 5px;
+  position: relative;
 }
 .container-home .main-home .best-seller .list-product .hatienpcb40 .background-product{
   background: linear-gradient(to bottom, transparent, rgba(0,0,0,0.3)), url('/img/backgroundpcb40.jpg') center / cover no-repeat;
@@ -277,26 +278,41 @@
   height: 60%;
   transition: 0.5s;
   position: absolute;
-  bottom: 20%;
+  bottom: 5%;
+  left: 50%;
+  transform: translateX(-50%);
   margin: 0 auto;
+  z-index: 2;
+}
+.container-home .main-home .best-seller .list-product .product .background-backup{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  bottom: 0;
+  left: 0;
+  transition: .5s;
 }
 .container-home .main-home .best-seller .list-product .product:hover img{
-  transform: scale(1.1);
+  transform: translateX(-50%) scale(1.1);
   filter: drop-shadow(0 10px 30px rgba(255,255,255,0.8));
 }
-.container-home .main-home .best-seller .list-product .product:hover .background-product{
+.container-home .main-home .best-seller .list-product .product:hover .background-backup{
   filter: blur(5px);
+  background-color: rgba(0, 0, 0,0.6);
 }
 .container-home .main-home .best-seller .list-product .product span{
   font-size: 18px;
-  font-weight: 600;
+  font-weight: 500;
   transition: .5s;
   color: black;
+  width: 100%;
+}
+.container-home .main-home .best-seller .list-product .product span.name-product{
+  text-transform: capitalize;
 }
 .container-home .main-home .best-seller .list-product .product span.visited-product,
 .container-home .main-home .best-seller .see-all{
-  width: 30%;
-  height: 50px;
   font-size: 16px;
   font-weight: 500;
   border: 1px solid $primarycolor;
@@ -306,13 +322,14 @@
   align-items: center;
   text-decoration: none;
   transition: .3s;
-  padding: 8px 0;
+  padding: 10px 16px;
   font-weight: 600;
   position: relative;
   z-index: 8;
   transition: all .5s;
   text-transform: capitalize;
   border-radius: 5px;
+  width: unset;
 }
 .container-home .main-home .best-seller .see-all{
   height: 60px;
@@ -352,11 +369,13 @@
 }
 .container-home .main-home .list-event .container-event{
   display: flex;
+  flex-direction: row;
   justify-content: space-around;
   align-items: center;
   flex-wrap: wrap;
   width: 90%;
   padding: 20px 0;
+  margin: unset;
 }
 .container-home .main-home .list-event .container-event .event{
   width: 30%;
@@ -445,4 +464,248 @@
   overflow: hidden;
   text-overflow: ellipsis;
   height: 100%;
+}
+//responsive macbook
+@media screen and (min-width: 1023px) and (max-width: 1441px){
+  .container-home header{
+    height: 70vh;
+  }
+  .container-home header h1{
+    font-size: 60px;
+  }
+  .container-home header span b{
+    font-size: 46px;
+  }
+  .container-home header p{
+    text-align: center;
+    width: 80%;
+    font-size: 26px;
+  }
+  .container-home .main-home .reason-choose-us{
+    height: 80vh;
+  }
+  .container-home .main-home .reason-choose-us span{
+    text-align: center;
+    font-size: 18px;
+    padding: 0 100px;
+  }
+  .container-home .main-home .reason-choose-us .list-card{
+    flex-wrap: wrap;
+  }
+  .container-home .main-home .reason-choose-us .list-card .card{
+    width: 30%;
+  }
+  // .container-home .main-home .reason-choose-us .list-card .card:nth-child(2) span.title,
+  // .container-home .main-home .reason-choose-us .list-card .card:nth-child(5) span.title {
+  //   height: 46px;
+  // }
+  .container-home .main-home .reason-choose-us .list-card .card:nth-child(2){
+    order: 4;
+  }
+  .container-home .main-home .about-us{
+    height: 100vh;
+  }
+  .container-home .main-home .best-seller .list-product{
+    width: 90%;
+    justify-content: space-around;
+  }
+  .container-home .main-home .best-seller .list-product .product{
+    margin: unset;
+    margin-bottom: 60px;
+  }
+}
+//responsive all devices
+@media screen and (max-width: 1025px){
+  .container-home header{
+    height: 40vh;
+  }
+  .container-home header p{
+    text-align: center;
+    padding: 0 100px;
+  }
+  .container-home .main-home .reason-choose-us{
+    height: 40vh;
+  }
+  .container-home .main-home .reason-choose-us span{
+    text-align: center;
+    font-size: 18px;
+    padding: 0 100px;
+  }
+  .container-home .main-home .reason-choose-us .list-card{
+    flex-wrap: wrap;
+  }
+  .container-home .main-home .reason-choose-us .list-card .card{
+    width: 30%;
+  }
+  .container-home .main-home .reason-choose-us .list-card .card:nth-child(2) span.title,
+  .container-home .main-home .reason-choose-us .list-card .card:nth-child(5) span.title {
+    height: 46px;
+  }
+  .container-home .main-home .reason-choose-us .list-card .card:nth-child(2){
+    order: 4;
+  }
+  .container-home .main-home .about-us{
+    height: 60vh;
+  }
+  .container-home .main-home .best-seller .list-product{
+    width: 90%;
+    justify-content: space-around;
+  }
+  .container-home .main-home .best-seller .list-product .product{
+    margin: unset;
+    margin-bottom: 60px;
+    height: 450px;
+  }
+  .container-home .main-home .best-seller .list-product .product img {
+    height: 65%;
+    width: 75%;
+  }
+  .container-home .main-home .best-seller .list-product .hatienpcb40 img{
+    width: 50%;
+  }
+  .container-home .main-home .best-seller .list-product .product .background-product{
+    height: 350px;
+  }
+  .container-home .main-home .best-seller .list-product .product span.name-product{
+   height: 50px;
+   padding: 4px 0;
+  }
+}
+@media screen and (max-width: 769px) {
+  .container-home{
+    margin-top: unset;
+  }
+  .container-home header{
+    height: 50vh;
+  }
+  .container-home header h1{
+    font-size: 50px;
+  }
+  .container-home header span{
+    font-size: 24px;
+  }
+  .container-home header span b{
+    font-size: 36px;
+  }
+  .container-home header p{
+    font-size: 18px;
+  }
+  .container-home .main-home .reason-choose-us{
+    height: 55vh;
+  }
+  .container-home .main-home .reason-choose-us h1,
+  .container-home .main-home .about-us h1, 
+  .container-home .main-home .best-seller h1, 
+  .container-home .main-home .list-event h1{
+    font-size: 28px;
+  }
+  .container-home .main-home .reason-choose-us span{
+    font-size: 16px;
+  }
+  .container-home .main-home .reason-choose-us .list-card .card img{
+    width: 40px;
+    height: 40px;
+  }
+  .container-home .main-home .reason-choose-us .list-card .card span.title{
+    font-size: 16px;
+  }
+  .container-home .main-home .reason-choose-us .list-card .card span.main-info{
+    font-size: 14px;
+  }
+  .container-home .main-home .about-us .introduce{
+    width: 90%;
+    order: 2;
+    padding: unset;
+  }
+  .container-home .main-home .about-us .img-introduce {
+    width: 90%;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 20px 0;
+    padding: unset;
+    align-items: center;
+  }
+  .container-home .main-home .about-us{
+    height: unset;
+    flex-direction: row;
+  }
+  .container-home .main-home .about-us .img-introduce .img-2{
+    width: 47%;
+    height: 250px;
+  }
+  .container-home .main-home .about-us .img-introduce .img-1{
+    position: unset;
+    width: 47%;
+    height: 250px;
+  }
+  .container-home .main-home .best-seller .list-product .product{
+    width: 32%;
+    height: 400px;
+  }
+  .container-home .main-home .best-seller .list-product .product .background-product{
+    height: 300px;
+  }
+  .container-home .main-home .best-seller .list-product .product img{
+    height: 60%;
+    width: 76%;
+  }
+  .container-home .main-home .best-seller .list-product .hatienpcb40 img{
+    width: 54%;
+  }
+  .container-home .main-home .best-seller .list-product .product span,
+  .container-home .main-home .best-seller .list-product .product span.visited-product {
+    font-size: 14px;
+  }
+  .container-home .main-home .best-seller .see-all{
+    font-size: 20px;
+  }
+  .container-home .main-home .list-event .container-event{
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  .container-home .main-home .list-event .container-event .event{
+    width: 47%;
+  }
+  .container-home .main-home .list-event .container-event .event .title{
+    height: 30%;
+  }
+  .container-home .main-home .list-event .container-event .event:nth-child(1){
+    width: 100%;
+    margin-bottom: 20px;
+  }
+}
+@media screen and (max-width: 601px) {
+  // .container-home .main-home .reason-choose-us {
+  //   height: 65vh;
+  // }
+  .container-home .main-home .reason-choose-us .list-card .card{
+    padding: 0px 12px;
+  }
+  .container-home .main-home .reason-choose-us .list-card .card:nth-child(2),
+  .container-home .main-home .reason-choose-us .list-card .card:nth-child(5){
+    width: 45%;
+  }
+  .container-home .main-home .reason-choose-us h1, 
+  .container-home .main-home .about-us h1, 
+  .container-home .main-home .best-seller h1, 
+  .container-home .main-home .list-event h1{
+    font-size: 26px;
+  }
+  .container-home .main-home .reason-choose-us span{
+    font-size: 14px;
+    padding: 0 50px;
+    margin: 10px 0;
+  }
+  .container-home .main-home .reason-choose-us .list-card .card span.title{
+    font-size: 14px;
+    font-weight: 500;
+    height: unset;
+  }
+  .container-home .main-home .reason-choose-us .list-card .card:nth-child(2) span.title,
+  .container-home .main-home .reason-choose-us .list-card .card:nth-child(5) span.title{
+    height: unset;
+  }
+  .container-home .main-home .reason-choose-us .list-card .card span.main-info{
+    font-size: 12px;
+  }
 }

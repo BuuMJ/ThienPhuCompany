@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" type="image/png" href="/img/companyTP.png" sizes="228×228"/>
+    <link rel="shortcut icon" type="image/png" href="/img/companyTP.png" sizes="32×32"/>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -31,18 +31,40 @@
 </body>
 <script>
   const navbar = document.querySelector('.navbar');
+  const navbarResponsive = document.querySelector('.navbar-responsive');
   window.addEventListener('scroll', scrollNavbar)
   function scrollNavbar(){
-      if(window.scrollY > 110){
+      if(navbar){
+        if(window.scrollY > 110){
         navbar.style.cssText = 'background-color: rgba(255,255,255,0.9); box-shadow: 1px 1px 10px rgba(0,0,0,.15);';
-      }else{
-        navbar.style.cssText = 'background-color: white; box-shadow: unset';
+        }else{
+          navbar.style.cssText = 'background-color: white; box-shadow: unset';
+        }
+      }
+      if(navbarResponsive){
+        if(window.scrollY > 110){
+        navbarResponsive.style.cssText = 'background-color: rgba(255,255,255,0.9);';
+        }else{
+          navbarResponsive.style.cssText = 'background-color: white;';
+        }
       }
   }
   const links = document.querySelectorAll('.navbar .navbar-inner .link');
+  const linksResponsive = document.querySelectorAll('.navbar-responsive .link');
   links.forEach(link=>{
     link.addEventListener('click',(e)=>{
       if(link.classList.contains('touched')){
+         e.preventDefault();
+      }else{
+        const href = link.getAttribute('data-href')
+        localStorage.setItem('link',href)
+      }
+    })
+  })
+  //responsive navbar
+  linksResponsive.forEach(link=>{
+    link.addEventListener('click',(e)=>{
+      if(link.classList.contains('touched-responsive')){
          e.preventDefault();
       }else{
         const href = link.getAttribute('data-href')
@@ -61,6 +83,7 @@
     localStorage.setItem('link', currentURL)
     const currentPage = localStorage.getItem('link');
     if(currentPage !== null){
+      if(navbar){
       links.forEach(link=>{
         const href = link.getAttribute('data-href');
         if (href === currentPage){
@@ -69,6 +92,18 @@
           link.classList.remove('touched')
         }
       })
+      }
+      //responsive navbar
+      if(navbarResponsive){
+        linksResponsive.forEach(link=>{
+          const href = link.getAttribute('data-href');
+          if (href === currentPage){
+            link.classList.add('touched-responsive')
+          }else{
+            link.classList.remove('touched-responsive')
+          }
+        })
+      }
     }
   })
 </script>
