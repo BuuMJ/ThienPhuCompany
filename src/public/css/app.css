@@ -1581,7 +1581,7 @@
   width: unset; }
 
 .container-home .main-home .best-seller .see-all {
-  height: 60px;
+  padding: 14px 20px;
   font-size: 22px;
   font-weight: 600; }
 
@@ -1788,10 +1788,8 @@
     padding: 4px 0; } }
 
 @media screen and (max-width: 769px) {
-  .container-home {
-    margin-top: unset; }
   .container-home header {
-    height: 50vh; }
+    height: 40vh; }
   .container-home header h1 {
     font-size: 50px; }
   .container-home header span {
@@ -1864,6 +1862,8 @@
     margin-bottom: 20px; } }
 
 @media screen and (max-width: 601px) {
+  .container-home {
+    margin-top: unset; }
   .container-home .main-home .reason-choose-us .list-card .card {
     padding: 0px 12px; }
   .container-home .main-home .reason-choose-us .list-card .card:nth-child(2),
@@ -1886,7 +1886,91 @@
   .container-home .main-home .reason-choose-us .list-card .card:nth-child(5) span.title {
     height: unset; }
   .container-home .main-home .reason-choose-us .list-card .card span.main-info {
-    font-size: 12px; } }
+    font-size: 12px; }
+  .container-home .main-home .about-us .introduce span {
+    font-size: 16px; } }
+
+@media screen and (max-width: 415px) {
+  .container-home header h1 {
+    font-size: 30px; }
+  .container-home header span {
+    font-size: 20px; }
+  .container-home header span b {
+    font-size: 28px; }
+  .container-home header p {
+    font-size: 16px;
+    padding: 0 30px; }
+  .container-home .main-home .reason-choose-us {
+    height: unset;
+    padding: 20px 0; }
+  .container-home .main-home .reason-choose-us h1,
+  .container-home .main-home .about-us h1,
+  .container-home .main-home .best-seller h1,
+  .container-home .main-home .list-event h1 {
+    font-size: 20px; }
+  .container-home .main-home .reason-choose-us span {
+    font-size: 12px;
+    padding: 0 30px; }
+  .container-home .main-home .reason-choose-us .list-card .card {
+    width: 90%;
+    margin: 14px 0 0 0; }
+  .container-home .main-home .reason-choose-us .list-card .card span.title {
+    font-size: 14px; }
+  .container-home .main-home .reason-choose-us .list-card .card span.main-info {
+    font-size: 10px; }
+  .container-home .main-home .reason-choose-us .list-card .card:nth-child(2), .container-home .main-home .reason-choose-us .list-card .card:nth-child(5) {
+    width: 90%; }
+  .container-home .main-home .reason-choose-us .list-card .card span.main-info {
+    height: unset; }
+  .container-home .main-home .about-us .img-introduce {
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center; }
+  .container-home .main-home .about-us .img-introduce .img-2,
+  .container-home .main-home .about-us .img-introduce .img-1 {
+    width: 100%;
+    height: 200px; }
+  .container-home .main-home .about-us .img-introduce .img-2 {
+    margin-bottom: 40px; }
+  .container-home .main-home .about-us .introduce span {
+    font-size: 14px;
+    margin: 14px 0; }
+  .container-home .main-home .about-us .introduce .read-more {
+    font-size: 14px;
+    padding: 12px 14px; }
+  .container-home .main-home .best-seller .list-product {
+    flex-wrap: wrap; }
+  .container-home .main-home .best-seller .list-product .product {
+    width: 90%;
+    align-items: center;
+    margin-bottom: 40px; }
+  .container-home .main-home .best-seller .list-product .product span.name-product {
+    height: unset;
+    text-align: center; }
+  .container-home .main-home .best-seller .list-product .product img {
+    width: 60%; }
+  .container-home .main-home .best-seller .list-product .hatienpcb40 img {
+    width: 40%; }
+  .container-home .main-home .best-seller .see-all {
+    font-size: 16px; }
+  .container-home .main-home .list-event .container-event .event {
+    width: 100%;
+    margin-bottom: 20px; }
+  .container-home .main-home .list-event .container-event .event .title {
+    height: unset; } }
+
+@media screen and (max-width: 321px) {
+  .container-home header h1 {
+    font-size: 26px; }
+  .container-home header span {
+    font-size: 16px; }
+  .container-home header span b {
+    font-size: 24px; }
+  .container-home header p {
+    font-size: 14px;
+    padding: 0 15px; }
+  .container-home .main-home .reason-choose-us span {
+    padding: 0 15px; } }
 
 .navbar {
   display: flex;
