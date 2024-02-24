@@ -224,8 +224,17 @@
 </div>
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 <script>
+    var slidesPerViewRP;
+    if(innerWidth > 769){
+        slidesPerViewRP = 3;
+    }
+    else if(innerWidth > 415 && innerWidth <= 769){
+        slidesPerViewRP = 2;
+    }else if(innerWidth <= 415){
+        slidesPerViewRP = 1;
+    }
     var swiper = new Swiper(".mySwiper", {
-      slidesPerView: 3,
+      slidesPerView: slidesPerViewRP,
       spaceBetween: 30,
       pagination: {
         el: ".swiper-pagination",
