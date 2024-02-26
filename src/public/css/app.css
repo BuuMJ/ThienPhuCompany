@@ -33,8 +33,9 @@
   justify-content: center;
   align-items: center;
   width: 100%;
-  height: 426px;
-  background: linear-gradient(to left, #bc9f6e33, #0080FF33), url("/img/header-product.jpg") bottom/cover no-repeat; }
+  height: 50vh;
+  background: linear-gradient(to left, #bc9f6e33, #0080FF33), url("/img/header-product.jpg") bottom/cover no-repeat;
+  margin-bottom: 50px; }
 
 .container-product header span {
   font-size: 50px;
@@ -98,7 +99,6 @@
 .container-product .main-product .hatien-product .product,
 .container-product .main-product .other-product .product {
   width: 30%;
-  height: 550px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -107,16 +107,27 @@
   position: relative;
   text-decoration: none;
   border-radius: 5px;
-  overflow: hidden; }
+  overflow: hidden;
+  background-color: white;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  padding-bottom: 20px; }
 
 .container-product .main-product .all-product .product .background-product,
 .container-product .main-product .hatien-product .product .background-product,
 .container-product .main-product .other-product .product .background-product {
   width: 100%;
-  height: 80%;
-  z-index: -1;
-  transition: .5s;
-  border-radius: 5px; }
+  height: 380px;
+  position: relative;
+  transition: .5s; }
+
+.container-product .main-product .all-product .product .background-product .background-backup {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  bottom: 0;
+  left: 0;
+  transition: .5s; }
 
 .container-product .main-product .all-product .hatienpcb40 .background-product,
 .container-product .main-product .hatien-product .hatienpcb40 .background-product {
@@ -138,42 +149,81 @@
 .container-product .main-product .other-product .longthanhpcb40 .background-product {
   background: linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.3)), url("/img/backgroundlongthanhpcb40.jpg") center/cover no-repeat; }
 
-.container-product .main-product .all-product .product img,
-.container-product .main-product .hatien-product .product img,
-.container-product .main-product .other-product .product img {
-  width: 70%;
-  height: 60%;
+.container-product .main-product .all-product .product img {
   transition: 0.5s;
   position: absolute;
-  bottom: 20%;
-  margin: 0 auto; }
+  bottom: 2%;
+  left: 50%;
+  transform: translateX(-50%);
+  margin: 0 auto;
+  z-index: 2;
+  width: 45%;
+  height: 85%; }
+
+.container-product .main-product .all-product .product:hover img {
+  transform: translateX(-50%) scale(1.1);
+  filter: drop-shadow(0 10px 30px rgba(255, 255, 255, 0.8)); }
+
+.container-product .main-product .all-product .product:hover .background-backup {
+  filter: blur(5px);
+  background-color: rgba(0, 0, 0, 0.6); }
 
 .container-product .main-product .all-product .product .name-product,
 .container-product .main-product .hatien-product .product .name-product,
 .container-product .main-product .other-product .product .name-product {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   font-size: 20px;
   font-weight: 600;
   color: black;
-  text-transform: capitalize; }
+  text-transform: capitalize;
+  background-color: #555c66;
+  color: white;
+  width: 100%;
+  height: 80px;
+  padding: 0 40px;
+  text-align: center;
+  z-index: 3; }
 
-.container-product .main-product .all-product .dadungpcb40 img,
-.container-product .main-product .hatien-product .dadungpcb40 img {
-  bottom: 19%; }
+.container-product .main-product .all-product .product:nth-child(2) .name-product {
+  background-color: #bc9f6e; }
 
-.container-product .main-product .all-product .hatienpcb40 img,
-.container-product .main-product .hatien-product .hatienpcb40 img {
-  width: 50%; }
+.container-product .main-product .all-product .product span.price-product {
+  padding: 30px 0 20px 0;
+  font-size: 18px;
+  color: black; }
 
-.container-product .main-product .all-product .product:hover img,
-.container-product .main-product .hatien-product .product:hover img,
-.container-product .main-product .other-product .product:hover img {
-  transform: scale(1.1);
-  filter: drop-shadow(0 10px 30px rgba(255, 255, 255, 0.8)); }
+.container-product .main-product .all-product .product:hover span.price-product b {
+  text-decoration: underline; }
 
-.container-product .main-product .all-product .product:hover .background-product,
-.container-product .main-product .hatien-product .product:hover .background-product,
-.container-product .main-product .other-product .product:hover .background-product {
-  filter: blur(5px); }
+.container-product .main-product .all-product .product ul {
+  width: 100%;
+  padding: 0 0 30px 25%; }
+
+.container-product .main-product .all-product .product ul li {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  width: 100%;
+  padding: 6px 0;
+  font-size: 16px;
+  text-transform: capitalize;
+  color: black;
+  list-style-type: none; }
+
+.container-product .main-product .all-product .product ul li .icon-advantage {
+  margin-right: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 18px;
+  height: 18px; }
+
+.container-product .main-product .all-product .product ul li .icon-advantage svg {
+  width: 100%;
+  height: 100%; }
 
 .container-product .main-product .all-product .product span.visited-product,
 .container-product .main-product .hatien-product .product span.visited-product,
@@ -196,9 +246,7 @@
   text-transform: capitalize;
   border-radius: 5px; }
 
-.container-product .main-product .all-product .product span.visited-product:hover,
-.container-product .main-product .hatien-product .product span.visited-product:hover,
-.container-product .main-product .other-product .product span.visited-product:hover {
+.container-product .main-product .all-product .product:hover span.visited-product {
   color: white; }
 
 .container-product .main-product .all-product .product span.visited-product::after,
@@ -213,9 +261,7 @@
   background-color: #bc9f6e;
   transition: all .5s; }
 
-.container-product .main-product .all-product .product span.visited-product:hover::after,
-.container-product .main-product .hatien-product .product span.visited-product:hover::after,
-.container-product .main-product .other-product .product span.visited-product:hover::after {
+.container-product .main-product .all-product .product:hover span.visited-product::after {
   width: 100%; }
 
 .dots-container {
@@ -301,10 +347,19 @@
   position: relative; }
 
 .container-pcb40 .main-pcb40 .header-pcb40 .card-pcb40 .background {
-  z-index: -1;
   width: 100%;
   height: 100%;
   background: linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.3)), url("/img/backgroundpcb40.jpg") bottom/cover no-repeat;
+  transition: .5s;
+  position: relative; }
+
+.container-pcb40 .main-pcb40 .header-pcb40 .card-pcb40 .background .background-backup {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  bottom: 0;
+  left: 0;
   transition: .5s; }
 
 .container-pcb40 .main-pcb40 .header-pcb40 .card-pcb40ms .background {
@@ -320,26 +375,21 @@
   background: linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.3)), url("/img/backgroundlongthanhpcb40.jpg") bottom/cover no-repeat; }
 
 .container-pcb40 .main-pcb40 .header-pcb40 .card-pcb40 img {
-  width: 60%;
-  height: 100%;
+  transition: 0.5s;
   position: absolute;
   bottom: -16%;
+  left: 50%;
+  transform: translateX(-50%);
   margin: 0 auto;
-  transition: .5s; }
+  z-index: 2; }
 
-.container-pcb40 .main-pcb40 .header-pcb40 .card-pcb40ms img,
-.container-pcb40 .main-pcb40 .header-pcb40 .card-dadung img,
-.container-pcb40 .main-pcb40 .header-pcb40 .card-scg img,
-.container-pcb40 .main-pcb40 .header-pcb40 .card-longthanh img {
-  width: 80%;
-  height: 90%; }
-
-.container-pcb40 .main-pcb40 .header-pcb40 .card-pcb40:hover .background {
-  filter: blur(10px); }
+.container-pcb40 .main-pcb40 .header-pcb40 .card-pcb40:hover .background-backup {
+  filter: blur(5px);
+  background-color: rgba(0, 0, 0, 0.6); }
 
 .container-pcb40 .main-pcb40 .header-pcb40 .card-pcb40:hover img {
-  transform: scale(1.1);
-  filter: drop-shadow(0 10px 15px rgba(255, 255, 255, 0.8)); }
+  transform: translateX(-50%) scale(1.1);
+  filter: drop-shadow(0 10px 30px rgba(255, 255, 255, 0.8)); }
 
 .container-pcb40 .main-pcb40 .header-pcb40 .info-pcb40 {
   display: flex;
