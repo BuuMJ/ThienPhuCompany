@@ -727,6 +727,18 @@
   font-size: 20px;
   font-weight: 600; }
 
+.container-login .box-login .right-box .login-info .show-password {
+  font-size: 30px;
+  position: absolute;
+  right: 30px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #9294a0; }
+
 .container-login .box-login .right-box .username input:focus ~ label.animation-label__username,
 .container-login .box-login .right-box .password input:focus ~ label.animation-label__password,
 .container-login .box-login .right-box .username input:valid ~ label.animation-label__username,
