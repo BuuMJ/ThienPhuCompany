@@ -83,7 +83,7 @@
 .container-product .main-product .other-product {
   display: flex;
   flex-direction: row;
-  justify-content: start;
+  justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
   width: 80%; }
@@ -103,7 +103,7 @@
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  margin: 20px 20px 60px 20px;
+  margin: 20px 0;
   position: relative;
   text-decoration: none;
   border-radius: 5px;
@@ -149,6 +149,9 @@
 .container-product .main-product .other-product .longthanhpcb40 .background-product {
   background: linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.3)), url("/img/backgroundlongthanhpcb40.jpg") center/cover no-repeat; }
 
+.container-product .main-product .all-product .power-cement .background-product {
+  background: linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.3)), url("/img/backgroundpower.png") center/cover no-repeat; }
+
 .container-product .main-product .all-product .product img {
   transition: 0.5s;
   position: absolute;
@@ -159,6 +162,11 @@
   z-index: 2;
   width: 45%;
   height: 85%; }
+
+.container-product .main-product .all-product .power-cement img {
+  bottom: -34%;
+  width: 80%;
+  height: 145%; }
 
 .container-product .main-product .all-product .product:hover img {
   transform: translateX(-50%) scale(1.1);
@@ -186,7 +194,7 @@
   text-align: center;
   z-index: 3; }
 
-.container-product .main-product .all-product .product:nth-child(2) .name-product {
+.container-product .main-product .all-product .product:nth-child(3n+2) .name-product {
   background-color: #bc9f6e; }
 
 .container-product .main-product .all-product .product span.price-product {
@@ -297,21 +305,22 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 100%; }
+  width: 100%;
+  margin-top: 110px; }
 
 .container-pcb40 header {
   display: flex;
   justify-content: center;
   align-items: center;
   width: 100%;
-  height: 426px;
+  height: 40vh;
   background: linear-gradient(to left, #bc9f6e33, #0080FF33), url("/img/header-pcb40.jpg") bottom/cover no-repeat; }
 
 .container-pcb40 header span {
   font-size: 50px;
   color: white;
   font-weight: 600;
-  transform: translateY(50%); }
+  text-transform: uppercase; }
 
 .container-pcb40 header span .backproductpage {
   color: white;
@@ -374,6 +383,9 @@
 .container-pcb40 .main-pcb40 .header-pcb40 .card-longthanh .background {
   background: linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.3)), url("/img/backgroundlongthanhpcb40.jpg") bottom/cover no-repeat; }
 
+.container-pcb40 .main-pcb40 .header-pcb40 .card-powercement .background {
+  background: linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.3)), url("/img/backgroundpower.png") center/cover no-repeat; }
+
 .container-pcb40 .main-pcb40 .header-pcb40 .card-pcb40 img {
   transition: 0.5s;
   position: absolute;
@@ -382,6 +394,11 @@
   transform: translateX(-50%);
   margin: 0 auto;
   z-index: 2; }
+
+.container-pcb40 .main-pcb40 .header-pcb40 .card-powercement img {
+  bottom: -50%;
+  width: 380px;
+  height: 580px; }
 
 .container-pcb40 .main-pcb40 .header-pcb40 .card-pcb40:hover .background-backup {
   filter: blur(5px);
@@ -405,7 +422,14 @@
 .container-pcb40 .main-pcb40 .header-pcb40 .info-pcb40 .name-pcb40 {
   font-size: 24px;
   font-weight: 600;
-  letter-spacing: 1.2px; }
+  letter-spacing: 1.2px;
+  text-transform: uppercase; }
+
+.container-pcb40 .main-pcb40 .header-pcb40 .info-pcb40 .title-description {
+  font-size: 20px;
+  letter-spacing: 1.2px;
+  margin-top: 4px;
+  text-transform: uppercase; }
 
 .container-pcb40 .main-pcb40 .header-pcb40 .info-pcb40 .description {
   font-size: 18px;
@@ -531,6 +555,226 @@
 .container-pcb40 .main-pcb40 .detail-pcb40 .standard-scg img {
   width: 100%;
   height: 800px; }
+
+.container-pcb40 .main-pcb40 .detail-pcb40 .standard-power img {
+  width: 100%;
+  height: unset; }
+
+.container-login {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  min-height: 100vh;
+  position: relative; }
+
+.container-login .background-inside {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url("/img/bginside.jpg") center/cover no-repeat;
+  z-index: 1; }
+
+.container-login .background-inside .back-drop {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.1);
+  -webkit-backdrop-filter: blur(50px);
+  backdrop-filter: blur(50px); }
+
+.container-login .box-login {
+  z-index: 2;
+  width: 70%;
+  height: 70vh;
+  background-color: white;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+  overflow: hidden; }
+
+.container-login .box-login .left-box {
+  width: 35%;
+  height: 100%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center; }
+
+.container-login .box-login .left-box .background-inside__left {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  background: url("/img/bginsidelogin.jpg") center/cover no-repeat; }
+
+.container-login .box-login .left-box .background-inside__left .back-drop__left {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(188, 159, 110, 0.95); }
+
+.container-login .box-login .left-box .top-left {
+  width: 100%;
+  height: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: start;
+  z-index: 2;
+  color: white;
+  padding: 80px 40px 0 50px; }
+
+.container-login .box-login .left-box .top-left h1 {
+  letter-spacing: 1.2px;
+  word-spacing: 2px;
+  margin-bottom: 50px; }
+
+.container-login .box-login .left-box .top-left p {
+  letter-spacing: 1.2px;
+  font-size: 20px;
+  line-height: 36px;
+  text-align: justify; }
+
+.container-login .box-login .left-box .bottom-left {
+  width: 100%;
+  height: 50%;
+  display: flex;
+  justify-content: start;
+  align-items: end;
+  z-index: 2;
+  padding: 0 40px 80px 50px; }
+
+.container-login .box-login .left-box .bottom-left img {
+  width: 95%;
+  height: 60px; }
+
+.container-login .box-login .right-box {
+  width: 65%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: start;
+  padding: 80px 60px; }
+
+.container-login .box-login .right-box .primary-right {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; }
+
+.container-login .box-login .right-box .primary-right img {
+  width: 60%;
+  height: 80px;
+  margin-bottom: 12px; }
+
+.container-login .box-login .right-box .primary-right p {
+  font-size: 18px;
+  font-weight: 500;
+  width: 70%;
+  text-align: center;
+  line-height: 30px;
+  padding: 6px 12px; }
+
+.container-login .box-login .right-box .login-info {
+  width: 100%;
+  height: 60px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: start;
+  position: relative;
+  border-radius: 2px;
+  background-color: #dbdbdb; }
+
+.container-login .box-login .right-box .login-info label {
+  font-size: 20px;
+  font-weight: 600;
+  position: absolute;
+  color: #9294a0;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  letter-spacing: 1.2px; }
+
+.container-login .box-login .right-box .login-info label.animation-label {
+  left: 60px;
+  transition: .3s; }
+
+.container-login .box-login .right-box .login-info svg {
+  width: 30px;
+  height: 30px;
+  fill: #9294a0;
+  transition: .3s; }
+
+.container-login .box-login .right-box .login-info input {
+  width: 100%;
+  height: 100%;
+  outline: none;
+  border: none;
+  background: unset;
+  padding: 6px 60px;
+  font-size: 20px;
+  font-weight: 600; }
+
+.container-login .box-login .right-box .username input:focus ~ label.animation-label__username,
+.container-login .box-login .right-box .password input:focus ~ label.animation-label__password,
+.container-login .box-login .right-box .username input:valid ~ label.animation-label__username,
+.container-login .box-login .right-box .password input:valid ~ label.animation-label__password {
+  top: 0;
+  transform: translateY(-100%);
+  color: #bc9f6e;
+  font-size: 18px; }
+
+.container-login .box-login .right-box .username input:focus ~ label.icon-login__username svg,
+.container-login .box-login .right-box .password input:focus ~ label.icon-login__password svg,
+.container-login .box-login .right-box .username input:valid ~ label.icon-login__username svg,
+.container-login .box-login .right-box .password input:valid ~ label.icon-login__password svg {
+  fill: #bc9f6e; }
+
+.container-login .box-login .submit-login {
+  align-self: center;
+  border-radius: 2px;
+  outline: none;
+  border: none;
+  padding: 20px 40px;
+  font-size: 20px;
+  font-weight: 600;
+  background-color: #bc9f6e;
+  color: white; }
+
+.container-login .box-login .submit-login:hover {
+  background-color: #bba887;
+  cursor: pointer; }
+
+.container-login .box-login .support-login {
+  width: 100%;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+
+.container-login .box-login .support-login {
+  font-size: 18px; }
+
+.container-login .box-login .support-login a {
+  font-weight: 600;
+  color: #bc9f6e;
+  text-decoration: none; }
+
+.container-login .box-login .support-login a:hover {
+  color: #004d61;
+  text-decoration: underline; }
 
 .container-contact {
   display: flex;

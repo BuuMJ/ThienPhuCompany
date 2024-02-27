@@ -20,7 +20,9 @@
 </head>
 <body>
     <div class="app">
-        {{> header}}
+        <div class="header-app">
+          {{> header}}
+        </div>
 
         {{{body}}}  
 
@@ -86,7 +88,7 @@
       if(navbar){
       links.forEach(link=>{
         const href = link.getAttribute('data-href');
-        if (href === currentPage){
+        if (href === currentPage || currentPage.includes('product') && href.includes('product')){
           link.classList.add('touched')
         }else{
           link.classList.remove('touched')
@@ -97,7 +99,7 @@
       if(navbarResponsive){
         linksResponsive.forEach(link=>{
           const href = link.getAttribute('data-href');
-          if (href === currentPage){
+          if (href === currentPage || currentPage.includes('product') && href.includes('product')){
             link.classList.add('touched-responsive')
           }else{
             link.classList.remove('touched-responsive')

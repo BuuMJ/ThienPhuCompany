@@ -10,6 +10,7 @@ router.get(
 );
 router.get("/xi-mang-long-thanh-pcb40", productController.longthanhpcb40);
 router.get("/scg-super-xi-mang", productController.scg);
+router.get("/power-cement", productController.powercement);
 router.get("/", productController.list);
 
 module.exports = router;

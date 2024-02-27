@@ -34,6 +34,12 @@ class ProductController {
       title: " Xi măng Long Thành PCB40",
     });
   }
+
+  powercement(req, res, next) {
+    res.render("powercement", {
+      title: " Power Cement",
+    });
+  }
 }
 
 module.exports = new ProductController();

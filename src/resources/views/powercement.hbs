@@ -1,0 +1,77 @@
+<div class="container-pcb40">
+    <header>
+        <span><a class="backproductpage" href="/product">SẢN PHẨM</a> / POWER CEMENT</span>
+    </header>
+    <div class="main-pcb40">
+        <div class="header-pcb40">
+            <div class="card-pcb40 card-powercement">
+                <div class="background">
+                  <div class="background-backup"></div>
+                  <img src="/img/power-cement.png" alt="">
+                </div>
+            </div>
+            <div class="info-pcb40">
+                <span class="name-pcb40">Power Cement</span>
+                <span class="title-description"><b>CÔNG TRÌNH BỀN VỮNG TRONG MÔI TRƯỜNG KHẮC NGHIỆT</b></span>
+                <span class="description">Power Cement tăng khả năng cho công trình đối phó với các hiện tượng thời tiết cực đoan, không chỉ đem lại độ đặc chắc cho bê tông mà còn tạo ra lớp bảo vệ mạnh mẽ chống lại các tác động của môi trường khác nghiệt</span>
+                <div class="contact-pcb40">
+                    <span class="box-contact-us"><a class="contact-us" href="/contact">LIÊN HỆ VỚI CHÚNG TÔI</a></span>
+                    <a href="tel:02583875686" class="hotline">
+                        <span class="material-symbols-outlined">
+                        phone_in_talk
+                        </span>
+                        <span>0258 3 875 686</span>
+                    </a>
+                    <a href="tel:02583875303" class="hotline">
+                        <span class="material-symbols-outlined">
+                        phone_in_talk
+                        </span>
+                        <span>0258 3 875 303</span>
+                    </a>
+                    <a href="tel:02583875163" class="hotline">
+                        <span class="material-symbols-outlined">
+                        phone_in_talk
+                        </span>
+                        <span>0258 3 875 163</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="detail-pcb40">
+            <span class="primary-title">THÔNG TIN SẢN PHẨM</span>
+            <div class="application">
+                <span class="title">ỨNG DỤNG</span>
+                <span class="application-content">Đầu tháng 10-2023, sau thời gian nỗ lực nghiên cứu và sản xuất, Vicem Hà Tiên đã chính thức cho ra mắt thị trường sản phẩm xi măng POWER PCB40, một nhãn hiệu hoàn toàn mới hướng tới tương lai. </span>
+                <span class="application-content">Đây là một giải pháp tối ưu cho mọi công trình xây dựng tại thời điểm hiện tại. Khi mà sản phẩm mới ra mắt đã đáp ứng được những tiêu chí chất lượng quan trọng và vượt trội hơn so với các sản phẩm đã và đang sử dụng trên thị trường, và giá cả phù hợp với đa số người dân. Việc cho ra mắt sản phẩm mới với thương hiệu mới mang tính đột phá đã khẳng định tầm nhìn chiến lược trong tương lai.</span>
+            </div>
+            <div class="addvantage">
+                <span class="title">ƯU ĐIỂM</span>
+                <ul>
+                    <li>Chất lượng vượt trội: Power Cement đáp ứng tiêu chuẩn chất lượng xi măng poóc-lăng hỗn hợp TCVN 6260-2020 - PCB40. Hạt xi măng siêu mịn phân tán làm tăng độ đặc chắc trong cấu trúc bê tông và tạo ra vữa dẻo, bám dính cao</li>
+                    <li>Tạo Lớp bảo Vệ Vững Chắc: Được kết hợp từ những nguồn nguyên liệu chọn lọc với gốc clin-ker giàu hàm lượng khoáng tricanxi - silicat, Power Cement giúp tạo lớp bảo vệ mạnh mẽ và bền bỉ cho công trình xây dựng.</li>
+                </ul>
+            </div>
+            <div class="pack">
+                <span class="title">ĐÓNG GÓI THÀNH PHẨM</span>
+                <span class="pack-content">Bao 50kg</span>
+            </div>
+            <div class="standard standard-power">
+                <span class="title">TIÊU CHUẨN</span>
+                {{!-- <span class="standard-content">Xi măng Vicem Hà Tiên PCB40 được sản xuất theo Tiêu chuẩn Việt Nam TCVN 6260 : 2009 có các chỉ tiêu cơ lý và thành phần hóa như sau:</span>
+                <span class="title-standard-img">TCVN 6260 : 2009 (PCB40)</span> --}}
+                <img src="/img/standard-powercement.jpg" alt="">
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    var backProductPage = document.querySelector('.backproductpage');
+        backProductPage.addEventListener('click',()=>{
+            localStorage.setItem('touchedLink', '/product')
+        });
+    var goContactPage = document.querySelector('.contact-us');
+        goContactPage.addEventListener('click', () => {
+        localStorage.setItem('touchedLink', '/contact');
+    });
+    localStorage.clear()
+</script>
