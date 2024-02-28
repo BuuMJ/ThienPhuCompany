@@ -42,6 +42,7 @@
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
+    padding: 80px 40px 80px 50px;
 }
 .container-login .box-login .left-box .background-inside__left{
     position: absolute;
@@ -66,7 +67,6 @@
     align-items: start;
     z-index: 2;
     color: white;
-    padding: 80px 40px 0 50px;
 }
 .container-login .box-login .left-box .top-left h1{
     letter-spacing: 1.2px;
@@ -86,11 +86,10 @@
     justify-content: start;
     align-items: end;
     z-index: 2;
-    padding: 0 40px 80px 50px;
 }
 .container-login .box-login .left-box .bottom-left img{
-    width: 95%;
-    height: 60px;
+    width: 100%;
+    height: 65px;
 }
 .container-login .box-login .right-box{
     width: 65%;
@@ -228,4 +227,279 @@
 .container-login .box-login .support-login a:hover{
     color: $linecolor;
     text-decoration: underline;
+}
+@media screen and (max-width: 1025px) {
+    .container-login .box-login{
+        width: 90%;
+        height: 50vh;
+    }
+    .container-login .box-login .left-box{
+        width: 40%;
+    }
+    .container-login .box-login .right-box{
+        width: 60%;
+    }
+    .container-login .box-login .left-box .top-left h1{
+        font-size: 36px;
+        line-height: 56px;
+    }
+    .container-login .box-login .left-box .top-left p{
+        font-size: 18px;
+    }
+    .container-login .box-login .left-box .bottom-left img{
+        height: 55px;
+    }
+    .container-login .box-login .right-box .primary-right img{
+        width: 70%;
+        height: 74px;
+    }
+    .container-login .box-login .right-box .primary-right p{
+        font-size: 16px;
+    }
+    .container-login .box-login .right-box .primary-right p{
+        padding: 6px 0;
+        width: 80%;
+    }
+    .container-login .box-login .right-box .login-info svg{
+        width: 26px;
+        height: 26px;
+    }
+    .container-login .box-login .right-box .login-info label.animation-label{
+        font-size: 18px;
+    }
+    .container-login .box-login .right-box .login-info .show-password{
+        font-size: 26px;
+    }   
+}
+@media screen and (max-width: 769px) {
+    .container-login .box-login{
+        height: 60vh;
+    }
+    .container-login .box-login .left-box{
+        padding: 60px 30px 60px 40px;
+    }
+    .container-login .box-login .left-box .top-left h1{
+        font-size: 28px;
+        line-height: 48px;
+    }
+    .container-login .box-login .left-box .top-left p{
+        font-size: 16px;
+        letter-spacing: normal;
+    }
+    .container-login .box-login .right-box{
+        padding: 60px 40px;
+    }
+    .container-login .box-login .right-box .primary-right img{
+        width: 90%;
+        height: 70px;
+    }
+    .container-login .box-login .right-box .primary-right p{
+        width: 100%;
+    }
+    .container-login .box-login .right-box .login-info{
+        height: 50px;
+    }
+    .container-login .box-login .right-box .login-info input{
+        font-size: 16px;
+    }
+    .container-login .box-login .right-box .login-info label.animation-label {
+        font-size: 16px;
+    }
+    .container-login .box-login .right-box .username input:focus ~ label.animation-label__username, .container-login .box-login .right-box .password input:focus ~ label.animation-label__password, .container-login .box-login .right-box .username input:valid ~ label.animation-label__username, .container-login .box-login .right-box .password input:valid ~ label.animation-label__password{
+        font-size: 14px;
+    }
+    .container-login .box-login .right-box .login-info svg{
+        width: 22px;
+        height: 22px;
+    }
+    .container-login .box-login .right-box .login-info .show-password{
+        font-size: 22px;
+    }
+    .container-login .box-login .submit-login {
+        font-size: 18px;
+        padding: 16px 32px;
+    }
+    .container-login .box-login .support-login{
+        line-height: 28px;
+        text-align: center;
+    }
+}
+@media screen and (max-width: 601px) {
+    .container-login .box-login{
+        flex-direction: column;
+        width: 100%;
+        height: 90vh;
+        align-self: end;
+        border-radius: unset;
+        border-top-left-radius: 20px;
+        border-top-right-radius: 20px;
+    }
+    .container-login .box-login .left-box{
+        padding: 20px;
+        width: 100%;
+        height: 40%;
+    }
+    .container-login .box-login .left-box .top-left{
+        justify-content: start;
+        align-items: center;
+        order: 2;
+    }
+    .container-login .box-login .left-box .top-left h1{
+        margin: unset;
+        font-size: 32px;
+        margin-bottom: 20px;
+    }
+    .container-login .box-login .left-box .top-left p{
+        font-size: 18px;
+    }
+    .container-login .box-login .left-box .bottom-left{
+        justify-content: center;
+        align-items: center;
+    }
+    .container-login .box-login .left-box .bottom-left img{
+        width: 60%;
+        height: 65px;
+    }
+    .container-login .box-login .right-box{
+        padding: 20px;
+        width: 100%;
+        height: 60%;
+        align-items: center;
+    }
+    .container-login .box-login .right-box .primary-right img{
+        display: none;
+    }
+    .container-login .box-login .right-box .primary-right p{
+        width: 55%;
+    }
+    .container-login .box-login .right-box .login-info{
+        width: 80%;
+        height: 55px;
+    }
+    .container-login .box-login .right-box .login-info input{
+        font-size: 18px;
+    }
+    .container-login .box-login .right-box .login-info label.animation-label{
+        font-size: 18px;
+    }
+    .container-login .box-login .right-box .login-info svg{
+        width: 24px;
+        height: 24px;
+    }
+    .container-login .box-login .right-box .login-info .show-password{
+        font-size: 24px;
+    }
+    .container-login .box-login .right-box .username input:focus ~ label.animation-label__username, .container-login .box-login .right-box .password input:focus ~ label.animation-label__password, .container-login .box-login .right-box .username input:valid ~ label.animation-label__username, .container-login .box-login .right-box .password input:valid ~ label.animation-label__password{
+        font-size: 16px;
+    }
+}
+@media screen and (max-width: 415px) {
+    .container-login .box-login{
+        border-top-left-radius: 15px;
+        border-top-right-radius: 15px;
+    }
+    .container-login .box-login .left-box .bottom-left img{
+        width: 80%;
+        height: 55px;
+    }
+    .container-login .box-login .left-box .top-left h1{
+        font-size: 28px;
+        margin-bottom: 12px;
+    }
+    .container-login .box-login .left-box .top-left p{
+        font-size: 16px;
+        text-align: center;
+        line-height: 26px;
+    }
+    .container-login .box-login .right-box .primary-right p{
+        width: 80%;
+        line-height: 24px;
+    }
+    .container-login .box-login .right-box .login-info{
+        width: 90%;
+        height: 50px;
+    }
+    .container-login .box-login .right-box .login-info input,
+    .container-login .box-login .right-box .login-info label.animation-label{
+        font-size: 16px;
+    }
+    .container-login .box-login .right-box .login-info label.animation-label{
+        left: 44px;
+    }
+    .container-login .box-login .right-box .login-info input{
+        padding: 6px 44px;
+    }
+    .container-login .box-login .right-box .username input:focus ~ label.animation-label__username, .container-login .box-login .right-box .password input:focus ~ label.animation-label__password, .container-login .box-login .right-box .username input:valid ~ label.animation-label__username, .container-login .box-login .right-box .password input:valid ~ label.animation-label__password{
+        font-size: 14px;
+    }
+    .container-login .box-login .right-box .login-info svg{
+        width: 22px;
+        height: 22px;
+    }
+    .container-login .box-login .right-box .login-info .show-password{
+        font-size: 22px;
+        right: 16px;
+    }
+    .container-login .box-login .submit-login,
+    .container-login .box-login .support-login{
+        font-size: 16px;
+    }
+}
+@media screen and (max-width: 376px){
+    .container-login .box-login .right-box .primary-right p{
+        width: 90%;
+    }
+}
+@media screen and (max-width: 321px) {
+    .container-login .box-login .left-box,
+    .container-login .box-login .right-box{
+        padding: 12px;
+    }
+    .container-login .box-login .left-box{
+        height: 35%;
+    }
+    .container-login .box-login .right-box{
+        height: 65%;
+    }
+    .container-login .box-login .left-box .bottom-left img{
+        width: 100%;
+    }
+    .container-login .box-login .left-box .top-left h1{
+        font-size: 20px;
+        margin-bottom: unset;
+    }
+    .container-login .box-login .left-box .top-left p,
+    .container-login .box-login .right-box .primary-right p{
+        font-size: 14px;
+        line-height: 20px;
+    }
+    .container-login .box-login .right-box .login-info {
+        width: 100%;
+        height: 45px;
+        margin: 6px 0;
+    }
+    .container-login .box-login .right-box .login-info .show-password{
+        font-size: 18px;
+    }
+    .container-login .box-login .right-box .login-info svg{
+        width: 18px;
+        height: 18px;
+    }
+    .container-login .box-login .right-box .login-info input,
+    .container-login .box-login .right-box .login-info label.animation-label{
+        font-size: 14px;
+    }
+    .container-login .box-login .right-box .username input:focus ~ label.animation-label__username, .container-login .box-login .right-box .password input:focus ~ label.animation-label__password, .container-login .box-login .right-box .username input:valid ~ label.animation-label__username, .container-login .box-login .right-box .password input:valid ~ label.animation-label__password {
+        font-size: 12px;
+    }
+    .container-login .box-login .submit-login, 
+    .container-login .box-login .support-login{
+        font-size: 14px;
+    }
+    .container-login .box-login .submit-login{
+        padding: 12px 24px;
+    }
+    .container-login .box-login .support-login{
+        line-height: 20px;
+    }
 }

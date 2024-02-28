@@ -1,5 +1,5 @@
 const jwt = require("jsonwebtoken");
-const { company } = require("../app/controllers/CompanyController");
+// const { company } = require("../app/controllers/CompanyController");
 const UserModel = require("../app/models/user")
 //check login
 function checkLogin(req, res, next) {

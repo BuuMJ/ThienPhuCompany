@@ -3,7 +3,7 @@ const jwt = require("jsonwebtoken");
 const UserModel = require("../models/user");
 
 class LoginController {
-  resigter(req, res, next) {
+  register(req, res, next) {
     const username = "ctythienphu@ymail.com";
     const password = "108lehongphong";
     bcrypt.hash(password, 10, function (err, hash) {

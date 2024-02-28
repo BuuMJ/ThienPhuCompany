@@ -10,6 +10,11 @@
             <li><a class="link" data-href="event" href="/event">Tin Tức Và Khuyến Mãi</a></li>
             {{!-- <li><a class="link" data-href="award" href="/award">Giải Thưởng</a></li> --}}
             <li><a class="link" data-href="contact" href="/contact">Liên Hệ</a></li>
+            {{#if user}}
+            <li><a onclick="logout()" class="logout">Log Out</a></li>
+            {{else}}
+            <li><a onclick="logout()" class="logout">Không Có</a></li>
+            {{/if}}
         </ul>
     </div>
 </div>
@@ -113,3 +118,12 @@
             </li>
         </ul>
 </div>
+<script>
+    function logout() {
+    document.cookie = 'token =; Path=/; Expires=Thu, 01 Jan 1970 00:00:01 GMT;';
+        localStorage.setItem('showSignIn', 'show');
+        localStorage.setItem('showSignUp', 'hide');
+        localStorage.setItem('showForgot', 'hide');
+    window.location.href = "/login"
+  }
+</script>

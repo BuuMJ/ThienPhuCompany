@@ -19,7 +19,6 @@
     font-size: 50px;
     color: white;
     font-weight: 600;
-    transform: translateY(50%);
 }
 .container-product .main-product{
     display: flex;
@@ -214,8 +213,8 @@
 .container-product .main-product .all-product .product span.visited-product,
 .container-product .main-product .hatien-product .product span.visited-product,
 .container-product .main-product .other-product .product span.visited-product{
-  width: 30%;
-  height: 50px;
+  // width: 30%;
+  // height: 50px;
   font-size: 16px;
   border: 1px solid #bc9f6e;
   color: #bc9f6e;
@@ -224,7 +223,7 @@
   align-items: center;
   text-decoration: none;
   transition: .3s;
-  padding: 8px 0;
+  padding: 16px 20px;
   font-weight: 600;
   position: relative;
   z-index: 8;
@@ -314,6 +313,7 @@
     color: white;
     font-weight: 600;
     text-transform: uppercase;
+    text-align: center;
   }
   .container-pcb40 header span .backproductpage{
     color: white;
@@ -426,16 +426,17 @@
     text-transform: uppercase;
   }
   .container-pcb40 .main-pcb40 .header-pcb40 .info-pcb40 .title-description{
-    font-size: 20px;
-    letter-spacing: 1.2px;
-    margin-top: 4px;
+    font-size: 18px;
     text-transform: uppercase;
+    text-align: justify;
+    margin: 0 0 0 36px !important;
   }
   .container-pcb40 .main-pcb40 .header-pcb40 .info-pcb40 .description{
     font-size: 18px;
     font-weight: 400;
     text-align: justify;
     letter-spacing: 1.2px;
+    line-height: 30px;
   }
   .container-pcb40 .main-pcb40 .header-pcb40 .info-pcb40 .contact-pcb40{
     display: flex;
@@ -516,6 +517,7 @@
     align-items: start;
     width: 100%;
     line-height: 24px;
+    text-align: justify;
   }
   .container-pcb40 .main-pcb40 .detail-pcb40 .application span.title,
   .container-pcb40 .main-pcb40 .detail-pcb40 .addvantage span.title,
@@ -560,3 +562,317 @@
     width: 100%;
     height:unset;
   }
+@media screen and(max-width: 1025px) {
+  .container-product header,
+  .container-pcb40 header{
+    height: 30vh;
+  }
+  .container-product .main-product .all-product{
+    width: 90%;
+  }
+  .container-product .main-product .all-product .product{
+    width: 48%;
+  }
+  .container-product .main-product .all-product .product:nth-child(even) .name-product{
+    background-color: $primarycolor;
+  }
+  .container-product .main-product .all-product .product ul{
+    padding: 0 0 20px 15%;
+  }
+  .container-pcb40 .main-pcb40 .header-pcb40,
+  .container-pcb40 .main-pcb40 .detail-pcb40{
+    width: 85%;
+  }
+  .container-pcb40 .main-pcb40 .header-pcb40{
+    height: 420px;
+  }
+  .container-pcb40 .main-pcb40 .header-pcb40ms{
+    height: 550px;
+  }
+  .container-pcb40 .main-pcb40 .header-pcb40 .info-pcb40 .title-description {
+    line-height: 28px;
+  }
+  .container-pcb40 .main-pcb40 .header-pcb40 .info-pcb40 .contact-pcb40 span.box-contact-us a{
+    width: 45%;
+  }
+  .container-pcb40 .main-pcb40 .header-pcb40 .info-pcb40 .contact-pcb40 a {
+    width: 40%;
+  }
+  .container-pcb40 .main-pcb40 .header-pcb40 .card-powercement img{
+    width: 280px;
+    height: 480px;
+    // bottom: -40%;
+  }
+  .container-pcb40 .main-pcb40 .header-pcb40 .card-pcb40 img{
+    bottom: 50%;
+    transform: translate(-50% ,50%);
+  }
+  .container-pcb40 .main-pcb40 .header-pcb40 .card-pcb40:hover img{
+    transform: translate(-50% ,50%) scale(1.1);
+  }
+  // .container-pcb40 .main-pcb40 .header-pcb40ms .card-pcb40 img{
+  //   bottom: -10%;
+  // }
+}
+@media screen and(max-width: 769px){
+  .container-product .main-product .all-product{
+    flex-direction: column;
+  }
+  .container-product header span,
+  .container-pcb40 header span{
+    font-size: 40px;
+  }
+  .container-pcb40 header span{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .container-product .main-product .all-product .product{
+    width: 80%;
+  }
+  .container-product .main-product .all-product .product .background-product{
+    height: 300px;
+  }
+  .container-product .main-product .all-product .product img{
+    width: 35%;
+  }
+  .container-product .main-product .all-product .power-cement img{
+    width: 70%;
+  }
+  .container-pcb40 .main-pcb40 .header-pcb40, .container-pcb40 .main-pcb40 .detail-pcb40{
+    width: 90%;
+  }
+  .container-pcb40 .main-pcb40 .header-pcb40 .info-pcb40{
+    width: 55%;
+  }
+  .container-pcb40 .main-pcb40 .header-pcb40 .card-pcb40{
+    width: 45%;
+  }
+  .container-pcb40 .main-pcb40 .header-pcb40 .info-pcb40 > * {
+    margin: 4px 0 4px 12px;
+  }
+  .container-pcb40 .main-pcb40 .header-pcb40 .info-pcb40 .title-description{
+    font-size: 14px;
+    margin: 4px 0 4px 12px !important;
+    line-height: 24px;
+  }
+  .container-pcb40 .main-pcb40 .header-pcb40 .info-pcb40 .name-pcb40{
+    font-size: 20px;
+  }
+  .container-pcb40 .main-pcb40 .header-pcb40 .info-pcb40 .description{
+    font-size: 14px;
+    line-height: 26px;
+  }
+  .container-pcb40 .main-pcb40 .header-pcb40 .info-pcb40 .contact-pcb40 span.box-contact-us a,
+  .container-pcb40 .main-pcb40 .header-pcb40 .info-pcb40 .contact-pcb40 a.hotline{
+    font-size: 14px;
+    width: 80%;
+  }
+  .container-pcb40 .main-pcb40 .header-pcb40 .info-pcb40 .contact-pcb40 a.hotline{
+    margin: 8px 0 0 0;
+  }
+  .container-pcb40 .main-pcb40 .header-pcb40 .card-pcb40 img {
+    width: 200px;
+    height: 300px;
+  }
+  .container-pcb40 .main-pcb40 .header-pcb40 .card-powercement img{
+    width: 280px;
+    height: 450px;
+  }
+  .container-pcb40 .main-pcb40 .header-pcb40 .info-pcb40 .contact-pcb40 a.hotline span.material-symbols-outlined{
+    font-size: 26px;
+  }
+  .container-pcb40 .main-pcb40 .detail-pcb40 .primary-title,
+  .container-pcb40 .main-pcb40 .detail-pcb40 .standard span.title-standard-img{
+    font-size: 20px;
+  }
+  .container-pcb40 .main-pcb40 .detail-pcb40 .application span.title, .container-pcb40 .main-pcb40 .detail-pcb40 .addvantage span.title, .container-pcb40 .main-pcb40 .detail-pcb40 .pack span.title, .container-pcb40 .main-pcb40 .detail-pcb40 .standard span.title{
+    font-size: 18px;
+  }
+  .container-pcb40 .main-pcb40 .detail-pcb40 .application span.application-content, .container-pcb40 .main-pcb40 .detail-pcb40 .application li.application-content, .container-pcb40 .main-pcb40 .detail-pcb40 .addvantage ul li, .container-pcb40 .main-pcb40 .detail-pcb40 .pack span.pack-content, .container-pcb40 .main-pcb40 .detail-pcb40 .pack li.pack-content, .container-pcb40 .main-pcb40 .detail-pcb40 .standard span.standard-content{
+    font-size: 16px;
+  }
+  .container-pcb40 .main-pcb40 .detail-pcb40 .standard img{
+    height: 400px;
+  }
+}
+@media screen and(max-width: 601px) {
+  .container-product,
+  .container-pcb40{
+    margin-top: unset;
+  }
+  .container-product .main-product .all-product .product img{
+    width: 40%;
+  }
+  .container-product .main-product .all-product .power-cement img{
+    width: 70%;
+  }
+  .container-pcb40 .main-pcb40 .header-pcb40{
+    flex-direction: column;
+    height: unset;
+  }
+  .container-pcb40 .main-pcb40 .header-pcb40 .card-pcb40,
+  .container-pcb40 .main-pcb40 .header-pcb40 .info-pcb40{
+    width: 100%;
+  }
+  .container-pcb40 .main-pcb40 .header-pcb40 .card-pcb40{
+    height: 400px;
+  }
+  .container-pcb40 .main-pcb40 .header-pcb40 .info-pcb40{
+    margin: 40px 0 0 0;
+  }
+  .container-pcb40 .main-pcb40 .header-pcb40 .info-pcb40 > *{
+    margin: 8px 0 8px 0;
+  }
+  .container-pcb40 .main-pcb40 .header-pcb40 .card-pcb40 img{
+    width: 220px;
+    height: 320px;
+  }
+  .container-pcb40 .main-pcb40 .header-pcb40 .card-powercement img{
+    width: 380px;
+    height: 480px;
+  }
+  .container-pcb40 .main-pcb40 .header-pcb40 .info-pcb40 .name-pcb40{
+    font-size: 22px;
+  }
+  .container-pcb40 .main-pcb40 .header-pcb40 .info-pcb40 .description{
+    font-size: 16px;
+  }
+  .container-pcb40 .main-pcb40 .header-pcb40 .info-pcb40 .contact-pcb40 span.box-contact-us a{
+    width: 40%;
+  }
+  .container-pcb40 .main-pcb40 .header-pcb40 .info-pcb40 .contact-pcb40 a.hotline{
+    width: 40%;
+    margin-right: 6px;
+  }
+  .container-pcb40 .main-pcb40 .detail-pcb40 {
+    margin-top: 50px;
+  }
+  .container-pcb40 .main-pcb40 .detail-pcb40 .standard img{
+    height: 350px;
+  }
+}
+@media screen and(max-width: 415px){
+  .container-product .main-product .all-product .product{
+    width: 100%;
+  }
+  .container-product .main-product .all-product .product .name-product{
+    font-size: 18px;
+  }
+  .container-product .main-product .all-product .product .background-product{
+    height: 280px;
+  }
+  .container-product .main-product .all-product .product img{
+    height: 75%;
+  }
+  .container-product .main-product .all-product .power-cement img{
+    height: 140%;
+  }
+  .container-product .main-product .all-product .product span.price-product{
+    padding: 20px 0 10px 0;
+    font-size: 16px;
+  }
+  .container-product .main-product .all-product .product ul{
+     padding: 0 0 16px 10%;
+  }
+  .container-product .main-product .all-product .product ul li,
+  .container-product .main-product .all-product .product span.visited-product{
+    font-size: 14px;
+  }
+  .container-product .main-product .all-product .product span.visited-product{
+    padding: 14px 16px;
+  }
+  .container-pcb40 header span{
+    font-size: 28px;
+    text-align: center;
+  }
+  .container-pcb40 .main-pcb40 .header-pcb40 .card-pcb40 {
+    height: 320px;
+  }
+  .container-pcb40 .main-pcb40 .header-pcb40 .card-pcb40 img{
+    width: 180px;
+    height: 260px;
+  }
+  .container-pcb40 .main-pcb40 .header-pcb40 .card-powercement img{
+    width: 260px;
+    height: 360px;
+  }
+  .container-pcb40 .main-pcb40 .header-pcb40 .info-pcb40 .contact-pcb40{
+    justify-content: center;
+  }
+  .container-pcb40 .main-pcb40 .header-pcb40 .info-pcb40 .contact-pcb40 span.box-contact-us a,
+  .container-pcb40 .main-pcb40 .header-pcb40 .info-pcb40 .contact-pcb40 a.hotline{
+    width: 80%;
+    margin-right: unset;
+    justify-content: center;
+  }
+  .container-pcb40 .main-pcb40 .header-pcb40 .info-pcb40 .contact-pcb40 span.box-contact-us{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  }
+  .container-pcb40 .main-pcb40 .detail-pcb40 .standard img{
+    height: 300px;
+  }
+}
+@media screen and (max-width: 321px) {
+  .container-product .main-product .all-product .product .name-product{
+    font-size: 16px;
+    height: 70px;
+    line-height: 26px;
+  }
+  .container-product .main-product .all-product .product .background-product{
+    height: 220px;
+  }
+  .container-product .main-product .all-product .product img{
+    height: 80%;
+  }
+  .container-product .main-product .all-product .power-cement img{
+    height: 145%;
+  }
+  .container-product .main-product .all-product .product span.price-product{
+    font-size: 14px;
+  }
+  .container-product .main-product .all-product .product ul{
+    padding-left: 5%;
+  }
+  .container-product .main-product .all-product .product ul li{
+    align-items: start;
+  }
+  .container-product .main-product .all-product .product span.visited-product{
+    font-size: 14px;
+    padding: 12px 14px;
+  }
+  .container-pcb40 .main-pcb40 .header-pcb40 .card-pcb40 img{
+    width: 150px;
+    height: 230px;
+  }
+  .container-pcb40 .main-pcb40 .header-pcb40 .card-powercement img{
+    width: 230px;
+    height: 330px;
+  }
+  .container-pcb40 .main-pcb40 .header-pcb40 .info-pcb40 .name-pcb40{
+    font-size: 20px;
+    line-height: 30px;
+  }
+  .container-pcb40 .main-pcb40 .header-pcb40 .info-pcb40 .contact-pcb40 span.box-contact-us a, .container-pcb40 .main-pcb40 .header-pcb40 .info-pcb40 .contact-pcb40 a.hotline{
+    width: 100%;
+  }
+  .container-pcb40 .main-pcb40 .detail-pcb40 .primary-title, .container-pcb40 .main-pcb40 .detail-pcb40 .standard span.title-standard-img{
+    font-size: 18px;
+  }
+  .container-pcb40 .main-pcb40 .detail-pcb40 .application span.title, .container-pcb40 .main-pcb40 .detail-pcb40 .addvantage span.title, .container-pcb40 .main-pcb40 .detail-pcb40 .pack span.title, .container-pcb40 .main-pcb40 .detail-pcb40 .standard span.title{
+    font-size: 16px;
+  }
+  .container-pcb40 .main-pcb40 .detail-pcb40 .application span.application-content, .container-pcb40 .main-pcb40 .detail-pcb40 .application li.application-content, .container-pcb40 .main-pcb40 .detail-pcb40 .addvantage ul li, .container-pcb40 .main-pcb40 .detail-pcb40 .pack span.pack-content, .container-pcb40 .main-pcb40 .detail-pcb40 .pack li.pack-content, .container-pcb40 .main-pcb40 .detail-pcb40 .standard span.standard-content{
+    font-size: 14px;
+    list-style-type: none;
+  }
+  .container-pcb40 .main-pcb40 .detail-pcb40 .standard img{
+    height: 250px;
+  }
+  .container-pcb40 header span{
+    font-size: 26px;
+  }
+}

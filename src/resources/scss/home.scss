@@ -95,9 +95,9 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 18%;
-  margin: 30px 10px 0 10px;
-  padding: 0 30px;
+  width: 19%;
+  margin: 30px 8px 0 8px;
+  padding: 0 26px;
 }
 // .container-home .main-home .reason-choose-us .list-card .card span.material-symbols-outlined{
 //   color: $primarycolor;
@@ -134,7 +134,7 @@
   width: 100%;
   background-color: $backgroundColor;
   padding: 20px 0;
-  height: 60vh;
+  height: 70vh;
 }
 .container-home .main-home .about-us h1,
 .container-home .main-home .best-seller h1,
@@ -274,8 +274,8 @@
   background: linear-gradient(to bottom, transparent, rgba(0,0,0,0.3)), url('/img/backgroundpcb40-ms.jpg') center / cover no-repeat;
 }
 .container-home .main-home .best-seller .list-product .product img{
-  width: 70%;
-  height: 60%;
+  // width: 70%;
+  // height: 60%;
   transition: 0.5s;
   position: absolute;
   bottom: 5%;
@@ -557,8 +557,8 @@
     height: 450px;
   }
   .container-home .main-home .best-seller .list-product .product img {
-    height: 65%;
-    width: 75%;
+    // height: 65%;
+    width: 65%;
   }
   .container-home .main-home .best-seller .list-product .hatienpcb40 img{
     width: 50%;
@@ -642,10 +642,10 @@
   .container-home .main-home .best-seller .list-product .product .background-product{
     height: 300px;
   }
-  .container-home .main-home .best-seller .list-product .product img{
-    height: 60%;
-    width: 76%;
-  }
+  // .container-home .main-home .best-seller .list-product .product img{
+  //   height: 60%;
+  //   width: 76%;
+  // }
   .container-home .main-home .best-seller .list-product .hatienpcb40 img{
     width: 54%;
   }
@@ -787,7 +787,7 @@
     text-align: center;
   }
   .container-home .main-home .best-seller .list-product .product img{
-    width: 60%;
+    width: 45%;
   }
   .container-home .main-home .best-seller .list-product .hatienpcb40 img{
     width: 40%;
@@ -819,5 +819,8 @@
   }
   .container-home .main-home .reason-choose-us span{
     padding: 0 15px;
+  }
+  .container-home .main-home .best-seller .list-product .product img{
+    width: 55%;
   }
 }

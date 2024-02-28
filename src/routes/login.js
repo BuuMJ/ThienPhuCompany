@@ -2,7 +2,7 @@ const express = require("express");
 const router = express.Router();
 const loginController = require("../app/controllers/LoginController");
 
-router.get("/resigter", loginController.resigter);
+router.get("/register", loginController.register);
 router.post("/apilogin", loginController.login);
 router.get("/", loginController.index);
 

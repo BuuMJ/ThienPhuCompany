@@ -10,7 +10,7 @@ const User = new Schema(
     collection: "user",
   }
 );
-
+console.log(User)
 const UserModel = mongoose.model("user", User);
 
 module.exports = UserModel;

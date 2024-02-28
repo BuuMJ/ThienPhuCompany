@@ -1,12 +1,14 @@
 const EventModel = require("../models/event");
-
+const UserModel = require("../models/user");
 class CreateEventController {
   formCreate(req, res, next) {
+    const user = req.user;
+    console.log(user)
     res.render("createEvent", {
       title: "Tạo Sự Kiện",
+      user: user,
     });
   }
-
   async create(req, res, next) {
     const text1 = req.body.text1;
     const text2 = req.body.text2;
