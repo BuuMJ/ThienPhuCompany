@@ -51,13 +51,22 @@
   <script>
     const footer = document.querySelector('.container-footer');
     const headerNav = document.querySelector('.header-app');
+    const headerNavAdmin = document.querySelector('.header-app__admin');
     const checkContactPage = window.location.pathname;
     const hideFooterEmail = document.querySelector('.email-contact');
-    if(checkContactPage === '/contact' || checkContactPage === '/event'){
+    if(checkContactPage === '/contact' || checkContactPage === '/event' ){
         hideFooterEmail.style.display = 'none';
     }
     if(checkContactPage === '/login'){
       footer.style.display = 'none';
+      
+    }
+    if(checkContactPage.includes('admin')){
       headerNav.style.display = 'none';
+      hideFooterEmail.style.display = 'none';
+       footer.style.display = 'none';
+      headerNavAdmin.style.display = 'flex';
+    }else{
+      headerNavAdmin.style.display = 'none';
     }
 </script>
