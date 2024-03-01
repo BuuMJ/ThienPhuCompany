@@ -1,0 +1,51 @@
+<div class="container-header__admin">
+    <div class="top-header">
+        <img src="/img/companyTPBackground.png" alt="">
+    </div>
+    <div class="body-header">
+        <div class="title">
+            <img src="/img/activity-icon.png" alt="">
+            <h2>Hoạt Động</h2>
+        </div>
+        <ul class="admin-navbar">
+            <li>
+                <a href="#" class="create-news"><i class="bi bi-file-earmark-plus-fill"></i> Tạo Sự Kiện</a>
+            </li>
+            <li>
+                <a href="#" class="create-news"><i class="bi bi-person-plus-fill"></i> Thêm Nhân Viên</a>
+            </li>
+            <li>
+                <a href="#" data-href="management_msg" class="link"><i class="bi bi-chat-text-fill"></i> Quản Lý Tin Nhắn</a>
+            </li>
+        </ul>
+        <div class="title">
+            <img src="/img/page-icon.png" alt="">
+            <h2>Trang Chính</h2>
+        </div>
+        <ul class="primary-navbar">
+            <li class="admin-nav"><a class="link" data-href="Admin" href="/"><span class="material-symbols-outlined">folder_managed</span> Quản Trị Viên</a></li>
+            <li><a class="link" data-href="home" href="/"><i class="bi bi-house-door-fill"></i> Trang Chủ</a></li>
+            <li><a class="link" data-href="about" href="/about"><span class="material-symbols-outlined">groups</span> Về Chúng Tôi</a></li>
+            <li><a class="link" data-href="product" href="/product"><i class="bi bi-basket3-fill"></i> Sản Phẩm</a></li>
+            <li><a class="link" data-href="event" href="/event"><span class="material-symbols-outlined">language</span> Tin Tức Và Khuyến Mãi</a></li>
+            {{!-- <li><a class="link" data-href="award" href="/award">Giải Thưởng</a></li> --}}
+            <li><a class="link" data-href="contact" href="/contact"><span class="material-symbols-outlined">info</span> Liên Hệ</a></li>
+        </ul>
+    </div>
+    <ul class="bottom-navbar">
+           <li><a href="#"><i class="bi bi-question-diamond-fill"></i> Liên Hệ Và Hỗ Trợ</a></li>
+            {{#if user}}
+            <li><a onclick="logout()" class="logout"><i class="bi bi-door-closed-fill"></i> Log Out</a></li>
+            {{else}}
+            {{/if}}
+        </ul>
+</div>
+<script>
+    function logout() {
+    document.cookie = 'token =; Path=/; Expires=Thu, 01 Jan 1970 00:00:01 GMT;';
+        localStorage.setItem('showSignIn', 'show');
+        localStorage.setItem('showSignUp', 'hide');
+        localStorage.setItem('showForgot', 'hide');
+    window.location.href = "/login"
+  }
+</script>
