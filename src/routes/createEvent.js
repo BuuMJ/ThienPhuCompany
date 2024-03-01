@@ -8,6 +8,6 @@ router.post(
   upload.fields([{ name: "image1" }, { name: "image2" }]),
   createEventController.create
 );
-router.get("/create", createEventController.formCreate);
+router.get("/", createEventController.formCreate);
 
 module.exports = router;
