@@ -3,6 +3,7 @@
     <div class="body-left">
         <div class="welcome-admin">
             <h1><h1>Hello {{getName user}}</h1></h1>
+            
         </div>
         <form action="/admin/create_event"  method="POST" enctype="multipart/form-data">
             <input type="text" name="title">
@@ -12,6 +13,10 @@
             <input type="file" name="image1" id="">
             <input type="file" name="image2" id="">
             <button type="submit">Đẹp trai thì bấn vào đây</button>
+            <select name="category" id="">
+                <option value="event" selected>Khuyến Mãi</option>
+                <option value="news">Tin Tức</option>
+            </select>
         </form>
     </div>
 </div>
