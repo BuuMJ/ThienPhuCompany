@@ -43,7 +43,7 @@
                             <span class="check-label {{this.category}}"></span>
                         </div>
                         <h3>{{this.title}}</h3>
-                        <p class="desc">{{this.text1}}</p>
+                        <p class="desc" data-change-text="{{this.text1}}">{{this.text1}}</p>
                         <span class="time-news">{{moment this.createdAt format="MMM DD, YYYY"}}</span>
                     </div>
                 {{/each}}
@@ -60,7 +60,7 @@
                 <div class="content-news">
                     <span class="time-news">{{moment this.createdAt format="MMM DD, YYYY"}}</span>
                     <h2>{{this.title}}</h2>
-                    <p class="desc">{{this.text1}}</p>
+                    <p class="desc" data-change-text="{{this.text1}}">{{this.text1}}</p>
                 </div>
             </div>
             {{/each}}
@@ -76,7 +76,7 @@
                 <div class="content-news">
                     <span class="time-news">{{moment this.createdAt format="MMM DD, YYYY"}}</span>
                     <h2>{{this.title}}</h2>
-                    <p class="desc">{{this.text1}}</p>
+                    <p class="desc" data-change-text="{{this.text1}}">{{this.text1}}</p>
                 </div>
             </div>
             {{/each}}
@@ -87,6 +87,22 @@
     </div>
 </div>
 <script>
+    // function change link text
+    const contentNews = document.querySelectorAll('p.desc')
+    contentNews.forEach(content=>{
+        const text1 = content.getAttribute('data-change-text');
+        const regex = /(^|\s)(https?:\/\/\S+)(?=\s|[,\.?!;:]|$)/g;
+        let linkifiedText = text1.replace(regex, '$1<a href="$2">$2</a>');
+        content.innerHTML = linkifiedText;
+        content.querySelectorAll('a').forEach(a => {
+            const href = a.getAttribute('href');
+            if(href.includes(',')){
+                const newHref = href.replace(/,/g, '');
+                a.setAttribute('href', newHref);
+            }
+        })
+    })
+
     const labelNews = document.querySelector('.container-event .main-event .all-news .latest-news .label-news span.check-label');
     if(labelNews.classList.contains('new') || labelNews.classList.contains('news') ){
         labelNews.textContent = 'Tin Tức';
