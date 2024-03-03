@@ -17,3 +17,36 @@
     box-shadow: 0 0 0 0 rgba(247,218,169, 0.7);
   }
 }
+@keyframes showToast{
+  0%{
+    transform: translateX(calc(100% + 20px));
+  }
+  40%{
+    transform: translateX(-5%);
+  }
+  80%{
+    transform: translateX(0%);
+  }
+  100%{
+    transform: translateX(-10px);
+  }
+}
+@keyframes hideToast{
+  0%{
+    transform: translateX(-10px);
+  }
+  40%{
+    transform: translateX(0%);
+  }
+  80%{
+    transform: translateX(-5%);
+  }
+  100%{
+    transform: translateX(calc(100% + 20px));
+  }
+}
+@keyframes progress{
+  100%{
+    width: 0%;
+  }
+}
