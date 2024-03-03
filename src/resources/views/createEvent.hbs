@@ -2,19 +2,174 @@
     <div class="body-right"></div>
     <div class="body-left">
         <div class="welcome-admin">
-            <h1><h1>Hello {{getName user}}</h1></h1>
+            <h1>Hello {{getName user}}</h1>
         </div>
-        <form action="/admin/create_event"  method="POST" enctype="multipart/form-data">
-            <input type="text" name="title">
-            <textarea type="text" name="text1"></textarea>
-            <input type="text" name="text2">
-            <input type="text" name="text3">
-            <input type="file" name="image1" id="">
-            <input type="file" name="image2" id="">
-            <button type="submit">Đẹp trai thì bấn vào đây</button>
-        </form>
     </div>
+    <div class="overlay"></div>
+    <form class="box-create__event" action="/admin/create_event"  method="POST" enctype="multipart/form-data">
+        <span class="title__post-news">
+            Đăng Tin Tức Mới
+            <i class="bi bi-x"></i>
+        </span>
+        <div class="body-create__event">
+            <div class="content__post-news">
+                <label class="title-img" for="file-img">
+                    <div class="img-view">
+                        <label class="icon-title" for="file-img">
+                            <svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" fill="#000000">
+                                <g id="SVGRepo_bgCarrier" stroke-width="0"/>
+                                <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"/>
+                                <g id="SVGRepo_iconCarrier">
+                                <title>ionicons-v5-e</title>
+                                <path d="M432,112V96a48.14,48.14,0,0,0-48-48H64A48.14,48.14,0,0,0,16,96V352a48.14,48.14,0,0,0,48,48H80" style="fill:none;stroke:#000000;stroke-linejoin:round;stroke-width:32px"/>
+                                <rect x="96" y="128" width="400" height="336" rx="45.99" ry="45.99" style="fill:none;stroke:#000000;stroke-linejoin:round;stroke-width:32px"/>
+                                <ellipse cx="372.92" cy="219.64" rx="30.77" ry="30.55" style="fill:none;stroke:#000000;stroke-miterlimit:10;stroke-width:32px"/>
+                                <path d="M342.15,372.17,255,285.78a30.93,30.93,0,0,0-42.18-1.21L96,387.64" style="fill:none;stroke:#000000;stroke-linecap:round;stroke-linejoin:round;stroke-width:32px"/>
+                                <path d="M265.23,464,383.82,346.27a31,31,0,0,1,41.46-1.87L496,402.91" style="fill:none;stroke:#000000;stroke-linecap:round;stroke-linejoin:round;stroke-width:32px"/>
+                                </g>
+                            </svg>
+                        </label>
+                        <label class="drag-drop" for="file-img">Kéo Và Thả Hình Ảnh Tiêu Đề Của Bạn Vào Đây</label>
+                        <label class="browse" for="file-img">Hoặc <b>Lấy</b> Từ Máy Tính Của Bạn</label>
+                        <span class="skip">Bạn Có Thể <b>Bỏ Qua</b> Nếu Như Không Có Hình Ảnh Cho Tiêu Đề</span>
+                    </div>
+                    <input id="file-img" type="file" name="image1" hidden>
+                </label>
+                <div class="main-info__news">
+                    <input id="title-news" type="text" name="title" placeholder="Tiêu Đề Cho Bài Viết">
+                    <div class="first__img-content">
+                        <label class="content-img" for="first__content-img">
+                            <div class="img-view">
+                                <label class="icon-title" for="first__content-img">
+                                    <svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" fill="#000000">
+                                        <g id="SVGRepo_bgCarrier" stroke-width="0"/>
+                                        <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"/>
+                                        <g id="SVGRepo_iconCarrier">
+                                        <title>ionicons-v5-e</title>
+                                        <path d="M432,112V96a48.14,48.14,0,0,0-48-48H64A48.14,48.14,0,0,0,16,96V352a48.14,48.14,0,0,0,48,48H80" style="fill:none;stroke:#000000;stroke-linejoin:round;stroke-width:32px"/>
+                                        <rect x="96" y="128" width="400" height="336" rx="45.99" ry="45.99" style="fill:none;stroke:#000000;stroke-linejoin:round;stroke-width:32px"/>
+                                        <ellipse cx="372.92" cy="219.64" rx="30.77" ry="30.55" style="fill:none;stroke:#000000;stroke-miterlimit:10;stroke-width:32px"/>
+                                        <path d="M342.15,372.17,255,285.78a30.93,30.93,0,0,0-42.18-1.21L96,387.64" style="fill:none;stroke:#000000;stroke-linecap:round;stroke-linejoin:round;stroke-width:32px"/>
+                                        <path d="M265.23,464,383.82,346.27a31,31,0,0,1,41.46-1.87L496,402.91" style="fill:none;stroke:#000000;stroke-linecap:round;stroke-linejoin:round;stroke-width:32px"/>
+                                        </g>
+                                    </svg>
+                                </label>
+                                <label class="drag-drop" for="first__content-img">Kéo Và Thả Hình Ảnh Cho Nội Dung Của Bạn Vào Đây</label>
+                                <label class="browse" for="first__content-img">Hoặc <b>Lấy</b> Từ Máy Tính Của Bạn</label>
+                            </div>
+                        </label>
+                            <input type="file" name="image2" id="first__content-img" hidden>
+                    </div>
+                    <textarea id="content-news" name="text1" rows="6" placeholder="Nội Dung Cho Bài Viết..."></textarea>
+                    <input type="text" name="text2">
+                    <input type="text" name="text3">
+                    <select name="category" id="">
+                        <option value="event" selected>Khuyến Mãi</option>
+                        <option value="news">Tin Tức</option>
+                    </select>
+                    <button type="submit">Đẹp trai thì bấn vào đây</button>
+                </div>
+            </div>
+        </div>
+    </form>
 </div>
 <script>
+    // title img
+    const dropArea = document.querySelector('.title-img');
+    const inputFile = document.getElementById('file-img');
+    const imageView = document.querySelector('.img-view');
+    inputFile.addEventListener('change', uploadImage);
+    function uploadImage(){
+        let imgLink = URL.createObjectURL(inputFile.files[0]);
+        imageView.style.cssText = `background: url(${imgLink}) center / cover no-repeat; border-radius: 10px;`;
+        imageView.textContent = "";
+        const closeIcon = document.createElement('i');
+        closeIcon.className = 'bi bi-x';
+        closeIcon.style.cssText = 'position: absolute; top: 0; right: 2px; color: #F80404; font-size: 40px;';
+        imageView.appendChild(closeIcon);
+        closeIcon.addEventListener('click', (e)=>{
+            e.preventDefault();
+            imageView.style.background = 'unset';
+            imageView.textContent = "";
+            const resetTitleImg = `
+            <label class="icon-title" for="file-img">
+                            <svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" fill="#000000">
+                                <g id="SVGRepo_bgCarrier" stroke-width="0"/>
+                                <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"/>
+                                <g id="SVGRepo_iconCarrier">
+                                <title>ionicons-v5-e</title>
+                                <path d="M432,112V96a48.14,48.14,0,0,0-48-48H64A48.14,48.14,0,0,0,16,96V352a48.14,48.14,0,0,0,48,48H80" style="fill:none;stroke:#000000;stroke-linejoin:round;stroke-width:32px"/>
+                                <rect x="96" y="128" width="400" height="336" rx="45.99" ry="45.99" style="fill:none;stroke:#000000;stroke-linejoin:round;stroke-width:32px"/>
+                                <ellipse cx="372.92" cy="219.64" rx="30.77" ry="30.55" style="fill:none;stroke:#000000;stroke-miterlimit:10;stroke-width:32px"/>
+                                <path d="M342.15,372.17,255,285.78a30.93,30.93,0,0,0-42.18-1.21L96,387.64" style="fill:none;stroke:#000000;stroke-linecap:round;stroke-linejoin:round;stroke-width:32px"/>
+                                <path d="M265.23,464,383.82,346.27a31,31,0,0,1,41.46-1.87L496,402.91" style="fill:none;stroke:#000000;stroke-linecap:round;stroke-linejoin:round;stroke-width:32px"/>
+                                </g>
+                            </svg>
+                        </label>
+                        <label class="drag-drop" for="file-img">Kéo Và Thả Hình Ảnh Của Bạn Vào Đây</label>
+                        <label class="browse" for="file-img">Hoặc <b>Lấy</b> Từ Máy Tính Của Bạn</label>
+                        <span class="skip">Bạn Có Thể <b>Bỏ Qua</b> Nếu Như Không Có Hình Ảnh Cho Tiêu Đề</span>
+            `
+            imageView.innerHTML = `${resetTitleImg}`
+        });
+    }
+    dropArea.addEventListener('dragover',(e)=>{
+        e.preventDefault();
+
+    });
+    dropArea.addEventListener('drop',(e)=>{
+        e.preventDefault();
+        inputFile.files = e.dataTransfer.files;
+        uploadImage();
+    });
+
+    // content img
+    const dropAreaContent = document.querySelector('.content-img');
+    const inputFileContent = document.getElementById('first__content-img');
+    const imageViewContent = document.querySelector('.content-img .img-view');
+    inputFileContent.addEventListener('change', uploadImageContent);
+    function uploadImageContent(){
+        let imgLink = URL.createObjectURL(inputFileContent.files[0]);
+        imageViewContent.style.cssText = `background: url(${imgLink}) center / cover no-repeat; border-radius: 10px;`;
+        imageViewContent.textContent = "";
+        const closeIcon = document.createElement('i');
+        closeIcon.className = 'bi bi-x';
+        closeIcon.style.cssText = 'position: absolute; top: 0; right: 2px; color: #F80404; font-size: 40px;';
+        imageViewContent.appendChild(closeIcon);
+        closeIcon.addEventListener('click', (e)=>{
+            e.preventDefault();
+            imageViewContent.style.background = 'unset';
+            imageViewContent.textContent = "";
+            const resetTitleImg = `
+            <label class="icon-title" for="first__content-img">
+                                    <svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" fill="#000000">
+                                        <g id="SVGRepo_bgCarrier" stroke-width="0"/>
+                                        <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"/>
+                                        <g id="SVGRepo_iconCarrier">
+                                        <title>ionicons-v5-e</title>
+                                        <path d="M432,112V96a48.14,48.14,0,0,0-48-48H64A48.14,48.14,0,0,0,16,96V352a48.14,48.14,0,0,0,48,48H80" style="fill:none;stroke:#000000;stroke-linejoin:round;stroke-width:32px"/>
+                                        <rect x="96" y="128" width="400" height="336" rx="45.99" ry="45.99" style="fill:none;stroke:#000000;stroke-linejoin:round;stroke-width:32px"/>
+                                        <ellipse cx="372.92" cy="219.64" rx="30.77" ry="30.55" style="fill:none;stroke:#000000;stroke-miterlimit:10;stroke-width:32px"/>
+                                        <path d="M342.15,372.17,255,285.78a30.93,30.93,0,0,0-42.18-1.21L96,387.64" style="fill:none;stroke:#000000;stroke-linecap:round;stroke-linejoin:round;stroke-width:32px"/>
+                                        <path d="M265.23,464,383.82,346.27a31,31,0,0,1,41.46-1.87L496,402.91" style="fill:none;stroke:#000000;stroke-linecap:round;stroke-linejoin:round;stroke-width:32px"/>
+                                        </g>
+                                    </svg>
+                                </label>
+                                <label class="drag-drop" for="first__content-img">Kéo Và Thả Hình Ảnh Cho Nội Dung Của Bạn Vào Đây</label>
+                                <label class="browse" for="first__content-img">Hoặc <b>Lấy</b> Từ Máy Tính Của Bạn</label>
+            `
+            imageViewContent.innerHTML = `${resetTitleImg}`
+        });
+    }
+    dropAreaContent.addEventListener('dragover',(e)=>{
+        e.preventDefault();
+    });
+    dropAreaContent.addEventListener('drop',(e)=>{
+        e.preventDefault();
+        inputFileContent.files = e.dataTransfer.files;
+        uploadImageContent();
+    });
+
+
     localStorage.clear()
 </script>

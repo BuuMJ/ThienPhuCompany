@@ -5,7 +5,7 @@ class CreateEventController {
     const user = req.user;
     console.log(user);
     res.render("createEvent", {
-      title: "Tạo Sự Kiện",
+      title: "Quản Trị Viên",
       user: user,
     });
   }

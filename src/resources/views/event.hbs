@@ -1,13 +1,83 @@
 <div class="container-event">
     <header>
-        <span class="title-event">Tin Tức Và Khuyến Mãi</span>
+        {{!-- <span class="title-event">Tin Tức Và Khuyến Mãi</span> --}}
     </header>
     <div class="main-event">
+        <h1 class="primary-title">
+            <img src="/img/allnews-title.png" alt="">
+            Tin Tức & Khuyến Mãi
+         </h1>
+        <div class="all-news">
+            <div class="latest-news">
+                {{#each latestNews}}
+                    <div class="card-latest__news">
+                        <img src="/{{this.image1}}" alt="">
+                        <div class="label-news" >
+                            <span>Mới Nhất</span>
+                            <span class="check-label {{this.category}}"></span>
+                        </div>
+                        <h1>{{this.title}}</h1>
+                        <span class="time-news">{{moment this.createdAt format="MMM DD, YYYY"}}</span>
+                    </div>
+                {{/each}}
+            </div>
+            <div class="content-three__latest">
+                {{#each threeLatestNews}}
+                    <div class="card-three__latest">
+                        <img src="/{{this.image1}}" alt="">
+                        <div class="content-three__latest">
+                            <div class="label-news">
+                                <span class="check-label {{this.category}}"></span>
+                            </div>
+                            <h2>{{this.title}}</h2>
+                            <span class="time-news">{{moment this.createdAt format="MMM DD, YYYY"}}</span>
+                        </div>
+                    </div>
+                {{/each}}
+            </div>
+            <div class="remaining-news">
+                {{#each remainingNews}}
+                    <div class="card-remaining__news">
+                        <img src="/{{this.image1}}" alt="">
+                        <div class="label-news">
+                            <span class="check-label {{this.category}}"></span>
+                        </div>
+                        <h3>{{this.title}}</h3>
+                        <p class="desc" data-change-text="{{this.text1}}">{{this.text1}}</p>
+                        <span class="time-news">{{moment this.createdAt format="MMM DD, YYYY"}}</span>
+                    </div>
+                {{/each}}
+            </div>
+        </div>
         <div class="news">
+            <h1>
+                <img src="/img/news-title.png" alt="">
+                Tin Tức
+            </h1>
             {{#each listNew}}
             <div class="card-news">
                 <img src="/{{this.image1}}" alt="" class="header">
-                <h2>{{this.title}}</h2>
+                <div class="content-news">
+                    <span class="time-news">{{moment this.createdAt format="MMM DD, YYYY"}}</span>
+                    <h2>{{this.title}}</h2>
+                    <p class="desc" data-change-text="{{this.text1}}">{{this.text1}}</p>
+                </div>
+            </div>
+            {{/each}}
+        </div>
+        <div class="event">
+            <h1>
+                <img src="/img/event-title.png" alt="">
+                Sự Kiện Khuyến Mãi
+            </h1>
+            {{#each listEvent}}
+            <div class="card-news">
+                <img src="/{{this.image1}}" alt="" class="header">
+                <div class="content-news">
+                    <span class="time-news">{{moment this.createdAt format="MMM DD, YYYY"}}</span>
+                    <h2>{{this.title}}</h2>
+                    <p class="desc" data-change-text="{{this.text1}}">{{this.text1}}</p>
+                </div>
             </div>
             {{/each}}
         </div>
@@ -16,3 +86,45 @@
         </div>
     </div>
 </div>
+<script>
+    // function change link text
+    const contentNews = document.querySelectorAll('p.desc')
+    contentNews.forEach(content=>{
+        const text1 = content.getAttribute('data-change-text');
+        const regex = /(^|\s)(https?:\/\/\S+)(?=\s|[,\.?!;:]|$)/g;
+        let linkifiedText = text1.replace(regex, '$1<a href="$2">$2</a>');
+        content.innerHTML = linkifiedText;
+        content.querySelectorAll('a').forEach(a => {
+            const href = a.getAttribute('href');
+            if(href.includes(',')){
+                const newHref = href.replace(/,/g, '');
+                a.setAttribute('href', newHref);
+            }
+        })
+    })
+
+    const labelNews = document.querySelector('.container-event .main-event .all-news .latest-news .label-news span.check-label');
+    if(labelNews.classList.contains('new') || labelNews.classList.contains('news') ){
+        labelNews.textContent = 'Tin Tức';
+    }else if(labelNews.classList.contains('event') || labelThreeLatest.classList.contains('event')){
+        labelNews.textContent = 'Sự Kiện';
+    }
+    const threeLatest = document.querySelectorAll('.container-event .main-event .all-news .content-three__latest .card-three__latest');
+    threeLatest.forEach(card=>{
+        const labelThreeLatest = card.querySelector('.content-three__latest .label-news span')
+        if(labelThreeLatest.classList.contains('new') || labelThreeLatest.classList.contains('new')){
+            labelThreeLatest.textContent = 'Tin Tức';
+        }else if(labelThreeLatest.classList.contains('event')){
+            labelThreeLatest.textContent = 'Sự Kiện';
+        }
+    })
+    const remainingNews = document.querySelectorAll('.container-event .main-event .all-news .remaining-news .card-remaining__news');
+    remainingNews.forEach(card=>{
+        const labelRemainingNews = card.querySelector('.container-event .main-event .all-news .remaining-news .card-remaining__news .label-news span');
+        if(labelRemainingNews.classList.contains('new') || labelRemainingNews.classList.contains('new')){
+            labelRemainingNews.textContent = 'Tin Tức';
+        }else if(labelRemainingNews.classList.contains('event')){
+            labelRemainingNews.textContent = 'Sự Kiện';
+        }
+    })
+</script>
