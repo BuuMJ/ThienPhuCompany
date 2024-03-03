@@ -15,7 +15,6 @@ const Event = new Schema(
     text8: String,
     text9: String,
     text10: String,
-    text11: String,
     image1: String,
     image2: String,
     image3: String,

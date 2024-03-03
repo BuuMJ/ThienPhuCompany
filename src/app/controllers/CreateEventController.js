@@ -3,7 +3,7 @@ const UserModel = require("../models/user");
 class CreateEventController {
   formCreate(req, res, next) {
     const user = req.user;
-    console.log(user)
+    console.log(user);
     res.render("createEvent", {
       title: "Tạo Sự Kiện",
       user: user,
