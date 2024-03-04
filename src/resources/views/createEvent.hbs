@@ -280,7 +280,6 @@
     const closeEventBox = formEvent.querySelector('span.title__post-news i');
     const overlay = document.querySelector('.overlay');
     const showFormEvent = document.querySelector('.admin-navbar .create-news');
-    var selectIMG = false;
     if(showFormEvent){
         showFormEvent.addEventListener('click',()=>{
             overlay.style.cssText = 'top: 0; transform: scale(1)';
@@ -316,8 +315,6 @@
             e.preventDefault();
             imageView.style.background = 'unset';
             imageView.textContent = "";
-            selectIMG = false;
-            logger(selectIMG)
             const resetTitleImg = `
             <label class="icon-title" for="file-img">
                             <svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" fill="#000000">
@@ -566,7 +563,6 @@
             const getFileIMGBackup = boxContent[0].querySelector('#first__content-img');
             const setFileIMG = document.querySelector('.review-img');
             getFileIMG.addEventListener('change', (e) => {
-                selectIMG = true;
                 const file = e.target.files[0];
                 if (file || e.target.value === "") {
                     const reader = new FileReader();
