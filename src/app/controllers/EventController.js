@@ -11,7 +11,7 @@ class EventController {
       .limit(3);
 
     //Phân trang của Remaining New
-    const pageOfRemain = req.query.pageOfRemain;
+    var pageOfRemain = req.query.pageOfRemain;
     if (pageOfRemain) {
       const count = await EventModel.countDocuments()
         .sort({ createdAt: -1 })
@@ -21,8 +21,8 @@ class EventController {
       for (let i = 1; i <= total; i++) {
         pagesOfRemain.push(i);
       }
-      pageOfEvent = parseInt(pageOfRemain);
-      const skip = (pageOfEvent - 1) * PAGE_SIZE + 4;
+      pageOfRemain = parseInt(pageOfRemain);
+      const skip = (pageOfRemain - 1) * PAGE_SIZE + 4;
       var remainingNews = await EventModel.find()
         .skip(skip)
         .limit(PAGE_SIZE)
@@ -36,8 +36,8 @@ class EventController {
       for (let i = 1; i <= total; i++) {
         pagesOfRemain.push(i);
       }
-      pageOfEvent = 1;
-      const skip = (pageOfEvent - 1) * PAGE_SIZE + 4;
+      pageOfRemain = 1;
+      const skip = (pageOfRemain - 1) * PAGE_SIZE + 4;
       var remainingNews = await EventModel.find()
         .skip(skip)
         .limit(PAGE_SIZE)
@@ -45,7 +45,7 @@ class EventController {
     }
 
     //Phân trang New
-    const pageOfNew = req.query.pagesOfNew;
+    var pageOfNew = req.query.pagesOfNew;
     if (pageOfNew) {
       const countOfNew = await EventModel.countDocuments({ category: "new" });
       const total = Math.ceil(countOfNew / PAGE_SIZE);
@@ -75,7 +75,7 @@ class EventController {
     }
 
     //Phân trang của Event
-    const pageOfEvent = req.query.pageOfEvent;
+    var pageOfEvent = req.query.pageOfEvent;
     if (pageOfEvent) {
       const count = await EventModel.countDocuments({ category: "event" });
       const total = Math.ceil(count / PAGE_SIZE);
@@ -97,7 +97,7 @@ class EventController {
         pagesOfEvent.push(i);
       }
       pageOfEvent = 1;
-      const skip = (page - 1) * PAGE_SIZE;
+      const skip = (pageOfEvent - 1) * PAGE_SIZE;
       var listEvent = await EventModel.find({ category: "event" })
         .skip(skip)
         .limit(PAGE_SIZE)
