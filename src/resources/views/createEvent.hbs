@@ -93,9 +93,9 @@
                         </label>
                         <label class="drag-drop" for="file-img">Kéo Và Thả Hình Ảnh Tiêu Đề Của Bạn Vào Đây</label>
                         <label class="browse" for="file-img">Hoặc <b>Lấy</b> Từ Máy Tính Của Bạn</label>
-                        <span class="skip">Bạn Có Thể <b>Bỏ Qua</b> Nếu Như Không Có Hình Ảnh Cho Tiêu Đề</span>
+                        <span class="skip">Hình Ảnh <b>Tiêu Đề</b> Giúp Bài Viết Thu Hút Người Đọc</span>
                     </div>
-                    <input id="file-img" type="file" name="image1" hidden>
+                    <input id="file-img" type="file" name="image1" hidden required>
                 </label>
                 <div class="main-info__news">
                     <div class="select-category">
@@ -280,6 +280,7 @@
     const closeEventBox = formEvent.querySelector('span.title__post-news i');
     const overlay = document.querySelector('.overlay');
     const showFormEvent = document.querySelector('.admin-navbar .create-news');
+    var selectIMG = false;
     if(showFormEvent){
         showFormEvent.addEventListener('click',()=>{
             overlay.style.cssText = 'top: 0; transform: scale(1)';
@@ -315,6 +316,8 @@
             e.preventDefault();
             imageView.style.background = 'unset';
             imageView.textContent = "";
+            selectIMG = false;
+            logger(selectIMG)
             const resetTitleImg = `
             <label class="icon-title" for="file-img">
                             <svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" fill="#000000">
@@ -485,9 +488,21 @@
     })
     // check valid user field
     function checkValidEvent(boxContent){
+        const titleIMG = document.getElementById('file-img');
+        const borderTitleIMG = document.querySelector('.content__post-news .title-img');
         const titleNews = document.getElementById('title-news');
         const errorToast = document.querySelector('.toast.error');
-        if(titleNews.value === ''){
+        const textErrorToast = errorToast.querySelector('.content-toast p');
+        if(titleIMG.value === "" || !titleIMG){
+            textErrorToast.innerHTML = '<p><b>Sự Cố:</b> Chưa Có Hình Tiêu Đề Cho Bài Đăng</p>'
+                visibleToast(errorToast);
+                borderTitleIMG.style.border = '2px dashed #BC0404';
+                borderTitleIMG.scrollIntoView();
+                titleIMG.addEventListener('change',()=>{
+                    borderTitleIMG.style.border = '2px dashed #ffe699';
+                })
+        }
+        else if(titleNews.value === ''){
             visibleToast(errorToast);
             titleNews.focus();
             titleNews.style.border = '1px solid #BC0404';
@@ -501,14 +516,14 @@
         }else{
             boxContent.forEach((box,index)=>{
                 const fileIMG = (index === 0) ? box.querySelector('input.file-img__content') : null;
-                const textErrorToast = errorToast.querySelector('.content-toast p');
                 const textareaContent = box.querySelector('textarea.content-news');
                 const borderContentIMG = (index === 0) ? box.querySelector('.first__img-content .content-img') : null;
                 const boxDisplayStyle = getComputedStyle(box).getPropertyValue('display');
                 if(index === 0 && (fileIMG.value === "" || !fileIMG)){
-                    textErrorToast.innerHTML = '<p><b>Sự Cố:</b> Chưa Có Hình Nội Dung Bài Đăng</p>'
+                    textErrorToast.innerHTML = '<p><b>Sự Cố:</b> Chưa Có Hình Ảnh Nội Dung Bài Đăng</p>'
                     visibleToast(errorToast);
                     borderContentIMG.style.border = '2px dashed #BC0404';
+                    borderContentIMG.scrollIntoView();
                     fileIMG.addEventListener('change',()=>{
                         borderContentIMG.style.border = '2px dashed #ffe699';
                     })
@@ -530,7 +545,6 @@
     }
     document.addEventListener('DOMContentLoaded',()=>{
         const postedEvent = localStorage.getItem('event');
-        logger(postedEvent)
         if(postedEvent === 'success'){
             const successToast = document.querySelector('.toast.success')
             successToast.querySelector('.content-toast p').innerHTML = '<p><b>Thành Công:</b> Đăng Bài Viết Thành Công</p>'
@@ -551,7 +565,19 @@
             const getFileIMG = document.getElementById('file-img');
             const getFileIMGBackup = boxContent[0].querySelector('#first__content-img');
             const setFileIMG = document.querySelector('.review-img');
-            
+            getFileIMG.addEventListener('change', (e) => {
+                selectIMG = true;
+                const file = e.target.files[0];
+                if (file || e.target.value === "") {
+                    const reader = new FileReader();
+                    reader.onload = function (e) {
+                        setFileIMG.src = e.target.result;
+                    };
+                    reader.readAsDataURL(file);
+                } else {
+                    setFileIMG.src = "";
+                }
+            });
             let date = new Date();
             let year = date.getFullYear();
             let dd = date.getDate();
@@ -589,20 +615,5 @@
             setValueDate.innerHTML = `${month} ${dd}, ${year}`
         }
         reviewCard();
-        // function handle img
-        function handleFileInput(fileInput, imageElement) {
-            fileInput.addEventListener('change', (e) => {
-                const file = e.target.files[0];
-                if (file || e.target.value === "") {
-                    const reader = new FileReader();
-                    reader.onload = function (e) {
-                        imageElement.src = e.target.result;
-                    };
-                    reader.readAsDataURL(file);
-                } else {
-                    imageElement.src = "";
-                }
-            });
-        }
     })
 </script>
