@@ -5,7 +5,22 @@
             <h1>Hello {{getName user}}</h1>
         </div>
     </div>
+    {{!-- overlay --}}
     <div class="overlay"></div>
+    {{!-- warning toast --}}
+    <div class="toast warning">
+        <div class="icon-toast">
+            <svg viewBox="0 0 512 512" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" fill="#FCAC34" stroke="#FCAC34">
+            <g id="SVGRepo_bgCarrier" stroke-width="0"/>
+            <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"/>
+            <g id="SVGRepo_iconCarrier"> <title>warning-filled</title> <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"> <g id="add" fill="#FCAC34" transform="translate(32.000000, 42.666667)"> <path d="M246.312928,5.62892705 C252.927596,9.40873724 258.409564,14.8907053 262.189374,21.5053731 L444.667042,340.84129 C456.358134,361.300701 449.250007,387.363834 428.790595,399.054926 C422.34376,402.738832 415.04715,404.676552 407.622001,404.676552 L42.6666667,404.676552 C19.1025173,404.676552 7.10542736e-15,385.574034 7.10542736e-15,362.009885 C7.10542736e-15,354.584736 1.93772021,347.288125 5.62162594,340.84129 L188.099293,21.5053731 C199.790385,1.04596203 225.853517,-6.06216498 246.312928,5.62892705 Z M224,272 C208.761905,272 197.333333,283.264 197.333333,298.282667 C197.333333,313.984 208.415584,325.248 224,325.248 C239.238095,325.248 250.666667,313.984 250.666667,298.624 C250.666667,283.264 239.238095,272 224,272 Z M245.333333,106.666667 L202.666667,106.666667 L202.666667,234.666667 L245.333333,234.666667 L245.333333,106.666667 Z" id="Combined-Shape"> </path> </g> </g> </g>
+            </svg>
+        </div>
+        <div class="content-toast">
+            <p><b>Cảnh Báo:</b> Hãy Xoá Từ Dưới Lên Trên</p>
+        </div>
+    </div>
+    {{!-- box create event --}}
     <form class="box-create__event" action="/admin/create_event"  method="POST" enctype="multipart/form-data">
         <span class="title__post-news">
             Đăng Tin Tức Mới
@@ -36,38 +51,161 @@
                     <input id="file-img" type="file" name="image1" hidden>
                 </label>
                 <div class="main-info__news">
-                    <input id="title-news" type="text" name="title" placeholder="Tiêu Đề Cho Bài Viết">
-                    <div class="first__img-content">
-                        <label class="content-img" for="first__content-img">
-                            <div class="img-view">
-                                <label class="icon-title" for="first__content-img">
-                                    <svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" fill="#000000">
-                                        <g id="SVGRepo_bgCarrier" stroke-width="0"/>
-                                        <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"/>
-                                        <g id="SVGRepo_iconCarrier">
-                                        <title>ionicons-v5-e</title>
-                                        <path d="M432,112V96a48.14,48.14,0,0,0-48-48H64A48.14,48.14,0,0,0,16,96V352a48.14,48.14,0,0,0,48,48H80" style="fill:none;stroke:#000000;stroke-linejoin:round;stroke-width:32px"/>
-                                        <rect x="96" y="128" width="400" height="336" rx="45.99" ry="45.99" style="fill:none;stroke:#000000;stroke-linejoin:round;stroke-width:32px"/>
-                                        <ellipse cx="372.92" cy="219.64" rx="30.77" ry="30.55" style="fill:none;stroke:#000000;stroke-miterlimit:10;stroke-width:32px"/>
-                                        <path d="M342.15,372.17,255,285.78a30.93,30.93,0,0,0-42.18-1.21L96,387.64" style="fill:none;stroke:#000000;stroke-linecap:round;stroke-linejoin:round;stroke-width:32px"/>
-                                        <path d="M265.23,464,383.82,346.27a31,31,0,0,1,41.46-1.87L496,402.91" style="fill:none;stroke:#000000;stroke-linecap:round;stroke-linejoin:round;stroke-width:32px"/>
-                                        </g>
-                                    </svg>
-                                </label>
-                                <label class="drag-drop" for="first__content-img">Kéo Và Thả Hình Ảnh Cho Nội Dung Của Bạn Vào Đây</label>
-                                <label class="browse" for="first__content-img">Hoặc <b>Lấy</b> Từ Máy Tính Của Bạn</label>
+                    <div class="select-category">
+                        <span>Chọn Loại Bài Viết</span>
+                            <div class="choose-category">
+                                    <input type="radio" name="category" id="category-event" value="event" checked hidden>
+                                    <input type="radio" name="category" id="category-news" value="news" hidden>
+                                    <label class="checked" for=""></label>
+                                    <label class="choose-event" for="category-event">Sự Kiện</label>
+                                    <label class="choose-news" for="category-news">Tin Tức</label>
                             </div>
-                        </label>
-                            <input type="file" name="image2" id="first__content-img" hidden>
                     </div>
-                    <textarea id="content-news" name="text1" rows="6" placeholder="Nội Dung Cho Bài Viết..."></textarea>
-                    <input type="text" name="text2">
-                    <input type="text" name="text3">
-                    <select name="category" id="">
-                        <option value="event" selected>Khuyến Mãi</option>
-                        <option value="news">Tin Tức</option>
-                    </select>
-                    <button type="submit">Đẹp trai thì bấn vào đây</button>
+                    <input id="title-news" type="text" name="title" placeholder="Tiêu Đề Cho Bài Viết">
+                    {{!-- box 1 --}}
+                    <div class="box__content-first">
+                        <div class="first__img-content">
+                            <label class="content-img" for="first__content-img">
+                                <div class="img-view">
+                                    <label class="icon-title" for="first__content-img">
+                                        <svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" fill="#000000">
+                                            <g id="SVGRepo_bgCarrier" stroke-width="0"/>
+                                            <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"/>
+                                            <g id="SVGRepo_iconCarrier">
+                                            <title>ionicons-v5-e</title>
+                                            <path d="M432,112V96a48.14,48.14,0,0,0-48-48H64A48.14,48.14,0,0,0,16,96V352a48.14,48.14,0,0,0,48,48H80" style="fill:none;stroke:#000000;stroke-linejoin:round;stroke-width:32px"/>
+                                            <rect x="96" y="128" width="400" height="336" rx="45.99" ry="45.99" style="fill:none;stroke:#000000;stroke-linejoin:round;stroke-width:32px"/>
+                                            <ellipse cx="372.92" cy="219.64" rx="30.77" ry="30.55" style="fill:none;stroke:#000000;stroke-miterlimit:10;stroke-width:32px"/>
+                                            <path d="M342.15,372.17,255,285.78a30.93,30.93,0,0,0-42.18-1.21L96,387.64" style="fill:none;stroke:#000000;stroke-linecap:round;stroke-linejoin:round;stroke-width:32px"/>
+                                            <path d="M265.23,464,383.82,346.27a31,31,0,0,1,41.46-1.87L496,402.91" style="fill:none;stroke:#000000;stroke-linecap:round;stroke-linejoin:round;stroke-width:32px"/>
+                                            </g>
+                                        </svg>
+                                    </label>
+                                    <label class="drag-drop" for="first__content-img">Kéo Và Thả Hình Ảnh Cho Nội Dung Của Bạn Vào Đây</label>
+                                    <label class="browse" for="first__content-img">Hoặc <b>Lấy</b> Từ Máy Tính Của Bạn</label>
+                                </div>
+                            </label>
+                                <input class="file-img__content" type="file" name="image2" id="first__content-img" hidden>
+                        </div>
+                        <textarea class="content-news" id="content-news" name="text1" rows="10" placeholder="Nội Dung Cho Bài Viết..."></textarea>
+                    </div>
+                    {{!-- box 2 --}}
+                    <div class="box__content-first">
+                        <p class="title-content"></p>
+                        <div class="first__img-content">
+                            <label class="content-img" for="first__content-img1">
+                                <div class="img-view">
+                                    <label class="icon-title" for="first__content-img1">
+                                        <svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" fill="#000000">
+                                            <g id="SVGRepo_bgCarrier" stroke-width="0"/>
+                                            <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"/>
+                                            <g id="SVGRepo_iconCarrier">
+                                            <title>ionicons-v5-e</title>
+                                            <path d="M432,112V96a48.14,48.14,0,0,0-48-48H64A48.14,48.14,0,0,0,16,96V352a48.14,48.14,0,0,0,48,48H80" style="fill:none;stroke:#000000;stroke-linejoin:round;stroke-width:32px"/>
+                                            <rect x="96" y="128" width="400" height="336" rx="45.99" ry="45.99" style="fill:none;stroke:#000000;stroke-linejoin:round;stroke-width:32px"/>
+                                            <ellipse cx="372.92" cy="219.64" rx="30.77" ry="30.55" style="fill:none;stroke:#000000;stroke-miterlimit:10;stroke-width:32px"/>
+                                            <path d="M342.15,372.17,255,285.78a30.93,30.93,0,0,0-42.18-1.21L96,387.64" style="fill:none;stroke:#000000;stroke-linecap:round;stroke-linejoin:round;stroke-width:32px"/>
+                                            <path d="M265.23,464,383.82,346.27a31,31,0,0,1,41.46-1.87L496,402.91" style="fill:none;stroke:#000000;stroke-linecap:round;stroke-linejoin:round;stroke-width:32px"/>
+                                            </g>
+                                        </svg>
+                                    </label>
+                                    <label class="drag-drop" for="first__content-img1">Kéo Và Thả Hình Ảnh Cho Nội Dung Của Bạn Vào Đây</label>
+                                    <label class="browse" for="first__content-img1">Hoặc <b>Lấy</b> Từ Máy Tính Của Bạn</label>
+                                </div>
+                            </label>
+                                <input class="file-img__content" type="file" name="image3" id="first__content-img1" hidden>
+                        </div>
+                        <textarea class="content-news" id="content-news1" name="text2" rows="10" placeholder="Nội Dung Cho Bài Viết..."></textarea>
+                    </div>
+                    {{!-- box 3 --}}
+                    <div class="box__content-first">
+                        <p class="title-content"></p>
+                        <div class="first__img-content">
+                            <label class="content-img" for="first__content-img2">
+                                <div class="img-view">
+                                    <label class="icon-title" for="first__content-img2">
+                                        <svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" fill="#000000">
+                                            <g id="SVGRepo_bgCarrier" stroke-width="0"/>
+                                            <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"/>
+                                            <g id="SVGRepo_iconCarrier">
+                                            <title>ionicons-v5-e</title>
+                                            <path d="M432,112V96a48.14,48.14,0,0,0-48-48H64A48.14,48.14,0,0,0,16,96V352a48.14,48.14,0,0,0,48,48H80" style="fill:none;stroke:#000000;stroke-linejoin:round;stroke-width:32px"/>
+                                            <rect x="96" y="128" width="400" height="336" rx="45.99" ry="45.99" style="fill:none;stroke:#000000;stroke-linejoin:round;stroke-width:32px"/>
+                                            <ellipse cx="372.92" cy="219.64" rx="30.77" ry="30.55" style="fill:none;stroke:#000000;stroke-miterlimit:10;stroke-width:32px"/>
+                                            <path d="M342.15,372.17,255,285.78a30.93,30.93,0,0,0-42.18-1.21L96,387.64" style="fill:none;stroke:#000000;stroke-linecap:round;stroke-linejoin:round;stroke-width:32px"/>
+                                            <path d="M265.23,464,383.82,346.27a31,31,0,0,1,41.46-1.87L496,402.91" style="fill:none;stroke:#000000;stroke-linecap:round;stroke-linejoin:round;stroke-width:32px"/>
+                                            </g>
+                                        </svg>
+                                    </label>
+                                    <label class="drag-drop" for="first__content-img2">Kéo Và Thả Hình Ảnh Cho Nội Dung Của Bạn Vào Đây</label>
+                                    <label class="browse" for="first__content-img2">Hoặc <b>Lấy</b> Từ Máy Tính Của Bạn</label>
+                                </div>
+                            </label>
+                                <input class="file-img__content" type="file" name="image4" id="first__content-img2" hidden>
+                        </div>
+                        <textarea class="content-news" id="content-news2" name="text3" rows="10" placeholder="Nội Dung Cho Bài Viết..."></textarea>
+                    </div>
+                    {{!-- box 4 --}}
+                    <div class="box__content-first">
+                        <p class="title-content"></p>
+                        <div class="first__img-content">
+                            <label class="content-img" for="first__content-img3">
+                                <div class="img-view">
+                                    <label class="icon-title" for="first__content-img3">
+                                        <svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" fill="#000000">
+                                            <g id="SVGRepo_bgCarrier" stroke-width="0"/>
+                                            <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"/>
+                                            <g id="SVGRepo_iconCarrier">
+                                            <title>ionicons-v5-e</title>
+                                            <path d="M432,112V96a48.14,48.14,0,0,0-48-48H64A48.14,48.14,0,0,0,16,96V352a48.14,48.14,0,0,0,48,48H80" style="fill:none;stroke:#000000;stroke-linejoin:round;stroke-width:32px"/>
+                                            <rect x="96" y="128" width="400" height="336" rx="45.99" ry="45.99" style="fill:none;stroke:#000000;stroke-linejoin:round;stroke-width:32px"/>
+                                            <ellipse cx="372.92" cy="219.64" rx="30.77" ry="30.55" style="fill:none;stroke:#000000;stroke-miterlimit:10;stroke-width:32px"/>
+                                            <path d="M342.15,372.17,255,285.78a30.93,30.93,0,0,0-42.18-1.21L96,387.64" style="fill:none;stroke:#000000;stroke-linecap:round;stroke-linejoin:round;stroke-width:32px"/>
+                                            <path d="M265.23,464,383.82,346.27a31,31,0,0,1,41.46-1.87L496,402.91" style="fill:none;stroke:#000000;stroke-linecap:round;stroke-linejoin:round;stroke-width:32px"/>
+                                            </g>
+                                        </svg>
+                                    </label>
+                                    <label class="drag-drop" for="first__content-img3">Kéo Và Thả Hình Ảnh Cho Nội Dung Của Bạn Vào Đây</label>
+                                    <label class="browse" for="first__content-img3">Hoặc <b>Lấy</b> Từ Máy Tính Của Bạn</label>
+                                </div>
+                            </label>
+                                <input class="file-img__content" type="file" name="image5" id="first__content-img3" hidden>
+                        </div>
+                        <textarea class="content-news" id="content-news3" name="text4" rows="10" placeholder="Nội Dung Cho Bài Viết..."></textarea>
+                    </div>
+                    {{!-- box 5 --}}
+                    <div class="box__content-first">
+                        <p class="title-content"></p>
+                        <div class="first__img-content">
+                            <label class="content-img" for="first__content-img4">
+                                <div class="img-view">
+                                    <label class="icon-title" for="first__content-img4">
+                                        <svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" fill="#000000">
+                                            <g id="SVGRepo_bgCarrier" stroke-width="0"/>
+                                            <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"/>
+                                            <g id="SVGRepo_iconCarrier">
+                                            <title>ionicons-v5-e</title>
+                                            <path d="M432,112V96a48.14,48.14,0,0,0-48-48H64A48.14,48.14,0,0,0,16,96V352a48.14,48.14,0,0,0,48,48H80" style="fill:none;stroke:#000000;stroke-linejoin:round;stroke-width:32px"/>
+                                            <rect x="96" y="128" width="400" height="336" rx="45.99" ry="45.99" style="fill:none;stroke:#000000;stroke-linejoin:round;stroke-width:32px"/>
+                                            <ellipse cx="372.92" cy="219.64" rx="30.77" ry="30.55" style="fill:none;stroke:#000000;stroke-miterlimit:10;stroke-width:32px"/>
+                                            <path d="M342.15,372.17,255,285.78a30.93,30.93,0,0,0-42.18-1.21L96,387.64" style="fill:none;stroke:#000000;stroke-linecap:round;stroke-linejoin:round;stroke-width:32px"/>
+                                            <path d="M265.23,464,383.82,346.27a31,31,0,0,1,41.46-1.87L496,402.91" style="fill:none;stroke:#000000;stroke-linecap:round;stroke-linejoin:round;stroke-width:32px"/>
+                                            </g>
+                                        </svg>
+                                    </label>
+                                    <label class="drag-drop" for="first__content-img4">Kéo Và Thả Hình Ảnh Cho Nội Dung Của Bạn Vào Đây</label>
+                                    <label class="browse" for="first__content-img4">Hoặc <b>Lấy</b> Từ Máy Tính Của Bạn</label>
+                                </div>
+                            </label>
+                                <input class="file-img__content" type="file" name="image6" id="first__content-img4" hidden>
+                        </div>
+                        <textarea class="content-news" id="content-news4" name="text5" rows="10" placeholder="Nội Dung Cho Bài Viết..."></textarea>
+                    </div>
+                    {{!-- end box content --}}
+                    <div class="action__box-content">
+                        <button class="add-more" type="button">Thêm Nội Dung Và Hình Ảnh</button>
+                        <button class="submit" type="submit">Đăng Bài</button>
+                    </div>
                 </div>
             </div>
         </div>
@@ -75,19 +213,23 @@
 </div>
 <script>
     // title img
-    const dropArea = document.querySelector('.title-img');
+    const dropArea = document.querySelector('.container-create .box-create__event .body-create__event .content__post-news .title-img');
     const inputFile = document.getElementById('file-img');
-    const imageView = document.querySelector('.img-view');
+    const imageView = document.querySelector('.container-create .box-create__event .body-create__event .content__post-news .title-img .img-view');
+    const contentImageView = document.querySelector('.container-create .box-create__event .body-create__event .content__post-news .title-img')
     inputFile.addEventListener('change', uploadImage);
     function uploadImage(){
         let imgLink = URL.createObjectURL(inputFile.files[0]);
-        imageView.style.cssText = `background: url(${imgLink}) center / cover no-repeat; border-radius: 10px;`;
+        imageView.style.cssText = `background: url(${imgLink}) center / cover no-repeat; border-radius: 5px;`;
         imageView.textContent = "";
+        contentImageView.style.cssText = 'border: 2px dashed #ffe699;'
         const closeIcon = document.createElement('i');
         closeIcon.className = 'bi bi-x';
         closeIcon.style.cssText = 'position: absolute; top: 0; right: 2px; color: #F80404; font-size: 40px;';
         imageView.appendChild(closeIcon);
         closeIcon.addEventListener('click', (e)=>{
+            URL.revokeObjectURL(imgLink);
+            inputFile.value= '';
             e.preventDefault();
             imageView.style.background = 'unset';
             imageView.textContent = "";
@@ -106,70 +248,134 @@
                                 </g>
                             </svg>
                         </label>
-                        <label class="drag-drop" for="file-img">Kéo Và Thả Hình Ảnh Của Bạn Vào Đây</label>
+                        <label class="drag-drop" for="file-img">Kéo Và Thả Hình Ảnh Tiêu Đề Của Bạn Vào Đây</label>
                         <label class="browse" for="file-img">Hoặc <b>Lấy</b> Từ Máy Tính Của Bạn</label>
                         <span class="skip">Bạn Có Thể <b>Bỏ Qua</b> Nếu Như Không Có Hình Ảnh Cho Tiêu Đề</span>
             `
             imageView.innerHTML = `${resetTitleImg}`
+            contentImageView.style.cssText = 'border: 2px dashed #7C7C7C;'
         });
     }
     dropArea.addEventListener('dragover',(e)=>{
         e.preventDefault();
-
     });
     dropArea.addEventListener('drop',(e)=>{
         e.preventDefault();
         inputFile.files = e.dataTransfer.files;
         uploadImage();
     });
-
-    // content img
-    const dropAreaContent = document.querySelector('.content-img');
-    const inputFileContent = document.getElementById('first__content-img');
-    const imageViewContent = document.querySelector('.content-img .img-view');
-    inputFileContent.addEventListener('change', uploadImageContent);
-    function uploadImageContent(){
-        let imgLink = URL.createObjectURL(inputFileContent.files[0]);
-        imageViewContent.style.cssText = `background: url(${imgLink}) center / cover no-repeat; border-radius: 10px;`;
-        imageViewContent.textContent = "";
-        const closeIcon = document.createElement('i');
-        closeIcon.className = 'bi bi-x';
-        closeIcon.style.cssText = 'position: absolute; top: 0; right: 2px; color: #F80404; font-size: 40px;';
-        imageViewContent.appendChild(closeIcon);
-        closeIcon.addEventListener('click', (e)=>{
-            e.preventDefault();
-            imageViewContent.style.background = 'unset';
-            imageViewContent.textContent = "";
-            const resetTitleImg = `
-            <label class="icon-title" for="first__content-img">
-                                    <svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" fill="#000000">
-                                        <g id="SVGRepo_bgCarrier" stroke-width="0"/>
-                                        <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"/>
-                                        <g id="SVGRepo_iconCarrier">
-                                        <title>ionicons-v5-e</title>
-                                        <path d="M432,112V96a48.14,48.14,0,0,0-48-48H64A48.14,48.14,0,0,0,16,96V352a48.14,48.14,0,0,0,48,48H80" style="fill:none;stroke:#000000;stroke-linejoin:round;stroke-width:32px"/>
-                                        <rect x="96" y="128" width="400" height="336" rx="45.99" ry="45.99" style="fill:none;stroke:#000000;stroke-linejoin:round;stroke-width:32px"/>
-                                        <ellipse cx="372.92" cy="219.64" rx="30.77" ry="30.55" style="fill:none;stroke:#000000;stroke-miterlimit:10;stroke-width:32px"/>
-                                        <path d="M342.15,372.17,255,285.78a30.93,30.93,0,0,0-42.18-1.21L96,387.64" style="fill:none;stroke:#000000;stroke-linecap:round;stroke-linejoin:round;stroke-width:32px"/>
-                                        <path d="M265.23,464,383.82,346.27a31,31,0,0,1,41.46-1.87L496,402.91" style="fill:none;stroke:#000000;stroke-linecap:round;stroke-linejoin:round;stroke-width:32px"/>
-                                        </g>
-                                    </svg>
-                                </label>
-                                <label class="drag-drop" for="first__content-img">Kéo Và Thả Hình Ảnh Cho Nội Dung Của Bạn Vào Đây</label>
-                                <label class="browse" for="first__content-img">Hoặc <b>Lấy</b> Từ Máy Tính Của Bạn</label>
-            `
-            imageViewContent.innerHTML = `${resetTitleImg}`
+    // content box
+        const boxContent = document.querySelectorAll('.box__content-first');
+        const addMore = document.querySelector('.action__box-content .add-more');
+        const warningToast = document.querySelector('.toast.warning');
+        let increAdd = 0;
+        addMore.addEventListener('click', () => {
+            increAdd++;
+            if (increAdd >= boxContent.length) {
+                logger('Đã hết, không thể thêm nữa.');
+            }
+            boxContent.forEach((box, index) => {
+                if (index === increAdd) {
+                    box.style.display = 'block';
+                    const titleContent = box.querySelector('p.title-content');
+                    const numerical = increAdd + 1;
+                    titleContent.innerHTML = `Nội Dung Thứ ${numerical} <i class="bi bi-x" title="Xoá Nội Dung Này"></i>`;
+                    const closeThisBox = box.querySelector('p i');
+                    if (closeThisBox) {
+                        closeThisBox.addEventListener('click', () => {
+                            if(index !== increAdd){
+                                warningToast.classList.add('show-toast');
+                                setTimeout(()=>{
+                                    warningToast.classList.add('hide-toast');
+                                },5000)
+                            }else{
+                                box.style.display = 'none';
+                                increAdd--;
+                            }
+                        });
+                    }
+                }
+            });
         });
-    }
-    dropAreaContent.addEventListener('dragover',(e)=>{
-        e.preventDefault();
-    });
-    dropAreaContent.addEventListener('drop',(e)=>{
-        e.preventDefault();
-        inputFileContent.files = e.dataTransfer.files;
-        uploadImageContent();
-    });
-
-
+        boxContent.forEach((box,index)=>{
+            if(index > 0){
+                box.style.display = 'none';
+            }
+            const dropAreaContent = box.querySelector('.content-img');
+            const inputFileContent = box.querySelector('.file-img__content');
+            const imageViewContent = box.querySelector('.content-img .img-view');
+            const contentIMG = box.querySelector('.content-img');
+            
+            inputFileContent.addEventListener('change', ()=>{
+                uploadImageContent(imageViewContent, inputFileContent, contentIMG);
+            });
+            uploadImageContent(imageViewContent, inputFileContent, contentIMG)
+            dropAreaContent.addEventListener('dragover',(e)=>{
+            e.preventDefault();
+            });
+            dropAreaContent.addEventListener('drop',(e)=>{
+                e.preventDefault();
+                inputFileContent.files = e.dataTransfer.files;
+                uploadImageContent(imageViewContent, inputFileContent, contentIMG);
+            });
+        })
+        function uploadImageContent(imageViewContent, inputFileContent, contentIMG){
+            if (inputFileContent.files.length > 0){
+                let imgLink = URL.createObjectURL(inputFileContent.files[0]);
+                imageViewContent.style.cssText = `background: url(${imgLink}) center / cover no-repeat; border-radius: 5px;`;
+                imageViewContent.textContent = "";
+                contentIMG.style.cssText = 'border: 2px dashed #ffe699;'
+                const closeIcon = document.createElement('i');
+                closeIcon.className = 'bi bi-x';
+                closeIcon.style.cssText = 'position: absolute; top: 0; right: 2px; color: #F80404; font-size: 40px;';
+                imageViewContent.appendChild(closeIcon);
+                closeIcon.addEventListener('click', (e)=>{
+                    e.preventDefault();
+                    imageViewContent.style.background = 'unset';
+                    imageViewContent.textContent = "";
+                    URL.revokeObjectURL(imgLink);
+                    inputFileContent.value = '';
+                    const resetTitleImg = `
+                    <label class="icon-title" for="first__content-img">
+                                            <svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" fill="#000000">
+                                                <g id="SVGRepo_bgCarrier" stroke-width="0"/>
+                                                <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"/>
+                                                <g id="SVGRepo_iconCarrier">
+                                                <title>ionicons-v5-e</title>
+                                                <path d="M432,112V96a48.14,48.14,0,0,0-48-48H64A48.14,48.14,0,0,0,16,96V352a48.14,48.14,0,0,0,48,48H80" style="fill:none;stroke:#000000;stroke-linejoin:round;stroke-width:32px"/>
+                                                <rect x="96" y="128" width="400" height="336" rx="45.99" ry="45.99" style="fill:none;stroke:#000000;stroke-linejoin:round;stroke-width:32px"/>
+                                                <ellipse cx="372.92" cy="219.64" rx="30.77" ry="30.55" style="fill:none;stroke:#000000;stroke-miterlimit:10;stroke-width:32px"/>
+                                                <path d="M342.15,372.17,255,285.78a30.93,30.93,0,0,0-42.18-1.21L96,387.64" style="fill:none;stroke:#000000;stroke-linecap:round;stroke-linejoin:round;stroke-width:32px"/>
+                                                <path d="M265.23,464,383.82,346.27a31,31,0,0,1,41.46-1.87L496,402.91" style="fill:none;stroke:#000000;stroke-linecap:round;stroke-linejoin:round;stroke-width:32px"/>
+                                                </g>
+                                            </svg>
+                                        </label>
+                                        <label class="drag-drop" for="first__content-img">Kéo Và Thả Hình Ảnh Cho Nội Dung Của Bạn Vào Đây</label>
+                                        <label class="browse" for="first__content-img">Hoặc <b>Lấy</b> Từ Máy Tính Của Bạn</label>
+                    `
+                    imageViewContent.innerHTML = `${resetTitleImg}`
+                    contentIMG.style.cssText = 'border: 2px dashed #7C7C7C;'
+                });
+            }
+            
+        }
+        const textArea = document.querySelectorAll('textarea.content-news');
+        const inputField = document.querySelector('input#title-news');
+        inputField.addEventListener('input',()=>{
+            if(inputField.value !== ""){
+                inputField.style.border = '1px solid #ffe699';
+            }else{
+                inputField.style.border = '1px solid transparent';
+            }
+        })
+        textArea.forEach(textarea=>{
+            textarea.addEventListener('input',()=>{
+            if(textarea.value !== ""){
+                textarea.style.border = '1px solid #ffe699';
+            }else{
+                textarea.style.border = '1px solid transparent';
+            }
+        })
+        })
     localStorage.clear()
 </script>
