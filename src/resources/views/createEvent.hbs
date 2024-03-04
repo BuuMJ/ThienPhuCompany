@@ -7,6 +7,39 @@
     </div>
     {{!-- overlay --}}
     <div class="overlay"></div>
+    {{!-- warning valid --}}
+    <div class="toast warning-valid">
+        <div class="icon-toast">
+            <svg viewBox="0 0 512 512" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" fill="#FCAC34" stroke="#FCAC34">
+            <g id="SVGRepo_bgCarrier" stroke-width="0"/>
+            <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"/>
+            <g id="SVGRepo_iconCarrier"> <title>warning-filled</title> <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"> <g id="add" fill="#FCAC34" transform="translate(32.000000, 42.666667)"> <path d="M246.312928,5.62892705 C252.927596,9.40873724 258.409564,14.8907053 262.189374,21.5053731 L444.667042,340.84129 C456.358134,361.300701 449.250007,387.363834 428.790595,399.054926 C422.34376,402.738832 415.04715,404.676552 407.622001,404.676552 L42.6666667,404.676552 C19.1025173,404.676552 7.10542736e-15,385.574034 7.10542736e-15,362.009885 C7.10542736e-15,354.584736 1.93772021,347.288125 5.62162594,340.84129 L188.099293,21.5053731 C199.790385,1.04596203 225.853517,-6.06216498 246.312928,5.62892705 Z M224,272 C208.761905,272 197.333333,283.264 197.333333,298.282667 C197.333333,313.984 208.415584,325.248 224,325.248 C239.238095,325.248 250.666667,313.984 250.666667,298.624 C250.666667,283.264 239.238095,272 224,272 Z M245.333333,106.666667 L202.666667,106.666667 L202.666667,234.666667 L245.333333,234.666667 L245.333333,106.666667 Z" id="Combined-Shape"> </path> </g> </g> </g>
+            </svg>
+            <h2>Cảnh Báo</h2>
+        </div>
+        <div class="content-toast">
+            <p>Bạn Có Thể Mất Hết Dữ Liệu Đã Nhập Vào Nếu Như Bạn Xoá Nội Dung Này</p>
+        </div>
+        <div class="action-toast">
+            <span class="yes">Xoá</span>
+            <span class="no">Huỷ Bỏ</span>
+        </div>
+    </div>
+    {{!-- success toast --}}
+    <div class="toast success">
+        <div class="icon-toast">
+           <svg fill="#048444" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <g id="SVGRepo_bgCarrier" stroke-width="0"/>
+            <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"/>
+            <g id="SVGRepo_iconCarrier">
+            <path d="M12,2A10,10,0,1,0,22,12,10,10,0,0,0,12,2Zm5.676,8.237-6,5.5a1,1,0,0,1-1.383-.03l-3-3a1,1,0,1,1,1.414-1.414l2.323,2.323,5.294-4.853a1,1,0,1,1,1.352,1.474Z"/>
+            </g>
+            </svg>
+        </div>
+        <div class="content-toast">
+            <p><b>Thành Công:</b> Xoá Bài Viết Thành Công</p>
+        </div>
+    </div>
     {{!-- warning toast --}}
     <div class="toast warning">
         <div class="icon-toast">
@@ -18,6 +51,19 @@
         </div>
         <div class="content-toast">
             <p><b>Cảnh Báo:</b> Hãy Xoá Từ Dưới Lên Trên</p>
+        </div>
+    </div>
+    {{!-- error toast --}}
+    <div class="toast error">
+        <div class="icon-toast">
+            <svg fill="#BC0404" version="1.1" baseProfile="tiny" id="Layer_1" xmlns:x="&amp;ns_extend;" xmlns:i="&amp;ns_ai;" xmlns:graph="&amp;ns_graphs;" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:a="http://ns.adobe.com/AdobeSVGViewerExtensions/3.0/" viewBox="-0.5 0.5 42 42" xml:space="preserve">
+            <g id="SVGRepo_bgCarrier" stroke-width="0"/>
+            <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"/>
+            <g id="SVGRepo_iconCarrier"> <path d="M29.582,8.683l-0.129,0.12L8.3,29.954c-0.249,0.249-0.428,0.478-0.547,0.688c-2.04-2.639-3.233-6-3.233-9.701 c0-8.797,6.626-15.482,15.421-15.482C23.632,5.459,26.955,6.644,29.582,8.683z M10.937,33.704c0.189-0.117,0.388-0.287,0.606-0.507 l21.151-21.151l0.041-0.04c1.74,2.518,2.746,5.602,2.746,8.994c0,8.785-6.696,15.541-15.481,15.541 C16.568,36.541,13.454,35.506,10.937,33.704z M0.5,21c0,10.775,8.735,19.5,19.5,19.5c10.767,0,19.501-8.725,19.501-19.5 c0-10.775-8.734-19.5-19.5-19.5C9.235,1.5,0.5,10.225,0.5,21z"/> </g>
+            </svg>
+        </div>
+        <div class="content-toast">
+            <p><b>Sự Cố:</b> Hãy Điền Tiêu Đề Để Đăng Bài</p>
         </div>
     </div>
     {{!-- box create event --}}
@@ -61,7 +107,7 @@
                                     <label class="choose-news" for="category-news">Tin Tức</label>
                             </div>
                     </div>
-                    <input id="title-news" type="text" name="title" placeholder="Tiêu Đề Cho Bài Viết">
+                    <input id="title-news" type="text" name="title" placeholder="Tiêu Đề Cho Bài Viết" required>
                     {{!-- box 1 --}}
                     <div class="box__content-first">
                         <div class="first__img-content">
@@ -85,9 +131,9 @@
                                     <label class="browse" for="first__content-img">Hoặc <b>Lấy</b> Từ Máy Tính Của Bạn</label>
                                 </div>
                             </label>
-                                <input class="file-img__content" type="file" name="image2" id="first__content-img" hidden>
+                                <input class="file-img__content" type="file" name="image2" id="first__content-img" hidden required>
                         </div>
-                        <textarea class="content-news" id="content-news" name="text1" rows="10" placeholder="Nội Dung Cho Bài Viết..."></textarea>
+                        <textarea class="content-news" id="content-news" name="text1" rows="10" placeholder="Nội Dung Cho Bài Viết..." required></textarea>
                     </div>
                     {{!-- box 2 --}}
                     <div class="box__content-first">
@@ -115,7 +161,7 @@
                             </label>
                                 <input class="file-img__content" type="file" name="image3" id="first__content-img1" hidden>
                         </div>
-                        <textarea class="content-news" id="content-news1" name="text2" rows="10" placeholder="Nội Dung Cho Bài Viết..."></textarea>
+                        <textarea class="content-news" id="content-news1" name="text2" rows="10" placeholder="Nội Dung Cho Bài Viết..." required></textarea>
                     </div>
                     {{!-- box 3 --}}
                     <div class="box__content-first">
@@ -143,7 +189,7 @@
                             </label>
                                 <input class="file-img__content" type="file" name="image4" id="first__content-img2" hidden>
                         </div>
-                        <textarea class="content-news" id="content-news2" name="text3" rows="10" placeholder="Nội Dung Cho Bài Viết..."></textarea>
+                        <textarea class="content-news" id="content-news2" name="text3" rows="10" placeholder="Nội Dung Cho Bài Viết..." required></textarea>
                     </div>
                     {{!-- box 4 --}}
                     <div class="box__content-first">
@@ -171,7 +217,7 @@
                             </label>
                                 <input class="file-img__content" type="file" name="image5" id="first__content-img3" hidden>
                         </div>
-                        <textarea class="content-news" id="content-news3" name="text4" rows="10" placeholder="Nội Dung Cho Bài Viết..."></textarea>
+                        <textarea class="content-news" id="content-news3" name="text4" rows="10" placeholder="Nội Dung Cho Bài Viết..." required></textarea>
                     </div>
                     {{!-- box 5 --}}
                     <div class="box__content-first">
@@ -199,12 +245,12 @@
                             </label>
                                 <input class="file-img__content" type="file" name="image6" id="first__content-img4" hidden>
                         </div>
-                        <textarea class="content-news" id="content-news4" name="text5" rows="10" placeholder="Nội Dung Cho Bài Viết..."></textarea>
+                        <textarea class="content-news" id="content-news4" name="text5" rows="10" placeholder="Nội Dung Cho Bài Viết..." required></textarea>
                     </div>
                     {{!-- end box content --}}
                     <div class="action__box-content">
                         <button class="add-more" type="button">Thêm Nội Dung Và Hình Ảnh</button>
-                        <button class="submit" type="submit">Đăng Bài</button>
+                        <button class="submit" type="button">Đăng Bài</button>
                     </div>
                 </div>
             </div>
@@ -212,6 +258,24 @@
     </form>
 </div>
 <script>
+    const formEvent = document.querySelector('.box-create__event');
+    const closeEventBox = formEvent.querySelector('span.title__post-news i');
+    const overlay = document.querySelector('.overlay');
+    const showFormEvent = document.querySelector('.admin-navbar .create-news');
+    if(showFormEvent){
+        showFormEvent.addEventListener('click',()=>{
+            overlay.style.cssText = 'top: 0; transform: scale(1)';
+            formEvent.style.cssText = 'top: 50%; transform: translate(-50%, -50%) scale(1)';
+        })
+        overlay.addEventListener('click',()=>{
+            overlay.style.cssText = 'top: -100%; transform: scale(0)';
+            formEvent.style.cssText = 'top: -100%; transform: translate(-50%, -50%) scale(1)';
+        })
+        closeEventBox.addEventListener('click',()=>{
+            overlay.style.cssText = 'top: -100%; transform: scale(0)';
+            formEvent.style.cssText = 'top: -100%; transform: translate(-50%, -50%) scale(1)';
+        })
+    }
     // title img
     const dropArea = document.querySelector('.container-create .box-create__event .body-create__event .content__post-news .title-img');
     const inputFile = document.getElementById('file-img');
@@ -220,7 +284,7 @@
     inputFile.addEventListener('change', uploadImage);
     function uploadImage(){
         let imgLink = URL.createObjectURL(inputFile.files[0]);
-        imageView.style.cssText = `background: url(${imgLink}) center / cover no-repeat; border-radius: 5px;`;
+        imageView.style.cssText = `background: url(${imgLink}) center / 100% 300px no-repeat; border-radius: 5px;`;
         imageView.textContent = "";
         contentImageView.style.cssText = 'border: 2px dashed #ffe699;'
         const closeIcon = document.createElement('i');
@@ -267,7 +331,6 @@
     // content box
         const boxContent = document.querySelectorAll('.box__content-first');
         const addMore = document.querySelector('.action__box-content .add-more');
-        const warningToast = document.querySelector('.toast.warning');
         let increAdd = 0;
         addMore.addEventListener('click', () => {
             increAdd++;
@@ -284,19 +347,58 @@
                     if (closeThisBox) {
                         closeThisBox.addEventListener('click', () => {
                             if(index !== increAdd){
-                                warningToast.classList.add('show-toast');
-                                setTimeout(()=>{
-                                    warningToast.classList.add('hide-toast');
-                                },5000)
+                                const warningToast = document.querySelector('.toast.warning');
+                                visibleToast(warningToast);
                             }else{
-                                box.style.display = 'none';
-                                increAdd--;
+                                const checkUserValid = box.querySelector('textarea');
+                                if(checkUserValid.value !== ""){
+                                    const warningValid = document.querySelector('.toast.warning-valid');
+                                    showConfirm(warningValid, box);
+                                }else{
+                                    const successToast = document.querySelector('.toast.success')
+                                    box.style.display = 'none';
+                                    increAdd--;
+                                    visibleToast(successToast);
+                                }
                             }
                         });
                     }
                 }
             });
         });
+        // function show & hide toast
+        function visibleToast(toast){
+             toast.classList.add('show-toast');
+                setTimeout(()=>{
+                    toast.classList.add('hide-toast');
+                },5000)
+                setTimeout(()=>{
+                    toast.classList.remove('show-toast');
+                    toast.classList.remove('hide-toast');
+                }, 5800)
+        }
+        function showConfirm(confirm, box){
+            confirm.classList.add('show-toast');
+            const yes = confirm.querySelector('.yes');
+            const no = confirm.querySelector('.no');
+            const successToast = document.querySelector('.toast.success')
+            yes.addEventListener('click',()=>{
+                box.style.display = 'none';
+                confirm.classList.add('hide-toast');
+                setTimeout(()=>{
+                    confirm.classList.remove('show-toast');
+                    confirm.classList.remove('hide-toast');
+                    visibleToast(successToast);
+                },500)
+            })
+            no.addEventListener('click',()=>{
+                confirm.classList.add('hide-toast');
+                setTimeout(()=>{
+                    confirm.classList.remove('show-toast');
+                    confirm.classList.remove('hide-toast');
+                },1000)
+            })
+        }
         boxContent.forEach((box,index)=>{
             if(index > 0){
                 box.style.display = 'none';
@@ -322,7 +424,7 @@
         function uploadImageContent(imageViewContent, inputFileContent, contentIMG){
             if (inputFileContent.files.length > 0){
                 let imgLink = URL.createObjectURL(inputFileContent.files[0]);
-                imageViewContent.style.cssText = `background: url(${imgLink}) center / cover no-repeat; border-radius: 5px;`;
+                imageViewContent.style.cssText = `background: url(${imgLink}) center / 100% 300px no-repeat; border-radius: 5px;`;
                 imageViewContent.textContent = "";
                 contentIMG.style.cssText = 'border: 2px dashed #ffe699;'
                 const closeIcon = document.createElement('i');
@@ -357,25 +459,63 @@
                     contentIMG.style.cssText = 'border: 2px dashed #7C7C7C;'
                 });
             }
-            
         }
-        const textArea = document.querySelectorAll('textarea.content-news');
-        const inputField = document.querySelector('input#title-news');
-        inputField.addEventListener('input',()=>{
-            if(inputField.value !== ""){
-                inputField.style.border = '1px solid #ffe699';
-            }else{
-                inputField.style.border = '1px solid transparent';
-            }
-        })
-        textArea.forEach(textarea=>{
-            textarea.addEventListener('input',()=>{
-            if(textarea.value !== ""){
-                textarea.style.border = '1px solid #ffe699';
-            }else{
-                textarea.style.border = '1px solid transparent';
-            }
-        })
-        })
+    // submit event
+    const submitEvent = document.querySelector('.submit');
+    submitEvent.addEventListener('click',()=>{
+        checkValidEvent(boxContent)
+    })
+    // check valid user field
+    function checkValidEvent(boxContent){
+        const titleNews = document.getElementById('title-news');
+        const errorToast = document.querySelector('.toast.error');
+        if(titleNews.value === ''){
+            visibleToast(errorToast);
+            titleNews.focus();
+            titleNews.style.border = '1px solid #BC0404';
+            titleNews.addEventListener('input',()=>{
+                if(titleNews.value !==""){
+                    titleNews.style.border = '1px solid #ffe699';
+                }else{
+                    titleNews.style.border = '1px solid #BC0404';
+                }
+            })
+        }else{
+            boxContent.forEach((box,index)=>{
+                const fileIMG = (index === 0) ? box.querySelector('input.file-img__content') : null;
+                const textErrorToast = errorToast.querySelector('.content-toast p');
+                const textareaContent = box.querySelector('textarea.content-news');
+                const borderContentIMG = (index === 0) ? box.querySelector('.first__img-content .content-img') : null;
+                if(index === 0 && (fileIMG.value === "" || !fileIMG)){
+                    textErrorToast.innerHTML = '<p><b>Sự Cố:</b> Chưa Có Hình Nội Dung Bài Đăng</p>'
+                    visibleToast(errorToast);
+                    borderContentIMG.style.border = '2px dashed #BC0404';
+                    fileIMG.addEventListener('change',()=>{
+                        borderContentIMG.style.border = '2px dashed #ffe699';
+                    })
+                }else if(textareaContent.value === ""){
+                    textErrorToast.innerHTML = '<p><b>Sự Cố:</b> Chưa Nhập Nội Dung Bài Đăng</p>'
+                    visibleToast(errorToast);
+                    textareaContent.style.border = '1px solid #BC0404';
+                    textareaContent.addEventListener('input',()=>{
+                         textareaContent.style.border = '1px solid #ffe699';
+                    })
+                }else{
+                    localStorage.setItem('event', 'success');
+                    formEvent.submit();
+                }
+            })
+        }
+    }
+    document.addEventListener('DOMContentLoaded',()=>{
+        const postedEvent = localStorage.getItem('event');
+        if(postedEvent === 'success'){
+            successToast.querySelector('.content-toast p').innerHTML = '<p><b>Thành Công:</b> Đăng Bài Viết Thành Công</p>'
+            visibleToast(successToast);
+            setTimeout(()=>{
+                localStorage.setItem('event', "");
+            },1000)
+        }
+    })
     localStorage.clear()
 </script>
