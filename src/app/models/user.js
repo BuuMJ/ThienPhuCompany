@@ -5,12 +5,13 @@ const User = new Schema(
   {
     username: String,
     password: String,
+    role: String,
+    email: String,
   },
   {
     collection: "user",
   }
 );
-console.log(User)
 const UserModel = mongoose.model("user", User);
 
 module.exports = UserModel;
