@@ -3,17 +3,24 @@ const jwt = require("jsonwebtoken");
 const UserModel = require("../models/user");
 
 class LoginController {
+  formRegister(req, res, next) {
+    res.render("register", {
+      title: "Đăng ký",
+    });
+  }
+
   register(req, res, next) {
-    const username = "ctythienphu@ymail.com";
-    const password = "108lehongphong";
+    // const username = "ctythienphu@ymail.com";
+    // const password = "108lehongphong";
+    const { username, password, role, email } = req.body;
     bcrypt.hash(password, 10, function (err, hash) {
       UserModel.create({
         username: username,
         password: hash,
       });
     });
-    res.render("login", {
-      title: "Đăng Nhập",
+    res.render("register", {
+      title: "Đăng ký",
     });
   }
 
