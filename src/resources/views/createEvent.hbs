@@ -73,6 +73,7 @@
             <i class="bi bi-x"></i>
         </span>
         <div class="body-create__event">
+            {{!-- create post --}}
             <div class="content__post-news">
                 <label class="title-img" for="file-img">
                     <div class="img-view">
@@ -252,6 +253,23 @@
                         <button class="add-more" type="button">Thêm Nội Dung Và Hình Ảnh</button>
                         <button class="submit" type="button">Đăng Bài</button>
                     </div>
+                </div>
+            </div>
+            {{!-- review post --}}
+            <div class="content__review-post">
+                {{!-- review card --}}
+                <div class="review-card">
+                    <img src="" alt="" class="review-img">
+                    <div class="review__label-news">
+                        <span class="check-label event">Sự Kiện</span>
+                    </div>
+                    <h3 class="title-review"></h3>
+                    <p class="desc-review"></p>
+                    <span class="review__time-news"></span>
+                </div>
+                {{!-- review detail page --}}
+                <div class="review__detail-page">
+
                 </div>
             </div>
         </div>
@@ -486,6 +504,7 @@
                 const textErrorToast = errorToast.querySelector('.content-toast p');
                 const textareaContent = box.querySelector('textarea.content-news');
                 const borderContentIMG = (index === 0) ? box.querySelector('.first__img-content .content-img') : null;
+                const boxDisplayStyle = getComputedStyle(box).getPropertyValue('display');
                 if(index === 0 && (fileIMG.value === "" || !fileIMG)){
                     textErrorToast.innerHTML = '<p><b>Sự Cố:</b> Chưa Có Hình Nội Dung Bài Đăng</p>'
                     visibleToast(errorToast);
@@ -493,13 +512,15 @@
                     fileIMG.addEventListener('change',()=>{
                         borderContentIMG.style.border = '2px dashed #ffe699';
                     })
-                }else if(textareaContent.value === ""){
-                    textErrorToast.innerHTML = '<p><b>Sự Cố:</b> Chưa Nhập Nội Dung Bài Đăng</p>'
-                    visibleToast(errorToast);
-                    textareaContent.style.border = '1px solid #BC0404';
-                    textareaContent.addEventListener('input',()=>{
-                         textareaContent.style.border = '1px solid #ffe699';
-                    })
+                }else if(boxDisplayStyle === 'block'){
+                    if(textareaContent.value === ""){
+                        textErrorToast.innerHTML = '<p><b>Sự Cố:</b> Chưa Nhập Nội Dung Bài Đăng</p>'
+                        visibleToast(errorToast);
+                        textareaContent.style.border = '1px solid #BC0404';
+                        textareaContent.addEventListener('input',()=>{
+                            textareaContent.style.border = '1px solid #ffe699';
+                        })
+                    }
                 }else{
                     localStorage.setItem('event', 'success');
                     formEvent.submit();
@@ -509,13 +530,79 @@
     }
     document.addEventListener('DOMContentLoaded',()=>{
         const postedEvent = localStorage.getItem('event');
+        logger(postedEvent)
         if(postedEvent === 'success'){
+            const successToast = document.querySelector('.toast.success')
             successToast.querySelector('.content-toast p').innerHTML = '<p><b>Thành Công:</b> Đăng Bài Viết Thành Công</p>'
             visibleToast(successToast);
             setTimeout(()=>{
-                localStorage.setItem('event', "");
+                localStorage.setItem('event', '');
             },1000)
         }
+        function reviewCard(){
+            const getValueTitle = document.getElementById('title-news');
+            const setValueTitle = document.querySelector('.title-review');
+            const categoryEvent = document.getElementById('category-event');
+            const categoryNews = document.getElementById('category-news');
+            const setCategory = document.querySelector('.review__label-news span');
+            const getValueDesc = boxContent[0].querySelector('.content-news');
+            const setValueDesc = document.querySelector('.desc-review');
+            const setValueDate = document.querySelector('.review__time-news');
+            const getFileIMG = document.getElementById('file-img');
+            const getFileIMGBackup = boxContent[0].querySelector('#first__content-img');
+            const setFileIMG = document.querySelector('.review-img');
+            
+            let date = new Date();
+            let year = date.getFullYear();
+            let dd = date.getDate();
+            if (dd < 10) dd = '0' + dd;
+            function getMonthName(monthNumber) {
+                const date = new Date();
+                date.setMonth(monthNumber - 1);
+                return date.toLocaleString('en-US', {
+                    month: 'long',
+                });
+            }
+            let mm = getMonthName(date.getMonth() + 1);
+            let month = mm.slice(0,3);
+            getValueTitle.addEventListener('input',()=>{
+                setValueTitle.innerHTML = getValueTitle.value;
+            })
+            categoryEvent.addEventListener('change',()=>{
+                if(categoryEvent.checked){
+                    setCategory.classList.remove('news');
+                    setCategory.classList.add('event');
+                    setCategory.innerHTML = 'Sự Kiện';
+                    
+                }
+            })
+            categoryNews.addEventListener('change',()=>{
+                if(categoryNews.checked){
+                    setCategory.classList.remove('event');
+                    setCategory.classList.add('news');
+                    setCategory.innerHTML = 'Tin Tức';
+                }
+            })
+            getValueDesc.addEventListener('input',()=>{
+                setValueDesc.innerHTML = getValueDesc.value;
+            })
+            setValueDate.innerHTML = `${month} ${dd}, ${year}`
+        }
+        reviewCard();
+        // function handle img
+        function handleFileInput(fileInput, imageElement) {
+            fileInput.addEventListener('change', (e) => {
+                const file = e.target.files[0];
+                if (file || e.target.value === "") {
+                    const reader = new FileReader();
+                    reader.onload = function (e) {
+                        imageElement.src = e.target.result;
+                    };
+                    reader.readAsDataURL(file);
+                } else {
+                    imageElement.src = "";
+                }
+            });
+        }
     })
-    localStorage.clear()
 </script>

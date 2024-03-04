@@ -544,7 +544,8 @@
     height: 90%;
     overflow: hidden;
 }
-.container-create .box-create__event .body-create__event .content__post-news{
+.container-create .box-create__event .body-create__event .content__post-news,
+.container-create .box-create__event .body-create__event .content__review-post{
     display: flex;
     flex-direction: column;
     justify-content: start;
@@ -554,16 +555,24 @@
     padding: 0 20px;
     overflow-y: scroll;
 }
-.container-create .box-create__event .body-create__event .content__post-news::-webkit-scrollbar{
+.container-create .box-create__event .body-create__event .content__review-post{
+    width: 40%;
+    align-items: center;
+}
+.container-create .box-create__event .body-create__event .content__post-news::-webkit-scrollbar,
+.container-create .box-create__event .body-create__event .content__review-post::-webkit-scrollbar{
     width: 8px;
 }
-.container-create .box-create__event .body-create__event .content__post-news::-webkit-scrollbar-thumb{
+.container-create .box-create__event .body-create__event .content__post-news::-webkit-scrollbar-thumb,
+.container-create .box-create__event .body-create__event .content__review-post::-webkit-scrollbar-thumb{
     background-color: #dcdcdc;
 }
-.container-create .box-create__event .body-create__event .content__post-news::-webkit-scrollbar-thumb:hover {
+.container-create .box-create__event .body-create__event .content__post-news::-webkit-scrollbar-thumb:hover,
+.container-create .box-create__event .body-create__event .content__review-post::-webkit-scrollbar-thumb:hover{
     background: #BCBCBB; 
 }
-.container-create .box-create__event .body-create__event .content__post-news::-webkit-scrollbar-track {
+.container-create .box-create__event .body-create__event .content__post-news::-webkit-scrollbar-track,
+.container-create .box-create__event .body-create__event .content__review-post::-webkit-scrollbar-track{
     background: rgb(245, 245, 244); 
 }
 .container-create .box-create__event .body-create__event .content__post-news .main-info__news .box__content-first p{
@@ -722,6 +731,7 @@
     width: 101px;
     transition: .5s;
     border: 1px solid rgba(188, 159, 110,0.3);
+    width: calc(50% - 12px);
 }
 .container-create .box-create__event .body-create__event .main-info__news .select-category .choose-category input#category-event:checked ~ label.choose-event,
 .container-create .box-create__event .body-create__event .main-info__news .select-category .choose-category input#category-news:checked ~ label.choose-news{
@@ -771,5 +781,75 @@
 }
 .container-create .box-create__event .body-create__event .main-info__news .action__box-content button.submit:hover{
     background-image: linear-gradient(to bottom, rgba(152, 129, 89, 0.4) , rgba(152, 129, 89,1));
+}
+.container-create .box-create__event .body-create__event .content__review-post .review-card{
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+}
+.container-create .box-create__event .body-create__event .content__review-post .review-card img{
+    width: 100%;
+    height: 150px;
+    border-radius: 5px;
+    margin-bottom: 12px;
+}
+.container-create .box-create__event .body-create__event .content__review-post .review-card .review__label-news{
+    margin-bottom: 12px;
+}
+.container-create .box-create__event .body-create__event .content__review-post .review-card .review__label-news span{
+    font-size: 12px;
+    font-weight: 600;
+    padding: 4px 12px;
+    border-radius: 20px;
+    border: 1px solid black;
+    text-transform: capitalize;
+    background-color: black;
+    color: white;
+    display: inline;
+}
+.container-create .box-create__event .body-create__event .content__review-post .review-card .review__label-news span.event{
+    background-color: #FF8C00;
+    border: 1px solid #FF8C00;
+    display: inline !important;
+}
+.container-create .box-create__event .body-create__event .content__review-post .review-card .review__label-news span.news{
+    background-color: #FF0000;
+    border: 1px solid #FF0000;
+}
+.container-create .box-create__event .body-create__event .content__review-post .review-card .title-review{
+    text-align: justify;
+    margin-bottom: 12px;
+    padding: 6px 0;
+}
+.container-create .box-create__event .body-create__event .content__review-post .review-card p.desc-review{
+    margin-bottom: 20px;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    line-clamp: 3;
+    -webkit-box-orient: vertical;
+    line-height: 28px;
+    text-align: justify;
+    font-weight: 500;
+    color: #646464;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+}
+.container-create .box-create__event .body-create__event .content__review-post .review-card .review__time-news{
+    text-align: end;
+    position: relative;
+    font-size: 14px;
+    font-weight: 700;
+    color: #7C7C7C;
+    margin-bottom: 12px;
+}
+.container-create .box-create__event .body-create__event .content__review-post .review-card .review__time-news::after{
+    position: absolute;
+    content: "";
+    top: 50%;
+    left: 0;
+    width: 75%;
+    height: 2px;
+    background-color: rgba(0, 77, 97, 0.1);
 }
 

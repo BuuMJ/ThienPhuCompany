@@ -11,7 +11,11 @@
             <div class="latest-news">
                 {{#each latestNews}}
                     <div class="card-latest__news">
-                        <img src="/{{this.image1}}" alt="">
+                        {{#if this.image1}}
+                            <img src="/{{this.image1}}" alt="">
+                        {{else}}
+                            <img src="/{{this.image2}}" alt="">
+                        {{/if}}
                         <div class="label-news" >
                             <span>Mới Nhất</span>
                             <span class="check-label {{this.category}}"></span>
@@ -24,7 +28,11 @@
             <div class="content-three__latest">
                 {{#each threeLatestNews}}
                     <div class="card-three__latest">
-                        <img src="/{{this.image1}}" alt="">
+                        {{#if this.image1}}
+                            <img src="/{{this.image1}}" alt="">
+                        {{else}}
+                            <img src="/{{this.image2}}" alt="">
+                        {{/if}}
                         <div class="content-three__latest">
                             <div class="label-news">
                                 <span class="check-label {{this.category}}"></span>
@@ -38,7 +46,11 @@
             <div class="remaining-news">
                 {{#each remainingNews}}
                     <div class="card-remaining__news">
-                        <img src="/{{this.image1}}" alt="">
+                        {{#if this.image1}}
+                            <img src="/{{this.image1}}" alt="">
+                        {{else}}
+                            <img src="/{{this.image2}}" alt="">
+                        {{/if}}
                         <div class="label-news">
                             <span class="check-label {{this.category}}"></span>
                         </div>
@@ -56,7 +68,11 @@
             </h1>
             {{#each listNew}}
             <div class="card-news">
-                <img src="/{{this.image1}}" alt="" class="header">
+                {{#if this.image1}}
+                    <img src="/{{this.image1}}" alt="" class="header">
+                {{else}}
+                    <img src="/{{this.image2}}" alt="" class="header">
+                {{/if}}
                 <div class="content-news">
                     <span class="time-news">{{moment this.createdAt format="MMM DD, YYYY"}}</span>
                     <h2>{{this.title}}</h2>
@@ -72,7 +88,11 @@
             </h1>
             {{#each listEvent}}
             <div class="card-news">
-                <img src="/{{this.image1}}" alt="" class="header">
+                {{#if this.image1}}
+                    <img src="/{{this.image1}}" alt="" class="header">
+                {{else}}
+                    <img src="/{{this.image2}}" alt="" class="header">
+                {{/if}}
                 <div class="content-news">
                     <span class="time-news">{{moment this.createdAt format="MMM DD, YYYY"}}</span>
                     <h2>{{this.title}}</h2>
@@ -111,8 +131,8 @@
     }
     const threeLatest = document.querySelectorAll('.container-event .main-event .all-news .content-three__latest .card-three__latest');
     threeLatest.forEach(card=>{
-        const labelThreeLatest = card.querySelector('.content-three__latest .label-news span')
-        if(labelThreeLatest.classList.contains('new') || labelThreeLatest.classList.contains('new')){
+        const labelThreeLatest = card.querySelector('.content-three__latest .label-news span.check-label')
+        if(labelThreeLatest.classList.contains('news') || labelThreeLatest.classList.contains('new')){
             labelThreeLatest.textContent = 'Tin Tức';
         }else if(labelThreeLatest.classList.contains('event')){
             labelThreeLatest.textContent = 'Sự Kiện';
@@ -121,7 +141,7 @@
     const remainingNews = document.querySelectorAll('.container-event .main-event .all-news .remaining-news .card-remaining__news');
     remainingNews.forEach(card=>{
         const labelRemainingNews = card.querySelector('.container-event .main-event .all-news .remaining-news .card-remaining__news .label-news span');
-        if(labelRemainingNews.classList.contains('new') || labelRemainingNews.classList.contains('new')){
+        if(labelRemainingNews.classList.contains('news') || labelRemainingNews.classList.contains('new')){
             labelRemainingNews.textContent = 'Tin Tức';
         }else if(labelRemainingNews.classList.contains('event')){
             labelRemainingNews.textContent = 'Sự Kiện';
