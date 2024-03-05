@@ -401,7 +401,7 @@
                                 const checkUserValid = box.querySelector('textarea');
                                 if(checkUserValid.value !== ""){
                                     const warningValid = document.querySelector('.toast.warning-valid');
-                                    showConfirm(warningValid, box);
+                                    showConfirm(warningValid, box, index);
                                 }else{
                                     const successToast = document.querySelector('.toast.success')
                                     box.style.display = 'none';
@@ -427,7 +427,7 @@
                     toast.classList.remove('hide-toast');
                 }, 5800)
         }
-        function showConfirm(confirm, box){
+        function showConfirm(confirm, box, index){
             confirm.classList.add('show-toast');
             const yes = confirm.querySelector('.yes');
             const no = confirm.querySelector('.no');
