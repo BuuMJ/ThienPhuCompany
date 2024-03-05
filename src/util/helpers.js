@@ -21,12 +21,9 @@ module.exports = {
     getAddress: function (user) {
       return user.address;
     },
-    ifeq: function (user, y, options) {
-        // console.log(user)
-        var currentRole = user == undefined ? "" : user.role;
-        // console.log(currentRole)
-        // console.log(y)
-        if (currentRole === y) {
+    ifeq: function (event, y, options) {
+        var currentCategory = event == undefined ? "" : event.category;
+        if (currentCategory === y) {
           return options.fn(this);
         } else {
           return options.inverse(this);

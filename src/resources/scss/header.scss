@@ -293,18 +293,22 @@
 .container-header__admin .body-header .primary-navbar li a span,
 .container-header__admin .bottom-navbar li i{
     margin-right: 8px;
+    font-size: 22px;
 }
 .container-header__admin .bottom-navbar{
-    width: 90%;
+    width: 80%;
     height: 20%;
     display: flex;
     flex-direction: column;
     justify-content: start;
     align-items: start;
-    padding-left: 28px;
+    margin-left: 20px;
+    padding-top: 12px;
+    border-top: 2px solid rgba(255, 255, 255, 0.45);
 }
 .container-header__admin .bottom-navbar li{
     list-style-type: none;
     width: 100%;
     transition: .3s;
+    margin-left: 8px;
 }

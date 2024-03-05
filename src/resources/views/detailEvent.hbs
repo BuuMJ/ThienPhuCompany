@@ -1,0 +1,61 @@
+<div class="container-detail" >
+    <div class="suggest-event">
+        {{#ifeq event 'news'}}
+            <div class="title-suggest">
+                <h2>Tin Tức Gợi Ý</h2>
+            </div>
+        {{else}}
+            <div class="title-suggest">
+                <h2>Sự Kiện Gợi Ý</h2>
+            </div>
+        {{/ifeq}}
+    </div>
+    <div class="main-detail">
+        <div class="header-detail">
+            <div class="title-detail">
+                <h1>{{event.title}}</h1>
+                {{#ifeq event "news"}}
+                    <span class="time-detail"> <span>Tin Tức</span> | {{moment event.createdAt format="MMM DD, YYYY"}}</span>
+                {{else}}
+                    <span class="time-detail"> <span>Sự Kiện</span> | {{moment event.createdAt format="MMM DD, YYYY"}}</span>
+                {{/ifeq}}
+            </div>
+        </div>
+        <div class="body-detail">
+            <img src="/{{event.image2}}" alt="" class="img__detail-title">
+            <p class="desc">{{event.text1}}</p>
+            {{#if event.image3}}
+                <img src="/{{event.image3}}" alt="" class="img__detail-title">
+            {{else}}
+            {{/if}}
+            {{#if event.text2}}
+                <img src="/{{event.text2}}" alt="" class="img__detail-title">
+            {{else}}
+            {{/if}}
+            {{#if event.image4}}
+                <img src="/{{event.image4}}" alt="" class="img__detail-title">
+            {{else}}
+            {{/if}}
+            {{#if event.text3}}
+                <img src="/{{event.text3}}" alt="" class="img__detail-title">
+            {{else}}
+            {{/if}}
+            {{#if event.image5}}
+                <img src="/{{event.image5}}" alt="" class="img__detail-title">
+            {{else}}
+            {{/if}}
+            {{#if event.text4}}
+                <img src="/{{event.text4}}" alt="" class="img__detail-title">
+            {{else}}
+            {{/if}}
+            {{#if event.image6}}
+                <img src="/{{event.image6}}" alt="" class="img__detail-title">
+            {{else}}
+            {{/if}}
+            {{#if event.text5}}
+                <img src="/{{event.text5}}" alt="" class="img__detail-title">
+            {{else}}
+            {{/if}}
+        </div>
+    </div>
+</div>

@@ -28,7 +28,7 @@
     {{!-- success toast --}}
     <div class="toast success">
         <div class="icon-toast">
-           <svg fill="#048444" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+           <svg fill="#7CEC24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
             <g id="SVGRepo_bgCarrier" stroke-width="0"/>
             <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"/>
             <g id="SVGRepo_iconCarrier">
@@ -75,6 +75,7 @@
         <div class="body-create__event">
             {{!-- create post --}}
             <div class="content__post-news">
+                <h2 class="primary-title">Tạo Bài Đăng</h2>
                 <label class="title-img" for="file-img">
                     <div class="img-view">
                         <label class="icon-title" for="file-img">
@@ -250,13 +251,22 @@
                     </div>
                     {{!-- end box content --}}
                     <div class="action__box-content">
-                        <button class="add-more" type="button">Thêm Nội Dung Và Hình Ảnh</button>
-                        <button class="submit" type="button">Đăng Bài</button>
+                        <button class="add-more" type="button">
+                            <span class="material-symbols-outlined">
+                                note_stack_add
+                            </span>
+                            <span class="note__add-more">Nội Dung & Hình Ảnh</span>
+                        </button>
+                        <button class="submit" type="button">
+                            <span></span>
+                            Đăng Bài
+                        </button>
                     </div>
                 </div>
             </div>
             {{!-- review post --}}
             <div class="content__review-post">
+                <h2 class="primary-title">Xem Trước</h2>
                 {{!-- review card --}}
                 <div class="review-card">
                     <img src="" alt="" class="review-img">
@@ -269,7 +279,21 @@
                 </div>
                 {{!-- review detail page --}}
                 <div class="review__detail-page">
-
+                    <div class="review__detail-card">
+                        <h3 class="title__review-detail"></h3>
+                        <span class="time-news"></span>
+                        <img src="" alt="" class="content__review-detail">
+                        <p class="desc"></p>
+                        {{!-- hidden --}}
+                        <img src="" alt="" class="content__review-detail">
+                        <p class="desc"></p>
+                        <img src="" alt="" class="content__review-detail">
+                        <p class="desc"></p>
+                        <img src="" alt="" class="content__review-detail">
+                        <p class="desc"></p>
+                        <img src="" alt="" class="content__review-detail">
+                        <p class="desc"></p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -306,6 +330,7 @@
         imageView.textContent = "";
         contentImageView.style.cssText = 'border: 2px dashed #ffe699;'
         const closeIcon = document.createElement('i');
+        const setFileIMG = document.querySelector('.review-img');
         closeIcon.className = 'bi bi-x';
         closeIcon.style.cssText = 'position: absolute; top: 0; right: 2px; color: #F80404; font-size: 40px;';
         imageView.appendChild(closeIcon);
@@ -315,6 +340,7 @@
             e.preventDefault();
             imageView.style.background = 'unset';
             imageView.textContent = "";
+            setFileIMG.src = '';
             const resetTitleImg = `
             <label class="icon-title" for="file-img">
                             <svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" fill="#000000">
@@ -358,6 +384,10 @@
             boxContent.forEach((box, index) => {
                 if (index === increAdd) {
                     box.style.display = 'block';
+                    const IMGDetailReview = document.querySelectorAll('.review__detail-card .content__review-detail');
+                    const DescDetailReview = document.querySelectorAll('.review__detail-card .desc');
+                    IMGDetailReview[index].style.display = 'block';
+                    DescDetailReview[index].style.display = 'block';
                     const titleContent = box.querySelector('p.title-content');
                     const numerical = increAdd + 1;
                     titleContent.innerHTML = `Nội Dung Thứ ${numerical} <i class="bi bi-x" title="Xoá Nội Dung Này"></i>`;
@@ -375,6 +405,8 @@
                                 }else{
                                     const successToast = document.querySelector('.toast.success')
                                     box.style.display = 'none';
+                                    IMGDetailReview[index].style.display = 'none';
+                                    DescDetailReview[index].style.display = 'none'
                                     increAdd--;
                                     visibleToast(successToast);
                                 }
@@ -400,9 +432,13 @@
             const yes = confirm.querySelector('.yes');
             const no = confirm.querySelector('.no');
             const successToast = document.querySelector('.toast.success')
+            const IMGDetailReview = document.querySelectorAll('.review__detail-card .content__review-detail');
+            const DescDetailReview = document.querySelector('.review__detail-card .desc');
             yes.addEventListener('click',()=>{
                 box.style.display = 'none';
                 confirm.classList.add('hide-toast');
+                IMGDetailReview[index].style.display = 'none';
+                DescDetailReview[index].style.display = 'none'
                 setTimeout(()=>{
                     confirm.classList.remove('show-toast');
                     confirm.classList.remove('hide-toast');
@@ -553,27 +589,32 @@
         function reviewCard(){
             const getValueTitle = document.getElementById('title-news');
             const setValueTitle = document.querySelector('.title-review');
+            const setValueDetailTitle = document.querySelector('.review__detail-page .review__detail-card .title__review-detail');
             const categoryEvent = document.getElementById('category-event');
             const categoryNews = document.getElementById('category-news');
             const setCategory = document.querySelector('.review__label-news span');
-            const getValueDesc = boxContent[0].querySelector('.content-news');
-            const setValueDesc = document.querySelector('.desc-review');
             const setValueDate = document.querySelector('.review__time-news');
+            const setValueDetailDate = document.querySelector('.review__detail-page .review__detail-card .time-news');
             const getFileIMG = document.getElementById('file-img');
-            const getFileIMGBackup = boxContent[0].querySelector('#first__content-img');
             const setFileIMG = document.querySelector('.review-img');
-            getFileIMG.addEventListener('change', (e) => {
-                const file = e.target.files[0];
-                if (file || e.target.value === "") {
-                    const reader = new FileReader();
-                    reader.onload = function (e) {
-                        setFileIMG.src = e.target.result;
-                    };
-                    reader.readAsDataURL(file);
-                } else {
-                    setFileIMG.src = "";
+            handleFileInput(getFileIMG, setFileIMG);
+            for (var i = 0; i < boxContent.length; i++) {
+                const getFileIMGDetail = boxContent[i].querySelector('.file-img__content');
+                const setFileIMGDetail = document.querySelectorAll('.review__detail-page .review__detail-card .content__review-detail');
+                if (getFileIMGDetail && setFileIMGDetail[i]) {
+                    const FileIMGDetail = setFileIMGDetail[i];
+                    handleFileInput(getFileIMGDetail, FileIMGDetail);
                 }
-            });
+                const setValueDesc = document.querySelector('.desc-review');
+                const getValueDescFirst = boxContent[0].querySelector('.content-news');
+                const getValueDesc = boxContent[i].querySelector('.content-news');
+                const setValueDetailDesc = document.querySelectorAll('.review__detail-page .review__detail-card .desc')
+                const valueDetailDesc = setValueDetailDesc[i];
+                    getValueDesc.addEventListener('input',()=>{
+                    setValueDesc.innerHTML = getValueDescFirst.value;
+                    valueDetailDesc.innerHTML = getValueDesc.value;
+                })
+            }
             let date = new Date();
             let year = date.getFullYear();
             let dd = date.getDate();
@@ -589,13 +630,14 @@
             let month = mm.slice(0,3);
             getValueTitle.addEventListener('input',()=>{
                 setValueTitle.innerHTML = getValueTitle.value;
+                setValueDetailTitle.innerHTML = getValueTitle.value;
             })
             categoryEvent.addEventListener('change',()=>{
                 if(categoryEvent.checked){
                     setCategory.classList.remove('news');
                     setCategory.classList.add('event');
                     setCategory.innerHTML = 'Sự Kiện';
-                    
+                    setValueDetailDate.innerHTML = `Sự Kiện | ${month} ${dd}, ${year}`
                 }
             })
             categoryNews.addEventListener('change',()=>{
@@ -603,13 +645,27 @@
                     setCategory.classList.remove('event');
                     setCategory.classList.add('news');
                     setCategory.innerHTML = 'Tin Tức';
+                    setValueDetailDate.innerHTML = `Tin Tức | ${month} ${dd}, ${year}`
                 }
             })
-            getValueDesc.addEventListener('input',()=>{
-                setValueDesc.innerHTML = getValueDesc.value;
-            })
             setValueDate.innerHTML = `${month} ${dd}, ${year}`
+            setValueDetailDate.innerHTML = `Sự Kiện | ${month} ${dd}, ${year}`
         }
         reviewCard();
+        // function change img
+        function handleFileInput(fileInput, imageElement) {
+            fileInput.addEventListener('change', (e) => {
+                const file = e.target.files[0];
+                if (file || e.target.value === "") {
+                    const reader = new FileReader();
+                    reader.onload = function (e) {
+                        imageElement.src = e.target.result;
+                    };
+                    reader.readAsDataURL(file);
+                } else {
+                    imageElement.src = "";
+                }
+            });
+        }
     })
 </script>

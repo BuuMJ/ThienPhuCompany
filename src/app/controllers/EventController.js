@@ -1,6 +1,5 @@
 const EventModel = require("../models/event");
-const { mutipleMongooseToObject } = require("../../util/mongoose");
-
+const { mutipleMongooseToObject, staffMongooseToObject } = require("../../util/mongoose");
 class EventController {
   async event(req, res, next) {
     var PAGE_SIZE = 10;
@@ -120,10 +119,9 @@ class EventController {
   async detail(req, res, next) {
     const idEvent = req.params.id;
     const event = await EventModel.findById(idEvent);
-
     res.render("detailEvent", {
       title: "Chi Tiết Sự Kiện",
-      event,
+      event: staffMongooseToObject(event),
     });
   }
 }

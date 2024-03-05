@@ -205,14 +205,14 @@
 }
 .container-about .main-about .primary-infor .card::after{
     position: absolute;
-    content: "";
+    content: " ";
     width: 100%;
     height: 0;
     border-radius: 5px;
-    top: 0;
+    bottom: 0;
     left: 0;
     background: linear-gradient(180deg, rgba(255,230,153,1) 17%, rgba(188,159,110,1) 73%);
-    transition: 0.5s;
+    transition: 0.5s ease-in-out;
     z-index: -1;
 }
 .container-about .main-about .primary-infor .card:hover h1,
@@ -221,6 +221,8 @@
 }
 .container-about .main-about .primary-infor .card:hover::after{
     height: 100%;
+    bottom: auto;
+    top: 0;
 }
 .container-about .main-about .primary-infor .card img{
     width: 90px;
