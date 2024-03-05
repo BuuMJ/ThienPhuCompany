@@ -298,6 +298,57 @@
             </div>
         </div>
     </form>
+    {{!-- box create new user --}}
+    <form action="/login/apiregister" class="box-create__user">
+        <span class="title__post-news">
+            Thêm Tài Khoản Mới
+            <i class="bi bi-x"></i>
+        </span>
+        <div class="body-create__user">
+            <div class="user-infor">
+                <div class="user-label">
+                    <label for="fullname">Họ & Tên</label>
+                    <input id="fullname" name="fullname" type="text" placeholder="Điền Tên Đầy Đủ">
+                </div>
+                <div class="user-label">
+                    <label for="role">Chức Vụ</label>
+                    <select name="role" id="role">
+                        <option value="" selected>Chọn Chức Vụ</option>
+                    </select>
+                </div>
+                <div class="user-label">
+                    <label for="username">Tên Đăng Nhập</label>
+                    <input id="username" name="username" type="text" placeholder="Điền Tên Đăng Nhập">
+                </div>
+                <div class="user-label">
+                    <label for="Email">Email</label>
+                    <input id="Email" name="email" type="text" placeholder="Điền Email">
+                </div>
+                <div class="user-label">
+                    <label for="password">Mật Khẩu</label>
+                    <input id="password" name="password" type="password" placeholder="Điền Mật Khẩu">
+                </div>
+                <div class="user-label">
+                    <label for="repassword">Nhập Lại Mật Khẩu</label>
+                    <input id="repassword" type="password" placeholder="Nhập Lại Mật Khẩu">
+                </div>
+                <div class="user-label">
+                    <label for="city">Thành Phố & Huyện</label>
+                    <select name="city" id="city"></select>
+                </div>
+                <div class="user-label">
+                    <label for="district">Phường & Xã</label>
+                    <select name="district" id="district"></select>
+                </div>
+            </div>
+            <div class="action-user">
+                <button class="submit-user">
+                    Tạo Tài Khoản
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </form>
 </div>
 <script>
     const formEvent = document.querySelector('.box-create__event');
@@ -668,4 +719,83 @@
             });
         }
     })
+
+    // box user
+    const khanhHoaDistricts = [
+        {
+            districtName: "Nha Trang",
+            wards: ["Phường Vĩnh Phước", "Phường Vĩnh Hải", "Phường Vĩnh Thọ", "Phường Vĩnh Trường", "Phường Vĩnh Nguyên", "Phường Vĩnh Thạnh", "Phường Phương Sài", "Phường Phương Sơn", "Phường Phước Hải", "Phường Phước Tân", "Phường Phước Tiến", "Phường Xuân Hà", "Phường Xuân Bình", "Phường Vạn Thắng", "Phường Vạn Thạnh", "Phường Vạn Phước", "Phường Vạn Thắng", "Phường Vạn Bình", "Phường Vạn Thanh", "Phường Vạn Hòa", "Phường Vạn Lương", "Phường Vạn Phú", "Phường Vạn Thương", "Phường Vạn Thanh Bắc", "Phường Vạn Thanh Nam"]
+        },
+        {
+            districtName: "Cam Ranh",
+            wards: ["Thị trấn Cam Ranh", "Phường Cam Phú", "Phường Cam Đức", "Phường Cam Hải Đông", "Phường Cam Hải Tây", "Xã Cam Hải Đông", "Xã Cam Hải Tây", "Xã Cam Phước Tây", "Xã Cam Thành Nam", "Xã Cam Thành Bắc"]
+        },
+        {
+            districtName: "Vạn Ninh",
+            wards: ["Thị trấn Vạn Giã", "Xã Vạn Hưng", "Xã Vạn Thạnh", "Xã Vạn Khánh", "Xã Vạn Phú", "Xã Vạn Long", "Xã Vạn Bình", "Xã Vạn Thắng", "Xã Vạn Đồng", "Xã Vạn Thành", "Xã Vạn Phước", "Xã Vạn Long", "Xã Vạn Lương"]
+        },
+        {
+            districtName: "Diên Khánh",
+            wards: ["Thị trấn Diên Khánh", "Xã Diên Lâm", "Xã Diên Điền", "Xã Diên Xuân", "Xã Diên Sơn", "Xã Diên Đồng", "Xã Diên Phú", "Xã Diên Thạnh", "Xã Diên An", "Xã Diên Phước", "Xã Diên Lạc", "Xã Diên Tân", "Xã Diên Hòa", "Xã Diên Thọ"]
+        },
+        {
+            districtName: "Khánh Vĩnh",
+            wards: ["Thị trấn Khánh Vĩnh", "Xã Khánh Hải", "Xã Khánh Trung", "Xã Khánh Đông", "Xã Khánh Thượng", "Xã Khánh Nam", "Xã Sông Cầu", "Xã Sông Cầu", "Xã Khánh Hiệp"]
+        },
+        {
+            districtName: "Trường Sa",
+            wards: ["Thị trấn Trường Sa", "Xã Trường Sa"]
+        },
+        {
+            districtName: "Cam Lâm",
+            wards: ["Thị trấn Cam Lâm", "Xã Cam An Bắc", "Xã Cam An Nam", "Xã Cam Hòa", "Xã Cam Hải Đông", "Xã Cam Hải Tây", "Xã Suối Cát", "Xã Suối Tân"]
+        },
+        {
+            districtName: "Khánh Sơn",
+            wards: ["Thị trấn Khánh Sơn", "Xã Sơn Thủy", "Xã Sơn Bình", "Xã Sơn Trung", "Xã Sơn Hòa", "Xã Sơn Phước", "Xã Sơn Định", "Xã Sơn Long", "Xã Ba Cụm Bắc", "Xã Ba Cụm Nam"]
+        },
+        {
+            districtName: "Ninh Hòa",
+            wards: ["Phường Ninh Đa", "Phường Ninh Diêm", "Phường Ninh Thủy", "Phường Ninh Tân", "Phường Ninh Thạnh", "Xã Ninh Quang", "Xã Ninh Hà", "Xã Ninh Ích", "Xã Ninh Lộc", "Xã Ninh Phụng", "Xã Ninh An", "Xã Ninh Hải", "Xã Ninh Thọ", "Xã Ninh Trung", "Xã Ninh Sim", "Xã Ninh Xuân", "Xã Ninh Phước", "Xã Ninh Phú", "Xã Ninh Thân", "Xã Ninh Bình", "Xã Ninh Quới"]
+        },
+        {
+            districtName: "Vĩnh Cửu",
+            wards: ["Thị trấn Vĩnh Lợi", "Xã Vĩnh Hảo", "Xã Vĩnh Hưng", "Xã Vĩnh Hiệp", "Xã Vĩnh Tân", "Xã Vĩnh Thành", "Xã Vĩnh Trung", "Xã Vĩnh Thái", "Xã Vĩnh Lạc", "Xã Vĩnh Thịnh", "Xã Vĩnh Quang"]
+        },
+        {
+            districtName: "Định Quán",
+            wards: ["Thị trấn Định Quán", "Xã Phú Tân", "Xã Phú Vinh", "Xã Phú Lợi", "Xã Phú Hòa", "Xã Phú Nghiệp", "Xã Phú Hưng", "Xã Phú Lập", "Xã Thanh Sơn", "Xã Tân An", "Xã Phú Túc", "Xã Phú Cường", "Xã Phú Lâm", "Xã Phú Sơn"]
+        }
+    ];
+    const citySelect = document.getElementById("city");
+const districtSelect = document.getElementById("district");
+const cities = khanhHoaDistricts.map(district => district.districtName);
+const uniqueCities = [...new Set(cities)];
+uniqueCities.forEach(city => {
+    const option = document.createElement("option");
+    option.text = city;
+    citySelect.add(option);
+});
+
+// Hiển thị danh sách các phường/xã của huyện đầu tiên khi trang được tải
+const firstDistrictWards = khanhHoaDistricts[0].wards;
+districtSelect.innerHTML = ""; // Xóa các tùy chọn hiện có trong select
+firstDistrictWards.forEach(ward => {
+    const option = document.createElement("option");
+    option.text = ward;
+    districtSelect.add(option);
+});
+
+citySelect.addEventListener("change", function() {
+    districtSelect.innerHTML = ""; // Xóa các tùy chọn hiện có trong select
+    const selectedCity = citySelect.value;
+    const selectedDistricts = khanhHoaDistricts.find(district => district.districtName === selectedCity);
+    if (selectedDistricts) {
+        selectedDistricts.wards.forEach(ward => {
+            const option = document.createElement("option");
+            option.text = ward;
+            districtSelect.add(option);
+        });
+    }
+});
 </script>
