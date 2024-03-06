@@ -4389,7 +4389,6 @@
   display: flex;
   justify-content: start;
   align-items: center;
-  margin-bottom: 20px;
   background-color: rgba(255, 255, 255, 0.25);
   padding: 0 20px; }
 
@@ -4432,9 +4431,6 @@
   justify-content: space-around;
   padding-bottom: 20px;
   padding-left: 8px; }
-
-.container-header__admin .body-header .admin-navbar {
-  margin-bottom: 20px; }
 
 .container-header__admin .body-header .admin-navbar li,
 .container-header__admin .body-header .primary-navbar li,
