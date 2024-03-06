@@ -306,44 +306,75 @@
         </span>
         <div class="body-create__user">
             <div class="user-infor">
-                <div class="user-label">
-                    <label for="fullname">Họ & Tên</label>
-                    <input id="fullname" name="fullname" type="text" placeholder="Điền Tên Đầy Đủ">
+                <div class="avatar-label">
+                    <label class="change-avatar" for="avatar">
+                        <img class="avatar-user" src="" alt="">
+                        <span>Đổi Ảnh</span>
+                    </label>
+                    <label class="label-avatar" for="avatar">Ảnh Đại Diện</label>
+                    <input id="avatar" name="avatar" type="file" hidden>
                 </div>
                 <div class="user-label">
-                    <label for="role">Chức Vụ</label>
-                    <select name="role" id="role">
+                    <input id="fullname-user" name="fullnameUser" type="text" placeholder="Điền Tên Đầy Đủ" required>
+                    <label class="fullnameUser" for="fullname-user">Họ & Tên</label>
+                </div>
+                <div class="user-label">
+                    <select name="role" id="role" required>
                         <option value="" selected>Chọn Chức Vụ</option>
+                        <option value="developer">Developer</option>
                     </select>
+                    <label class="role" for="role">Chức Vụ</label>
                 </div>
                 <div class="user-label">
-                    <label for="username">Tên Đăng Nhập</label>
-                    <input id="username" name="username" type="text" placeholder="Điền Tên Đăng Nhập">
+                    <input id="username" name="username" type="text" placeholder="Điền Tên Đăng Nhập" required>
+                    <label class="username" for="username">Tên Đăng Nhập</label>
                 </div>
                 <div class="user-label">
-                    <label for="Email">Email</label>
-                    <input id="Email" name="email" type="text" placeholder="Điền Email">
+                    <input id="email-user" name="email" type="text" placeholder="Điền Email" required>
+                    <label class="email" for="email-user">Email</label>
                 </div>
                 <div class="user-label">
-                    <label for="password">Mật Khẩu</label>
-                    <input id="password" name="password" type="password" placeholder="Điền Mật Khẩu">
+                    <input id="password" name="password" type="password" placeholder="Điền Mật Khẩu" required>
+                    <label class="password" for="password">Mật Khẩu</label>
                 </div>
                 <div class="user-label">
-                    <label for="repassword">Nhập Lại Mật Khẩu</label>
-                    <input id="repassword" type="password" placeholder="Nhập Lại Mật Khẩu">
+                    <input id="repassword" name="repassword" type="password" placeholder="Nhập Lại Mật Khẩu" required>
+                    <label class="repassword" for="repassword">Nhập Lại Mật Khẩu</label>
                 </div>
                 <div class="user-label">
-                    <label for="city">Thành Phố & Huyện</label>
-                    <select name="city" id="city"></select>
+                    <select name="city" id="city" required>
+                        <option value="" selected>Thành Phố & Huyện</option>
+                    </select>
+                    <label class="city" for="city">Thành Phố & Huyện</label>
                 </div>
                 <div class="user-label">
-                    <label for="district">Phường & Xã</label>
-                    <select name="district" id="district"></select>
+                    <select name="district" id="district" required>
+                        <option value="" selected>Phường & Xã</option>
+                    </select>
+                    <label class="district" for="district">Phường & Xã</label>
                 </div>
             </div>
             <div class="action-user">
-                <button class="submit-user">
+                <button type="button" class="submit-user">
                     Tạo Tài Khoản
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </form>
+    <form action="" class="box-create__role">
+        <span class="title__post-news">
+            Thêm Chức Vụ Mới
+            <i class="bi bi-x"></i>
+        </span>
+        <div class="body-create__role">
+            <div class="user-label">
+                <input id="create-role" name="create-role" type="text" placeholder="Nhập Tên Chức Vụ Muốn Thêm" required>
+                <label class="create-role" for="create-role">Chức Vụ</label>
+            </div>
+            <div class="action-role">
+                <button>
+                    Tạo Chức Vụ
                     <span></span>
                 </button>
             </div>
@@ -352,7 +383,7 @@
 </div>
 <script>
     const formEvent = document.querySelector('.box-create__event');
-    const closeEventBox = formEvent.querySelector('span.title__post-news i');
+    const closeEventBox = formEvent.querySelector('.box-create__event span.title__post-news i');
     const overlay = document.querySelector('.overlay');
     const showFormEvent = document.querySelector('.admin-navbar .create-news');
     if(showFormEvent){
@@ -467,43 +498,6 @@
                 }
             });
         });
-        // function show & hide toast
-        function visibleToast(toast){
-             toast.classList.add('show-toast');
-                setTimeout(()=>{
-                    toast.classList.add('hide-toast');
-                },5000)
-                setTimeout(()=>{
-                    toast.classList.remove('show-toast');
-                    toast.classList.remove('hide-toast');
-                }, 5800)
-        }
-        function showConfirm(confirm, box, index){
-            confirm.classList.add('show-toast');
-            const yes = confirm.querySelector('.yes');
-            const no = confirm.querySelector('.no');
-            const successToast = document.querySelector('.toast.success')
-            const IMGDetailReview = document.querySelectorAll('.review__detail-card .content__review-detail');
-            const DescDetailReview = document.querySelector('.review__detail-card .desc');
-            yes.addEventListener('click',()=>{
-                box.style.display = 'none';
-                confirm.classList.add('hide-toast');
-                IMGDetailReview[index].style.display = 'none';
-                DescDetailReview[index].style.display = 'none'
-                setTimeout(()=>{
-                    confirm.classList.remove('show-toast');
-                    confirm.classList.remove('hide-toast');
-                    visibleToast(successToast);
-                },500)
-            })
-            no.addEventListener('click',()=>{
-                confirm.classList.add('hide-toast');
-                setTimeout(()=>{
-                    confirm.classList.remove('show-toast');
-                    confirm.classList.remove('hide-toast');
-                },1000)
-            })
-        }
         boxContent.forEach((box,index)=>{
             if(index > 0){
                 box.style.display = 'none';
@@ -629,12 +623,28 @@
     }
     document.addEventListener('DOMContentLoaded',()=>{
         const postedEvent = localStorage.getItem('event');
+        const postedUser = localStorage.getItem('user');
+        const postedRole = localStorage.getItem('role');
         if(postedEvent === 'success'){
             const successToast = document.querySelector('.toast.success')
             successToast.querySelector('.content-toast p').innerHTML = '<p><b>Thành Công:</b> Đăng Bài Viết Thành Công</p>'
             visibleToast(successToast);
             setTimeout(()=>{
                 localStorage.setItem('event', '');
+            },1000)
+        }if(postedUser === 'success'){
+            const successToast = document.querySelector('.toast.success')
+            successToast.querySelector('.content-toast p').innerHTML = '<p><b>Thành Công:</b> Thêm Tài Khoản Thành Công</p>'
+            visibleToast(successToast);
+            setTimeout(()=>{
+                localStorage.setItem('user', '');
+            },1000)
+        }if(postedRole === 'success'){
+            const successToast = document.querySelector('.toast.success')
+            successToast.querySelector('.content-toast p').innerHTML = '<p><b>Thành Công:</b> Thêm Chức Vụ Mới Thành Công</p>'
+            visibleToast(successToast);
+            setTimeout(()=>{
+                localStorage.setItem('role', '');
             },1000)
         }
         function reviewCard(){
@@ -703,21 +713,6 @@
             setValueDetailDate.innerHTML = `Sự Kiện | ${month} ${dd}, ${year}`
         }
         reviewCard();
-        // function change img
-        function handleFileInput(fileInput, imageElement) {
-            fileInput.addEventListener('change', (e) => {
-                const file = e.target.files[0];
-                if (file || e.target.value === "") {
-                    const reader = new FileReader();
-                    reader.onload = function (e) {
-                        imageElement.src = e.target.result;
-                    };
-                    reader.readAsDataURL(file);
-                } else {
-                    imageElement.src = "";
-                }
-            });
-        }
     })
 
     // box user
@@ -768,34 +763,109 @@
         }
     ];
     const citySelect = document.getElementById("city");
-const districtSelect = document.getElementById("district");
-const cities = khanhHoaDistricts.map(district => district.districtName);
-const uniqueCities = [...new Set(cities)];
-uniqueCities.forEach(city => {
-    const option = document.createElement("option");
-    option.text = city;
-    citySelect.add(option);
-});
-
-// Hiển thị danh sách các phường/xã của huyện đầu tiên khi trang được tải
-const firstDistrictWards = khanhHoaDistricts[0].wards;
-districtSelect.innerHTML = ""; // Xóa các tùy chọn hiện có trong select
-firstDistrictWards.forEach(ward => {
-    const option = document.createElement("option");
-    option.text = ward;
-    districtSelect.add(option);
-});
-
-citySelect.addEventListener("change", function() {
-    districtSelect.innerHTML = ""; // Xóa các tùy chọn hiện có trong select
-    const selectedCity = citySelect.value;
-    const selectedDistricts = khanhHoaDistricts.find(district => district.districtName === selectedCity);
-    if (selectedDistricts) {
-        selectedDistricts.wards.forEach(ward => {
-            const option = document.createElement("option");
-            option.text = ward;
-            districtSelect.add(option);
-        });
+    const districtSelect = document.getElementById("district");
+    const cities = khanhHoaDistricts.map(district => district.districtName);
+    const uniqueCities = [...new Set(cities)];
+    uniqueCities.forEach(city => {
+        const option = document.createElement("option");
+        option.text = city;
+        citySelect.add(option);
+    });
+    citySelect.addEventListener("change", function() {
+        districtSelect.innerHTML = "";
+        const selectedCity = citySelect.value;
+        const selectedDistricts = khanhHoaDistricts.find(district => district.districtName === selectedCity);
+        if (selectedDistricts) {
+            selectedDistricts.wards.forEach(ward => {
+                const option = document.createElement("option");
+                option.text = ward;
+                districtSelect.add(option);
+            });
+        }
+    });
+    const showFormUser = document.querySelector('.create-user');
+    const formUser = document.querySelector('.box-create__user');
+    const closeUserBox = document.querySelector('.box-create__user .title__post-news i');
+    const fileAvatar = document.getElementById('avatar');
+    const setAvatar = document.querySelector('.avatar-user');
+    if(showFormUser){
+        showFormUser.addEventListener('click',()=>{
+            overlay.style.cssText = 'top: 0; transform: scale(1)';
+            formUser.style.cssText = 'top: 50%; transform: translate(-50%, -50%) scale(1)';
+        })
+        overlay.addEventListener('click',()=>{
+            overlay.style.cssText = 'top: -100%; transform: scale(0)';
+            formUser.style.cssText = 'top: -100%; transform: translate(-50%, -50%) scale(1)';
+        })
+        closeUserBox.addEventListener('click',()=>{
+            overlay.style.cssText = 'top: -100%; transform: scale(0)';
+            formUser.style.cssText = 'top: -100%; transform: translate(-50%, -50%) scale(1)';
+        })
     }
-});
+    handleFileInput(fileAvatar, setAvatar)
+    const submitUser = document.querySelector('.action-user .submit-user');
+    const inputFullname = document.getElementById('fullname-user');
+    const inputUsername = document.getElementById('username');
+    const inputEmail = document.getElementById('email-user');
+    const inputPassword = document.getElementById('password');
+    const inputRePassword = document.getElementById('repassword');
+    const selectRole = document.getElementById('role');
+    const selectCity = document.getElementById('city');
+    const selectDistrict = document.getElementById('district');
+    const errorToast = document.querySelector('.toast.error');
+    const textErrorToast = errorToast.querySelector('.content-toast p');
+    const toastPassword = '<p><b>Sự Cố:</b> Chưa Nhập Mật Khẩu</p>';
+    const toastUsername = '<p><b>Sự Cố:</b> Chưa Nhập Tên Đăng Nhập</p>';
+    const toastRePassword = '<p><b>Sự Cố:</b> Nhập Lại Mật Khẩu Không Trùng Khớp</p>';
+    const toastFullName = '<p><b>Sự Cố:</b> Chưa Nhập Họ & Tên</p>';
+    const toastEmail = '<p><b>Sự Cố:</b> Chưa Nhập Email</p>';
+    const toastRole = '<p><b>Sự Cố:</b> Chưa Nhập Chức Vụ</p>';
+    const toastCity = '<p><b>Sự Cố:</b> Chưa Nhập Thành Phố & Huyện</p>';
+    submitUser.addEventListener('click',()=>{
+        if(inputFullname.value === ""){
+            validateInput(inputFullname, toastFullName, `label.${inputFullname.name}`)
+        }else if(selectRole.value === ""){
+            validateInput(selectRole, toastRole, `label.${selectRole.name}`)
+        }else if(inputUsername.value === ""){
+            validateInput(inputUsername, toastUsername, `label.${inputUsername.name}`)
+        }else if(inputEmail.value === ""){
+            validateInput(inputEmail, toastEmail, `label.${inputEmail.name}`)
+        }else if(inputPassword.value === ""){
+            validateInput(inputPassword, toastPassword, `label.${inputPassword.name}`)
+        }else if(inputRePassword.value === "" || inputRePassword.value !== inputPassword.value){
+            validateInput(inputRePassword, toastRePassword, `label.${inputRePassword.name}`)
+        }else if(selectCity.value === ""){
+            validateInput(selectCity, toastCity, `label.${selectCity.name}`)
+        }else{
+            localStorage.setItem('user', 'success');
+            formUser.submit();
+        }
+    })
+    const formRole = document.querySelector('.box-create__role');
+    const showFormRole = document.querySelector('.create-role');
+    const submitRole = document.querySelector('.action-role button');
+    const inputCreateRole = document.getElementById('create-role');
+    const toastCreateRole = '<p><b>Sự Cố:</b> Chưa Nhập Chức Vụ Muốn Thêm</p>';
+    if(showFormRole){
+        showFormRole.addEventListener('click',()=>{
+            overlay.style.cssText = 'top: 0; transform: scale(1)';
+            formRole.style.cssText = 'top: 50%; transform: translate(-50%, -50%) scale(1)';
+        })
+        overlay.addEventListener('click',()=>{
+            overlay.style.cssText = 'top: -100%; transform: scale(0)';
+            formRole.style.cssText = 'top: -100%; transform: translate(-50%, -50%) scale(1)';
+        })
+        closeUserBox.addEventListener('click',()=>{
+            overlay.style.cssText = 'top: -100%; transform: scale(0)';
+            formRole.style.cssText = 'top: -100%; transform: translate(-50%, -50%) scale(1)';
+        })
+    }
+    submitRole.addEventListener('click',()=>{
+        if(inputCreateRole.value === ""){
+            validateInput(inputCreateRole, toastCreateRole, `label.${inputCreateRole.name}`)
+        }else{
+            formRole.submit();
+            localStorage.setItem('role', 'success');
+        }
+    })
 </script>

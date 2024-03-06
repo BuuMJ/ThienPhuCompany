@@ -397,7 +397,6 @@
     transform: translateX(100%);
     right: 0;
     z-index: 13;
-    width: 480px;
     height: 90px;
     overflow: hidden;
     box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
@@ -512,7 +511,8 @@
     animation: hideToast .3s ease forwards;
 }
 .container-create .box-create__event,
-.container-create .box-create__user{
+.container-create .box-create__user,
+.container-create .box-create__role{
     display: flex;
     flex-direction: column;
     justify-content: start;
@@ -530,7 +530,8 @@
     transition: .3s ease;
 }
 .container-create .box-create__event span.title__post-news,
-.container-create .box-create__user span.title__post-news{
+.container-create .box-create__user span.title__post-news,
+.container-create .box-create__role span.title__post-news{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -545,13 +546,20 @@
     top: 0;
     left: 0;
 }
-.container-create .box-create__event span.title__post-news i{
+.container-create .box-create__role span.title__post-news{
+    height: 70px;
+}
+.container-create .box-create__event span.title__post-news i,
+.container-create .box-create__user span.title__post-news i,
+.container-create .box-create__role span.title__post-news i{
     font-size: 30px;
     color: #7C7C7C;
     transition: .3s;
     cursor: pointer;
 }
-.container-create .box-create__event span.title__post-news i:hover{
+.container-create .box-create__event span.title__post-news i:hover,
+.container-create .box-create__user span.title__post-news i:hover,
+.container-create .box-create__role span.title__post-news i:hover{
     color: $errorcolor;
 }
 .container-create .box-create__event .body-create__event{
@@ -798,7 +806,8 @@
     resize: none;
 }
 .container-create .box-create__event .body-create__event .main-info__news .action__box-content,
-.container-create .box-create__user .body-create__user .action-user{
+.container-create .box-create__user .body-create__user .action-user,
+.container-create .box-create__role .body-create__role .action-role{
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -806,11 +815,13 @@
     width: 100%;
     position: relative;
 }
-.container-create .box-create__user .body-create__user .action-user{
+.container-create .box-create__user .body-create__user .action-user,
+.container-create .box-create__role .body-create__role .action-role{
     padding: 12px 0;
 }
 .container-create .box-create__event .body-create__event .main-info__news .action__box-content button,
-.container-create .box-create__user .body-create__user .action-user button{
+.container-create .box-create__user .body-create__user .action-user button,
+.container-create .box-create__role .body-create__role .action-role button{
     padding: 12px 16px;
     outline: none;
     font-size: 18px;
@@ -848,7 +859,8 @@
     z-index: 2;
 }
 .container-create .box-create__event .body-create__event .main-info__news .action__box-content button.submit,
-.container-create .box-create__user .body-create__user .action-user button.submit-user{
+.container-create .box-create__user .body-create__user .action-user button.submit-user,
+.container-create .box-create__role .body-create__role .action-role button{
     position: relative;
     z-index: 2;
     overflow: hidden;
@@ -857,7 +869,8 @@
     border: 1px solid $primarycolor;
 }
 .container-create .box-create__event .body-create__event .main-info__news .action__box-content button.submit span,
-.container-create .box-create__user .body-create__user .action-user button.submit-user span{
+.container-create .box-create__user .body-create__user .action-user button.submit-user span,
+.container-create .box-create__role .body-create__role .action-role button span{
     position: absolute;
     top: 0;
     left: 0;
@@ -868,13 +881,15 @@
     transition: .3s ease-in-out;
 }
 .container-create .box-create__event .body-create__event .main-info__news .action__box-content button.submit:hover,
-.container-create .box-create__user .body-create__user .action-user button.submit-user:hover{
+.container-create .box-create__user .body-create__user .action-user button.submit-user:hover,
+.container-create .box-create__role .body-create__role .action-role button:hover{
     color: $primarycolor;
     background-color: white;
     border: 1px solid $primarycolor;
 }
 .container-create .box-create__event .body-create__event .main-info__news .action__box-content button.submit:hover span,
-.container-create .box-create__user .body-create__user .action-user button.submit-user:hover span{
+.container-create .box-create__user .body-create__user .action-user button.submit-user:hover span,
+.container-create .box-create__role .body-create__role .action-role button:hover span{
     width: 0;
     right: 0;
     left: auto;
@@ -995,16 +1010,14 @@
 .container-create .box-create__event .body-create__event .content__review-post .review__detail-page .review__detail-card p.desc:nth-of-type(1){
     display: block;
 }
-.container-create .box-create__user{
+.container-create .box-create__user,
+.container-create .box-create__role{
     width: 50vw;
-    height: 60vh;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    height: unset;
 }
-.container-create .box-create__user .body-create__user{
+.container-create .box-create__user .body-create__user,
+.container-create .box-create__role .body-create__role{
     width: 100%;
-    height: 90%;
     margin-top: 7%;
     padding: 12px 20px;
     display: flex;
@@ -1018,22 +1031,69 @@
     justify-content: space-between;
     align-items: center;
 }
-.container-create .box-create__user .body-create__user .user-infor .user-label{
+.container-create .box-create__user .body-create__user .user-infor .user-label,
+.container-create .box-create__user .body-create__user .user-infor .avatar-label,
+.container-create .box-create__role .body-create__role .user-label{
     display: flex;
-    flex-direction: column;
+    flex-direction: column-reverse;
     justify-content: center;
     align-items: start;
     width: 48%;
     padding: 12px 0;
 }
-.container-create .box-create__user .body-create__user .user-infor .user-label label{
+.container-create .box-create__role .body-create__role .user-label{
+    width: 100%;
+}
+.container-create .box-create__user .body-create__user .user-infor .avatar-label{
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+}
+.container-create .box-create__user .body-create__user .user-infor .avatar-label .change-avatar{
+    width: 150px;
+    height: 150px;
+    position: relative;
+    border-radius: 5px;
+    overflow: hidden;
+    cursor: pointer;
+}
+.container-create .box-create__user .body-create__user .user-infor .avatar-label .change-avatar img{
+    width: 100%;
+    height: 100%;
+}
+.container-create .box-create__user .body-create__user .user-infor .avatar-label .change-avatar span{
+    position: absolute;
+    background-color: rgba(0,0,0,0.8);
+    width: 100%;
+    height: 0;
+    left: 0;
+    bottom: auto;
+    top: 0;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: .3s ease-in-out;
+    font-weight: 600;
+    font-size: 0;
+}
+.container-create .box-create__user .body-create__user .user-infor .avatar-label .change-avatar:hover span{
+    height: 100%;
+    font-size: 20px;
+    bottom: 0;
+    top: auto;
+}
+.container-create .box-create__user .body-create__user .user-infor .user-label label,
+.container-create .box-create__user .body-create__user .user-infor .avatar-label .label-avatar,
+.container-create .box-create__role .body-create__role .user-label label{
     font-size: 18px;
     color: #7C7C7C;
     padding: 8px 0;
     font-weight: 600;
 }
 .container-create .box-create__user .body-create__user .user-infor .user-label input,
-.container-create .box-create__user .body-create__user .user-infor .user-label select{
+.container-create .box-create__user .body-create__user .user-infor .user-label select,
+.container-create .box-create__role .body-create__role .user-label input{
     border: 1px solid #646464;
     padding: 8px 12px;
     width: 100%;
@@ -1041,6 +1101,28 @@
     border-radius: 5px;
     outline: none;
     font-size: 20px;
+}
+.container-create .box-create__user .body-create__user .user-infor .user-label input#fullname-user{
+    text-transform: capitalize;
+}
+.container-create .box-create__user .body-create__user .user-infor .user-label input:focus,
+.container-create .box-create__user .body-create__user .user-infor .user-label select:focus,
+.container-create .box-create__role .body-create__role .user-label input:focus,
+.container-create .box-create__role .body-create__role .user-label input:valid,
+.container-create .box-create__user .body-create__user .user-infor .user-label input:valid,
+.container-create .box-create__user .body-create__user .user-infor .user-label select:valid{
+    border: 1px solid $primarycolor;
+}
+.container-create .box-create__user .body-create__user .user-infor .user-label input:focus + label,
+.container-create .box-create__user .body-create__user .user-infor .user-label select:focus + label,
+.container-create .box-create__role .body-create__role .user-label input:focus + label,
+.container-create .box-create__role .body-create__role .user-label input:valid + label,
+.container-create .box-create__user .body-create__user .user-infor .user-label input:valid + label,
+.container-create .box-create__user .body-create__user .user-infor .user-label select:valid + label{
+    color: $primarycolor;
+}
+.animate__shakeX{
+    animation: animate__shakeX .3s ease forwards;
 }
 //event detail
 .container-detail{
