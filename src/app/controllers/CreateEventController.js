@@ -1,13 +1,27 @@
 const EventModel = require("../models/event");
 const UserModel = require("../models/user");
+const RoleModel = require("../models/role");
+const {
+  mutipleMongooseToObject,
+  mongooseToObject,
+  staffMongooseToObject,
+} = require("../../util/mongoose");
+
 class CreateEventController {
-  formCreate(req, res, next) {
+  async formCreate(req, res, next) {
     const user = req.user;
-    console.log(user);
+    const role = await RoleModel.find();
     res.render("createEvent", {
       title: "Quản Trị Viên",
       user: user,
+      role: mutipleMongooseToObject(role),
     });
+  }
+
+  addRole(req, res, next) {
+    const role = req.body.role;
+    RoleModel.create({ role: role });
+    return;
   }
   async create(req, res, next) {
     const text1 = req.body.text1;

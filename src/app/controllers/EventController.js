@@ -1,5 +1,9 @@
 const EventModel = require("../models/event");
-const { mutipleMongooseToObject, staffMongooseToObject } = require("../../util/mongoose");
+const {
+  mutipleMongooseToObject,
+  staffMongooseToObject,
+} = require("../../util/mongoose");
+
 class EventController {
   async event(req, res, next) {
     var PAGE_SIZE = 10;

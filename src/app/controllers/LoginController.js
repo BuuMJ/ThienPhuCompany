@@ -9,19 +9,44 @@ class LoginController {
     });
   }
 
-  register(req, res, next) {
+  async register(req, res, next) {
     // const username = "ctythienphu@ymail.com";
     // const password = "108lehongphong";
-    const { username, password, role, email } = req.body;
-    bcrypt.hash(password, 10, function (err, hash) {
-      UserModel.create({
-        username: username,
-        password: hash,
+    const { username, password, role, email, city, district, fullnameUser } =
+      req.body;
+
+    if (req.file) {
+      const avatar = fs.promises.readFile(req.file.path);
+      console.log(avatar + "  aaaaaaaaaaaaaaaaaaassssssssssss");
+      bcrypt.hash(password, 10, function (err, hash) {
+        UserModel.create({
+          avatar: avatar,
+          username: username,
+          password: hash,
+          role: role,
+          email: email,
+          city: city,
+          district: district,
+          fullname: fullnameUser,
+        });
       });
-    });
-    res.render("register", {
-      title: "Đăng ký",
-    });
+      await UserModel.save();
+      return;
+    } else {
+      bcrypt.hash(password, 10, function (err, hash) {
+        UserModel.create({
+          username: username,
+          password: hash,
+          role: role,
+          email: email,
+          city: city,
+          district: district,
+          fullname: fullnameUser,
+        });
+      });
+      await UserModel.save();
+      return;
+    }
   }
 
   index(req, res, next) {

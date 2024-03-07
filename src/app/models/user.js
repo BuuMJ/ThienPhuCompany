@@ -7,8 +7,13 @@ const User = new Schema(
     password: String,
     role: String,
     email: String,
+    city: String,
+    district: String,
+    fullname: String,
+    avatar: String,
   },
   {
+    timestamps: true,
     collection: "user",
   }
 );

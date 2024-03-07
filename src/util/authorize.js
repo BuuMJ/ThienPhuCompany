@@ -1,6 +1,6 @@
 const jwt = require("jsonwebtoken");
 // const { company } = require("../app/controllers/CompanyController");
-const UserModel = require("../app/models/user")
+const UserModel = require("../app/models/user");
 //check login
 function checkLogin(req, res, next) {
   //check
@@ -29,4 +29,17 @@ function checkLogin(req, res, next) {
   }
 }
 
-module.exports = {checkLogin}
+function checkAdmin(req, res, next) {
+  if (req.user) {
+    var role = req.user.role;
+    if (role != "admin" && role != "manager") {
+      next();
+    } else {
+      return res.redirect("/admin?messenge=You are not authorized.");
+    }
+  } else {
+    return next();
+  }
+}
+
+module.exports = { checkLogin, checkAdmin };
