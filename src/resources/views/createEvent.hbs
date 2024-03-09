@@ -299,7 +299,7 @@
         </div>
     </form>
     {{!-- box create new user --}}
-    <form action="/admin/apiregister" class="box-create__user">
+    <form action="/admin/apiregister" class="box-create__user" method="POST">
         <span class="title__post-news">
             Thêm Tài Khoản Mới
             <i class="bi bi-x"></i>
@@ -322,7 +322,7 @@
                     <select name="role" id="role" required>
                         <option value="" selected>Chọn Chức Vụ</option>
                         {{#each role}}
-                            <option value="{{role.role}}">{{role.role}}</option>
+                            <option value="{{this.role}}">{{this.role}}</option>
                         {{/each}}
                     </select>
                     <label class="role" for="role">Chức Vụ</label>
@@ -364,7 +364,7 @@
             </div>
         </div>
     </form>
-    <form action="" class="box-create__role">
+    <form action="/admin/role" class="box-create__role" method="POST">
         <span class="title__post-news">
             Thêm Chức Vụ Mới
             <i class="bi bi-x"></i>

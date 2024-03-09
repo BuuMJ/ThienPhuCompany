@@ -277,6 +277,13 @@
     align-items: center;
     padding: 12px;
 }
+.container-header__admin .body-header .primary-navbar li a .material-symbols-outlined {
+    font-variation-settings:
+    'FILL' 1,
+    'wght' 400,
+    'GRAD' 0,
+    'opsz' 24
+  }
 .container-header__admin .body-header .primary-navbar li.admin-nav{
     background-color: rgba(255,255,255,.15);
     border-radius: 5px;
