@@ -34,14 +34,14 @@
             {{!-- <li><a class="link" data-href="award" href="/award">Giải Thưởng</a></li> --}}
             <li><a class="link" data-href="contact" href="/contact"><span class="material-symbols-outlined">info</span> Liên Hệ</a></li>
         </ul>
-    </div>
     <ul class="bottom-navbar">
-           <li><a href="#"><i class="bi bi-question-diamond-fill"></i> Liên Hệ Và Hỗ Trợ</a></li>
-            {{#if user}}
+        <li><a href="#"><i class="bi bi-question-diamond-fill"></i> Liên Hệ Và Hỗ Trợ</a></li>
+        {{#if user}}
             <li><a onclick="logout()" class="logout"><i class="bi bi-door-closed-fill"></i> Log Out</a></li>
-            {{else}}
-            {{/if}}
-        </ul>
+        {{else}}
+        {{/if}}
+    </ul>
+    </div>
 </div>
 <script>
     function logout() {

@@ -321,7 +321,9 @@
                 <div class="user-label">
                     <select name="role" id="role" required>
                         <option value="" selected>Chọn Chức Vụ</option>
-                        <option value="developer">Developer</option>
+                        {{#each role}}
+                            <option value="{{role.role}}">{{role.role}}</option>
+                        {{/each}}
                     </select>
                     <label class="role" for="role">Chức Vụ</label>
                 </div>
