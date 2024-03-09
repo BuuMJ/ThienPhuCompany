@@ -44,7 +44,7 @@ class LoginController {
           fullname: fullnameUser,
         });
       });
-      await UserModel.save();
+      UserModel.save();
       res.redirect("back");
     }
   }
