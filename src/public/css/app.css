@@ -4398,7 +4398,7 @@
 
 .container-header__admin .body-header {
   width: 100%;
-  height: 70%;
+  height: 90%;
   display: flex;
   flex-direction: column;
   justify-content: start;
@@ -4410,7 +4410,6 @@
   justify-content: start;
   align-items: center;
   width: 90%;
-  height: 45px;
   padding-bottom: 12px;
   border-bottom: 2px solid rgba(255, 255, 255, 0.45);
   margin-bottom: 20px; }
@@ -4477,14 +4476,11 @@
   font-size: 22px; }
 
 .container-header__admin .bottom-navbar {
-  width: 80%;
-  height: 20%;
+  width: 90%;
   display: flex;
   flex-direction: column;
   justify-content: start;
   align-items: start;
-  margin-left: 20px;
-  padding-top: 12px;
   border-top: 2px solid rgba(255, 255, 255, 0.45); }
 
 .container-header__admin .bottom-navbar li {
@@ -4492,6 +4488,28 @@
   width: 100%;
   transition: .3s;
   margin-left: 8px; }
+
+@media screen and (min-width: 1023px) and (max-width: 1441px) {
+  .container-header__admin .top-header {
+    padding: 0 12px; }
+  .container-header__admin .body-header {
+    padding: 12px; }
+  .container-header__admin .body-header .title {
+    padding-bottom: 8px;
+    margin-bottom: 12px; }
+  .container-header__admin .body-header .title h2 {
+    font-size: 20px; }
+  .container-header__admin .body-header .title img {
+    width: 22px;
+    height: 22px; }
+  .container-header__admin .body-header .admin-navbar, .container-header__admin .body-header .primary-navbar {
+    padding-left: 6px;
+    padding-bottom: 12px; }
+  .container-header__admin .body-header .admin-navbar li a, .container-header__admin .body-header .primary-navbar li a, .container-header__admin .bottom-navbar li a {
+    font-size: 16px;
+    padding: 6px; }
+  .container-header__admin .body-header .admin-navbar li a i, .container-header__admin .body-header .primary-navbar li a i, .container-header__admin .body-header .admin-navbar li a span, .container-header__admin .body-header .primary-navbar li a span, .container-header__admin .bottom-navbar li i {
+    font-size: 20px; } }
 
 .container-footer {
   width: 100%;

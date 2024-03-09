@@ -30,18 +30,18 @@
             <li><a class="link" data-href="home" href="/"><i class="bi bi-house-door-fill"></i> Trang Chủ</a></li>
             <li><a class="link" data-href="about" href="/about"><span class="material-symbols-outlined">groups</span> Về Chúng Tôi</a></li>
             <li><a class="link" data-href="product" href="/product"><i class="bi bi-basket3-fill"></i> Sản Phẩm</a></li>
-            <li><a class="link" data-href="event" href="/event"><span class="material-symbols-outlined">language</span> Tin Tức Và Khuyến Mãi</a></li>
+            <li><a class="link" data-href="event" href="/event"><span class="material-symbols-outlined">language</span> Tin Tức & Sự Kiện</a></li>
             {{!-- <li><a class="link" data-href="award" href="/award">Giải Thưởng</a></li> --}}
             <li><a class="link" data-href="contact" href="/contact"><span class="material-symbols-outlined">info</span> Liên Hệ</a></li>
         </ul>
-    </div>
     <ul class="bottom-navbar">
-           <li><a href="#"><i class="bi bi-question-diamond-fill"></i> Liên Hệ Và Hỗ Trợ</a></li>
-            {{#if user}}
-            <li><a onclick="logout()" class="logout"><i class="bi bi-door-closed-fill"></i> Log Out</a></li>
-            {{else}}
-            {{/if}}
-        </ul>
+        <li><a href="#"><i class="bi bi-question-diamond-fill"></i> Hỗ Trợ & Giúp Đỡ</a></li>
+        {{#if user}}
+            <li><a onclick="logout()" class="logout"><i class="bi bi-door-closed-fill"></i> Đăng Xuất</a></li>
+        {{else}}
+        {{/if}}
+    </ul>
+    </div>
 </div>
 <script>
     function logout() {
