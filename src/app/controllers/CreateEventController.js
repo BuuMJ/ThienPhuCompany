@@ -11,10 +11,14 @@ class CreateEventController {
   async formCreate(req, res, next) {
     const user = req.user;
     const role = await RoleModel.find();
+    const listUser = await UserModel.find();
+    const listEvent = await EventModel.find();
     res.render("createEvent", {
       title: "Quản Trị Viên",
       user: user,
       role: mutipleMongooseToObject(role),
+      listUser: mutipleMongooseToObject(listUser),
+      listEvent: mutipleMongooseToObject(listEvent),
     });
   }
 
