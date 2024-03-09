@@ -25,7 +25,7 @@ class CreateEventController {
   addRole(req, res, next) {
     const role = req.body.role;
     RoleModel.create({ role: role });
-    return;
+    res.redirect("back");
   }
   async create(req, res, next) {
     const text1 = req.body.text1;

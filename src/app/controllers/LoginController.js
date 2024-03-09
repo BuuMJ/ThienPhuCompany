@@ -31,7 +31,7 @@ class LoginController {
         });
       });
       await UserModel.save();
-      return;
+      res.redirect("back");
     } else {
       bcrypt.hash(password, 10, function (err, hash) {
         UserModel.create({
@@ -45,7 +45,7 @@ class LoginController {
         });
       });
       await UserModel.save();
-      return;
+      res.redirect("back");
     }
   }
 
