@@ -13,6 +13,7 @@ class CreateEventController {
     const role = await RoleModel.find();
     const listUser = await UserModel.find();
     const listEvent = await EventModel.find();
+    console.log(role + " aaaaaaaaaaaassss");
     res.render("createEvent", {
       title: "Quản Trị Viên",
       user: user,
