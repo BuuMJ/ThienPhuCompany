@@ -16,7 +16,7 @@
     display: flex;
     flex-direction: column;
 }
-.container-create .overlay{
+.overlay{
     position: absolute;
     width: 100vw;
     height: 100vh;
@@ -28,7 +28,7 @@
     transform: scale(0);
     cursor: pointer;
 }
-.container-create .toast{
+.toast{
     display: flex;
     flex-direction: row;
     justify-content: start;
@@ -45,17 +45,17 @@
     overflow: hidden;
     box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 }
-.container-create .toast.warning-valid{
+.toast.warning-valid{
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
     height: 280px;
     width: 350px;
 }
-.container-create .toast.warning::after,
-.container-create .toast.warning-valid::after,
-.container-create .toast.success::after,
-.container-create .toast.error::after{
+.toast.warning::after,
+.toast.warning-valid::after,
+.toast.success::after,
+.toast.error::after{
     position: absolute;
     content: "";
     bottom: 0;
@@ -64,63 +64,63 @@
     height: 4px;
     background-color: $warningcolor;
 }
-.container-create .toast.success::after{
+.toast.success::after{
     background-color: $successcolor;
 }
-.container-create .toast.error::after{
+.toast.error::after{
     background-color: $errorcolor;
 }
-.container-create .toast .icon-toast{
+.toast .icon-toast{
     display: flex;
     justify-content: center;
     align-items: center;
     padding-left: 12px;
 }
-.container-create .toast.warning-valid .icon-toast{
+.toast.warning-valid .icon-toast{
     flex-direction: column;
 }
-.container-create .toast .icon-toast svg{
+.toast .icon-toast svg{
     height: 50px;
     width: 50px;
 }
-.container-create .toast.warning-valid .icon-toast svg{
+.toast.warning-valid .icon-toast svg{
     height: 70px;
     width: 70px;
 }
-.container-create .toast.warning-valid .icon-toast h2{
+.toast.warning-valid .icon-toast h2{
     color: $warningcolor;
 }
-.container-create .toast .content-toast{
+.toast .content-toast{
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: start;
     padding: 0 12px 0 20px;
 }
-.container-create .toast.warning-valid .content-toast p{
+.toast.warning-valid .content-toast p{
     text-align: center;
     line-height: 26px;
     font-size: 18px;
 }
-.container-create .toast .content-toast p{
+.toast .content-toast p{
     font-size: 18px;
 }
-.container-create .toast.success .content-toast p b{
+.toast.success .content-toast p b{
     color: $successcolor;
 }
-.container-create .toast.warning .content-toast p b{
+.toast.warning .content-toast p b{
     color: $warningcolor;
 }
-.container-create .toast.error .content-toast p b{
+.toast.error .content-toast p b{
     color: $errorcolor;
 }
-.container-create .toast.warning-valid .action-toast{
+.toast.warning-valid .action-toast{
     display: flex;
     justify-content: center;
     align-items: center;
     width: 100%;
 }
-.container-create .toast.warning-valid .action-toast span{
+.toast.warning-valid .action-toast span{
     border: 1px solid #646464;
     padding: 8px 16px;
     color: #646464;
@@ -130,28 +130,28 @@
     cursor: pointer;
     transition: .3s;
 }
-.container-create .toast.warning-valid .action-toast span.yes{
+.toast.warning-valid .action-toast span.yes{
     border: 1px solid #ed5e68;
     background-color: #ed5e68;
     color: white;
 }
-.container-create .toast.warning-valid .action-toast span.no:hover{
+.toast.warning-valid .action-toast span.no:hover{
     color: #4b4b4b;
     background-color: rgba(0,0,0,0.1);
 }
-.container-create .toast.warning-valid .action-toast span.yes:hover{
+.toast.warning-valid .action-toast span.yes:hover{
     background-color: #e94b56;
 }
-.container-create .toast.show-toast{
+.toast.show-toast{
     animation: showToast .3s ease forwards;
 }
-.container-create .toast.show-toast::after{
+.toast.show-toast::after{
     animation: progress 5s ease forwards;
 }
-.container-create .warning-valid.show-toast::after{
+.warning-valid.show-toast::after{
     animation: unset;
 }
-.container-create .toast.hide-toast{
+.toast.hide-toast{
     animation: hideToast .3s ease forwards;
 }
 .container-create .box-create__event,

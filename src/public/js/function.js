@@ -68,15 +68,25 @@ function validateInput(input, errorMessage, labelSelector) {
   const textErrorToast = errorToast.querySelector('.content-toast p');
   input.focus();
   input.style.border = '1px solid #BC0404';
-  label.style.color = '#BC0404';
   textErrorToast.innerHTML = errorMessage;
-  visibleToast(errorToast);
   input.classList.add('animate__shakeX');
-  label.classList.add('animate__shakeX');
+  if(label){
+    label.classList.add('animate__shakeX');
+    label.style.color = '#BC0404';
+    setTimeout(()=>{
+      label.classList.remove('animate__shakeX');
+    }, 500)
+  }
+  setTimeout(() => {
+    input.classList.remove('animate__shakeX');
+  }, 500);
+  visibleToast(errorToast);
   input.addEventListener('input', () => {
       input.style.border = '1px solid #bc9f6e';
-      label.style.color = '#bc9f6e';
       input.classList.remove('animate__shakeX');
-      label.classList.remove('animate__shakeX');
+      if(label){
+        label.style.color = '#bc9f6e';
+        label.classList.remove('animate__shakeX');
+      }
   });
 }
