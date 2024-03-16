@@ -5,7 +5,7 @@
     <div class="main-event">
         <h1 class="primary-title">
             <img src="/img/allnews-title.png" alt="">
-            Tin Tức & Sự Kiện
+            Tất Cả
          </h1>
         <div class="all-news">
             <div class="latest-news">
@@ -33,7 +33,7 @@
                         {{else}}
                             <img src="/{{this.image2}}" alt="">
                         {{/if}}
-                        <div class="content-three__latest">
+                        <div class="main-three__latest">
                             <div class="label-news">
                                 <span class="check-label {{this.category}}"></span>
                             </div>
@@ -84,7 +84,7 @@
         <div class="event">
             <h1>
                 <img src="/img/event-title.png" alt="">
-                Sự Kiện & Khuyến Mãi
+                Sự Kiện
             </h1>
             {{#each listEvent}}
             <a href="/event/{{this._id}}" class="card-news">
