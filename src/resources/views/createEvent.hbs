@@ -37,7 +37,7 @@
             </svg>
         </div>
         <div class="content-toast">
-            <p><b>Thành Công:</b> Xoá Bài Viết Thành Công</p>
+            <p><b>Thành Công:</b> Xoá Nội Dung Bài Viết Thành Công</p>
         </div>
     </div>
     {{!-- warning toast --}}
@@ -508,21 +508,20 @@
             const inputFileContent = box.querySelector('.file-img__content');
             const imageViewContent = box.querySelector('.content-img .img-view');
             const contentIMG = box.querySelector('.content-img');
-            
             inputFileContent.addEventListener('change', ()=>{
-                uploadImageContent(imageViewContent, inputFileContent, contentIMG);
+                uploadImageContent(imageViewContent, inputFileContent, contentIMG,index);
             });
-            uploadImageContent(imageViewContent, inputFileContent, contentIMG)
+            uploadImageContent(imageViewContent, inputFileContent, contentIMG,index)
             dropAreaContent.addEventListener('dragover',(e)=>{
             e.preventDefault();
             });
             dropAreaContent.addEventListener('drop',(e)=>{
                 e.preventDefault();
                 inputFileContent.files = e.dataTransfer.files;
-                uploadImageContent(imageViewContent, inputFileContent, contentIMG);
+                uploadImageContent(imageViewContent, inputFileContent, contentIMG,index);
             });
         })
-        function uploadImageContent(imageViewContent, inputFileContent, contentIMG){
+        function uploadImageContent(imageViewContent, inputFileContent, contentIMG, checkNumber){
             if (inputFileContent.files.length > 0){
                 let imgLink = URL.createObjectURL(inputFileContent.files[0]);
                 imageViewContent.style.cssText = `background: url(${imgLink}) center / 100% 300px no-repeat; border-radius: 5px;`;
@@ -532,12 +531,18 @@
                 closeIcon.className = 'bi bi-x';
                 closeIcon.style.cssText = 'position: absolute; top: 0; right: 2px; color: #F80404; font-size: 40px;';
                 imageViewContent.appendChild(closeIcon);
+                const reviewIMG = document.querySelectorAll('.content__review-detail');
                 closeIcon.addEventListener('click', (e)=>{
                     e.preventDefault();
                     imageViewContent.style.background = 'unset';
                     imageViewContent.textContent = "";
                     URL.revokeObjectURL(imgLink);
                     inputFileContent.value = '';
+                    reviewIMG.forEach((img,index)=>{
+                        if(index === checkNumber){
+                            img.src = ''
+                        }
+                    })
                     const resetTitleImg = `
                     <label class="icon-title" for="first__content-img">
                                             <svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" fill="#000000">
@@ -682,15 +687,8 @@
             let year = date.getFullYear();
             let dd = date.getDate();
             if (dd < 10) dd = '0' + dd;
-            function getMonthName(monthNumber) {
-                const date = new Date();
-                date.setMonth(monthNumber - 1);
-                return date.toLocaleString('en-US', {
-                    month: 'long',
-                });
-            }
-            let mm = getMonthName(date.getMonth() + 1);
-            let month = mm.slice(0,3);
+            let month = date.getMonth() + 1;
+            if (month < 10) month = '0' + month;
             getValueTitle.addEventListener('input',()=>{
                 setValueTitle.innerHTML = getValueTitle.value;
                 setValueDetailTitle.innerHTML = getValueTitle.value;
@@ -700,7 +698,7 @@
                     setCategory.classList.remove('news');
                     setCategory.classList.add('event');
                     setCategory.innerHTML = 'Sự Kiện';
-                    setValueDetailDate.innerHTML = `Sự Kiện | ${month} ${dd}, ${year}`
+                    setValueDetailDate.innerHTML = `Sự Kiện | ${dd}/${month}/${year}`
                 }
             })
             categoryNews.addEventListener('change',()=>{
@@ -708,11 +706,11 @@
                     setCategory.classList.remove('event');
                     setCategory.classList.add('news');
                     setCategory.innerHTML = 'Tin Tức';
-                    setValueDetailDate.innerHTML = `Tin Tức | ${month} ${dd}, ${year}`
+                    setValueDetailDate.innerHTML = `Tin Tức | ${dd}/${month}/${year}`
                 }
             })
-            setValueDate.innerHTML = `${month} ${dd}, ${year}`
-            setValueDetailDate.innerHTML = `Sự Kiện | ${month} ${dd}, ${year}`
+            setValueDate.innerHTML = `${dd}/${month}/${year}`
+            setValueDetailDate.innerHTML = `Sự Kiện | ${dd}/${month}/${year}`
         }
         reviewCard();
     })

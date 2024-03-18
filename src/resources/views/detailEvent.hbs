@@ -15,21 +15,21 @@
             <div class="title-detail">
                 <h1>{{event.title}}</h1>
                 {{#ifeq event "news"}}
-                    <span class="time-detail"> <span>Tin Tức</span> | {{moment event.createdAt format="MMM DD, YYYY"}}</span>
+                    <span class="time-detail"> <span>Tin Tức</span> | {{moment event.createdAt format="DD/MM/YYYY"}}</span>
                 {{else}}
-                    <span class="time-detail"> <span>Sự Kiện</span> | {{moment event.createdAt format="MMM DD, YYYY"}}</span>
+                    <span class="time-detail"> <span>Sự Kiện</span> | {{moment event.createdAt format="DD/MM/YYYY"}}</span>
                 {{/ifeq}}
             </div>
         </div>
         <div class="body-detail">
             <img src="/{{event.image2}}" alt="" class="img__detail-title">
-            <p class="desc">{{event.text1}}</p>
+            <p class="desc" data-change-text="{{event.text1}}">{{event.text1}}</p>
             {{#if event.image3}}
                 <img src="/{{event.image3}}" alt="" class="img__detail-title">
             {{else}}
             {{/if}}
             {{#if event.text2}}
-                <img src="/{{event.text2}}" alt="" class="img__detail-title">
+                <p class="desc" data-change-text="{{event.text2}}">{{event.text2}}</p>
             {{else}}
             {{/if}}
             {{#if event.image4}}
@@ -37,7 +37,7 @@
             {{else}}
             {{/if}}
             {{#if event.text3}}
-                <img src="/{{event.text3}}" alt="" class="img__detail-title">
+                <p class="desc" data-change-text="{{event.text3}}">{{event.text3}}</p>
             {{else}}
             {{/if}}
             {{#if event.image5}}
@@ -45,7 +45,7 @@
             {{else}}
             {{/if}}
             {{#if event.text4}}
-                <img src="/{{event.text4}}" alt="" class="img__detail-title">
+                <p class="desc" data-change-text="{{event.text4}}">{{event.text4}}</p>
             {{else}}
             {{/if}}
             {{#if event.image6}}
@@ -53,9 +53,25 @@
             {{else}}
             {{/if}}
             {{#if event.text5}}
-                <img src="/{{event.text5}}" alt="" class="img__detail-title">
+                <p class="desc" data-change-text="{{event.text5}}">{{event.text5}}</p>
             {{else}}
             {{/if}}
         </div>
     </div>
 </div>
+<script>
+    const contentNews = document.querySelectorAll('p.desc')
+    contentNews.forEach(content=>{
+        const text1 = content.getAttribute('data-change-text');
+        const regex = /(^|\s)(https?:\/\/\S+)(?=\s|[,\.?!;:]|$)/g;
+        let linkifiedText = text1.replace(regex, '$1<a href="$2">$2</a>');
+        content.innerHTML = linkifiedText;
+        content.querySelectorAll('a').forEach(a => {
+            const href = a.getAttribute('href');
+            if(href.includes(',')){
+                const newHref = href.replace(/,/g, '');
+                a.setAttribute('href', newHref);
+            }
+        })
+    })
+</script>

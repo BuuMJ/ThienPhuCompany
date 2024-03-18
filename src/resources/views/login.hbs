@@ -111,6 +111,20 @@
     const labelPassword = document.querySelector('.login-info.password label.animation-label');
     const svgPassword = document.querySelector('.login-info.password label.icon-login svg');
     const formLogin = document.querySelector('.box-login');
+    usernameInput.addEventListener('keypress',(e)=>{
+        if(e.target === usernameInput){
+            if(e.key === "Enter"){
+                submitLogin.click();
+            }
+        }
+    })
+    passwordInput.addEventListener('keypress',(e)=>{
+        if(e.target === passwordInput){
+            if(e.key === "Enter"){
+                submitLogin.click();
+            }
+        }
+    })
     submitLogin.addEventListener('click',()=>{
         if(usernameInput.value === ""){
             validateInput(usernameInput, msgErrorUsername);
