@@ -12,7 +12,6 @@ class EventController {
       .sort({ createdAt: -1 })
       .skip(1)
       .limit(3);
-
     //Phân trang của Remaining New
     var pageOfRemain = req.query.pageOfRemain;
     if (pageOfRemain) {
@@ -123,9 +122,15 @@ class EventController {
   async detail(req, res, next) {
     const idEvent = req.params.id;
     const event = await EventModel.findById(idEvent);
+    const category = event.category;
+    const suggestEvent = await EventModel.find({
+      category: category,
+      _id: {$ne: idEvent}
+    }).sort({ createdAt: -1 }).limit(3);
     res.render("detailEvent", {
       title: "Chi Tiết Sự Kiện",
       event: staffMongooseToObject(event),
+      suggestEvent: mutipleMongooseToObject(suggestEvent),
     });
   }
 }

@@ -12,7 +12,7 @@
     align-items: center;
     width: 100%;
     height: 50vh;
-    background:  linear-gradient(to right, rgba(0,0,0,0.3), rgba(188, 159, 110,0.5)), url('/img/news.jpg') center / cover no-repeat;
+    background:  linear-gradient(to right, rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url('/img/news.avif') center / cover no-repeat;
 }
 .container-event header span {
     font-size: 50px;
@@ -397,6 +397,202 @@
     line-height: 32px;
     -webkit-line-clamp: 4;
     line-clamp: 4; 
+}
+//event detail
+.container-detail{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: start;
+    flex-wrap: wrap;
+    width: 100%;
+    margin-top: 110px;
+    padding: 40px 60px;
+    background-color: rgba(188, 188, 187, 0.15);
+}
+.container-detail .suggest-event{
+    width: 25%;
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    border-radius: 5px;
+    padding: 40px 30px;
+    position: sticky;
+    top: calc(0% + 130px);
+    z-index: 10;
+    overflow: hidden;
+    left: 20px;
+}
+.container-detail .suggest-event .bg {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: calc(100% - 10px);
+    height: calc(100% - 10px);
+    z-index: 2;
+    background: rgba(255, 255, 255, .95);
+    backdrop-filter: blur(24px);
+    border-radius: 2px;
+    overflow: hidden;
+    outline: 2px solid white;
+  }
+  .container-detail .suggest-event .blob {
+    position: absolute;
+    z-index: 1;
+    top: 50%;
+    left: 50%;
+    width: calc(100% - 50px);
+    height: calc(100% - 50px);
+    border-radius: 50%;
+    background-color: $titlecolor;
+    opacity: 1;
+    filter: blur(12px);
+    animation: blob-bounce 5s infinite linear;
+  }
+  .container-detail .suggest-event .title-suggest{
+    display: flex;
+    margin-bottom: 20px;
+    z-index: 3;
+  }
+.container-detail .suggest-event .title-suggest h2{
+    padding-bottom: 12px;
+    padding-right: 20px;
+    position: relative;
+    display: inline;
+}
+.container-detail .suggest-event .title-suggest h2::after{
+    position: absolute;
+    content: "";
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background-color: $linecolor;
+    border-top-right-radius: 5px;
+}
+.container-detail .suggest-event .card-suggest{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    z-index: 3;
+    width: 100%;
+    gap: 6px;
+    padding: 12px 10px;
+    box-shadow: rgba(255, 255, 255, 0.19) 0px 10px 20px,
+            rgba(255, 255, 255, 0.23) 0px 6px 6px,
+            inset rgba(255, 255, 255, 0.19) 0px 10px 20px,
+            inset rgba(255, 255, 255, 0.23) 0px 6px 6px;
+    transition: all ease-in-out 0.3s;
+    overflow: hidden;
+    margin-bottom: 12px;
+    border: 2px solid transparent;
+    position: relative;
+    background-color: transparent;
+    border-radius: 3px;
+    text-decoration: none;
+    color: black;
+}
+.container-detail .suggest-event .card-suggest:hover{
+    box-shadow: rgba(188, 159, 110, 0.19) 0px 10px 20px,
+    rgba(188, 159, 110, 0.23) 0px 6px 6px,
+    inset rgba(255, 255, 255, 0.19) 0px 10px 20px,
+    inset rgba(255, 255, 255, 0.23) 0px 6px 6px;
+    border: 2px solid $primarycolor;
+}
+.container-detail .suggest-event .card-suggest span.time-news{
+    font-size: 14px;
+    font-weight: 700;
+    color: #7C7C7C;
+}
+.container-detail .suggest-event .card-suggest .card-title{
+    font-size: 18px;
+    line-height: 28px;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+    text-align: justify;
+}
+.container-detail .suggest-event .card-suggest .card-des {
+    font-size: 16px;
+    line-height: 26px;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    display: -webkit-box;
+    word-break: break-all;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+    margin-bottom: 24px;
+    text-align: justify;
+}
+.container-detail .suggest-event .card-suggest .card-text {
+    position: absolute;
+    font-size: 16px;
+    font-weight: 500;
+    right: 20px;
+    bottom: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 3px;
+    transition: all ease-in-out 0.3s;
+    animation: textanimate 0.8s alternate infinite;
+    opacity: 0;
+    color: $primarycolor;
+}
+.container-detail .suggest-event .card-suggest:hover > .card-text{
+    opacity: 1;
+}
+.container-detail .suggest-event .card-suggest .card-text .arrow-icon {
+    font-size: 15px;
+    font-weight: 500;
+}
+.container-detail .main-detail{
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+    background-color: white;
+    border-radius: 5px;
+    padding: 40px 30px;
+}
+.container-detail .main-detail .title-detail{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+.container-detail .main-detail .title-detail h1{
+    color: black;
+    line-height: 42px;
+}
+.container-detail .main-detail .title-detail .time-detail{
+    color: black;
+    font-weight: 500;
+    padding: 12px 0;
+}
+.container-detail .main-detail .title-detail .time-detail span{
+    text-transform: capitalize;
+}
+.container-detail .main-detail .body-detail{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 20px 0;
+}
+.container-detail .main-detail .body-detail .img__detail-title{
+    width: 100%;
+    height: 650px;
+    margin-top: 20px;
+}
+.container-detail .main-detail .body-detail p.desc{
+    font-size: 22px;
+    letter-spacing: 1.2px;
+    line-height: 40px;
+    text-align: justify;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    margin-top: 20px;
 }
 @media screen and (max-width: 1025px) {
     .container-event header{

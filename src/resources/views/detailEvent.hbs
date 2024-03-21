@@ -1,14 +1,46 @@
 <div class="container-detail" >
+    <div class="back-to-event">
+
+    </div>
     <div class="suggest-event">
-        {{#ifeq event 'news'}}
+         {{#ifeq event 'news'}}
             <div class="title-suggest">
                 <h2>Tin Tức Gợi Ý</h2>
             </div>
-        {{else}}
-            <div class="title-suggest">
-                <h2>Sự Kiện Gợi Ý</h2>
+            {{#each suggestEvent}}
+                <a class="card-suggest" href="/event/{{this._id}}">
+                    <span class="time-news">{{moment this.createdAt format="DD/MM/YYYY"}}</span>
+                    <h4 class="card-title">{{this.title}}</h4>
+                    <p class="card-des">{{this.text1}}</p>
+                    <p class="card-text">
+                        <span>View More</span>
+                        <svg class="arrow-icon" stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 16 16" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8z"></path>
+                        </svg>
+                    </p>
+                </a>
+            {{/each}}
+            {{else}}
+                <div class="title-suggest">
+                    <h2>Sự Kiện Gợi Ý</h2>
+                </div>
+                 {{#each suggestEvent}}
+                    <a class="card-suggest" href="/event/{{this._id}}">
+                        <span class="time-news">{{moment this.createdAt format="DD/MM/YYYY"}}</span>
+                        <h4 class="card-title">{{this.title}}</h4>
+                        <p class="card-des">{{this.text1}}</p>
+                        <p class="card-text">
+                            <span>View More</span>
+                            <svg class="arrow-icon" stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 16 16" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8z"></path>
+                            </svg>
+                        </p>
+                    </a>
+                {{/each}}
+            {{/ifeq}}
+            <div class="bg">
             </div>
-        {{/ifeq}}
+            <div class="blob"></div>
     </div>
     <div class="main-detail">
         <div class="header-detail">
@@ -74,4 +106,6 @@
             }
         })
     })
+    const backToEvent = document.querySelector('.link.event');
+    backToEvent.classList.add('event-header');
 </script>

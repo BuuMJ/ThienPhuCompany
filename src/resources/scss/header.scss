@@ -71,6 +71,11 @@
     cursor: default;
     pointer-events: none;
 }
+.navbar-inner .event-header.touched,
+.navbar-inner .product-header.touched{
+    pointer-events: all;
+    cursor: pointer;
+}
 .navbar-inner li a.touched,
 .navbar-inner li a:hover{
     background-color: $primarycolor;
