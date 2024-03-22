@@ -485,7 +485,6 @@
             inset rgba(255, 255, 255, 0.23) 0px 6px 6px;
     transition: all ease-in-out 0.3s;
     overflow: hidden;
-    margin-bottom: 12px;
     border: 2px solid transparent;
     position: relative;
     background-color: transparent;
@@ -521,7 +520,6 @@
     -webkit-box-orient: vertical;
     overflow: hidden;
     display: -webkit-box;
-    word-break: break-all;
     -webkit-line-clamp: 2;
     line-clamp: 2;
     margin-bottom: 24px;
@@ -584,6 +582,9 @@
     width: 100%;
     height: 650px;
     margin-top: 20px;
+}
+.container-detail .main-detail .body-detail .img__detail-title:first-child{
+    margin-top: unset;
 }
 .container-detail .main-detail .body-detail p.desc{
     font-size: 22px;
@@ -694,6 +695,45 @@
         font-size: 16px;
         line-height: 26px;
     }
+    //detail event
+    .container-detail{
+        padding: 40px 20px;
+        justify-content: space-between;
+    }
+    .container-detail .suggest-event{
+        width: 28%;
+        padding: 40px 20px;
+    }
+    .container-detail .main-detail{
+        padding: 40px 20px;
+    }
+    .container-detail .suggest-event .card-suggest{
+        gap: unset;
+    }
+    .container-detail .suggest-event .card-suggest .card-title{
+        font-size: 16px;
+        line-height: 26px;
+    }
+    .container-detail .suggest-event .card-suggest span.time-news{
+        font-size: 12px;
+    }
+    .container-detail .main-detail .title-detail h1{
+        font-size: 28px;
+        line-height: 38px;
+    }
+    .container-detail .main-detail .body-detail p.desc{
+        font-size: 20px;
+        line-height: 38px;
+    }
+    .container-detail .main-detail .body-detail .img__detail-title{
+        height: 550px;
+    }
+    .container-detail .suggest-event .title-suggest h2{
+        font-size: 22px;
+    }
+    .container-detail .suggest-event .card-suggest .card-text{
+        font-size: 15px;
+    }
 }
 @media screen and (max-width: 769px) {
     .container-event .main-event .news h1, 
@@ -768,9 +808,37 @@
         font-size: 22px;
         line-height: 32px;
     }
+    //detail event
+    .container-detail{
+        flex-direction: column-reverse;
+        justify-content: center;
+        align-items: center;
+    }
+    .container-detail .suggest-event,
+    .container-detail .main-detail{
+        width: 95%;
+    }
+    .container-detail .suggest-event{
+        margin-top: 40px;
+    }
+    .container-detail .main-detail .title-detail h1{
+        font-size: 26px;
+        line-height: 36px;
+    }
+    .container-detail .main-detail .title-detail .time-detail{
+        font-size: 15px;
+    }
+    .container-detail .main-detail .body-detail .img__detail-title{
+        height: 450px;
+    }
+    .container-detail .main-detail .body-detail p.desc{
+        font-size: 18px;
+        line-height: 36px;
+    }
 }
 @media screen and (max-width: 601px) {
-    .container-event{
+    .container-event,
+    .container-detail{
         margin-top: unset;
     }
     .container-event .main-event .news .card-news img, 
@@ -788,6 +856,14 @@
     .container-event .main-event .news .card-news .content-news p.desc, .container-event .main-event .event .card-news .content-news p.desc, .container-event .main-event .all-news .remaining-news .card-remaining__news p.desc{
         font-size: 14px;
         line-height: 24px;
+    }
+    //detail event
+    .container-detail .main-detail .body-detail .img__detail-title,
+    .container-detail .main-detail .body-detail p.desc{
+        margin-top: 12px;
+    }
+    .container-detail .main-detail .body-detail .img__detail-title{
+        height: 400px;
     }
 }
 @media screen and (max-width: 415px) {
@@ -853,6 +929,44 @@
     .container-event .main-event .event .card-news{
         width: 100%;
     }
+    //detail event
+    .container-detail,
+    .container-detail .main-detail,
+    .container-detail .suggest-event{
+        padding: 20px 12px;
+    }
+    .container-detail .suggest-event,
+    .container-detail .main-detail{
+        width: 100%;
+    }
+    .container-detail .main-detail .title-detail h1{
+        font-size: 20px;
+        line-height: 30px;
+    }
+    .container-detail .main-detail .title-detail .time-detail{
+        font-size: 14px;
+    }
+    .container-detail .main-detail .body-detail .img__detail-title{
+        height: 300px;
+    }
+    .container-detail .main-detail .body-detail p.desc{
+        font-size: 16px;
+        line-height: 34px;
+    }
+    .container-detail .suggest-event .title-suggest h2{
+        font-size: 20px;
+    }
+    .container-detail .suggest-event .card-suggest .card-title{
+        font-size: 15px;
+        line-height: 25px;
+    }
+    .container-detail .suggest-event .card-suggest .card-des{
+        font-size: 14px;
+        line-height: 24px;
+    }
+    .container-detail .suggest-event .card-suggest .card-text{
+        font-size: 14px;
+    }
 }
 @media screen and (max-width: 321px) {
     .container-event .main-event .all-news .latest-news{
@@ -907,5 +1021,40 @@
     }
     .container-event .main-event .news, .container-event .main-event .event{
         padding: 20px 0;
+    }
+    //detail event 
+    .container-detail .main-detail .title-detail h1{
+        font-size: 16px;
+        line-height: 26px;
+    }
+    .container-detail .main-detail .title-detail .time-detail{
+        font-size: 12px;
+    }
+    .container-detail .main-detail .body-detail .img__detail-title{
+        height: 200px;
+    }
+    .container-detail .main-detail .body-detail p.desc{
+        font-size: 13px;
+        line-height: 31px;
+    }
+    .container-detail .suggest-event .title-suggest{
+        margin-bottom: 12px;
+    }
+    .container-detail .suggest-event .title-suggest h2{
+        font-size: 16px;
+    }
+    .container-detail .suggest-event .card-suggest .card-title{
+        font-size: 13px;
+        line-height: 23px;
+    }
+    .container-detail .suggest-event .card-suggest .card-des{
+        font-size: 12px;
+        line-height: 22px;
+    }
+    .container-detail .suggest-event .card-suggest span.time-news{
+        font-size: 10px;
+    }
+    .container-detail .suggest-event .card-suggest .card-text{
+        font-size: 12px;
     }
 }

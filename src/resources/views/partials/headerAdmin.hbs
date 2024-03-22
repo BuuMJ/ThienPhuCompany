@@ -1,6 +1,7 @@
 <div class="container-header__admin">
     <div class="top-header">
-        <img src="/img/companyTPBackground.png" alt="">
+        <img class="hide-menu" src="/img/companyTPBackground.png" alt="">
+        <img class="show-menu" src="/img/companyTPWhite.png" alt="">
     </div>
     <div class="body-header">
         <div class="title">
@@ -9,16 +10,16 @@
         </div>
         <ul class="admin-navbar">
             <li>
-                <a href="#Tạo-Sự-Kiện" class="create-news"><i class="bi bi-file-earmark-plus-fill"></i> Tạo Sự Kiện</a>
+                <a href="#Tạo-Sự-Kiện" class="create-news"><i class="bi bi-file-earmark-plus-fill"></i> <span class="text-indent">Tạo Sự Kiện</span></a>
             </li>
             <li>
-                <a href="#Thêm-Nhân-Viên" class="create-user"><i class="bi bi-person-plus-fill"></i> Thêm Nhân Viên</a>
+                <a href="#Thêm-Nhân-Viên" class="create-user"><i class="bi bi-person-plus-fill"></i> <span class="text-indent">Thêm Nhân Viên</span></a>
             </li>
             <li>
-                <a href="#Thêm-Chức-Vụ" class="create-role"><i class="bi bi-person-fill-gear"></i> Thêm Chức Vụ</a>
+                <a href="#Thêm-Chức-Vụ" class="create-role"><i class="bi bi-person-fill-gear"></i> <span class="text-indent">Thêm Chức Vụ</span></a>
             </li>
             <li>
-                <a href="#" data-href="management_msg" class="link"><i class="bi bi-chat-text-fill"></i> Quản Lý Tin Nhắn</a>
+                <a href="#" data-href="management_msg" class="link"><i class="bi bi-chat-text-fill"></i> <span class="text-indent">Quản Lý Tin Nhắn</span></a>
             </li>
         </ul>
         <div class="title">
@@ -26,18 +27,18 @@
             <h2>Trang Chính</h2>
         </div>
         <ul class="primary-navbar">
-            <li class="admin-nav"><a class="link" data-href="Admin" href="/"><span class="material-symbols-outlined">folder_managed</span> Quản Trị Viên</a></li>
-            <li><a class="link" data-href="home" href="/"><i class="bi bi-house-door-fill"></i> Trang Chủ</a></li>
-            <li><a class="link" data-href="about" href="/about"><span class="material-symbols-outlined">groups</span> Về Chúng Tôi</a></li>
-            <li><a class="link" data-href="product" href="/product"><i class="bi bi-basket3-fill"></i> Sản Phẩm</a></li>
-            <li><a class="link" data-href="event" href="/event"><span class="material-symbols-outlined">language</span> Tin Tức & Sự Kiện</a></li>
+            <li class="admin-nav"><a class="link" data-href="Admin" href="/"><span class="material-symbols-outlined">folder_managed</span> <span class="text-indent">Quản Trị Viên</span></a></li>
+            <li><a class="link" data-href="home" href="/"><i class="bi bi-house-door-fill"></i> <span class="text-indent">Trang Chủ</span></a></li>
+            <li><a class="link" data-href="about" href="/about"><span class="material-symbols-outlined">groups</span> <span class="text-indent">Về Chúng Tôi</span></a></li>
+            <li><a class="link" data-href="product" href="/product"><i class="bi bi-basket3-fill"></i> <span class="text-indent">Sản Phẩm</span></a></li>
+            <li><a class="link" data-href="event" href="/event"><span class="material-symbols-outlined">language</span> <span class="text-indent">Tin Tức & Sự Kiện</span></a></li>
             {{!-- <li><a class="link" data-href="award" href="/award">Giải Thưởng</a></li> --}}
-            <li><a class="link" data-href="contact" href="/contact"><span class="material-symbols-outlined">info</span> Liên Hệ</a></li>
+            <li><a class="link" data-href="contact" href="/contact"><span class="material-symbols-outlined">info</span> <span class="text-indent">Liên Hệ</span></a></li>
         </ul>
     <ul class="bottom-navbar">
-        <li><a href="#"><i class="bi bi-question-diamond-fill"></i> Hỗ Trợ & Giúp Đỡ</a></li>
+        <li><a href="#"><i class="bi bi-question-diamond-fill"></i> <span class="text-indent">Hỗ Trợ & Giúp Đỡ</span></a></li>
         {{#if user}}
-            <li><a onclick="logout()" class="logout"><i class="bi bi-door-closed-fill"></i> Đăng Xuất</a></li>
+            <li><a onclick="logout()" class="logout"><i class="bi bi-door-closed-fill"></i> <span class="text-indent">Đăng Xuất</span></a></li>
         {{else}}
         {{/if}}
     </ul>
