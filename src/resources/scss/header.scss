@@ -284,6 +284,9 @@
     .container-header__admin .bottom-navbar li{
         margin-left: unset;
     }
+    .container-header__admin .top-header{
+        height: 6%;
+    }
 }
 @media screen and (max-width: 769px) {
     .navbar .navbar-inner{
@@ -313,8 +316,11 @@
         padding: 12px;
     }
     .container-header__admin .top-header{
-        height: 8%;
+        height: 10%;
         cursor: pointer;
+    }
+    .container-header__admin .top-header img{
+        height: 100%;
     }
     .container-header__admin .top-header img.hide-menu{
         display: none;
@@ -358,8 +364,8 @@
     .container-header__admin .body-header .title{
         display: none;
         opacity: 0;
-        transition: .3s linear;
-        font-size: 16px;
+        font-size: 0;
+        transition: .3s ease;
     }
     .container-header__admin .body-header .admin-navbar, 
     .container-header__admin .body-header .primary-navbar{
@@ -435,6 +441,45 @@
     .primary-navbar__responsive li a.product-header.touched-responsive{
         cursor: pointer;
     }
+    .container-header__admin .body-header .admin-navbar li a i, 
+    .container-header__admin .body-header .primary-navbar li a i, 
+    .container-header__admin .body-header .admin-navbar li a span.material-symbols-outlined, 
+    .container-header__admin .body-header .primary-navbar li a span.material-symbols-outlined, 
+    .container-header__admin .bottom-navbar li i{
+        font-size: 18px;
+    }
+    .container-header__admin .body-header .admin-navbar li a, 
+    .container-header__admin .body-header .primary-navbar li a, 
+    .container-header__admin .bottom-navbar li a,
+    .container-header__admin .body-header, 
+    .container-header__admin .top-header{
+        padding: 8px;
+    }
+    .container-header__admin .top-header img.hide-menu{
+        width: 100%;
+    }
+}
+@media screen and (max-width: 415px){
+    .container-header__admin{
+        position: fixed;
+        left: 0;
+        top: 0;
+        width: 16%;
+    }
+    .container-header__admin .body-header .admin-navbar li a i, 
+    .container-header__admin .body-header .primary-navbar li a i, 
+    .container-header__admin .body-header .admin-navbar li a span.material-symbols-outlined, 
+    .container-header__admin .body-header .primary-navbar li a span.material-symbols-outlined, 
+    .container-header__admin .bottom-navbar li i{
+        font-size: 14px;
+    }
+    .container-header__admin .body-header .admin-navbar li a, 
+    .container-header__admin .body-header .primary-navbar li a, 
+    .container-header__admin .bottom-navbar li a,
+    .container-header__admin .body-header, 
+    .container-header__admin .top-header{
+        padding: 6px;
+    }
 }
 @media screen and (max-width: 321px) {
     .navbar-responsive{
@@ -445,5 +490,10 @@
     }
     .primary-navbar__responsive li a span{
         font-size: 8px;
+    }
+    .container-header__admin .body-header .admin-navbar li, 
+    .container-header__admin .body-header .primary-navbar li, 
+    .container-header__admin .bottom-navbar li{
+        margin: 6px 0;
     }
 }

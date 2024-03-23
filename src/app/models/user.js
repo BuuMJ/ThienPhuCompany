@@ -11,6 +11,7 @@ const User = new Schema(
     district: String,
     fullname: String,
     avatar: String,
+    gender: String,
   },
   {
     timestamps: true,

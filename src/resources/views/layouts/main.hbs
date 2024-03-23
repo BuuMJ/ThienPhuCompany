@@ -137,49 +137,73 @@
     const bodyRight = document.querySelector('.container-create .body-right');
     const bodyLeft = document.querySelector('.container-create .body-left');
     let checkClick = false;
-    if(showMenu){
-      actionMenu.addEventListener('click',()=>{
-        if(!checkClick){
-          checkClick = true;
-          headerAdmin.style.width = '28%';
-          bodyRight.style.width = '28%';
-          bodyLeft.style.width = '72%'
-          showMenu.style.cssText = 'display: none; opacity: 0';
-          hideMenu.style.display = 'block';
-          tagA.forEach(a=>{
-            a.style.cssText = 'justify-content: start;'
-          })
-          setTimeout(()=>{
-            hideMenu.style.opacity = '1';
-          },100)
-          setTimeout(()=>{
-            textIndent.forEach(text=>{
-              text.style.cssText = 'display: block; margin-left: 8px; opacity: 1;';
-            })
-          }, 280)
-        }else{
-          checkClick = false;
-          headerAdmin.style.width = '14%';
-          bodyRight.style.width = '14%';
-          bodyLeft.style.width = '86%'
-          hideMenu.style.cssText = 'display: none; opacity: 0';
-          showMenu.style.display = 'block';
-          textIndent.forEach(text=>{
-              text.style.cssText = 'display: none;';
-            })
-          setTimeout(()=>{
-            showMenu.style.opacity = '1';
-          },100)
-          setTimeout(()=>{
+    let fontSize;
+    let widthRight;
+    let widthNavAdmin;
+    let widthOffNavAdmin;
+    if(window.innerWidth < 769 && window.innerWidth > 601){
+      fontSize = '15px';
+      widthRight = '28%';
+      widthNavAdmin = '28%';
+      widthOffNavAdmin = '14%';
+    }else if(window.innerWidth < 601 && window.innerWidth > 416){
+      fontSize = '13px';
+      widthRight = '28%';
+      widthNavAdmin = '28%';
+      widthOffNavAdmin = '14%';
+    }else if(window.innerWidth < 415 && window.innerWidth > 321){
+      fontSize = '11px';
+      widthRight = '14%';
+      widthNavAdmin = '40%';
+      widthOffNavAdmin = '16%';
+    }else{
+      fontSize = '9px';
+      widthRight = '14%';
+      widthNavAdmin = '40%';
+      widthOffNavAdmin = '16%';
+    }
+    if(window.innerWidth < 769){
+        if(showMenu){
+        actionMenu.addEventListener('click',()=>{
+          if(!checkClick){
+            checkClick = true;
+            headerAdmin.style.width = `${widthNavAdmin}`;
+            bodyRight.style.width = `${widthRight}`;
+            bodyLeft.style.width = '72%'
+            showMenu.style.cssText = 'display: none; opacity: 0';
+            hideMenu.style.display = 'block';
             tagA.forEach(a=>{
-              a.style.cssText = 'justify-content: center;'
+              a.style.cssText = `justify-content: start; font-size: ${fontSize}`;
             })
+            setTimeout(()=>{
+              hideMenu.style.opacity = '1';
+            },100)
+            setTimeout(()=>{
+              textIndent.forEach(text=>{
+                text.style.cssText = `display: block; margin-left: 8px; opacity: 1; font-size: ${fontSize};`;
+              })
+            }, 300)
+          }else{
+            checkClick = false;
+            headerAdmin.style.width = `${widthOffNavAdmin}`;
+            bodyRight.style.width = '14%';
+            bodyLeft.style.width = '86%'
+            hideMenu.style.cssText = 'display: none; opacity: 0';
+            showMenu.style.display = 'block';
             textIndent.forEach(text=>{
-              text.style.cssText = 'display: none;  margin-left: unset; opacity: 0;';
-            })
-          },300)
-        }
-      })
+                text.style.cssText = 'display: none; opacity: 0; font-size: 0; margin-left: unset;';
+              })
+            setTimeout(()=>{
+              showMenu.style.opacity = '1';
+            },100)
+            setTimeout(()=>{
+              tagA.forEach(a=>{
+                a.style.cssText = 'justify-content: center;'
+              })
+            },300)
+          }
+        })
+      }
     }
   })
 </script>
