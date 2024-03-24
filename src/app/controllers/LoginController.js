@@ -1,7 +1,7 @@
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
 const UserModel = require("../models/user");
-
+const fs = require('fs');
 class LoginController {
   formRegister(req, res, next) {
     res.render("register", {
@@ -12,9 +12,8 @@ class LoginController {
   async register(req, res, next) {
     // const username = "ctythienphu@ymail.com";
     // const password = "108lehongphong";
-    const { username, password, role, email, city, district, fullnameUser } =
+    const { username, password, role, email, city, district, fullnameUser, gender, nickname } =
       req.body;
-
     if (req.file) {
       const avatar = fs.promises.readFile(req.file.path);
       console.log(avatar + "  aaaaaaaaaaaaaaaaaaassssssssssss");
@@ -28,9 +27,11 @@ class LoginController {
           city: city,
           district: district,
           fullname: fullnameUser,
+          gender: gender,
+          nickname: nickname,
         });
       });
-      await UserModel.save();
+      // await UserModel.save();
       res.redirect("back");
     } else {
       bcrypt.hash(password, 10, function (err, hash) {
@@ -42,9 +43,11 @@ class LoginController {
           city: city,
           district: district,
           fullname: fullnameUser,
+          gender: gender,
+          nickname: nickname,
         });
       });
-      UserModel.save();
+      // await UserModel.save();
       res.redirect("back");
     }
   }

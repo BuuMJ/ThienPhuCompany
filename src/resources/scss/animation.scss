@@ -79,3 +79,14 @@
     right: 10px;
   }
 }
+@keyframes wave {
+  0% {
+    transform: rotateZ(0);
+  }
+  50%{
+    transform: rotateZ(45deg);
+  }
+  100%{
+    transform: rotateZ(0);
+  }
+}

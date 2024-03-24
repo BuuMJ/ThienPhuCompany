@@ -12,6 +12,7 @@ const User = new Schema(
     fullname: String,
     avatar: String,
     gender: String,
+    nickname: String,
   },
   {
     timestamps: true,

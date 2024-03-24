@@ -32,7 +32,7 @@ function checkLogin(req, res, next) {
 function checkAdmin(req, res, next) {
   if (req.user) {
     var role = req.user.role;
-    if (role != "admin" && role != "manager") {
+    if (role != "Giám Đốc" && role != "Quản Lý") {
       next();
     } else {
       return res.redirect("/admin?messenge=You are not authorized.");
