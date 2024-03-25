@@ -136,6 +136,7 @@
     const tagA = document.querySelectorAll('.container-header__admin li a')
     const bodyRight = document.querySelector('.container-create .body-right');
     const bodyLeft = document.querySelector('.container-create .body-left');
+    const profileHeaderUser = document.querySelector('.container-header__admin .bottom-navbar .profile-user');
     let checkClick = false;
     let fontSize;
     let widthNavAdmin;
@@ -165,6 +166,7 @@
             headerAdmin.style.width = `${widthNavAdmin}`;
             showMenu.style.cssText = 'display: none; opacity: 0';
             hideMenu.style.display = 'block';
+            profileHeaderUser.style.gap = '10px';
             tagA.forEach(a=>{
               a.style.cssText = `justify-content: start; font-size: ${fontSize}`;
             })
@@ -173,16 +175,17 @@
             },100)
             setTimeout(()=>{
               textIndent.forEach(text=>{
-                text.style.cssText = `display: block; margin-left: 8px; opacity: 1; font-size: ${fontSize};`;
+                text.style.cssText = `margin-left: 8px; opacity: 1; font-size: ${fontSize};`;
               })
-            }, 300)
+            }, 100)
           }else{
             checkClick = false;
             headerAdmin.style.width = `${widthOffNavAdmin}`;
             hideMenu.style.cssText = 'display: none; opacity: 0';
             showMenu.style.display = 'block';
+            profileHeaderUser.style.gap = '0px'
             textIndent.forEach(text=>{
-                text.style.cssText = 'display: none; opacity: 0; font-size: 0; margin-left: unset;';
+                text.style.cssText = 'opacity: 0; font-size: 0; margin-left: unset;';
               })
             setTimeout(()=>{
               showMenu.style.opacity = '1';

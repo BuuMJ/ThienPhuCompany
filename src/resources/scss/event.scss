@@ -595,6 +595,40 @@
     word-wrap: break-word;
     margin-top: 20px;
 }
+//break point macbook
+@media screen and (min-width: 1279px) and (max-width: 1441px){
+    .container-detail .suggest-event{
+        padding: 16px;
+    }
+    .container-detail .suggest-event .card-suggest{
+        gap: 2px;
+    }
+    .container-detail .suggest-event .title-suggest{
+        margin-bottom: 12px;
+    }
+    .container-detail .suggest-event .title-suggest h2{
+        font-size: 18px;
+        padding-bottom: 10px;
+    }
+    .container-detail .suggest-event .card-suggest span.time-news{
+        font-size: 12px;
+    }
+    .container-detail .suggest-event .card-suggest .card-title{
+        font-size: 15px;
+        line-height: 25px;
+    }
+    .container-detail .suggest-event .card-suggest .card-des{
+        line-height: 23px;
+        margin-bottom: 12px;
+    }
+    .container-detail .suggest-event .card-suggest .card-des,
+    .container-detail .suggest-event .card-suggest .card-text{
+        font-size: 13px;
+    }
+    .container-detail .suggest-event .card-suggest .card-text{
+        bottom: 4px;
+    }
+}
 @media screen and (max-width: 1025px) {
     .container-event header{
         height: 40vh;

@@ -587,6 +587,30 @@
   word-wrap: break-word;
   margin-top: 20px; }
 
+@media screen and (min-width: 1279px) and (max-width: 1441px) {
+  .container-detail .suggest-event {
+    padding: 16px; }
+  .container-detail .suggest-event .card-suggest {
+    gap: 2px; }
+  .container-detail .suggest-event .title-suggest {
+    margin-bottom: 12px; }
+  .container-detail .suggest-event .title-suggest h2 {
+    font-size: 18px;
+    padding-bottom: 10px; }
+  .container-detail .suggest-event .card-suggest span.time-news {
+    font-size: 12px; }
+  .container-detail .suggest-event .card-suggest .card-title {
+    font-size: 15px;
+    line-height: 25px; }
+  .container-detail .suggest-event .card-suggest .card-des {
+    line-height: 23px;
+    margin-bottom: 12px; }
+  .container-detail .suggest-event .card-suggest .card-des,
+  .container-detail .suggest-event .card-suggest .card-text {
+    font-size: 13px; }
+  .container-detail .suggest-event .card-suggest .card-text {
+    bottom: 4px; } }
+
 @media screen and (max-width: 1025px) {
   .container-event header {
     height: 40vh; }
@@ -3329,6 +3353,25 @@
 .container-create .box-create__user .body-create__user .user-infor .user-label select:valid + label {
   color: #bc9f6e; }
 
+@media screen and (min-width: 1279px) and (max-width: 1441px) {
+  .container-create .body-left .container-left .primary-page .primary-navbar {
+    justify-content: center; }
+  .container-create .body-left .container-left .primary-page .primary-navbar li {
+    width: unset;
+    margin: 0 12px; }
+  .container-create .body-left .container-left .primary-page .primary-navbar li a {
+    font-size: 18px; }
+  .container-create .body-left .container-left .primary-page .primary-navbar li a span.name-page {
+    font-size: 0;
+    transition: .3s;
+    margin-left: unset; }
+  .container-create .body-left .container-left .primary-page .primary-navbar li.admin-nav {
+    pointer-events: unset; }
+  .container-create .body-left .container-left .primary-page .primary-navbar li.admin-nav:hover a span.name-page,
+  .container-create .body-left .container-left .primary-page .primary-navbar li:hover a span.name-page {
+    font-size: 18px;
+    margin-left: 8px; } }
+
 @media screen and (max-width: 1025px) {
   .container-create .body-right {
     width: 25%; }
@@ -5402,12 +5445,16 @@
   border-radius: 5px; }
 
 .container-header__admin .bottom-navbar .profile-user h3.name-user {
-  text-transform: capitalize; }
+  text-transform: capitalize;
+  text-align: center;
+  word-break: break-all; }
 
 .container-header__admin .bottom-navbar .profile-user p.role-user {
   text-transform: capitalize;
   color: #acaeb0;
-  font-weight: 600; }
+  font-weight: 600;
+  text-align: center;
+  word-break: break-all; }
 
 .container-header__admin .body-header .admin-navbar li a i,
 .container-header__admin .body-header .admin-navbar li a span.material-symbols-outlined,
@@ -5521,6 +5568,14 @@
     align-items: center;
     margin: 8px 0;
     transition: .3s; }
+  .container-header__admin .bottom-navbar .profile-user {
+    gap: 0px; }
+  .container-header__admin .bottom-navbar .profile-user img.avatar-user__header {
+    width: 50px;
+    height: 50px; }
+  .container-header__admin .bottom-navbar .profile-user .email-user {
+    word-break: break-word;
+    text-align: center; }
   .container-header__admin .body-header .admin-navbar li a,
   .container-header__admin .bottom-navbar li a {
     padding: 12px;
@@ -5537,7 +5592,6 @@
   .container-header__admin .bottom-navbar .profile-user .text-indent,
   .container-header__admin .bottom-navbar li a span.text-indent,
   .container-header__admin .body-header .title {
-    display: none;
     opacity: 0;
     font-size: 0;
     transition: .3s ease; }
@@ -5624,7 +5678,10 @@
   .container-header__admin .bottom-navbar li a,
   .container-header__admin .body-header,
   .container-header__admin .top-header {
-    padding: 6px; } }
+    padding: 6px; }
+  .container-header__admin .bottom-navbar .profile-user img.avatar-user__header {
+    width: 40px;
+    height: 40px; } }
 
 @media screen and (max-width: 321px) {
   .navbar-responsive {
@@ -5635,7 +5692,10 @@
     font-size: 8px; }
   .container-header__admin .body-header .admin-navbar li,
   .container-header__admin .bottom-navbar li {
-    margin: 6px 0; } }
+    margin: 6px 0; }
+  .container-header__admin .bottom-navbar .profile-user img.avatar-user__header {
+    width: 25px;
+    height: 25px; } }
 
 .container-footer {
   width: 100%;
