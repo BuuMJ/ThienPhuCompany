@@ -68,7 +68,12 @@
   links.forEach(link=>{
     link.addEventListener('click',(e)=>{
       if(link.classList.contains('touched')){
-         e.preventDefault();
+         if(link.classList.contains('event-header') || link.classList.contains('product-header')){
+            
+         }else{
+            e.preventDefault();
+         }
+
       }else{
         const href = link.getAttribute('data-href')
         localStorage.setItem('link',href)
@@ -79,7 +84,11 @@
   linksResponsive.forEach(link=>{
     link.addEventListener('click',(e)=>{
       if(link.classList.contains('touched-responsive')){
-         e.preventDefault();
+         if(link.classList.contains('event-header') || link.classList.contains('product-header')){
+            
+         }else{
+            e.preventDefault();
+         }
       }else{
         const href = link.getAttribute('data-href')
         localStorage.setItem('link',href)
@@ -100,7 +109,7 @@
       if(navbar){
       links.forEach(link=>{
         const href = link.getAttribute('data-href');
-        if (href === currentPage || currentPage.includes('product') && href.includes('product')){
+        if (href === currentPage || currentPage.includes('product') && href.includes('product') || currentPage.includes('event') && href.includes('event')){
           link.classList.add('touched')
         }else{
           link.classList.remove('touched')
@@ -111,10 +120,81 @@
       if(navbarResponsive){
         linksResponsive.forEach(link=>{
           const href = link.getAttribute('data-href');
-          if (href === currentPage || currentPage.includes('product') && href.includes('product')){
+          if (href === currentPage || currentPage.includes('product') && href.includes('product') || currentPage.includes('event') && href.includes('event')){
             link.classList.add('touched-responsive')
           }else{
             link.classList.remove('touched-responsive')
+          }
+        })
+      }
+    }
+    const headerAdmin = document.querySelector('.container-header__admin');
+    const showMenu = document.querySelector('img.show-menu');
+    const hideMenu = document.querySelector('img.hide-menu');
+    const actionMenu = document.querySelector('.container-header__admin .top-header');
+    const textIndent = document.querySelectorAll('.text-indent');
+    const tagA = document.querySelectorAll('.container-header__admin li a')
+    const bodyRight = document.querySelector('.container-create .body-right');
+    const bodyLeft = document.querySelector('.container-create .body-left');
+    const profileHeaderUser = document.querySelector('.container-header__admin .bottom-navbar .profile-user');
+    let checkClick = false;
+    let fontSize;
+    let widthNavAdmin;
+    let widthOffNavAdmin;
+    if(window.innerWidth < 769 && window.innerWidth > 601){
+      fontSize = '15px';
+      widthNavAdmin = '28%';
+      widthOffNavAdmin = '14%';
+    }else if(window.innerWidth < 601 && window.innerWidth > 416){
+      fontSize = '13px';
+      widthNavAdmin = '28%';
+      widthOffNavAdmin = '14%';
+    }else if(window.innerWidth < 415 && window.innerWidth > 321){
+      fontSize = '11px';
+      widthNavAdmin = '40%';
+      widthOffNavAdmin = '16%';
+    }else{
+      fontSize = '9px';
+      widthNavAdmin = '40%';
+      widthOffNavAdmin = '16%';
+    }
+    if(window.innerWidth < 769){
+        if(showMenu){
+        actionMenu.addEventListener('click',()=>{
+          if(!checkClick){
+            checkClick = true;
+            headerAdmin.style.width = `${widthNavAdmin}`;
+            showMenu.style.cssText = 'display: none; opacity: 0';
+            hideMenu.style.display = 'block';
+            profileHeaderUser.style.gap = '10px';
+            tagA.forEach(a=>{
+              a.style.cssText = `justify-content: start; font-size: ${fontSize}`;
+            })
+            setTimeout(()=>{
+              hideMenu.style.opacity = '1';
+            },100)
+            setTimeout(()=>{
+              textIndent.forEach(text=>{
+                text.style.cssText = `margin-left: 8px; opacity: 1; font-size: ${fontSize};`;
+              })
+            }, 100)
+          }else{
+            checkClick = false;
+            headerAdmin.style.width = `${widthOffNavAdmin}`;
+            hideMenu.style.cssText = 'display: none; opacity: 0';
+            showMenu.style.display = 'block';
+            profileHeaderUser.style.gap = '0px'
+            textIndent.forEach(text=>{
+                text.style.cssText = 'opacity: 0; font-size: 0; margin-left: unset;';
+              })
+            setTimeout(()=>{
+              showMenu.style.opacity = '1';
+            },100)
+            setTimeout(()=>{
+              tagA.forEach(a=>{
+                a.style.cssText = 'justify-content: center;'
+              })
+            },300)
           }
         })
       }

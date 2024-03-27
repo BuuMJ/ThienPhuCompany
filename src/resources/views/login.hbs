@@ -1,4 +1,39 @@
 <div class="container-login">
+    <div class="toast error">
+        <div class="icon-toast">
+            <svg fill="#BC0404" version="1.1" baseProfile="tiny" id="Layer_1" xmlns:x="&amp;ns_extend;" xmlns:i="&amp;ns_ai;" xmlns:graph="&amp;ns_graphs;" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:a="http://ns.adobe.com/AdobeSVGViewerExtensions/3.0/" viewBox="-0.5 0.5 42 42" xml:space="preserve">
+            <g id="SVGRepo_bgCarrier" stroke-width="0"/>
+            <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"/>
+            <g id="SVGRepo_iconCarrier"> <path d="M29.582,8.683l-0.129,0.12L8.3,29.954c-0.249,0.249-0.428,0.478-0.547,0.688c-2.04-2.639-3.233-6-3.233-9.701 c0-8.797,6.626-15.482,15.421-15.482C23.632,5.459,26.955,6.644,29.582,8.683z M10.937,33.704c0.189-0.117,0.388-0.287,0.606-0.507 l21.151-21.151l0.041-0.04c1.74,2.518,2.746,5.602,2.746,8.994c0,8.785-6.696,15.541-15.481,15.541 C16.568,36.541,13.454,35.506,10.937,33.704z M0.5,21c0,10.775,8.735,19.5,19.5,19.5c10.767,0,19.501-8.725,19.501-19.5 c0-10.775-8.734-19.5-19.5-19.5C9.235,1.5,0.5,10.225,0.5,21z"/> </g>
+            </svg>
+        </div>
+        <div class="content-toast">
+            <p><b>Sự Cố:</b> 
+            Sai Tài Khoản Hoặc Mật Khẩu
+            <br>
+            Vui Lòng Kiểm Tra Lại
+            </p>
+        </div>
+    </div>
+    {{#if msg}}
+    <div class="toast error msg">
+        <div class="icon-toast">
+            <svg fill="#BC0404" version="1.1" baseProfile="tiny" id="Layer_1" xmlns:x="&amp;ns_extend;" xmlns:i="&amp;ns_ai;" xmlns:graph="&amp;ns_graphs;" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:a="http://ns.adobe.com/AdobeSVGViewerExtensions/3.0/" viewBox="-0.5 0.5 42 42" xml:space="preserve">
+            <g id="SVGRepo_bgCarrier" stroke-width="0"/>
+            <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"/>
+            <g id="SVGRepo_iconCarrier"> <path d="M29.582,8.683l-0.129,0.12L8.3,29.954c-0.249,0.249-0.428,0.478-0.547,0.688c-2.04-2.639-3.233-6-3.233-9.701 c0-8.797,6.626-15.482,15.421-15.482C23.632,5.459,26.955,6.644,29.582,8.683z M10.937,33.704c0.189-0.117,0.388-0.287,0.606-0.507 l21.151-21.151l0.041-0.04c1.74,2.518,2.746,5.602,2.746,8.994c0,8.785-6.696,15.541-15.481,15.541 C16.568,36.541,13.454,35.506,10.937,33.704z M0.5,21c0,10.775,8.735,19.5,19.5,19.5c10.767,0,19.501-8.725,19.501-19.5 c0-10.775-8.734-19.5-19.5-19.5C9.235,1.5,0.5,10.225,0.5,21z"/> </g>
+            </svg>
+        </div>
+        <div class="content-toast">
+            <p><b>Sự Cố:</b> 
+            Sai Tài Khoản Hoặc Mật Khẩu
+            <br>
+            Vui Lòng Kiểm Tra Lại
+            </p>
+        </div>
+    </div>
+    {{else}}
+    {{/if}}
     <div class="background-inside">
         <div class="back-drop"></div>    
     </div>
@@ -12,7 +47,7 @@
                 <p>Chúc bạn có 1 ngày làm việc thật năng động và vủi vẻ</p>
             </div>
             <div class="bottom-left">
-                <img src="/img/companyTPBackground.png" alt="" class="logo">
+                <img src="/img/companyTPWhite.png" alt="" class="logo">
             </div>
         </div>
         <div class="right-box">
@@ -22,8 +57,8 @@
             </div>
             <div class="login-info username">
                 <input id="username" type="text" name="username" required>
-                <label class="animation-label animation-label__username" for="username">Tên Đăng Nhập</label>
-                <label for="username" class="icon-login icon-login__username">
+                <label class="username animation-label animation-label__username" for="username">Tên Đăng Nhập</label>
+                <label for="username" class="username icon-login icon-login__username">
                     <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <g id="SVGRepo_bgCarrier" stroke-width="0"/>
                         <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"/>
@@ -43,7 +78,7 @@
                 </label>
                 <span class="show-password"><i class="bi bi-eye-slash-fill"></i></span>
             </div>
-            <button class="submit-login" type="submit">Đăng Nhập</button>
+            <button class="submit-login" type="button">Đăng Nhập</button>
             <div class="support-login">
                 <span>Cần Hỗ Trợ? Liên Hệ: <a href="mailto:nxt03091999@gmail.com">nxt03091999@gmail.com</a></span>
             </div>
@@ -51,6 +86,10 @@
     </form>
 </div>
 <script>
+    const toastErrorLogin = document.querySelector('.toast.error.msg');
+    if(toastErrorLogin){
+        visibleToast(toastErrorLogin)
+    }
     const showpassword = document.querySelector('.show-password');
     const password = document.querySelector('.login-info #password');
     showpassword.addEventListener('click',()=>{
@@ -61,5 +100,64 @@
             password.type = 'password'
             showpassword.innerHTML = '<i class="bi bi-eye-slash-fill"></i>'
         }
+    });
+    const usernameInput = document.getElementById('username');
+    const passwordInput = document.getElementById('password');
+    const submitLogin = document.querySelector('.submit-login');
+    const msgErrorUsername = '<p><b>Sự Cố:</b> Chưa Điền Tên Đăng Nhập</p>';
+    const msgErrorPassword = '<p><b>Sự Cố:</b> Chưa Điền Mật Khẩu</p>';
+    const labelUsername = document.querySelector('.login-info.username label.animation-label');
+    const svgUsername = document.querySelector('.login-info.username label.icon-login svg');
+    const labelPassword = document.querySelector('.login-info.password label.animation-label');
+    const svgPassword = document.querySelector('.login-info.password label.icon-login svg');
+    const formLogin = document.querySelector('.box-login');
+    usernameInput.addEventListener('keypress',(e)=>{
+        if(e.target === usernameInput){
+            if(e.key === "Enter"){
+                submitLogin.click();
+            }
+        }
+    })
+    passwordInput.addEventListener('keypress',(e)=>{
+        if(e.target === passwordInput){
+            if(e.key === "Enter"){
+                submitLogin.click();
+            }
+        }
+    })
+    submitLogin.addEventListener('click',()=>{
+        if(usernameInput.value === ""){
+            validateInput(usernameInput, msgErrorUsername);
+            labelUsername.style.color = "#BC0404";
+            svgUsername.style.fill = '#BC0404';
+            usernameInput.addEventListener('input',()=>{
+                if(usernameInput.value === ""){
+                    labelUsername.style.color = "#BC0404";
+                    svgUsername.style.fill = '#BC0404';
+                    usernameInput.style.border = '1px solid #BC0404';
+                }else{
+                    labelUsername.style.color = "#bc9f6e";
+                    svgUsername.style.fill = '#bc9f6e';
+                    usernameInput.style.border = '1px solid #bc9f6e';
+                }
+            })
+        } else if(passwordInput.value === ""){
+            validateInput(passwordInput, msgErrorPassword);
+            labelPassword.style.color = "#BC0404";
+            svgPassword.style.fill = '#BC0404';
+            passwordInput.addEventListener('input',()=>{
+                if(passwordInput.value === ""){
+                    labelPassword.style.color = "#BC0404";
+                    svgPassword.style.fill = '#BC0404';
+                    passwordInput.style.border = '1px solid #BC0404';
+                }else{
+                    labelPassword.style.color = "#bc9f6e";
+                    svgPassword.style.fill = '#bc9f6e';
+                    passwordInput.style.border = '1px solid #bc9f6e';
+                }
+            })
+            }else{
+                formLogin.submit();
+            }
     })
 </script>

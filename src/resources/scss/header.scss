@@ -71,19 +71,249 @@
     cursor: default;
     pointer-events: none;
 }
+.navbar-inner .event-header.touched,
+.navbar-inner .product-header.touched{
+    pointer-events: all;
+    cursor: pointer;
+}
 .navbar-inner li a.touched,
 .navbar-inner li a:hover{
     background-color: $primarycolor;
     color: white !important;
     border-radius: 5px;
 }
+// header admin
+.container-header__admin{
+    width: 18%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: white;
+    z-index: 10;
+}
+.container-header__admin .top-header{
+    width: 100%;
+    height: 10%;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    
+    padding: 0 20px;
+}
+.container-header__admin .top-header img.hide-menu,
+.container-header__admin .top-header img.show-menu{
+    width: 90%;
+    height: 50px;
+    opacity: 1;
+    transition: .3s linear;
+}
+.container-header__admin .top-header img.show-menu{
+    display: none;
+    opacity: 0;
+}
+.container-header__admin .body-header{
+    width: 100%;
+    height: 90%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: start;
+    padding: 20px;
+}
+.container-header__admin .body-header .title{
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    width: 100%;
+    padding-bottom: 12px;
+    border-bottom: 2px solid rgba(188, 159, 110, .2);
+    margin-bottom: 20px;
+}
+.container-header__admin .body-header .title h2{
+    color: $primarycolor;
+}
+.container-header__admin .body-header .title img{
+    width: 28px;
+    height: 28px;
+    margin-right: 8px;
+}
+// ,
+// .container-header__admin .body-header .primary-navbar
+.container-header__admin .body-header .admin-navbar{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding-bottom: 20px;
+    padding-left: 8px;
+}
+// .container-header__admin .body-header .admin-navbar{
+//     margin-bottom: 20px;
+// }
+// .container-header__admin .body-header .primary-navbar li,
+.container-header__admin .body-header .admin-navbar li,
+.container-header__admin .bottom-navbar li{
+    list-style-type: none;
+    width: 100%;
+    transition: .3s;
+    position: relative;
+}
+// .container-header__admin .body-header .primary-navbar li:hover,
+.container-header__admin .body-header .admin-navbar li::after,
+.container-header__admin .bottom-navbar li::after{
+    position: absolute;
+    content:  "";
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 4px;
+    background-color: $primarycolor;
+    display: none;
+}
+.container-header__admin .body-header .admin-navbar li:hover,
+.container-header__admin .bottom-navbar li:hover{
+    background-image: linear-gradient(90deg, $titlecolor 30%, #ffffff 70%);
+    cursor: pointer;
+}
+.container-header__admin .body-header .admin-navbar li:hover::after,
+.container-header__admin .bottom-navbar li:hover::after{
+    display: block;
+}
+// .container-header__admin .body-header .primary-navbar li a,
+.container-header__admin .body-header .admin-navbar li a,
+.container-header__admin .bottom-navbar li a{
+    font-size: 18px;
+    font-weight: 600;
+    color: #acaeb0;
+    text-decoration: none;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    padding: 20px 12px;
+    transition: .3s;
+}
+.container-header__admin .body-header .admin-navbar li:hover a,
+.container-header__admin .bottom-navbar li:hover a{
+    color: $primarycolor;
+}
+.container-header__admin .bottom-navbar li a.logout{
+    color: black;
+}
+.container-header__admin .bottom-navbar li a.logout i{
+    color: $primarycolor;
+}
+.container-header__admin .bottom-navbar .profile-user{
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    width: 100%;
+    gap: 10px;
+    background-color: rgba(188, 188, 187, 0.15);
+    border-radius: 5px;
+    padding: 30px 20px;
+    margin-bottom: 20px;
+}
+.container-header__admin .bottom-navbar .profile-user img.avatar-user__header{
+    width: 80px;
+    height: 80px;
+    border-radius: 5px;
+}
+.container-header__admin .bottom-navbar .profile-user h3.name-user{
+    text-transform: capitalize;
+    text-align: center;
+    word-break: break-all;
+}
+.container-header__admin .bottom-navbar .profile-user p.role-user{
+    text-transform: capitalize;
+    color: #acaeb0;
+    font-weight: 600;
+    text-align: center;
+    word-break: break-all;
+}
+// .container-header__admin .body-header .primary-navbar li a .material-symbols-outlined {
+//     font-variation-settings:
+//     'FILL' 1,
+//     'wght' 400,
+//     'GRAD' 0,
+//     'opsz' 24
+//   }
+// .container-header__admin .body-header .primary-navbar li.admin-nav{
+//     background-color: rgba(255,255,255,.15);
+//     border-radius: 5px;
+//     cursor: default;
+// }
+// .container-header__admin .body-header .primary-navbar li.admin-nav a{
+//     cursor: default;
+// }
+// .container-header__admin .body-header .primary-navbar li a i,
+// .container-header__admin .body-header .primary-navbar li a span.material-symbols-outlined,
+.container-header__admin .body-header .admin-navbar li a i,
+.container-header__admin .body-header .admin-navbar li a span.material-symbols-outlined,
+.container-header__admin .bottom-navbar li i{
+    margin-right: 8px;
+    font-size: 22px;
+}
+.container-header__admin .bottom-navbar{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: start;
+    border-top: 2px solid rgba(188, 159, 110, 0.2);
+    padding-top: 32px;
+}
+.container-header__admin .bottom-navbar li{
+    list-style-type: none;
+    width: 100%;
+    transition: .3s;
+    margin-left: 8px;
+}
 //responsive macbook
-@media screen and (min-width: 1023px) and (max-width: 1441px) {
+@media screen and (min-width: 1279px) and (max-width: 1441px) {
     .navbar .navbar-inner{
         width: 70%;
     }
     .navbar .navbar-inner .navbar-right .logo-company{
         width: 50%;
+    }
+    //header admin
+    .container-header__admin .top-header{
+        padding: 0 12px;
+    }
+    .container-header__admin .body-header{
+        padding: 12px;
+    }
+    .container-header__admin .body-header .title{
+        padding-bottom: 8px;
+        margin-bottom: 12px;
+    }
+    .container-header__admin .body-header .title h2{
+        font-size: 20px;
+    }
+    .container-header__admin .body-header .title img{
+        width: 22px;
+        height: 22px;
+    }
+    .container-header__admin .body-header .admin-navbar, .container-header__admin .body-header .primary-navbar{
+        padding-left: 6px;
+        padding-bottom: 12px;
+    }
+    // .container-header__admin .body-header .primary-navbar li a, 
+    .container-header__admin .body-header .admin-navbar li a, 
+    .container-header__admin .bottom-navbar li a{
+        font-size: 16px;
+        padding: 6px;
+    }
+    // .container-header__admin .body-header .primary-navbar li a i, 
+    // .container-header__admin .body-header .primary-navbar li a span.material-symbols-outlined, 
+    .container-header__admin .body-header .admin-navbar li a i, 
+    .container-header__admin .body-header .admin-navbar li a span.material-symbols-outlined, 
+    .container-header__admin .bottom-navbar li i{
+        font-size: 20px;
     }
   }
 //responsive all devices
@@ -93,6 +323,26 @@
     }
     .navbar .navbar-inner{
         width: 80%;
+    }
+    .container-header__admin{
+        width: 25%;
+    }
+    //header admin
+    // .container-header__admin .body-header .primary-navbar,
+    .container-header__admin .top-header img,
+    .container-header__admin .body-header .title,
+    .container-header__admin .body-header .admin-navbar, 
+    .container-header__admin .bottom-navbar{
+        width: 100%;
+    }
+    .container-header__admin .body-header .admin-navbar, .container-header__admin .body-header .primary-navbar{
+        padding-left: unset;
+    }
+    .container-header__admin .bottom-navbar li{
+        margin-left: unset;
+    }
+    .container-header__admin .top-header{
+        height: 6%;
     }
 }
 @media screen and (max-width: 769px) {
@@ -112,6 +362,89 @@
     }
     .navbar .navbar-inner .primary-navbar a {
         font-size: 11.5px;
+    }
+    //header admin
+    .container-header__admin{
+        width: 14%;
+        transition: .3s linear;
+        position: fixed;
+        left: 0;
+        top: 0;
+    }
+    .container-header__admin .body-header,
+    .container-header__admin .top-header{
+        align-items: center;
+        padding: 12px;
+    }
+    .container-header__admin .top-header{
+        height: 10%;
+        cursor: pointer;
+    }
+    .container-header__admin .top-header img{
+        height: 100%;
+    }
+    .container-header__admin .top-header img.hide-menu{
+        display: none;
+        opacity: 0;
+    }
+    .container-header__admin .top-header img.show-menu{
+        display: block;
+        width: 100%;
+        height: 100%;
+        opacity: 1;
+    }
+    // .container-header__admin .body-header .primary-navbar li, 
+    .container-header__admin .body-header .admin-navbar li, 
+    .container-header__admin .bottom-navbar li{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 8px 0;
+        transition: .3s;
+    }
+    .container-header__admin .bottom-navbar .profile-user{
+        gap: 0px;
+    }
+    .container-header__admin .bottom-navbar .profile-user img.avatar-user__header{
+        width: 50px;
+        height: 50px;
+    }
+    .container-header__admin .bottom-navbar .profile-user .email-user{
+        word-break: break-word;
+        text-align: center;
+    }
+    // .container-header__admin .body-header .primary-navbar li a, 
+    .container-header__admin .body-header .admin-navbar li a, 
+    .container-header__admin .bottom-navbar li a{
+        padding: 12px;
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+        transition: .3s;
+    }
+    // .container-header__admin .body-header .primary-navbar li a i, 
+    // .container-header__admin .body-header .primary-navbar li a span.material-symbols-outlined, 
+    .container-header__admin .body-header .admin-navbar li a i, 
+    .container-header__admin .body-header .admin-navbar li a span.material-symbols-outlined, 
+    .container-header__admin .bottom-navbar li i{
+        margin-right: unset;
+        font-size: 22px;
+    }
+    // .container-header__admin .body-header .primary-navbar li a span.text-indent, 
+    .container-header__admin .body-header .admin-navbar li a span.text-indent, 
+    .container-header__admin .bottom-navbar .profile-user .text-indent,
+    .container-header__admin .bottom-navbar li a span.text-indent,
+    .container-header__admin .body-header .title{
+        opacity: 0;
+        font-size: 0;
+        transition: .3s ease;
+    }
+    // .container-header__admin .body-header .primary-navbar,
+    .container-header__admin .body-header .admin-navbar{ 
+        padding-bottom: unset;
+    }
+    .container-header__admin .bottom-navbar{
+        padding-top: 12px;
     }
 }
 @media screen and(max-width: 601px) {
@@ -176,6 +509,50 @@
     .primary-navbar__responsive li a.touched-responsive span{
         color: $primarycolor;
     }
+    .primary-navbar__responsive li a.event-header.touched-responsive,
+    .primary-navbar__responsive li a.product-header.touched-responsive{
+        cursor: pointer;
+    }
+    // .container-header__admin .body-header .primary-navbar li a i, 
+    // .container-header__admin .body-header .primary-navbar li a span.material-symbols-outlined, 
+    .container-header__admin .body-header .admin-navbar li a i, 
+    .container-header__admin .body-header .admin-navbar li a span.material-symbols-outlined, 
+    .container-header__admin .bottom-navbar li i{
+        font-size: 18px;
+    }
+    // .container-header__admin .body-header .primary-navbar li a, 
+    .container-header__admin .body-header .admin-navbar li a, 
+    .container-header__admin .bottom-navbar li a,
+    .container-header__admin .body-header, 
+    .container-header__admin .top-header{
+        padding: 8px;
+    }
+    .container-header__admin .top-header img.hide-menu{
+        width: 100%;
+    }
+}
+@media screen and (max-width: 415px){
+    .container-header__admin{
+        width: 16%;
+    }
+    // .container-header__admin .body-header .primary-navbar li a i, 
+    // .container-header__admin .body-header .primary-navbar li a span.material-symbols-outlined, 
+    .container-header__admin .body-header .admin-navbar li a i, 
+    .container-header__admin .body-header .admin-navbar li a span.material-symbols-outlined, 
+    .container-header__admin .bottom-navbar li i{
+        font-size: 14px;
+    }
+    // .container-header__admin .body-header .primary-navbar li a, 
+    .container-header__admin .body-header .admin-navbar li a, 
+    .container-header__admin .bottom-navbar li a,
+    .container-header__admin .body-header, 
+    .container-header__admin .top-header{
+        padding: 6px;
+    }
+    .container-header__admin .bottom-navbar .profile-user img.avatar-user__header {
+        width: 40px;
+        height: 40px;
+    }
 }
 @media screen and (max-width: 321px) {
     .navbar-responsive{
@@ -187,154 +564,13 @@
     .primary-navbar__responsive li a span{
         font-size: 8px;
     }
-}
-// header admin
-.container-header__admin{
-    width: 18%;
-    height: 100%;
-    position: fixed;
-    top: 0;
-    left: 0;
-    background-color: $primarycolor;
-    z-index: 10;
-}
-.container-header__admin .top-header{
-    width: 100%;
-    height: 10%;
-    display: flex;
-    justify-content: start;
-    align-items: center;
-    background-color: rgba(255,255,255,.25);
-    padding: 0 20px;
-}
-.container-header__admin .top-header img{
-    width: 90%;
-    height: 50px;
-}
-.container-header__admin .body-header{
-    width: 100%;
-    height: 90%;
-    display: flex;
-    flex-direction: column;
-    justify-content: start;
-    align-items: start;
-    padding: 20px;
-}
-.container-header__admin .body-header .title{
-    display: flex;
-    justify-content: start;
-    align-items: center;
-    width: 90%;
-    padding-bottom: 12px;
-    border-bottom: 2px solid rgba(255,255,255,.45);
-    margin-bottom: 20px;
-}
-.container-header__admin .body-header .title h2{
-    color: white;
-}
-.container-header__admin .body-header .title img{
-    width: 28px;
-    height: 28px;
-    margin-right: 8px;
-}
-.container-header__admin .body-header .admin-navbar,
-.container-header__admin .body-header .primary-navbar{
-    width: 90%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    padding-bottom: 20px;
-    padding-left: 8px;
-}
-// .container-header__admin .body-header .admin-navbar{
-//     margin-bottom: 20px;
-// }
-.container-header__admin .body-header .admin-navbar li,
-.container-header__admin .body-header .primary-navbar li,
-.container-header__admin .bottom-navbar li{
-    list-style-type: none;
-    width: 100%;
-    transition: .3s;
-}
-.container-header__admin .body-header .admin-navbar li:hover,
-.container-header__admin .body-header .primary-navbar li:hover,
-.container-header__admin .bottom-navbar li:hover{
-    background-color: rgba(255,255,255,.15);
-    border-radius: 5px;
-    cursor: pointer;
-}
-.container-header__admin .body-header .admin-navbar li a,
-.container-header__admin .body-header .primary-navbar li a,
-.container-header__admin .bottom-navbar li a{
-    font-size: 18px;
-    font-weight: 600;
-    color: white;
-    text-decoration: none;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content: start;
-    align-items: center;
-    padding: 12px;
-}
-.container-header__admin .body-header .primary-navbar li.admin-nav{
-    background-color: rgba(255,255,255,.15);
-    border-radius: 5px;
-    cursor: default;
-}
-.container-header__admin .body-header .primary-navbar li.admin-nav a{
-    cursor: default;
-}
-.container-header__admin .body-header .admin-navbar li a i,
-.container-header__admin .body-header .primary-navbar li a i,
-.container-header__admin .body-header .admin-navbar li a span,
-.container-header__admin .body-header .primary-navbar li a span,
-.container-header__admin .bottom-navbar li i{
-    margin-right: 8px;
-    font-size: 22px;
-}
-.container-header__admin .bottom-navbar{
-    width: 90%;
-    display: flex;
-    flex-direction: column;
-    justify-content: start;
-    align-items: start;
-    border-top: 2px solid rgba(255, 255, 255, 0.45);
-}
-.container-header__admin .bottom-navbar li{
-    list-style-type: none;
-    width: 100%;
-    transition: .3s;
-    margin-left: 8px;
-}
-//breakpoint macbook
-@media screen and (min-width: 1023px) and (max-width: 1441px){
-    .container-header__admin .top-header{
-        padding: 0 12px;
+    // .container-header__admin .body-header .primary-navbar li, 
+    .container-header__admin .body-header .admin-navbar li, 
+    .container-header__admin .bottom-navbar li{
+        margin: 6px 0;
     }
-    .container-header__admin .body-header{
-        padding: 12px;
-    }
-    .container-header__admin .body-header .title{
-        padding-bottom: 8px;
-        margin-bottom: 12px;
-    }
-    .container-header__admin .body-header .title h2{
-        font-size: 20px;
-    }
-    .container-header__admin .body-header .title img{
-        width: 22px;
-        height: 22px;
-    }
-    .container-header__admin .body-header .admin-navbar, .container-header__admin .body-header .primary-navbar{
-        padding-left: 6px;
-        padding-bottom: 12px;
-    }
-    .container-header__admin .body-header .admin-navbar li a, .container-header__admin .body-header .primary-navbar li a, .container-header__admin .bottom-navbar li a{
-        font-size: 16px;
-        padding: 6px;
-    }
-    .container-header__admin .body-header .admin-navbar li a i, .container-header__admin .body-header .primary-navbar li a i, .container-header__admin .body-header .admin-navbar li a span, .container-header__admin .body-header .primary-navbar li a span, .container-header__admin .bottom-navbar li i{
-        font-size: 20px;
+    .container-header__admin .bottom-navbar .profile-user img.avatar-user__header {
+        width: 25px;
+        height: 25px;
     }
 }

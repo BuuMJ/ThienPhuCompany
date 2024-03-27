@@ -5,7 +5,7 @@
     <div class="main-event">
         <h1 class="primary-title">
             <img src="/img/allnews-title.png" alt="">
-            Tin Tức & Sự Kiện
+            Tất Cả
          </h1>
         <div class="all-news">
             <div class="latest-news">
@@ -21,7 +21,7 @@
                             <span class="check-label {{this.category}}"></span>
                         </div>
                         <h1>{{this.title}}</h1>
-                        <span class="time-news">{{moment this.createdAt format="MMM DD, YYYY"}}</span>
+                        <span class="time-news">{{moment this.createdAt format="DD/MM/YYYY"}}</span>
                     </a>
                 {{/each}}
             </div>
@@ -33,12 +33,12 @@
                         {{else}}
                             <img src="/{{this.image2}}" alt="">
                         {{/if}}
-                        <div class="content-three__latest">
+                        <div class="main-three__latest">
                             <div class="label-news">
                                 <span class="check-label {{this.category}}"></span>
                             </div>
                             <h2>{{this.title}}</h2>
-                            <span class="time-news">{{moment this.createdAt format="MMM DD, YYYY"}}</span>
+                            <span class="time-news">{{moment this.createdAt format="DD/MM/YYYY"}}</span>
                         </div>
                     </a>
                 {{/each}}
@@ -56,7 +56,7 @@
                         </div>
                         <h3>{{this.title}}</h3>
                         <p class="desc" data-change-text="{{this.text1}}">{{this.text1}}</p>
-                        <span class="time-news">{{moment this.createdAt format="MMM DD, YYYY"}}</span>
+                        <span class="time-news">{{moment this.createdAt format="DD/MM/YYYY"}}</span>
                     </a>
                 {{/each}}
             </div>
@@ -74,7 +74,7 @@
                     <img src="/{{this.image2}}" alt="" class="header">
                 {{/if}}
                 <div class="content-news">
-                    <span class="time-news">{{moment this.createdAt format="MMM DD, YYYY"}}</span>
+                    <span class="time-news">{{moment this.createdAt format="DD/MM/YYYY"}}</span>
                     <h2>{{this.title}}</h2>
                     <p class="desc" data-change-text="{{this.text1}}">{{this.text1}}</p>
                 </div>
@@ -84,7 +84,7 @@
         <div class="event">
             <h1>
                 <img src="/img/event-title.png" alt="">
-                Sự Kiện & Khuyến Mãi
+                Sự Kiện
             </h1>
             {{#each listEvent}}
             <a href="/event/{{this._id}}" class="card-news">
@@ -94,7 +94,7 @@
                     <img src="/{{this.image2}}" alt="" class="header">
                 {{/if}}
                 <div class="content-news">
-                    <span class="time-news">{{moment this.createdAt format="MMM DD, YYYY"}}</span>
+                    <span class="time-news">{{moment this.createdAt format="DD/MM/YYYY"}}</span>
                     <h2>{{this.title}}</h2>
                     <p class="desc" data-change-text="{{this.text1}}">{{this.text1}}</p>
                 </div>

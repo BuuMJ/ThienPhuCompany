@@ -1,35 +1,64 @@
 <div class="container-detail" >
     <div class="suggest-event">
-        {{#ifeq event 'news'}}
+         {{#ifeq event 'news'}}
             <div class="title-suggest">
                 <h2>Tin Tức Gợi Ý</h2>
             </div>
-        {{else}}
-            <div class="title-suggest">
-                <h2>Sự Kiện Gợi Ý</h2>
+            {{#each suggestEvent}}
+                <a class="card-suggest" href="/event/{{this._id}}">
+                    <span class="time-news">{{moment this.createdAt format="DD/MM/YYYY"}}</span>
+                    <h4 class="card-title">{{this.title}}</h4>
+                    <p class="card-des">{{this.text1}}</p>
+                    <p class="card-text">
+                        <span>Xem Thêm</span>
+                        <svg class="arrow-icon" stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 16 16" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8z"></path>
+                        </svg>
+                    </p>
+                </a>
+            {{/each}}
+            {{else}}
+                <div class="title-suggest">
+                    <h2>Sự Kiện Gợi Ý</h2>
+                </div>
+                 {{#each suggestEvent}}
+                    <a class="card-suggest" href="/event/{{this._id}}">
+                        <span class="time-news">{{moment this.createdAt format="DD/MM/YYYY"}}</span>
+                        <h4 class="card-title">{{this.title}}</h4>
+                        <p class="card-des">{{this.text1}}</p>
+                        <p class="card-text">
+                            <span>View More</span>
+                            <svg class="arrow-icon" stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 16 16" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8z"></path>
+                            </svg>
+                        </p>
+                    </a>
+                {{/each}}
+            {{/ifeq}}
+            <div class="bg">
             </div>
-        {{/ifeq}}
+            <div class="blob"></div>
     </div>
     <div class="main-detail">
         <div class="header-detail">
             <div class="title-detail">
                 <h1>{{event.title}}</h1>
                 {{#ifeq event "news"}}
-                    <span class="time-detail"> <span>Tin Tức</span> | {{moment event.createdAt format="MMM DD, YYYY"}}</span>
+                    <span class="time-detail"> <span>Tin Tức</span> | {{moment event.createdAt format="DD/MM/YYYY"}}</span>
                 {{else}}
-                    <span class="time-detail"> <span>Sự Kiện</span> | {{moment event.createdAt format="MMM DD, YYYY"}}</span>
+                    <span class="time-detail"> <span>Sự Kiện</span> | {{moment event.createdAt format="DD/MM/YYYY"}}</span>
                 {{/ifeq}}
             </div>
         </div>
         <div class="body-detail">
             <img src="/{{event.image2}}" alt="" class="img__detail-title">
-            <p class="desc">{{event.text1}}</p>
+            <p class="desc" data-change-text="{{event.text1}}">{{event.text1}}</p>
             {{#if event.image3}}
                 <img src="/{{event.image3}}" alt="" class="img__detail-title">
             {{else}}
             {{/if}}
             {{#if event.text2}}
-                <img src="/{{event.text2}}" alt="" class="img__detail-title">
+                <p class="desc" data-change-text="{{event.text2}}">{{event.text2}}</p>
             {{else}}
             {{/if}}
             {{#if event.image4}}
@@ -37,7 +66,7 @@
             {{else}}
             {{/if}}
             {{#if event.text3}}
-                <img src="/{{event.text3}}" alt="" class="img__detail-title">
+                <p class="desc" data-change-text="{{event.text3}}">{{event.text3}}</p>
             {{else}}
             {{/if}}
             {{#if event.image5}}
@@ -45,7 +74,7 @@
             {{else}}
             {{/if}}
             {{#if event.text4}}
-                <img src="/{{event.text4}}" alt="" class="img__detail-title">
+                <p class="desc" data-change-text="{{event.text4}}">{{event.text4}}</p>
             {{else}}
             {{/if}}
             {{#if event.image6}}
@@ -53,9 +82,29 @@
             {{else}}
             {{/if}}
             {{#if event.text5}}
-                <img src="/{{event.text5}}" alt="" class="img__detail-title">
+                <p class="desc" data-change-text="{{event.text5}}">{{event.text5}}</p>
             {{else}}
             {{/if}}
         </div>
     </div>
 </div>
+<script>
+    const contentNews = document.querySelectorAll('p.desc')
+    contentNews.forEach(content=>{
+        const text1 = content.getAttribute('data-change-text');
+        const regex = /(^|\s)(https?:\/\/\S+)(?=\s|[,\.?!;:]|$)/g;
+        let linkifiedText = text1.replace(regex, '$1<a href="$2">$2</a>');
+        content.innerHTML = linkifiedText;
+        content.querySelectorAll('a').forEach(a => {
+            const href = a.getAttribute('href');
+            if(href.includes(',')){
+                const newHref = href.replace(/,/g, '');
+                a.setAttribute('href', newHref);
+            }
+        })
+    })
+    const backToEvent = document.querySelectorAll('.link.event');
+    backToEvent.forEach(event=>{
+        event.classList.add('event-header');
+    })
+</script>

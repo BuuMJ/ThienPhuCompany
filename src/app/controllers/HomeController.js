@@ -1,5 +1,7 @@
 const EventModel = require("../models/event");
 const nodemailer = require("nodemailer");
+const bcrypt = require("bcrypt");
+
 const {
   mutipleMongooseToObject,
   mongooseToObject,
@@ -9,7 +11,10 @@ const {
 class HomeController {
   async home(req, res, next) {
     const event = await EventModel.find().sort({ createdAt: -1 }).limit(3);
-    console.log(event);
+    const password = "123";
+    bcrypt.hash(password, 10, function (err, hash) {
+      console.log(hash + " aaaaaaaa");
+    });
     res.render("home", {
       title: "Trang Chủ",
       event: mutipleMongooseToObject(event),

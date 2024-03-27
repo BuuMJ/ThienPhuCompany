@@ -105,4 +105,8 @@
         localStorage.setItem('touchedLink', '/contact');
     });
     localStorage.clear()
+    const backToProduct = document.querySelectorAll('.link.product');
+    backToProduct.forEach(product=>{
+        product.classList.add('product-header')
+    })
 </script>
