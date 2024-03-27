@@ -25,6 +25,8 @@ class CreateEventController {
 
   addRole(req, res, next) {
     const role = req.body.createRole;
+    console.log("đã tới đâyyyyyyyyyyyyyyyyyy");
+    console.log(role + " vvvvvvvvvvvvvvvvvv");
     RoleModel.create({ role: role });
     res.redirect("back");
   }
