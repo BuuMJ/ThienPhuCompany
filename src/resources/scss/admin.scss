@@ -29,7 +29,7 @@
     justify-content: space-around;
     align-items: start;
     padding-bottom: 20px;
-    gap: 12px;
+    gap: 6px;
 }
 .container-create .body-left .container-left .welcome-admin h1.title-welcome{
     display: flex;
@@ -42,9 +42,30 @@
     height: 32px;
     margin-left: 8px;
 }
-.container-create .body-left .container-left .welcome-admin h3.content-welcome{
-    color: $primarycolor;
+.container-create .body-left .container-left .welcome-admin p.content-welcome{
+    color: #b2bac6;
     text-transform: capitalize;
+}
+.container-create .body-left .container-left .primary-page{
+    padding: 50px 0;
+}
+.container-create .body-left .container-left .primary-page h2.title{
+    color: $primarycolor;
+    padding-bottom: 12px;
+    padding-right: 20px;
+    position: relative;
+    display: inline-block;
+    margin-bottom: 20px;
+}
+.container-create .body-left .container-left .primary-page h2.title::after{
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 4px;
+    bottom: 0;
+    left: 0;
+    border-top-right-radius: 5px;
+    background-color: $linecolor;
 }
 .container-create .body-left .container-left .primary-page .primary-navbar{
     display: flex;
@@ -917,11 +938,11 @@
 //break point macbook
 @media screen and (min-width: 1279px) and (max-width: 1441px){
     .container-create .body-left .container-left .primary-page .primary-navbar{
-        justify-content: center;
+        justify-content: start;
     }
     .container-create .body-left .container-left .primary-page .primary-navbar li{
         width: unset;
-        margin: 0 12px;
+        margin: 0 12px 0 0;
     }
     .container-create .body-left .container-left .primary-page .primary-navbar li a{
         font-size: 18px;
@@ -972,6 +993,29 @@
     }
     .container-create .box-create__user{
         width: 80vw;
+    }
+    .container-create .body-left .container-left .primary-page .primary-navbar{
+        justify-content: start;
+    }
+    .container-create .body-left .container-left .primary-page .primary-navbar li{
+        width: unset;
+        margin: 0 12px 0 0;
+    }
+    .container-create .body-left .container-left .primary-page .primary-navbar li a{
+        font-size: 18px;
+    }
+    .container-create .body-left .container-left .primary-page .primary-navbar li a span.name-page{
+        font-size: 0;
+        transition: .3s;
+        margin-left: unset;
+    }
+    .container-create .body-left .container-left .primary-page .primary-navbar li.admin-nav{
+        pointer-events: unset;
+    }
+    .container-create .body-left .container-left .primary-page .primary-navbar li.admin-nav:hover a span.name-page,
+    .container-create .body-left .container-left .primary-page .primary-navbar li:hover a span.name-page{
+        font-size: 18px;
+        margin-left: 8px;
     }
 }
 @media screen and (max-width: 769px) {
