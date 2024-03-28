@@ -28,7 +28,7 @@
     flex-direction: column;
     justify-content: space-around;
     align-items: start;
-    padding-bottom: 20px;
+    padding-bottom: 25px;
     gap: 6px;
 }
 .container-create .body-left .container-left .welcome-admin h1.title-welcome{
@@ -47,17 +47,28 @@
     text-transform: capitalize;
 }
 .container-create .body-left .container-left .primary-page{
-    padding: 50px 0;
+    padding: 25px 0;
 }
-.container-create .body-left .container-left .primary-page h2.title{
+.container-create .body-left .container-left .primary-page h1.title,
+.container-create .body-left .container-left .container__list-user h1.title-user,
+.container-create .body-left .container-left .container__list-event h1.title-event{
     color: $primarycolor;
     padding-bottom: 12px;
     padding-right: 20px;
     position: relative;
-    display: inline-block;
+    display: inline-flex;
     margin-bottom: 20px;
 }
-.container-create .body-left .container-left .primary-page h2.title::after{
+.container-create .body-left .container-left .primary-page h1.title svg,
+.container-create .body-left .container-left .container__list-user h1.title-user svg,
+.container-create .body-left .container-left .container__list-event h1.title-event svg{
+    width: 40px;
+    height: 40px;
+    margin-right: 8px;
+}
+.container-create .body-left .container-left .primary-page h1.title::after,
+.container-create .body-left .container-left .container__list-user h1.title-user::after,
+.container-create .body-left .container-left .container__list-event h1.title-event::after{
     position: absolute;
     content: "";
     width: 100%;
@@ -72,7 +83,7 @@
     justify-content: space-between;
     align-items: center;
     width: 100%;
-    padding: 20px 0;
+    padding: 20px 0 20px 40px;
 }
 .container-create .body-left .container-left .primary-page .primary-navbar li{
     list-style-type: none;
@@ -98,7 +109,7 @@
     text-decoration: none;
     font-weight: 600;
     font-size: 20px;
-    padding: 16px;
+    padding: 16px 0;
     transition: .3s;
     color: #acaeb0;
 }
@@ -110,6 +121,205 @@
 }
 .container-create .body-left .container-left .primary-page .primary-navbar li a .name-page{
     margin-left: 8px;
+}
+.container-create .body-left .container-left .container__list-user,
+.container-create .body-left .container-left .container__list-event{
+    width: 100%;
+    padding: 25px 0;
+}
+.container-create .body-left .container-left .container__list-user .all-user,
+.container-create .body-left .container-left .container__list-event .all-event{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 20px 0 20px 40px;
+}
+.container-create .body-left .container-left .container__list-event .all-event{
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.container-create .body-left .container-left .container__list-user .all-user .title__card-user,
+.container-create .body-left .container-left .container__list-user .all-user .card-user{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding: 20px;
+    background-color: white;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+.container-create .body-left .container-left .container__list-user .all-user .title__card-user .space,
+.container-create .body-left .container-left .container__list-user .all-user .card-user .avatar-user{
+    width: 10%;
+    height: 100%;
+}
+.container-create .body-left .container-left .container__list-user .all-user .title__card-user .title-name,
+.container-create .body-left .container-left .container__list-user .all-user .title__card-user .city,
+.container-create .body-left .container-left .container__list-user .all-user .title__card-user .role,
+.container-create .body-left .container-left .container__list-user .all-user .title__card-user .space-action,
+.container-create .body-left .container-left .container__list-user .all-user .card-user .name-user,
+.container-create .body-left .container-left .container__list-user .all-user .card-user .city-user,
+.container-create .body-left .container-left .container__list-user .all-user .card-user .role-user{
+    width: 30%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+.container-create .body-left .container-left .container__list-user .all-user .title__card-user .role,
+.container-create .body-left .container-left .container__list-user .all-user .title__card-user .space-action,
+.container-create .body-left .container-left .container__list-user .all-user .card-user .role-user,
+.container-create .body-left .container-left .container__list-user .all-user .card-user .action-user{
+    width: 15%;
+}
+.container-create .body-left .container-left .container__list-user .all-user .card-user .action-user{
+    align-self: center;
+    text-align: center;
+}
+.container-create .body-left .container-left .container__list-user .all-user .title__card-user .content-user,
+.container-create .body-left .container-left .container__list-user .all-user .card-user .infor-user{
+    padding: 0 12px;
+}
+.container-create .body-left .container-left .container__list-user .all-user .title__card-user .content-user p,
+.container-create .body-left .container-left .container__list-user .all-user .card-user .infor-user p{
+    color: #acaeb0;
+    font-weight: 600;
+    margin-top: 8px;
+    word-break: break-all;
+}
+.container-create .body-left .container-left .container__list-user .all-user .title__card-user .content-user h3,
+.container-create .body-left .container-left .container__list-user .all-user .card-user .infor-user h3{
+    word-break: break-all;
+    text-transform: capitalize;
+}
+.container-create .body-left .container-left .container__list-user .all-user .card-user .avatar-user img{
+    width: 100%;
+    height: 80px;
+    border-radius: 5px;
+}
+.container-create .body-left .container-left .container__list-user .all-user .card-user .action-user button{
+    border: 2px solid #727275;
+    border-radius: 5px;
+    padding: 12px;
+    font-size: 18px;
+    font-weight: 600;
+    color: #727275;
+    background-color: white;
+    transition: .3s;
+    cursor: pointer;
+}
+.container-create .body-left .container-left .container__list-user .all-user .card-user .action-user button:hover{
+    color: white;
+    border: 2px solid $primarycolor;
+    background-color: $primarycolor;
+}
+.container-create .body-left .container-left .container__list-event .all-event .card-event{
+    width: 23%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    background-color: white;
+    border-radius: 5px;
+    margin-bottom: 40px;
+    text-decoration: none;
+    color: unset;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    transition: .3s;
+}
+.container-create .body-left .container-left .container__list-event .all-event .card-event:hover{
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+.container-create .body-left .container-left .container__list-event .all-event .card-event:hover .infor-event img{
+    opacity: 0.9;
+    transform: scale(1.1);
+}
+.container-create .body-left .container-left .container__list-event .all-event .card-event:hover .infor-event h4{
+    color: $primarycolor;
+}
+.container-create .body-left .container-left .container__list-event .all-event .card-event .status-event{
+    display: flex;
+    align-items: center;
+    padding: 12px 12px 0px 12px;
+    width: 100%;
+}
+.container-create .body-left .container-left .container__list-event .all-event .card-event .status-event .circle{
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: $successcolor;
+    margin-right: 8px;
+}
+.container-create .body-left .container-left .container__list-event .all-event .card-event .status-event .status-info{
+    color: $successcolor;
+    font-weight: 600;
+}
+.container-create .body-left .container-left .container__list-event .all-event .card-event .infor-event{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: calc(100% - 12px);
+    padding: 0 0 12px 0;
+    margin-top: 12px;
+    overflow: hidden;
+}
+.container-create .body-left .container-left .container__list-event .all-event .card-event .infor-event img{
+    width: 100%;
+    height: 250px;
+    padding-bottom: 12px;
+    transition: .3s;
+}
+.container-create .body-left .container-left .container__list-event .all-event .card-event .infor-event h4{
+    text-align: center;
+    width: 90%;
+    line-height: 26px;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+    -webkit-box-orient: vertical;
+    height: 52px;
+    transition: .3s;
+}
+.container-create .body-left .container-left .container__list-event .all-event .card-event .infor-event p{
+    font-weight: 600;
+    font-size: 14px;
+    padding: 12px 0;
+    color: #acaeb0;
+}
+.container-create .body-left .container-left .container__list-event .all-event .card-event .edit-event{
+    width: 100%;
+    padding: 12px;
+    background-color: rgba(188, 188, 187, 0.15);
+}
+.container-create .body-left .container-left .container__list-event .all-event .card-event .edit-event button{
+    padding: 10px 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid black;
+    color: black;
+    font-weight: 600;
+    font-size: 16px;
+    transition: .3s;
+    cursor: pointer;
+    border-radius: 5px;
+}
+.container-create .body-left .container-left .container__list-event .all-event .card-event .edit-event button svg{
+    margin-left: 8px;
+    width: 22px;
+    height: 22px;
+}
+.container-create .body-left .container-left .container__list-event .all-event .card-event .edit-event button svg g{
+    transition: .3s;
+}
+.container-create .body-left .container-left .container__list-event .all-event .card-event .edit-event button:hover{
+    color: white;
+    border: 1px solid $primarycolor;
+    background-color: $primarycolor;
+}
+.container-create .body-left .container-left .container__list-event .all-event .card-event .edit-event button:hover svg g{
+    fill: white;
 }
 .overlay{
     position: fixed;
