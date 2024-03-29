@@ -2623,12 +2623,13 @@
 .container-create .body-left .container-left .container__list-user .all-user .card-user .infor-user p {
   color: #acaeb0;
   font-weight: 600;
-  margin-top: 8px;
+  margin-top: 8px; }
+
+.container-create .body-left .container-left .container__list-user .all-user .card-user .infor-user p.infor__email-user {
   word-break: break-all; }
 
 .container-create .body-left .container-left .container__list-user .all-user .title__card-user .content-user h3,
 .container-create .body-left .container-left .container__list-user .all-user .card-user .infor-user h3 {
-  word-break: break-all;
   text-transform: capitalize; }
 
 .container-create .body-left .container-left .container__list-user .all-user .card-user .avatar-user img {
@@ -2679,8 +2680,8 @@
 .container-create .body-left .container-left .container__list-event .all-event .card-event .status-event {
   display: flex;
   align-items: center;
-  padding: 12px 12px 0px 12px;
-  width: 100%; }
+  padding-top: 12px;
+  width: 90%; }
 
 .container-create .body-left .container-left .container__list-event .all-event .card-event .status-event .circle {
   width: 12px;
@@ -3591,7 +3592,8 @@
     width: unset;
     margin: 0 12px 0 0; }
   .container-create .body-left .container-left .primary-page .primary-navbar li a {
-    font-size: 18px; }
+    font-size: 18px;
+    padding: 16px; }
   .container-create .body-left .container-left .primary-page .primary-navbar li a span.name-page {
     font-size: 0;
     transition: .3s;
@@ -3601,7 +3603,41 @@
   .container-create .body-left .container-left .primary-page .primary-navbar li.admin-nav:hover a span.name-page,
   .container-create .body-left .container-left .primary-page .primary-navbar li:hover a span.name-page {
     font-size: 18px;
-    margin-left: 8px; } }
+    margin-left: 8px; }
+  .container-create .body-left .container-left .container__list-user .all-user .title__card-user .content-user h3,
+  .container-create .body-left .container-left .container__list-user .all-user .card-user .infor-user h3 {
+    font-size: 16px; }
+  .container-create .body-left .container-left .container__list-user .all-user .card-user .avatar-user {
+    padding: unset; }
+  .container-create .body-left .container-left .container__list-user .all-user .title__card-user .content-user p,
+  .container-create .body-left .container-left .container__list-user .all-user .card-user .infor-user p {
+    font-size: 14px; }
+  .container-create .body-left .container-left .container__list-user .all-user .card-user .action-user button {
+    font-size: 13px;
+    padding: 12px 6px; }
+  .container-create .body-left .container-left .container__list-user .all-user .card-user .avatar-user img {
+    height: 60px; }
+  .container-create .body-left .container-left .container__list-event .all-event .card-event .status-event .circle {
+    width: 8px;
+    height: 8px; }
+  .container-create .body-left .container-left .container__list-event .all-event .card-event .status-event .status-info {
+    font-size: 14px; }
+  .container-create .body-left .container-left .container__list-event .all-event .card-event .infor-event {
+    margin-top: 6px; }
+  .container-create .body-left .container-left .container__list-event .all-event .card-event .infor-event img {
+    height: 180px; }
+  .container-create .body-left .container-left .container__list-event .all-event .card-event .infor-event h4 {
+    font-size: 15px;
+    line-height: 25px; }
+  .container-create .body-left .container-left .container__list-event .all-event .card-event .infor-event p {
+    font-size: 13px;
+    padding: 6px 0; }
+  .container-create .body-left .container-left .container__list-event .all-event .card-event .edit-event button {
+    font-size: 14px;
+    padding: 8px 10px; }
+  .container-create .body-left .container-left .container__list-event .all-event .card-event .edit-event button svg {
+    width: 18px;
+    height: 18px; } }
 
 @media screen and (max-width: 1025px) {
   .container-create .body-right {
@@ -3633,7 +3669,8 @@
     width: unset;
     margin: 0 12px 0 0; }
   .container-create .body-left .container-left .primary-page .primary-navbar li a {
-    font-size: 18px; }
+    font-size: 18px;
+    padding: 16px; }
   .container-create .body-left .container-left .primary-page .primary-navbar li a span.name-page {
     font-size: 0;
     transition: .3s;
@@ -3643,7 +3680,79 @@
   .container-create .body-left .container-left .primary-page .primary-navbar li.admin-nav:hover a span.name-page,
   .container-create .body-left .container-left .primary-page .primary-navbar li:hover a span.name-page {
     font-size: 18px;
-    margin-left: 8px; } }
+    margin-left: 8px; }
+  .container-create .body-left .container-left .primary-page h1.title, .container-create .body-left .container-left .container__list-user h1.title-user, .container-create .body-left .container-left .container__list-event h1.title-event {
+    font-size: 28px; }
+  .container-create .body-left .container-left .primary-page h1.title svg, .container-create .body-left .container-left .container__list-user h1.title-user svg, .container-create .body-left .container-left .container__list-event h1.title-event svg {
+    width: 36px;
+    height: 36px; }
+  .container-create .body-left .container-left .primary-page .primary-navbar,
+  .container-create .body-left .container-left .container__list-user .all-user,
+  .container-create .body-left .container-left .container__list-event .all-event {
+    padding-left: 20px; }
+  .container-create .body-left .container-left .container__list-user .all-user {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center; }
+  .container-create .body-left .container-left .container__list-user .all-user .title__card-user {
+    display: none; }
+  .container-create .body-left .container-left .container__list-user .all-user .card-user {
+    width: 48%;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center; }
+  .container-create .body-left .container-left .container__list-user .all-user .card-user .infor-user {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+    width: 48%;
+    padding: 12px 0; }
+  .container-create .body-left .container-left .container__list-user .all-user .card-user .avatar-user {
+    width: 30%;
+    order: 0; }
+  .container-create .body-left .container-left .container__list-user .all-user .card-user .avatar-user img {
+    width: 100%;
+    height: 60px; }
+  .container-create .body-left .container-left .container__list-user .all-user .card-user .name-user {
+    width: 65%;
+    order: 1; }
+  .container-create .body-left .container-left .container__list-user .all-user .card-user .role-user {
+    order: 2; }
+  .container-create .body-left .container-left .container__list-user .all-user .card-user .city-user {
+    order: 3; }
+  .container-create .body-left .container-left .container__list-user .all-user .card-user .infor-user h3 {
+    font-size: 16px; }
+  .container-create .body-left .container-left .container__list-user .all-user .card-user .infor-user p {
+    font-size: 13px; }
+  .container-create .body-left .container-left .container__list-user .all-user .card-user .action-user {
+    width: 100%;
+    padding: 12px 0 0;
+    order: 4; }
+  .container-create .body-left .container-left .container__list-user .all-user .card-user .action-user button {
+    font-size: 14px;
+    padding: 10px 12px; }
+  .container-create .body-left .container-left .container__list-event .all-event .card-event {
+    width: 32%; }
+  .container-create .body-left .container-left .container__list-event .all-event .card-event .status-event .circle {
+    width: 10px;
+    height: 10px; }
+  .container-create .body-left .container-left .container__list-event .all-event .card-event .status-event .status-info {
+    font-size: 14px; }
+  .container-create .body-left .container-left .container__list-event .all-event .card-event .infor-event img {
+    height: 180px; }
+  .container-create .body-left .container-left .container__list-event .all-event .card-event .infor-event h4 {
+    font-size: 15px;
+    line-height: 25px; }
+  .container-create .body-left .container-left .container__list-event .all-event .card-event .infor-event p {
+    font-size: 13px;
+    padding: 8px 0; }
+  .container-create .body-left .container-left .container__list-event .all-event .card-event .edit-event button {
+    font-size: 14px; }
+  .container-create .body-left .container-left .container__list-event .all-event .card-event .edit-event button svg {
+    width: 20px;
+    height: 20px; } }
 
 @media screen and (max-width: 769px) {
   .container-create .body-right {
@@ -3692,7 +3801,15 @@
   .container-create .box-create__event .body-create__event .main-info__news .select-category .choose-category {
     width: 52%; }
   .container-create .box-create__role {
-    width: 70vw; } }
+    width: 70vw; }
+  .container-create .body-left .container-left .container__list-user .all-user .card-user .infor-user h3 {
+    font-size: 13px; }
+  .container-create .body-left .container-left .container__list-user .all-user .card-user .infor-user p {
+    font-size: 11px; }
+  .container-create .body-left .container-left .container__list-user .all-user .card-user .action-user button {
+    font-size: 12px; }
+  .container-create .body-left .container-left .container__list-event .all-event .card-event {
+    width: 48%; } }
 
 @media screen and (max-width: 601px) {
   .container-create .box-create__user {
@@ -3780,13 +3897,40 @@
   .container-create .box-create__event .body-create__event .content__review-post .review__detail-page .review__detail-card img.content__review-detail:nth-of-type(1) {
     margin-top: 12px; }
   .container-create .box-create__role {
-    width: 85vw; } }
+    width: 85vw; }
+  .container-create .body-left .container-left .container__list-user .all-user .card-user {
+    width: 100%; }
+  .container-create .body-left .container-left .container__list-user .all-user .card-user .avatar-user img {
+    height: 70px; }
+  .container-create .body-left .container-left .container__list-event .all-event .card-event {
+    width: 100%; }
+  .container-create .body-left .container-left .welcome-admin h1.title-welcome {
+    font-size: 26px; }
+  .container-create .body-left .container-left .welcome-admin p.content-welcome {
+    font-size: 14px; }
+  .container-create .body-left .container-left .primary-page h1.title, .container-create .body-left .container-left .container__list-user h1.title-user, .container-create .body-left .container-left .container__list-event h1.title-event {
+    font-size: 22px; }
+  .container-create .body-left .container-left .primary-page h1.title svg, .container-create .body-left .container-left .container__list-user h1.title-user svg, .container-create .body-left .container-left .container__list-event h1.title-event svg {
+    width: 30px;
+    height: 30px; }
+  .container-create .body-left .container-left .primary-page .primary-navbar li a,
+  .container-create .body-left .container-left .primary-page .primary-navbar li.admin-nav a {
+    font-size: 18px;
+    padding: 10px; }
+  .container-create .body-left .container-left .primary-page .primary-navbar li a span.material-symbols-outlined {
+    font-size: 18px; }
+  .container-create .body-left .container-left .primary-page .primary-navbar li.admin-nav:hover a span.name-page,
+  .container-create .body-left .container-left .primary-page .primary-navbar li:hover a span.name-page {
+    font-size: 14px; }
+  .container-create .body-left .container-left .primary-page .primary-navbar, .container-create .body-left .container-left .container__list-user .all-user, .container-create .body-left .container-left .container__list-event .all-event {
+    padding-left: 12px; } }
 
 @media screen and (max-width: 415px) {
   .container-create .body-right {
     width: 16%; }
   .container-create .body-left {
-    width: 84%; }
+    width: 84%;
+    padding: 30px 20px; }
   .container-create .box-create__user {
     height: 90vh; }
   .container-create .box-create__user span.title__post-news {
@@ -3833,7 +3977,39 @@
   .container-create .box-create__role .body-create__role {
     padding: 12px 20px 8px 20px; }
   .container-create .box-create__role .body-create__role .user-label {
-    padding: unset; } }
+    padding: unset; }
+  .container-create .body-left .container-left .welcome-admin h1.title-welcome {
+    font-size: 20px; }
+  .container-create .body-left .container-left .welcome-admin h1.title-welcome svg {
+    width: 20px;
+    height: 20px; }
+  .container-create .body-left .container-left .welcome-admin p.content-welcome {
+    font-size: 12px; }
+  .container-create .body-left .container-left .primary-page h1.title, .container-create .body-left .container-left .container__list-user h1.title-user, .container-create .body-left .container-left .container__list-event h1.title-event {
+    font-size: 18px; }
+  .container-create .body-left .container-left .primary-page h1.title svg, .container-create .body-left .container-left .container__list-user h1.title-user svg, .container-create .body-left .container-left .container__list-event h1.title-event svg {
+    width: 26px;
+    height: 26px; }
+  .container-create .body-left .container-left .primary-page .primary-navbar,
+  .container-create .body-left .container-left .container__list-user .all-user, .container-create .body-left .container-left .container__list-event .all-event {
+    padding: 12px 0 0 12px; }
+  .container-create .body-left .container-left .primary-page .primary-navbar {
+    flex-direction: column;
+    align-items: start; }
+  .container-create .body-left .container-left .primary-page .primary-navbar li,
+  .container-create .body-left .container-left .primary-page .primary-navbar li.admin-nav {
+    margin: 0 0 12px 0; }
+  .container-create .body-left .container-left .primary-page .primary-navbar li a,
+  .container-create .body-left .container-left .primary-page .primary-navbar li.admin-nav a {
+    padding: 14px; }
+  .container-create .body-left .container-left .primary-page .primary-navbar li.admin-nav a,
+  .container-create .body-left .container-left .primary-page .primary-navbar li a,
+  .container-create .body-left .container-left .primary-page .primary-navbar li a span.material-symbols-outlined,
+  .container-create .body-left .container-left .primary-page .primary-navbar li.admin-nav a span.material-symbols-outlined {
+    font-size: 22px; }
+  .container-create .body-left .container-left .primary-page .primary-navbar li a span.name-page {
+    font-size: 14px;
+    margin-left: 8px; } }
 
 @media screen and (max-width: 376px) {
   .container-create .box-create__event .body-create__event {
