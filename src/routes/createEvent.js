@@ -21,6 +21,9 @@ router.post(
   ]),
   createEventController.create
 );
+router.post("/editUser/:id", checkAdmin, createEventController.editUser);
+router.get("/editEvent/:id", checkAdmin, createEventController.formEditEvent);
+router.post("/apiEditEvent/:id", checkAdmin, createEventController.editEvent);
 router.post("/role", checkAdmin, createEventController.addRole);
 router.get("/register", checkLogin, loginController.formRegister);
 router.post(
