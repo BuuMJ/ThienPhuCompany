@@ -81,6 +81,82 @@
                             </button>
                         </div>
                     </div>
+                    <form action="/admin/editUser/{{this._id}}" class="box-edit__user" method="POST" enctype="multipart/form-data">
+                        <span class="title__post-news">
+                            Chỉnh Sửa Thông Tin Nhân Viên
+                            <i class="bi bi-x"></i>
+                        </span>
+                        <div class="body-create__user">
+                            <div class="user-infor">
+                                <div class="avatar-label">
+                                    <label class="change-avatar" for="avatar">
+                                        <img class="avatar-user" src="{{getAvatar this}}" alt="">
+                                        <span>Đổi Ảnh</span>
+                                    </label>
+                                    <label class="label-avatar" for="avatar">Thay Ảnh Đại Diện</label>
+                                    <input id="avatar" name="avatar" type="file" hidden>
+                                </div>
+                                <div class="user-label user-gender">
+                                    <div class="check-gender" data-check-gender="{{this.gender}}">
+                                        <input id="men" name="gender" value="Nam" type="radio" hidden checked>
+                                        <input id="women" name="gender" value="Nữ" type="radio" hidden >
+                                        <span class="choose-gender">
+                                            <label class="men" for="men">Nam</label>
+                                            <label class="women" for="women">Nữ</label>
+                                        </span>
+                                    </div>
+                                    <label for="">Giới Tính</label>
+                                </div>
+                                <div class="user-label">
+                                    <input id="fullname-user" name="fullnameUser" type="text" placeholder="Điền Tên Đầy Đủ" value="{{this.fullname}}" required>
+                                    <label class="fullnameUser" for="fullname-user">Họ & Tên</label>
+                                </div>
+                                <div class="user-label">
+                                    <select name="role" id="role" required>
+                                        <option value="" selected>Chọn Chức Vụ</option>
+                                        {{#each roles}}
+                                            <option value="{{this.role}}" selected>{{this.role}}</option>
+                                        {{/each}}
+                                    </select>
+                                    <label class="role" for="role">Chức Vụ</label>
+                                </div>
+                                <div class="user-label">
+                                    <input id="username" name="username" type="text" placeholder="Điền Tên Đăng Nhập" required value="{{this.username}}">
+                                    <label class="username" for="username">Tên Đăng Nhập</label>
+                                </div>
+                                <div class="user-label">
+                                    <input id="email-user" name="email" type="text" placeholder="Điền Email" value="{{this.email}}" required>
+                                    <label class="email" for="email-user">Email</label>
+                                </div>
+                                <div class="user-label">
+                                    <input id="password" name="password" type="password" placeholder="Điền Mật Khẩu" required>
+                                    <label class="password" for="password">Mật Khẩu</label>
+                                </div>
+                                <div class="user-label">
+                                    <input id="repassword" name="repassword" type="password" placeholder="Nhập Lại Mật Khẩu" required>
+                                    <label class="repassword" for="repassword">Nhập Lại Mật Khẩu</label>
+                                </div>
+                                <div class="user-label">
+                                    <select name="city" id="city" required>
+                                        <option value="{{this.city}}" selected>{{this.city}}</option>
+                                    </select>
+                                    <label class="city" for="city">Thành Phố & Huyện</label>
+                                </div>
+                                <div class="user-label">
+                                    <select name="district" id="district" required>
+                                        <option value="{{this.district}}" selected>{{this.district}}</option>
+                                    </select>
+                                    <label class="district" for="district">Phường & Xã</label>
+                                </div>
+                            </div>
+                            <div class="action-user">
+                                <button type="button" class="submit-user">
+                                    Thay Đổi
+                                    <span></span>
+                                </button>
+                            </div>
+                        </div>
+                    </form>
                     {{/each}}
                 </div>
             </div>
@@ -126,7 +202,7 @@
     {{!-- overlay --}}
     <div class="overlay"></div>
     {{!-- warning valid --}}
-    <div class="toast warning-valid">
+    <div class="toast__warning-valid">
         <div class="icon-toast">
             <svg viewBox="0 0 512 512" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" fill="#FCAC34" stroke="#FCAC34">
             <g id="SVGRepo_bgCarrier" stroke-width="0"/>
@@ -143,46 +219,9 @@
             <span class="no">Huỷ Bỏ</span>
         </div>
     </div>
-    {{!-- success toast --}}
-    <div class="toast success">
-        <div class="icon-toast">
-           <svg fill="#7CEC24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-            <g id="SVGRepo_bgCarrier" stroke-width="0"/>
-            <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"/>
-            <g id="SVGRepo_iconCarrier">
-            <path d="M12,2A10,10,0,1,0,22,12,10,10,0,0,0,12,2Zm5.676,8.237-6,5.5a1,1,0,0,1-1.383-.03l-3-3a1,1,0,1,1,1.414-1.414l2.323,2.323,5.294-4.853a1,1,0,1,1,1.352,1.474Z"/>
-            </g>
-            </svg>
-        </div>
-        <div class="content-toast">
-            <p><b>Thành Công:</b> Xoá Nội Dung Bài Viết Thành Công</p>
-        </div>
-    </div>
-    {{!-- warning toast --}}
-    <div class="toast warning">
-        <div class="icon-toast">
-            <svg viewBox="0 0 512 512" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" fill="#FCAC34" stroke="#FCAC34">
-            <g id="SVGRepo_bgCarrier" stroke-width="0"/>
-            <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"/>
-            <g id="SVGRepo_iconCarrier"> <title>warning-filled</title> <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"> <g id="add" fill="#FCAC34" transform="translate(32.000000, 42.666667)"> <path d="M246.312928,5.62892705 C252.927596,9.40873724 258.409564,14.8907053 262.189374,21.5053731 L444.667042,340.84129 C456.358134,361.300701 449.250007,387.363834 428.790595,399.054926 C422.34376,402.738832 415.04715,404.676552 407.622001,404.676552 L42.6666667,404.676552 C19.1025173,404.676552 7.10542736e-15,385.574034 7.10542736e-15,362.009885 C7.10542736e-15,354.584736 1.93772021,347.288125 5.62162594,340.84129 L188.099293,21.5053731 C199.790385,1.04596203 225.853517,-6.06216498 246.312928,5.62892705 Z M224,272 C208.761905,272 197.333333,283.264 197.333333,298.282667 C197.333333,313.984 208.415584,325.248 224,325.248 C239.238095,325.248 250.666667,313.984 250.666667,298.624 C250.666667,283.264 239.238095,272 224,272 Z M245.333333,106.666667 L202.666667,106.666667 L202.666667,234.666667 L245.333333,234.666667 L245.333333,106.666667 Z" id="Combined-Shape"> </path> </g> </g> </g>
-            </svg>
-        </div>
-        <div class="content-toast">
-            <p><b>Cảnh Báo:</b> Hãy Xoá Từ Dưới Lên Trên</p>
-        </div>
-    </div>
-    {{!-- error toast --}}
-    <div class="toast error">
-        <div class="icon-toast">
-            <svg fill="#BC0404" version="1.1" baseProfile="tiny" id="Layer_1" xmlns:x="&amp;ns_extend;" xmlns:i="&amp;ns_ai;" xmlns:graph="&amp;ns_graphs;" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:a="http://ns.adobe.com/AdobeSVGViewerExtensions/3.0/" viewBox="-0.5 0.5 42 42" xml:space="preserve">
-            <g id="SVGRepo_bgCarrier" stroke-width="0"/>
-            <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"/>
-            <g id="SVGRepo_iconCarrier"> <path d="M29.582,8.683l-0.129,0.12L8.3,29.954c-0.249,0.249-0.428,0.478-0.547,0.688c-2.04-2.639-3.233-6-3.233-9.701 c0-8.797,6.626-15.482,15.421-15.482C23.632,5.459,26.955,6.644,29.582,8.683z M10.937,33.704c0.189-0.117,0.388-0.287,0.606-0.507 l21.151-21.151l0.041-0.04c1.74,2.518,2.746,5.602,2.746,8.994c0,8.785-6.696,15.541-15.481,15.541 C16.568,36.541,13.454,35.506,10.937,33.704z M0.5,21c0,10.775,8.735,19.5,19.5,19.5c10.767,0,19.501-8.725,19.501-19.5 c0-10.775-8.734-19.5-19.5-19.5C9.235,1.5,0.5,10.225,0.5,21z"/> </g>
-            </svg>
-        </div>
-        <div class="content-toast">
-            <p><b>Sự Cố:</b> Hãy Điền Tiêu Đề Để Đăng Bài</p>
-        </div>
+    {{!-- toast --}}
+    <div id="toast">
+
     </div>
     {{!-- box create event --}}
     <form class="box-create__event" action="/admin/create_event"  method="POST" enctype="multipart/form-data">
@@ -450,7 +489,7 @@
                 <div class="user-label">
                     <select name="role" id="role" required>
                         <option value="" selected>Chọn Chức Vụ</option>
-                        {{#each role}}
+                        {{#each roles}}
                             <option value="{{this.role}}">{{this.role}}</option>
                         {{/each}}
                     </select>
@@ -612,20 +651,24 @@
                     if (closeThisBox) {
                         closeThisBox.addEventListener('click', () => {
                             if(index !== increAdd){
-                                const warningToast = document.querySelector('.toast.warning');
-                                visibleToast(warningToast);
+                                    visibleToast({
+                                        type: 'warning',
+                                        message: 'Xóa Từ Dưới Lên Trên'
+                                    })
                             }else{
                                 const checkUserValid = box.querySelector('textarea');
                                 if(checkUserValid.value !== ""){
-                                    const warningValid = document.querySelector('.toast.warning-valid');
+                                    const warningValid = document.querySelector('.toast__warning-valid');
                                     showConfirm(warningValid, box, index);
                                 }else{
-                                    const successToast = document.querySelector('.toast.success')
                                     box.style.display = 'none';
                                     IMGDetailReview[index].style.display = 'none';
                                     DescDetailReview[index].style.display = 'none'
                                     increAdd--;
-                                    visibleToast(successToast);
+                                    visibleToast({
+                                        type: 'success',
+                                        message: 'Xóa Nội Dung Thành Công'
+                                    });
                                 }
                             }
                         });
@@ -709,19 +752,25 @@
         const titleIMG = document.getElementById('file-img');
         const borderTitleIMG = document.querySelector('.content__post-news .title-img');
         const titleNews = document.getElementById('title-news');
-        const errorToast = document.querySelector('.toast.error');
-        const textErrorToast = errorToast.querySelector('.content-toast p');
+        const fileIMG = document.getElementById('first__content-img');
+        const borderContentIMG = document.querySelector('.first__img-content .content-img');
+        let checkTextAreaField;
         if(titleIMG.value === "" || !titleIMG){
-            textErrorToast.innerHTML = '<p><b>Sự Cố:</b> Chưa Có Hình Tiêu Đề Cho Bài Đăng</p>'
-                visibleToast(errorToast);
+                visibleToast({
+                    type: 'error',
+                    message: 'Chưa Có Hình Ảnh Tiêu Đề Cho Bài Viết'
+                });
                 borderTitleIMG.style.border = '2px dashed #BC0404';
                 borderTitleIMG.scrollIntoView();
                 titleIMG.addEventListener('change',()=>{
                     borderTitleIMG.style.border = '2px dashed #ffe699';
                 })
         }
-        else if(titleNews.value === ''){
-            visibleToast(errorToast);
+        else if(titleNews.value === '' || !titleNews){
+            visibleToast({
+                    type: 'error',
+                    message: 'Chưa Có Tiêu Đề Cho Bài Viết'
+                });
             titleNews.focus();
             titleNews.style.border = '1px solid #BC0404';
             titleNews.addEventListener('input',()=>{
@@ -731,34 +780,44 @@
                     titleNews.style.border = '1px solid #BC0404';
                 }
             })
-        }else{
-            boxContent.forEach((box,index)=>{
-                const fileIMG = (index === 0) ? box.querySelector('input.file-img__content') : null;
-                const textareaContent = box.querySelector('textarea.content-news');
-                const borderContentIMG = (index === 0) ? box.querySelector('.first__img-content .content-img') : null;
-                const boxDisplayStyle = getComputedStyle(box).getPropertyValue('display');
-                if(index === 0 && (fileIMG.value === "" || !fileIMG)){
-                    textErrorToast.innerHTML = '<p><b>Sự Cố:</b> Chưa Có Hình Ảnh Nội Dung Bài Đăng</p>'
-                    visibleToast(errorToast);
-                    borderContentIMG.style.border = '2px dashed #BC0404';
-                    borderContentIMG.scrollIntoView();
-                    fileIMG.addEventListener('change',()=>{
-                        borderContentIMG.style.border = '2px dashed #ffe699';
-                    })
-                }else if(boxDisplayStyle === 'block'){
-                    if(textareaContent.value === ""){
-                        textErrorToast.innerHTML = '<p><b>Sự Cố:</b> Chưa Nhập Nội Dung Bài Đăng</p>'
-                        visibleToast(errorToast);
-                        textareaContent.style.border = '1px solid #BC0404';
-                        textareaContent.addEventListener('input',()=>{
-                            textareaContent.style.border = '1px solid #ffe699';
+        }else if(fileIMG.value === "" || !fileIMG){
+                        visibleToast({
+                        type: 'error',
+                        message: 'Chưa Có Hình Ảnh Nội Dung Bài Đăng'
+                        });
+                        if(borderContentIMG){
+                            borderContentIMG.style.border = '2px dashed #BC0404';
+                            borderContentIMG.scrollIntoView();
+                        }
+                        fileIMG.addEventListener('change',()=>{
+                            borderContentIMG.style.border = '2px dashed #ffe699';
                         })
+        }else{
+                boxContent.forEach((box,index)=>{
+                    const textareaContent = box.querySelector('textarea.content-news');
+                    const boxDisplayStyle = getComputedStyle(box).getPropertyValue('display');
+                    if(boxDisplayStyle === 'block'){
+                        if(textareaContent.value === ""){
+                            visibleToast({
+                            type: 'error',
+                            message: 'Chưa Nhập Nội Dung Bài Đăng'
+                            });
+                            textareaContent.style.border = '1px solid #BC0404';
+                            textareaContent.addEventListener('input',()=>{
+                                textareaContent.style.border = '1px solid #ffe699';
+                            })
+                            checkTextAreaField = false;
+                        }else{
+                            checkTextAreaField = true;
+                        }
+                    }else{
+                        textareaContent.style.border = '1px solid #ffe699';
                     }
-                }else{
-                    localStorage.setItem('event', 'success');
-                    formEvent.submit();
-                }
-            })
+                })
+        }
+        if(checkTextAreaField){
+            localStorage.setItem('event', 'success');
+            formEvent.submit();
         }
     }
     document.addEventListener('DOMContentLoaded',()=>{
@@ -766,23 +825,26 @@
         const postedUser = localStorage.getItem('user');
         const postedRole = localStorage.getItem('role');
         if(postedEvent === 'success'){
-            const successToast = document.querySelector('.toast.success')
-            successToast.querySelector('.content-toast p').innerHTML = '<p><b>Thành Công:</b> Đăng Bài Viết Thành Công</p>'
-            visibleToast(successToast);
+            visibleToast({
+                    type: 'success',
+                    message: 'Đăng Bài Thành Công'
+                    });
             setTimeout(()=>{
                 localStorage.setItem('event', '');
             },1000)
         }if(postedUser === 'success'){
-            const successToast = document.querySelector('.toast.success')
-            successToast.querySelector('.content-toast p').innerHTML = '<p><b>Thành Công:</b> Thêm Tài Khoản Thành Công</p>'
-            visibleToast(successToast);
+            visibleToast({
+                    type: 'success',
+                    message: 'Thêm Nhân Viên Thành Công'
+                    });
             setTimeout(()=>{
                 localStorage.setItem('user', '');
             },1000)
         }if(postedRole === 'success'){
-            const successToast = document.querySelector('.toast.success')
-            successToast.querySelector('.content-toast p').innerHTML = '<p><b>Thành Công:</b> Thêm Chức Vụ Mới Thành Công</p>'
-            visibleToast(successToast);
+            visibleToast({
+                    type: 'success',
+                    message: 'Thêm Chức Vụ Thành Công'
+                    });
             setTimeout(()=>{
                 localStorage.setItem('role', '');
             },1000)
@@ -948,30 +1010,21 @@
     const selectRole = document.getElementById('role');
     const selectCity = document.getElementById('city');
     const selectDistrict = document.getElementById('district');
-    const errorToast = document.querySelector('.toast.error');
-    const textErrorToast = errorToast.querySelector('.content-toast p');
-    const toastPassword = '<p><b>Sự Cố:</b> Chưa Nhập Mật Khẩu</p>';
-    const toastUsername = '<p><b>Sự Cố:</b> Chưa Nhập Tên Đăng Nhập</p>';
-    const toastRePassword = '<p><b>Sự Cố:</b> Nhập Lại Mật Khẩu Không Trùng Khớp</p>';
-    const toastFullName = '<p><b>Sự Cố:</b> Chưa Nhập Họ & Tên</p>';
-    const toastEmail = '<p><b>Sự Cố:</b> Chưa Nhập Email</p>';
-    const toastRole = '<p><b>Sự Cố:</b> Chưa Nhập Chức Vụ</p>';
-    const toastCity = '<p><b>Sự Cố:</b> Chưa Nhập Thành Phố & Huyện</p>';
     submitUser.addEventListener('click',()=>{
         if(inputFullname.value === ""){
-            validateInput(inputFullname, toastFullName, `label.${inputFullname.name}`)
+            validateInput(inputFullname, 'Chưa Nhập Tên Đầy Đủ', `label.${inputFullname.name}`)
         }else if(selectRole.value === ""){
-            validateInput(selectRole, toastRole, `label.${selectRole.name}`)
+            validateInput(selectRole, 'Chưa Nhập Chức Vụ', `label.${selectRole.name}`)
         }else if(inputUsername.value === ""){
-            validateInput(inputUsername, toastUsername, `label.${inputUsername.name}`)
+            validateInput(inputUsername, 'Chưa Nhập Tên Đăng Nhập', `label.${inputUsername.name}`)
         }else if(inputEmail.value === ""){
-            validateInput(inputEmail, toastEmail, `label.${inputEmail.name}`)
+            validateInput(inputEmail, 'Chưa Nhập Địa Chỉ Email', `label.${inputEmail.name}`)
         }else if(inputPassword.value === ""){
-            validateInput(inputPassword, toastPassword, `label.${inputPassword.name}`)
+            validateInput(inputPassword, 'Chưa Nhập Mật Khẩu', `label.${inputPassword.name}`)
         }else if(inputRePassword.value === "" || inputRePassword.value !== inputPassword.value){
-            validateInput(inputRePassword, toastRePassword, `label.${inputRePassword.name}`)
+            validateInput(inputRePassword, 'Chưa Nhập Lại Mật Khẩu Hoặc Mật Khẩu Nhập Lại Không Khớp', `label.${inputRePassword.name}`)
         }else if(selectCity.value === ""){
-            validateInput(selectCity, toastCity, `label.${selectCity.name}`)
+            validateInput(selectCity, 'Chưa Nhập Thành Phố & Huyện ', `label.${selectCity.name}`)
         }else{
             localStorage.setItem('user', 'success');
             formUser.submit();
@@ -982,7 +1035,6 @@
     const closeRoleBox = document.querySelector('.container-create .box-create__role span.title__post-news i')
     const submitRole = document.querySelector('.action-role button');
     const inputCreateRole = document.getElementById('create-role');
-    const toastCreateRole = '<p><b>Sự Cố:</b> Chưa Nhập Chức Vụ Muốn Thêm</p>';
     if(showFormRole){
         showFormRole.addEventListener('click',()=>{
             overlay.style.cssText = 'top: 0; transform: scale(1)';
@@ -1002,7 +1054,7 @@
     }
     submitRole.addEventListener('click',()=>{
         if(inputCreateRole.value === ""){
-            validateInput(inputCreateRole, toastCreateRole, `label.${inputCreateRole.name}`)
+            validateInput(inputCreateRole, 'Chưa Nhập Tên Chức Vụ', `label.${inputCreateRole.name}`)
         }else{
             formRole.submit();
             localStorage.setItem('role', 'success');

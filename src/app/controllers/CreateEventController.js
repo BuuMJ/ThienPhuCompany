@@ -12,7 +12,7 @@ class CreateEventController {
     const user = req.user;
     const role = await RoleModel.find();
     const listUser = await UserModel.find().sort({ createdAt: -1 });
-    const listEvent = await EventModel.find();
+    const listEvent = await EventModel.find().sort({ createdAt: -1 });
     const countUser = await UserModel.countDocuments();
     const countEvent = await EventModel.countDocuments();
     res.render("createEvent", {
@@ -20,7 +20,7 @@ class CreateEventController {
       user: user,
       countUser: countUser,
       countEvent: countEvent,
-      role: mutipleMongooseToObject(role),
+      roles: mutipleMongooseToObject(role),
       listUser: mutipleMongooseToObject(listUser),
       listEvent: mutipleMongooseToObject(listEvent),
     });
