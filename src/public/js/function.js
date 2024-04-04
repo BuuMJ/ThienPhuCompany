@@ -138,3 +138,13 @@ function validateInput(input, errorMessage, labelSelector) {
       }
   });
 }
+function showBox(form, overlay, body){
+    overlay.style.cssText = 'top: 0; transform: scale(1)';
+    form.style.cssText = 'top: 50%; transform: translate(-50%, -50%) scale(1)';
+    body.classList.add('modal-open');
+}
+function hideBox(form, overlay, body){
+  overlay.style.cssText = 'top: -100%; transform: scale(0)';
+  form.style.cssText = 'top: -100%; transform: translate(-50%, -50%) scale(1)';
+  body.classList.remove('modal-open');
+}

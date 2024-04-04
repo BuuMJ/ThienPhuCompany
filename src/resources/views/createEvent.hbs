@@ -80,8 +80,8 @@
                                 Xem Chi Tiết >
                             </button>
                         </div>
-                    </div>
-                    <form action="/admin/editUser/{{this._id}}" class="box-edit__user" method="POST" enctype="multipart/form-data">
+
+                        <form action="/admin/editUser/{{this._id}}" class="box-edit__user" method="POST" enctype="multipart/form-data">
                         <span class="title__post-news">
                             Chỉnh Sửa Thông Tin Nhân Viên
                             <i class="bi bi-x"></i>
@@ -150,13 +150,14 @@
                                 </div>
                             </div>
                             <div class="action-user">
-                                <button type="button" class="submit-user">
+                                <button type="button" class="submit__edit-user submit-user">
                                     Thay Đổi
                                     <span></span>
                                 </button>
                             </div>
                         </div>
                     </form>
+                    </div>
                     {{/each}}
                 </div>
             </div>
@@ -985,19 +986,13 @@
     const setAvatar = document.querySelector('.box-create__user .avatar-user');
     if(showFormUser){
         showFormUser.addEventListener('click',()=>{
-            overlay.style.cssText = 'top: 0; transform: scale(1)';
-            formUser.style.cssText = 'top: 50%; transform: translate(-50%, -50%) scale(1)';
-            body.classList.add('modal-open');
+            showBox(formUser, overlay, body);
         })
         overlay.addEventListener('click',()=>{
-            overlay.style.cssText = 'top: -100%; transform: scale(0)';
-            formUser.style.cssText = 'top: -100%; transform: translate(-50%, -50%) scale(1)';
-            body.classList.remove('modal-open');
+            hideBox(formUser, overlay, body);
         })
         closeUserBox.addEventListener('click',()=>{
-            overlay.style.cssText = 'top: -100%; transform: scale(0)';
-            formUser.style.cssText = 'top: -100%; transform: translate(-50%, -50%) scale(1)';
-            body.classList.remove('modal-open');
+            hideBox(formUser, overlay, body);
         })
     }
     handleFileInput(fileAvatar, setAvatar)
@@ -1037,19 +1032,13 @@
     const inputCreateRole = document.getElementById('create-role');
     if(showFormRole){
         showFormRole.addEventListener('click',()=>{
-            overlay.style.cssText = 'top: 0; transform: scale(1)';
-            formRole.style.cssText = 'top: 50%; transform: translate(-50%, -50%) scale(1)';
-            body.classList.add('modal-open');
+            showBox(formRole, overlay, body)
         })
         overlay.addEventListener('click',()=>{
-            overlay.style.cssText = 'top: -100%; transform: scale(0)';
-            formRole.style.cssText = 'top: -100%; transform: translate(-50%, -50%) scale(1)';
-            body.classList.remove('modal-open');
+            hideBox(formRole, overlay, body)
         })
         closeRoleBox.addEventListener('click',()=>{
-            overlay.style.cssText = 'top: -100%; transform: scale(0)';
-            formRole.style.cssText = 'top: -100%; transform: translate(-50%, -50%) scale(1)';
-            body.classList.remove('modal-open');
+            hideBox(formRole, overlay, body)
         })
     }
     submitRole.addEventListener('click',()=>{
@@ -1068,5 +1057,20 @@
     })
     genderWomen.addEventListener('change',()=>{
         changeAvatar.src = '/img/avatar-women.png';
+    })
+    const listsUser = document.querySelectorAll('.card-user');
+    listsUser.forEach(user=>{
+        const formEditUser = user.querySelector('.box-edit__user');
+        const showFormEdit = user.querySelector('.action-user button');
+        const closeEditUserBox = formEditUser.querySelector('.container-create .box-edit__user span.title__post-news i')
+        showFormEdit.addEventListener('click',()=>{
+            showBox(formEditUser, overlay, body);
+        })
+        overlay.addEventListener('click',()=>{
+            hideBox(formEditUser, overlay, body);
+        })
+        closeEditUserBox.addEventListener('click',()=>{
+            hideBox(formEditUser, overlay, body);
+        })
     })
 </script>
