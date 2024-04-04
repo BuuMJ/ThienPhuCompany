@@ -80,7 +80,6 @@
                                 Xem Chi Tiết >
                             </button>
                         </div>
-
                         <form action="/admin/editUser/{{this._id}}" class="box-edit__user" method="POST" enctype="multipart/form-data">
                         <span class="title__post-news">
                             Chỉnh Sửa Thông Tin Nhân Viên
@@ -1065,12 +1064,12 @@
         const closeEditUserBox = formEditUser.querySelector('.container-create .box-edit__user span.title__post-news i')
         showFormEdit.addEventListener('click',()=>{
             showBox(formEditUser, overlay, body);
-        })
+        });
         overlay.addEventListener('click',()=>{
             hideBox(formEditUser, overlay, body);
-        })
+        });
         closeEditUserBox.addEventListener('click',()=>{
             hideBox(formEditUser, overlay, body);
-        })
+        });
     })
 </script>
