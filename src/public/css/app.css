@@ -1734,8 +1734,10 @@
   min-height: 100vh;
   position: relative; }
 
-.container-login .toast {
-  top: calc(110px + 30px);
+.container-login #toast {
+  top: calc(110px + 30px) !important; }
+
+.container-login #toast .toast {
   box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px; }
 
 .container-login .toast.error::before {
@@ -5983,7 +5985,11 @@
   .container-header__admin .body-header .admin-navbar li a i,
   .container-header__admin .body-header .admin-navbar li a span.material-symbols-outlined,
   .container-header__admin .bottom-navbar li i {
-    font-size: 20px; } }
+    font-size: 20px; }
+  .container-header__admin .bottom-navbar .profile-user h3.name-user {
+    font-size: 16px; }
+  .container-header__admin .bottom-navbar .profile-user p.role-user {
+    font-size: 14px; } }
 
 @media screen and (max-width: 1025px) {
   .navbar .navbar-inner .primary-navbar a {

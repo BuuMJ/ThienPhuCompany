@@ -319,6 +319,12 @@
     .container-header__admin .bottom-navbar li i{
         font-size: 20px;
     }
+    .container-header__admin .bottom-navbar .profile-user h3.name-user{
+        font-size: 16px;
+    }
+    .container-header__admin .bottom-navbar .profile-user p.role-user{
+        font-size: 14px;
+    }
   }
 //responsive all devices
 @media screen and (max-width: 1025px){
