@@ -2925,6 +2925,69 @@
   z-index: 12;
   transition: .3s ease; }
 
+.typing-indicator {
+  width: 60px;
+  height: 30px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 4;
+  display: none; }
+
+.overlay-inform {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.9);
+  filter: blur(20px);
+  z-index: 3;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: none; }
+
+.typing-indicator .typing-circle {
+  width: 8px;
+  height: 8px;
+  position: absolute;
+  border-radius: 50%;
+  background-color: #000;
+  left: 15%;
+  transform-origin: 50%;
+  animation: typing-circle7124 0.5s alternate infinite ease; }
+
+.typing-indicator .typing-circle:nth-child(2) {
+  left: 45%;
+  animation-delay: 0.2s; }
+
+.typing-indicator .typing-circle:nth-child(3) {
+  left: auto;
+  right: 15%;
+  animation-delay: 0.3s; }
+
+.typing-indicator .typing-shadow {
+  width: 5px;
+  height: 4px;
+  border-radius: 50%;
+  background-color: rgba(0, 0, 0, 0.2);
+  position: absolute;
+  top: 30px;
+  transform-origin: 50%;
+  z-index: 3;
+  left: 15%;
+  filter: blur(1px);
+  animation: typing-shadow046 0.5s alternate infinite ease; }
+
+.typing-indicator .typing-shadow:nth-child(4) {
+  left: 45%;
+  animation-delay: 0.2s; }
+
+.typing-indicator .typing-shadow:nth-child(5) {
+  left: auto;
+  right: 15%;
+  animation-delay: 0.3s; }
+
 .container-create .box-create__event span.title__post-news,
 .container-create .box-create__user span.title__post-news,
 .container-create .box-edit__user span.title__post-news,
@@ -6466,6 +6529,59 @@
   100% {
     transform: rotateZ(0); } }
 
+@keyframes typing-circle7124 {
+  0% {
+    top: 20px;
+    height: 5px;
+    border-radius: 50px 50px 25px 25px;
+    transform: scaleX(1.7); }
+  40% {
+    height: 8px;
+    border-radius: 50%;
+    transform: scaleX(1); }
+  100% {
+    top: 0%; } }
+
+@keyframes typing-shadow046 {
+  0% {
+    transform: scaleX(1.5); }
+  40% {
+    transform: scaleX(1);
+    opacity: 0.7; }
+  100% {
+    transform: scaleX(0.2);
+    opacity: 0.4; } }
+
+@keyframes tri-spinner {
+  100% {
+    transform: rotate(1turn); } }
+
+@keyframes cycle-words {
+  10% {
+    -webkit-transform: translateY(-105%);
+    transform: translateY(-105%); }
+  25% {
+    -webkit-transform: translateY(-100%);
+    transform: translateY(-100%); }
+  35% {
+    -webkit-transform: translateY(-205%);
+    transform: translateY(-205%); }
+  50% {
+    -webkit-transform: translateY(-200%);
+    transform: translateY(-200%); }
+  60% {
+    -webkit-transform: translateY(-305%);
+    transform: translateY(-305%); }
+  75% {
+    -webkit-transform: translateY(-300%);
+    transform: translateY(-300%); }
+  85% {
+    -webkit-transform: translateY(-405%);
+    transform: translateY(-405%); }
+  100% {
+    -webkit-transform: translateY(-400%);
+    transform: translateY(-400%); } }
+
 * {
   padding: 0;
   margin: 0;
@@ -6493,3 +6609,62 @@ input:-webkit-autofill:active {
 .animate__wave {
   animation: wave 1s ease forwards infinite;
   transform-origin: center; }
+
+.spinnerContainer {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.95);
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 100; }
+
+.spinner {
+  width: 56px;
+  height: 56px;
+  display: grid;
+  border: 4px solid #0000;
+  border-radius: 50%;
+  border-right-color: #bc9f6e;
+  animation: tri-spinner 1s infinite linear; }
+
+.spinner::before,
+.spinner::after {
+  content: "";
+  grid-area: 1/1;
+  margin: 2px;
+  border: inherit;
+  border-radius: 50%;
+  animation: tri-spinner 2s infinite; }
+
+.spinner::after {
+  margin: 8px;
+  animation-duration: 3s; }
+
+.loader {
+  color: #4a4a4a;
+  font-weight: 500;
+  font-size: 25px;
+  -webkit-box-sizing: content-box;
+  box-sizing: content-box;
+  height: 40px;
+  padding: 10px 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  border-radius: 8px; }
+
+.words {
+  overflow: hidden; }
+
+.word {
+  display: block;
+  height: 100%;
+  padding-left: 6px;
+  color: #bc9f6e;
+  animation: cycle-words 5s infinite; }

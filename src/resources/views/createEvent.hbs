@@ -93,12 +93,12 @@
                                         <span>Đổi Ảnh</span>
                                     </label>
                                     <label class="label-avatar" for="avatar">Thay Ảnh Đại Diện</label>
-                                    <input id="avatar" name="avatar" type="file" hidden>
+                                    <input id="avatar-{{this._id}}" name="avatar" type="file" hidden>
                                 </div>
                                 <div class="user-label user-gender">
                                     <div class="check-gender" data-check-gender="{{this.gender}}">
-                                        <input id="men" name="gender" value="Nam" type="radio" hidden checked>
-                                        <input id="women" name="gender" value="Nữ" type="radio" hidden >
+                                        <input id="men-{{this._id}}" name="gender" value="Nam" type="radio" hidden checked>
+                                        <input id="women-{{this._id}}" name="gender" value="Nữ" type="radio" hidden >
                                         <span class="choose-gender">
                                             <label class="men" for="men">Nam</label>
                                             <label class="women" for="women">Nữ</label>
@@ -107,7 +107,7 @@
                                     <label for="">Giới Tính</label>
                                 </div>
                                 <div class="user-label">
-                                    <input id="fullname-user" name="fullnameUser" type="text" placeholder="Điền Tên Đầy Đủ" value="{{this.fullname}}" required>
+                                    <input id="fullname-user-{{this._id}}" name="fullnameUser" type="text" placeholder="Điền Tên Đầy Đủ" value="{{this.fullname}}" required>
                                     <label class="fullnameUser" for="fullname-user">Họ & Tên</label>
                                 </div>
                                 <div class="user-label">
@@ -120,29 +120,29 @@
                                     <label class="role" for="role">Chức Vụ</label>
                                 </div>
                                 <div class="user-label">
-                                    <input id="username" name="username" type="text" placeholder="Điền Tên Đăng Nhập" required value="{{this.username}}">
+                                    <input id="username-{{this._id}}" name="username" type="text" placeholder="Điền Tên Đăng Nhập" required value="{{this.username}}">
                                     <label class="username" for="username">Tên Đăng Nhập</label>
                                 </div>
                                 <div class="user-label">
-                                    <input id="email-user" name="email" type="text" placeholder="Điền Email" value="{{this.email}}" required>
+                                    <input id="email-user-{{this._id}}" name="email" type="text" placeholder="Điền Email" value="{{this.email}}" required>
                                     <label class="email" for="email-user">Email</label>
                                 </div>
                                 <div class="user-label">
-                                    <input id="password" name="password" type="password" placeholder="Điền Mật Khẩu" required>
+                                    <input id="password-{{this._id}}" name="password" type="password" placeholder="Điền Mật Khẩu" required>
                                     <label class="password" for="password">Mật Khẩu</label>
                                 </div>
                                 <div class="user-label">
-                                    <input id="repassword" name="repassword" type="password" placeholder="Nhập Lại Mật Khẩu" required>
+                                    <input id="repassword-{{this._id}}" name="repassword" type="password" placeholder="Nhập Lại Mật Khẩu" required>
                                     <label class="repassword" for="repassword">Nhập Lại Mật Khẩu</label>
                                 </div>
                                 <div class="user-label">
-                                    <select name="city" id="city" required>
+                                    <select name="city" id="city-{{this._id}}" required>
                                         <option value="{{this.city}}" selected>{{this.city}}</option>
                                     </select>
                                     <label class="city" for="city">Thành Phố & Huyện</label>
                                 </div>
                                 <div class="user-label">
-                                    <select name="district" id="district" required>
+                                    <select name="district" id="district-{{this._id}}" required>
                                         <option value="{{this.district}}" selected>{{this.district}}</option>
                                     </select>
                                     <label class="district" for="district">Phường & Xã</label>
@@ -225,6 +225,15 @@
     </div>
     {{!-- box create event --}}
     <form class="box-create__event" action="/admin/create_event"  method="POST" enctype="multipart/form-data">
+        <div class="overlay-inform"></div>
+        <div class="typing-indicator">
+            <div class="typing-circle"></div>
+            <div class="typing-circle"></div>
+            <div class="typing-circle"></div>
+            <div class="typing-shadow"></div>
+            <div class="typing-shadow"></div>
+            <div class="typing-shadow"></div>
+        </div>
         <span class="title__post-news">
             Đăng Tin Tức Mới
             <i class="bi bi-x"></i>
@@ -457,6 +466,15 @@
     </form>
     {{!-- box create new user --}}
     <form action="/admin/apiregister" class="box-create__user" method="POST" enctype="multipart/form-data">
+        <div class="overlay-inform"></div>
+        <div class="typing-indicator">
+            <div class="typing-circle"></div>
+            <div class="typing-circle"></div>
+            <div class="typing-circle"></div>
+            <div class="typing-shadow"></div>
+            <div class="typing-shadow"></div>
+            <div class="typing-shadow"></div>
+        </div>
         <span class="title__post-news">
             Thêm Tài Khoản Mới
             <i class="bi bi-x"></i>
@@ -556,7 +574,6 @@
     const closeEventBox = formEvent.querySelector('.box-create__event span.title__post-news i');
     const overlay = document.querySelector('.overlay');
     const showFormEvent = document.querySelector('.admin-navbar .create-news');
-    const body = document.querySelector('body');
     if(showFormEvent){
         showFormEvent.addEventListener('click',()=>{
             overlay.style.cssText = 'top: 0; transform: scale(1)';
@@ -748,6 +765,8 @@
         checkValidEvent(boxContent)
     })
     // check valid user field
+    const overlayInformEvent = document.querySelector('.container-create .box-create__event .overlay-inform');
+    const loadingFormEvent = document.querySelector('.container-create .box-create__event .typing-indicator');
     function checkValidEvent(boxContent){
         const titleIMG = document.getElementById('file-img');
         const borderTitleIMG = document.querySelector('.content__post-news .title-img');
@@ -817,6 +836,8 @@
         }
         if(checkTextAreaField){
             localStorage.setItem('event', 'success');
+            overlayInformEvent.style.display = 'block';
+            loadingFormEvent.style.display = 'block';
             formEvent.submit();
         }
     }
@@ -1004,6 +1025,8 @@
     const selectRole = document.getElementById('role');
     const selectCity = document.getElementById('city');
     const selectDistrict = document.getElementById('district');
+    const overlayInformUser = document.querySelector('.container-create .box-create__user .overlay-inform');
+    const loadingFormUser = document.querySelector('.container-create .box-create__user .typing-indicator');
     submitUser.addEventListener('click',()=>{
         if(inputFullname.value === ""){
             validateInput(inputFullname, 'Chưa Nhập Tên Đầy Đủ', `label.${inputFullname.name}`)
@@ -1021,6 +1044,8 @@
             validateInput(selectCity, 'Chưa Nhập Thành Phố & Huyện ', `label.${selectCity.name}`)
         }else{
             localStorage.setItem('user', 'success');
+            overlayInformUser.style.display = 'block';
+            loadingFormUser.style.display = 'block';
             formUser.submit();
         }
     })
