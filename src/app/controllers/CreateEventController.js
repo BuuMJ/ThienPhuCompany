@@ -1,6 +1,7 @@
 const EventModel = require("../models/event");
 const UserModel = require("../models/user");
 const RoleModel = require("../models/role");
+const bcrypt = require("bcrypt");
 const {
   mutipleMongooseToObject,
   mongooseToObject,
@@ -131,63 +132,62 @@ class CreateEventController {
       email,
       city,
       district,
-      fullname,
+      fullnameUser,
       gender,
       nickname,
       username,
     } = req.body;
+
     if (req.file) {
       if (password) {
-        bcrypt.hash(password, 10, function (err, hash) {
-          UserModel.findByIdAndUpdate(idUser, {
-            avatar: req.file.filename,
-            username: username,
-            password: hash,
-            role: role,
-            email: email,
-            city: city,
-            district: district,
-            fullname: fullname,
-            gender: gender,
-            nickname: nickname,
-          });
+        const pass = await bcrypt.hash(password, 10);
+        await UserModel.findByIdAndUpdate(idUser, {
+          avatar: req.file.filename,
+          username: username,
+          password: pass,
+          role: role,
+          email: email,
+          city: city,
+          district: district,
+          fullname: fullnameUser,
+          gender: gender,
+          nickname: nickname,
         });
       } else {
-        UserModel.findByIdAndUpdate(idUser, {
+        await UserModel.findByIdAndUpdate(idUser, {
           avatar: req.file.filename,
           username: username,
           role: role,
           email: email,
           city: city,
           district: district,
-          fullname: fullname,
+          fullname: fullnameUser,
           gender: gender,
           nickname: nickname,
         });
       }
     } else {
       if (password) {
-        bcrypt.hash(password, 10, function (err, hash) {
-          UserModel.findByIdAndUpdate(idUser, {
-            username: username,
-            password: hash,
-            role: role,
-            email: email,
-            city: city,
-            district: district,
-            fullname: fullname,
-            gender: gender,
-            nickname: nickname,
-          });
+        const pass = await bcrypt.hash(password, 10);
+        await UserModel.findByIdAndUpdate(idUser, {
+          username: username,
+          password: pass,
+          role: role,
+          email: email,
+          city: city,
+          district: district,
+          fullname: fullnameUser,
+          gender: gender,
+          nickname: nickname,
         });
       } else {
-        UserModel.findByIdAndUpdate(idUser, {
+        await UserModel.findByIdAndUpdate(idUser, {
           username: username,
           role: role,
           email: email,
           city: city,
           district: district,
-          fullname: fullname,
+          fullname: fullnameUser,
           gender: gender,
           nickname: nickname,
         });
