@@ -1144,20 +1144,25 @@
     border-top-left-radius: 3px;
     border-bottom-left-radius: 3px;
 }
-.container-create .box-create__user .body-create__user .user-infor .user-label.user-gender input#women:checked + span.choose-gender::after{
+.container-create .box-create__user .body-create__user .user-infor .user-label.user-gender input.checked-women:checked + span.choose-gender::after,
+.container-create .box-edit__user .body-create__user .user-infor .user-label.user-gender input.checked-women:checked + span.choose-gender::after{
     left: 50%;
     border-top-right-radius: 3px;
     border-bottom-right-radius: 3px;
     border-top-left-radius: 0;
     border-bottom-left-radius: 0;
 }
-.container-create .box-create__user .body-create__user .user-infor .user-label.user-gender input#women:checked + span.choose-gender label.women,
-.container-create .box-create__user .body-create__user .user-infor .user-label.user-gender input#men:checked + span.choose-gender label.men{
+.container-create .box-create__user .body-create__user .user-infor .user-label.user-gender input.checked-women:checked + span.choose-gender label.women,
+.container-create .box-create__user .body-create__user .user-infor .user-label.user-gender input.checked-men:checked + span.choose-gender label.men,
+.container-create .box-edit__user .body-create__user .user-infor .user-label.user-gender input.checked-women:checked + span.choose-gender label.women,
+.container-create .box-edit__user .body-create__user .user-infor .user-label.user-gender input.checked-men:checked + span.choose-gender label.men{
     color: white;
     cursor: not-allowed;
 }
-.container-create .box-create__user .body-create__user .user-infor .user-label.user-gender input#women:checked + span.choose-gender label.men,
-.container-create .box-create__user .body-create__user .user-infor .user-label.user-gender input#men:checked + span.choose-gender label.women{
+.container-create .box-create__user .body-create__user .user-infor .user-label.user-gender input.checked-women:checked + span.choose-gender label.men,
+.container-create .box-create__user .body-create__user .user-infor .user-label.user-gender input.checked-men:checked + span.choose-gender label.women,
+.container-create .box-edit__user .body-create__user .user-infor .user-label.user-gender input.checked-women:checked + span.choose-gender label.men,
+.container-create .box-edit__user .body-create__user .user-infor .user-label.user-gender input.checked-men:checked + span.choose-gender label.women{
     color: #7C7C7C;
     cursor: pointer;
 }

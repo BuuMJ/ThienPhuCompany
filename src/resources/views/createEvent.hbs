@@ -88,20 +88,20 @@
                         <div class="body-create__user">
                             <div class="user-infor">
                                 <div class="avatar-label">
-                                    <label class="change-avatar" for="avatar">
-                                        <img class="avatar-user" src="{{getAvatar this}}" alt="">
+                                    <label class="change-avatar" for="avatar-{{this._id}}">
+                                        <img class="avatar-user avatar__edit-user" src="{{getAvatar this}}" alt="">
                                         <span>Đổi Ảnh</span>
                                     </label>
-                                    <label class="label-avatar" for="avatar">Thay Ảnh Đại Diện</label>
-                                    <input id="avatar-{{this._id}}" name="avatar" type="file" hidden>
+                                    <label class="label-avatar" for="avatar-{{this._id}}">Thay Ảnh Đại Diện</label>
+                                    <input class="file__edit-user" id="avatar-{{this._id}}" name="avatar" type="file" hidden>
                                 </div>
                                 <div class="user-label user-gender">
                                     <div class="check-gender" data-check-gender="{{this.gender}}">
-                                        <input id="men-{{this._id}}" name="gender" value="Nam" type="radio" hidden checked>
-                                        <input id="women-{{this._id}}" name="gender" value="Nữ" type="radio" hidden >
+                                        <input class="checked-men" id="men-{{this._id}}" name="gender" value="Nam" type="radio" hidden>
+                                        <input class="checked-women" id="women-{{this._id}}" name="gender" value="Nữ" type="radio" hidden >
                                         <span class="choose-gender">
-                                            <label class="men" for="men">Nam</label>
-                                            <label class="women" for="women">Nữ</label>
+                                            <label class="men" for="men-{{this._id}}">Nam</label>
+                                            <label class="women" for="women-{{this._id}}">Nữ</label>
                                         </span>
                                     </div>
                                     <label for="">Giới Tính</label>
@@ -110,46 +110,46 @@
                                     <input id="fullname-user-{{this._id}}" name="fullnameUser" type="text" placeholder="Điền Tên Đầy Đủ" value="{{this.fullname}}" required>
                                     <label class="fullnameUser" for="fullname-user">Họ & Tên</label>
                                 </div>
-                                <div class="user-label">
-                                    <select name="role" id="role" required>
+                                {{!-- <div class="user-label">
+                                    <select name="role" id="role-{{this._id}}" required>
                                         <option value="" selected>Chọn Chức Vụ</option>
                                         {{#each roles}}
                                             <option value="{{this.role}}" selected>{{this.role}}</option>
                                         {{/each}}
                                     </select>
                                     <label class="role" for="role">Chức Vụ</label>
-                                </div>
+                                </div> --}}
                                 <div class="user-label">
-                                    <input id="username-{{this._id}}" name="username" type="text" placeholder="Điền Tên Đăng Nhập" required value="{{this.username}}">
+                                    <input id="username-{{this._id}}" name="username" type="text" placeholder="Điền Tên Đăng Nhập" value="{{this.username}}">
                                     <label class="username" for="username">Tên Đăng Nhập</label>
                                 </div>
                                 <div class="user-label">
-                                    <input id="email-user-{{this._id}}" name="email" type="text" placeholder="Điền Email" value="{{this.email}}" required>
+                                    <input id="email-user-{{this._id}}" name="email" type="text" placeholder="Điền Email" value="{{this.email}}" >
                                     <label class="email" for="email-user">Email</label>
                                 </div>
                                 <div class="user-label">
-                                    <input id="password-{{this._id}}" name="password" type="password" placeholder="Điền Mật Khẩu" required>
+                                    <input id="password-{{this._id}}" name="password" type="password" placeholder="Điền Mật Khẩu">
                                     <label class="password" for="password">Mật Khẩu</label>
                                 </div>
                                 <div class="user-label">
-                                    <input id="repassword-{{this._id}}" name="repassword" type="password" placeholder="Nhập Lại Mật Khẩu" required>
+                                    <input id="repassword-{{this._id}}" name="repassword" type="password" placeholder="Nhập Lại Mật Khẩu">
                                     <label class="repassword" for="repassword">Nhập Lại Mật Khẩu</label>
                                 </div>
                                 <div class="user-label">
-                                    <select name="city" id="city-{{this._id}}" required>
+                                    <select name="city" id="city-{{this._id}}" >
                                         <option value="{{this.city}}" selected>{{this.city}}</option>
                                     </select>
                                     <label class="city" for="city">Thành Phố & Huyện</label>
                                 </div>
                                 <div class="user-label">
-                                    <select name="district" id="district-{{this._id}}" required>
+                                    <select name="district" id="district-{{this._id}}">
                                         <option value="{{this.district}}" selected>{{this.district}}</option>
                                     </select>
                                     <label class="district" for="district">Phường & Xã</label>
                                 </div>
                             </div>
                             <div class="action-user">
-                                <button type="button" class="submit__edit-user submit-user">
+                                <button type="submit" class="submit__edit-user submit-user">
                                     Thay Đổi
                                     <span></span>
                                 </button>
@@ -491,8 +491,8 @@
                 </div>
                 <div class="user-label user-gender">
                     <div class="check-gender">
-                        <input id="men" name="gender" value="Nam" type="radio" hidden checked>
-                        <input id="women" name="gender" value="Nữ" type="radio" hidden >
+                        <input class="checked-men" id="men" name="gender" value="Nam" type="radio" hidden checked>
+                        <input class="checked-women" id="women" name="gender" value="Nữ" type="radio" hidden >
                         <span class="choose-gender">
                             <label class="men" for="men">Nam</label>
                             <label class="women" for="women">Nữ</label>
@@ -1096,5 +1096,16 @@
         closeEditUserBox.addEventListener('click',()=>{
             hideBox(formEditUser, overlay, body);
         });
+        const checkedGenderUser = formEditUser.querySelector('.check-gender').getAttribute('data-check-gender');
+        const valueMen = formEditUser.querySelector('.checked-men');
+        const valueWomen = formEditUser.querySelector('.checked-women');
+        if(checkedGenderUser === 'Nam'){
+            valueMen.checked = true;
+        }else{
+            valueWomen.checked = true;
+        }
+        const setAvatarEditUser = formEditUser.querySelector('.avatar__edit-user');
+        const fileAvatarEditUser = formEditUser.querySelector('.file__edit-user');
+        handleFileInput(fileAvatarEditUser, setAvatarEditUser);
     })
 </script>

@@ -51,11 +51,13 @@
     </div>
 </body>
 <script>
-  const allIMG = document.querySelectorAll('img');
-  allIMG.forEach(img=>{
-    img.onerror = function() {
-            this.src = '/img/error-img.jpg';
-        };
+  document.addEventListener('DOMContentLoaded',()=>{
+    const allIMG = document.querySelectorAll('img');
+      allIMG.forEach(img=>{
+        img.onerror = function() {
+                this.src = '/img/error-img.jpg';
+            };
+      })
   })
   const navbar = document.querySelector('.navbar');
   const navbarResponsive = document.querySelector('.navbar-responsive');
