@@ -81,6 +81,15 @@
                             </button>
                         </div>
                         <form action="/admin/editUser/{{this._id}}" class="box-edit__user" method="POST" enctype="multipart/form-data">
+                        <div class="overlay-inform"></div>
+                        <div class="typing-indicator">
+                            <div class="typing-circle"></div>
+                            <div class="typing-circle"></div>
+                            <div class="typing-circle"></div>
+                            <div class="typing-shadow"></div>
+                            <div class="typing-shadow"></div>
+                            <div class="typing-shadow"></div>
+                        </div>
                         <span class="title__post-news">
                             Chỉnh Sửa Thông Tin Nhân Viên
                             <i class="bi bi-x"></i>
@@ -851,6 +860,7 @@
         const postedEvent = localStorage.getItem('event');
         const postedUser = localStorage.getItem('user');
         const postedRole = localStorage.getItem('role');
+        const finishEdit = localStorage.getItem('userEdit');
         if(postedEvent === 'success'){
             visibleToast({
                     type: 'success',
@@ -874,6 +884,14 @@
                     });
             setTimeout(()=>{
                 localStorage.setItem('role', '');
+            },1000)
+        }if(finishEdit === 'success'){
+            visibleToast({
+                    type: 'success',
+                    message: 'Chỉnh Sửa Tài Khoản Thành Công'
+                    });
+            setTimeout(()=>{
+                localStorage.setItem('userEdit', '');
             },1000)
         }
         function reviewCard(){
@@ -1050,9 +1068,13 @@
             validateInput(selectCity, 'Chưa Nhập Thành Phố & Huyện ', `label.${selectCity.name}`)
         }else{
             localStorage.setItem('user', 'success');
-            overlayInformUser.style.display = 'block';
-            loadingFormUser.style.display = 'block';
-            formUser.submit();
+            loadingAll.style.cssText = 'z-index: 10';
+            formUser.style.cssText = 'top: 50%; transform: translate(-50%, -50%) scale(1); z-index: 100';
+            setTimeout(()=>{
+                overlayInformUser.style.display = 'block';
+                loadingFormUser.style.display = 'block';
+                formUser.submit();
+            },200);
         }
     })
     const formRole = document.querySelector('.box-create__role');
@@ -1112,6 +1134,19 @@
         const setAvatarEditUser = formEditUser.querySelector('.avatar__edit-user');
         const fileAvatarEditUser = formEditUser.querySelector('.file__edit-user');
         handleFileInput(fileAvatarEditUser, setAvatarEditUser);
+        const submitEditUser = formEditUser.querySelector('.submit__edit-user');
+        const overlayInformEditUser = formEditUser.querySelector('.overlay-inform');
+        const loadingFormEditUser = formEditUser.querySelector('.typing-indicator');
+        submitEditUser.addEventListener('click',()=>{
+            localStorage.setItem('userEdit', 'success');
+            loadingAll.style.cssText = 'z-index: 10';
+            formEditUser.style.cssText = 'top: 50%; transform: translate(-50%, -50%) scale(1); z-index: 100';
+            setTimeout(()=>{
+                overlayInformEditUser.style.display = 'block';
+                loadingFormEditUser.style.display = 'block';
+                formEditUser.submit();
+            },200);
+        })
     })
     const managementMSG = document.querySelector('.management-msg');
     const toastMSGUpdate = document.querySelector('.toast-update');

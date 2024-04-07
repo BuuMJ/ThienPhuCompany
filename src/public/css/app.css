@@ -6664,7 +6664,7 @@ input:-webkit-autofill:active {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  z-index: 10; }
+  z-index: 100; }
 
 .spinner {
   width: 56px;
