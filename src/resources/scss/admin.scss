@@ -198,7 +198,7 @@
     height: 80px;
     border-radius: 5px;
 }
-.container-create .body-left .container-left .container__list-user .all-user .card-user .action-user button{
+.container-create .body-left .container-left .container__list-user .all-user .card-user .action-user button.view-detail{
     border: 2px solid #727275;
     border-radius: 5px;
     padding: 12px;
@@ -209,7 +209,7 @@
     transition: .3s;
     cursor: pointer;
 }
-.container-create .body-left .container-left .container__list-user .all-user .card-user .action-user button:hover{
+.container-create .body-left .container-left .container__list-user .all-user .card-user .action-user button.view-detail:hover{
     color: white;
     border: 2px solid $primarycolor;
     background-color: $primarycolor;
@@ -339,6 +339,43 @@
     right: 0;
     z-index: 13;
     position: fixed;
+}
+.toast-update{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    position: fixed;
+    top: -100%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    background-color: white;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    z-index: 12;
+    transition: .3s ease;
+    padding: 12px 24px;
+}
+.toast-update h1{
+    color: black;
+    padding: 12px 0;
+    margin: unset;
+    font-weight: 600;
+}
+.toast-update p{
+    margin: unset;
+    padding: 20px 0;
+    color: #949494;
+    border-bottom: 1px solid #949494;
+    text-align: justify;
+    line-height: 28px;
+}
+.toast-update .close-notification{
+    color: #E40404;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: 600;
+    padding: 12px 0;
 }
 .toast,
 .toast__warning-valid{

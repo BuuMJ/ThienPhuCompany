@@ -76,7 +76,7 @@
                             <p>{{moment this.createdAt format="DD/MM/YYYY"}}</p>
                         </div>
                         <div class="action-user infor-user">
-                            <button type="button">
+                            <button type="button" class="view-detail">
                                 Xem Chi Tiết >
                             </button>
                         </div>
@@ -201,6 +201,12 @@
     </div>
     {{!-- overlay --}}
     <div class="overlay"></div>
+    {{!-- toast not update yet --}}
+    <div class="toast-update">
+        <h1>Thông Báo</h1>
+        <p>Sự phát triển và cập nhật đang được thực hiện cho tính năng hiện có. Vui lòng thử lại sau khi có bản cập nhật tiếp theo.<br> Chúng tôi xin lỗi vì bất kỳ sự bất tiện nào gây ra.</p>
+        <span class="close-notification">Đóng</span>
+    </div>
     {{!-- warning valid --}}
     <div class="toast__warning-valid">
         <div class="icon-toast">
@@ -1016,7 +1022,7 @@
         })
     }
     handleFileInput(fileAvatar, setAvatar)
-    const submitUser = document.querySelector('.action-user .submit-user');
+    const submitUser = document.querySelector('.box-create__user .action-user .submit-user');
     const inputFullname = document.getElementById('fullname-user');
     const inputUsername = document.getElementById('username');
     const inputEmail = document.getElementById('email-user');
@@ -1075,12 +1081,11 @@
     })
     const genderMen = document.getElementById('men');
     const genderWomen = document.getElementById('women');
-    const changeAvatar = document.querySelector('.avatar-user');
     genderMen.addEventListener('change',()=>{
-        changeAvatar.src = '/img/avatar-men.png';
+        setAvatar.src = '/img/avatar-men.png';
     })
     genderWomen.addEventListener('change',()=>{
-        changeAvatar.src = '/img/avatar-women.png';
+        setAvatar.src = '/img/avatar-women.png';
     })
     const listsUser = document.querySelectorAll('.card-user');
     listsUser.forEach(user=>{
@@ -1107,5 +1112,17 @@
         const setAvatarEditUser = formEditUser.querySelector('.avatar__edit-user');
         const fileAvatarEditUser = formEditUser.querySelector('.file__edit-user');
         handleFileInput(fileAvatarEditUser, setAvatarEditUser);
+    })
+    const managementMSG = document.querySelector('.management-msg');
+    const toastMSGUpdate = document.querySelector('.toast-update');
+    const clodeMSGUpdate = document.querySelector('.close-notification');
+    managementMSG.addEventListener('click',()=>{
+        showBox(toastMSGUpdate, overlay, body);
+    })
+    overlay.addEventListener('click',()=>{
+        hideBox(toastMSGUpdate, overlay, body);
+    })
+    clodeMSGUpdate.addEventListener('click',()=>{
+        hideBox(toastMSGUpdate, overlay, body);
     })
 </script>
