@@ -27,7 +27,23 @@ router.post(
   upload.single("avatar"),
   createEventController.editUser
 );
-router.get("/editEvent/:id", checkAdmin, createEventController.formEditEvent);
+router.get(
+  "/editEvent/:id",
+  checkAdmin,
+  upload.fields([
+    { name: "image1" },
+    { name: "image2" },
+    { name: "image3" },
+    { name: "image4" },
+    { name: "image5" },
+    { name: "image6" },
+    { name: "image7" },
+    { name: "image8" },
+    { name: "image9" },
+    { name: "image10" },
+  ]),
+  createEventController.formEditEvent
+);
 router.post("/apiEditEvent/:id", checkAdmin, createEventController.editEvent);
 router.post("/role", checkAdmin, createEventController.addRole);
 router.get("/register", checkLogin, loginController.formRegister);
