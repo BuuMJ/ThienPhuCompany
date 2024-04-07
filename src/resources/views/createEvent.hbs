@@ -119,15 +119,15 @@
                                     <input id="fullname-user-{{this._id}}" name="fullnameUser" type="text" placeholder="Điền Tên Đầy Đủ" value="{{this.fullname}}" required>
                                     <label class="fullnameUser" for="fullname-user">Họ & Tên</label>
                                 </div>
-                                {{!-- <div class="user-label">
+                                <div class="user-label">
                                     <select name="role" id="role-{{this._id}}" required>
-                                        <option value="" selected>Chọn Chức Vụ</option>
-                                        {{#each roles}}
-                                            <option value="{{this.role}}" selected>{{this.role}}</option>
+                                        <option value="{{this.role}}" selected>{{this.role}}</option>
+                                        {{#each this.roles}}
+                                            <option value="{{this.role}}">{{this.role}}</option>
                                         {{/each}}
                                     </select>
                                     <label class="role" for="role">Chức Vụ</label>
-                                </div> --}}
+                                </div>
                                 <div class="user-label">
                                     <input id="username-{{this._id}}" name="username" type="text" placeholder="Điền Tên Đăng Nhập" value="{{this.username}}">
                                     <label class="username" for="username">Tên Đăng Nhập</label>

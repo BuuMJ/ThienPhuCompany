@@ -12,17 +12,27 @@ class CreateEventController {
   async formCreate(req, res, next) {
     const user = req.user;
     const role = await RoleModel.find();
+    const roles = mutipleMongooseToObject(role);
     const listUser = await UserModel.find().sort({ createdAt: -1 });
+    const listUsers = mutipleMongooseToObject(listUser);
     const listEvent = await EventModel.find().sort({ createdAt: -1 });
     const countUser = await UserModel.countDocuments();
     const countEvent = await EventModel.countDocuments();
+    const userWithRoles = listUsers.map(user =>{
+      const userRoles = roles.filter(role => role.userId === user.id);
+      console.log(user.role)
+      return {
+        ...user,
+        roles: userRoles,
+      }
+    })
     res.render("createEvent", {
       title: "Quản Trị Viên",
       user: user,
       countUser: countUser,
       countEvent: countEvent,
-      roles: mutipleMongooseToObject(role),
-      listUser: mutipleMongooseToObject(listUser),
+      roles: roles,
+      listUser: userWithRoles,
       listEvent: mutipleMongooseToObject(listEvent),
     });
   }
