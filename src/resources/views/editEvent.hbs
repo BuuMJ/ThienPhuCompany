@@ -1,0 +1,147 @@
+<div class="container-edit__event">
+    <header class="edit-event">
+        <h1>Chỉnh Sửa Bài Viết</h1>
+    </header>
+    <form class="main-edit__event">
+        <div class="select-category">
+            <h2>Chọn Loại Bài Viết</h2>
+                <div class="choose-category" data-type-event="{{event.category}}">
+                        <input type="radio" name="category" id="category-event" value="event" checked hidden>
+                        <input type="radio" name="category" id="category-news" value="news" hidden>
+                        <label class="checked" for=""></label>
+                        <label class="choose-event" for="category-event">Sự Kiện</label>
+                        <label class="choose-news" for="category-news">Tin Tức</label>
+                </div>
+        </div>
+        {{#if event.image1}}
+            <div class="content-edit__event">
+                <div class="title">
+                    <h2>Tiêu Đề Bài Viết</h2>
+                </div>
+                <label class="select-edit__img" for="file-event__edit">
+                    <label for="file-event__edit" class="title-avatar">
+                        <svg fill="white" viewBox="0 -1.5 35 35" version="1.1" xmlns="http://www.w3.org/2000/svg">
+                        <g id="SVGRepo_bgCarrier" stroke-width="0"/>
+                        <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"/>
+                        <g id="SVGRepo_iconCarrier"> <title>upload1</title> <path d="M29.426 15.535c0 0 0.649-8.743-7.361-9.74-6.865-0.701-8.955 5.679-8.955 5.679s-2.067-1.988-4.872-0.364c-2.511 1.55-2.067 4.388-2.067 4.388s-5.576 1.084-5.576 6.768c0.124 5.677 6.054 5.734 6.054 5.734h9.351v-6h-3l5-5 5 5h-3v6h8.467c0 0 5.52 0.006 6.295-5.395 0.369-5.906-5.336-7.070-5.336-7.070z"/> </g>
+                        </svg>
+                        <span>Thay Đổi Hình Ảnh</span>
+                    </label>
+                    <img src="/{{event.image1}}" alt="">
+                </label>
+                <input id="file-event__edit" type="file" name="image1" hidden>
+                <textarea type="text">{{event.title}}</textarea>
+            </div>
+        {{/if}}
+            <div class="content-edit__event">
+                <div class="title">
+                    <h2>Nội Dung Bài Viết</h2>
+                </div>
+                {{!-- content 1 --}}
+                {{#if event.image2}}
+                    <label class="select-edit__img" for="file-event__edit-content1">
+                        <label for="file-event__edit-content1" class="title-avatar">
+                        <svg fill="white" viewBox="0 -1.5 35 35" version="1.1" xmlns="http://www.w3.org/2000/svg">
+                        <g id="SVGRepo_bgCarrier" stroke-width="0"/>
+                        <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"/>
+                        <g id="SVGRepo_iconCarrier"> <title>upload1</title> <path d="M29.426 15.535c0 0 0.649-8.743-7.361-9.74-6.865-0.701-8.955 5.679-8.955 5.679s-2.067-1.988-4.872-0.364c-2.511 1.55-2.067 4.388-2.067 4.388s-5.576 1.084-5.576 6.768c0.124 5.677 6.054 5.734 6.054 5.734h9.351v-6h-3l5-5 5 5h-3v6h8.467c0 0 5.52 0.006 6.295-5.395 0.369-5.906-5.336-7.070-5.336-7.070z"/> </g>
+                        </svg>
+                        <span>Thay Đổi Hình Ảnh</span>
+                    </label>
+                        <img src="/{{event.image2}}" alt="">
+                    </label>
+                    <input id="file-event__edit-content1" type="file" name="image2" hidden>
+                 {{/if}}
+                {{#if event.text1}}
+                    <textarea class="content-text" name="text1" type="text">{{event.text1}}</textarea>
+                {{/if}}
+                {{!-- content 2 --}}
+                {{#if event.image3}}
+                    <label class="select-edit__img" for="file-event__edit-content2">
+                        <label for="file-event__edit-content2" class="title-avatar">
+                        <svg fill="white" viewBox="0 -1.5 35 35" version="1.1" xmlns="http://www.w3.org/2000/svg">
+                        <g id="SVGRepo_bgCarrier" stroke-width="0"/>
+                        <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"/>
+                        <g id="SVGRepo_iconCarrier"> <title>upload1</title> <path d="M29.426 15.535c0 0 0.649-8.743-7.361-9.74-6.865-0.701-8.955 5.679-8.955 5.679s-2.067-1.988-4.872-0.364c-2.511 1.55-2.067 4.388-2.067 4.388s-5.576 1.084-5.576 6.768c0.124 5.677 6.054 5.734 6.054 5.734h9.351v-6h-3l5-5 5 5h-3v6h8.467c0 0 5.52 0.006 6.295-5.395 0.369-5.906-5.336-7.070-5.336-7.070z"/> </g>
+                        </svg>
+                        <span>Thay Đổi Hình Ảnh</span>
+                    </label>
+                        <img src="/{{event.image3}}" alt="">
+                    </label>
+                    <input id="file-event__edit-content2" type="file" name="image3" hidden>
+                 {{/if}}
+                {{#if event.text2}}
+                    <textarea class="content-text" name="text2" type="text">{{event.text2}}</textarea>
+                {{/if}}
+                {{!-- content 3 --}}
+                {{#if event.image4}}
+                    <label class="select-edit__img" for="file-event__edit-content3">
+                        <label for="file-event__edit-content3" class="title-avatar">
+                        <svg fill="white" viewBox="0 -1.5 35 35" version="1.1" xmlns="http://www.w3.org/2000/svg">
+                        <g id="SVGRepo_bgCarrier" stroke-width="0"/>
+                        <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"/>
+                        <g id="SVGRepo_iconCarrier"> <title>upload1</title> <path d="M29.426 15.535c0 0 0.649-8.743-7.361-9.74-6.865-0.701-8.955 5.679-8.955 5.679s-2.067-1.988-4.872-0.364c-2.511 1.55-2.067 4.388-2.067 4.388s-5.576 1.084-5.576 6.768c0.124 5.677 6.054 5.734 6.054 5.734h9.351v-6h-3l5-5 5 5h-3v6h8.467c0 0 5.52 0.006 6.295-5.395 0.369-5.906-5.336-7.070-5.336-7.070z"/> </g>
+                        </svg>
+                        <span>Thay Đổi Hình Ảnh</span>
+                    </label>
+                        <img src="/{{event.image4}}" alt="">
+                    </label>
+                    <input id="file-event__edit-content3" type="file" name="image4" hidden>
+                 {{/if}}
+                {{#if event.text3}}
+                    <textarea class="content-text" name="text3" type="text">{{event.text3}}</textarea>
+                {{/if}}
+                {{!-- content 4 --}}
+                {{#if event.image5}}
+                    <label class="select-edit__img" for="file-event__edit-content4">
+                        <label for="file-event__edit-content4" class="title-avatar">
+                        <svg fill="white" viewBox="0 -1.5 35 35" version="1.1" xmlns="http://www.w3.org/2000/svg">
+                        <g id="SVGRepo_bgCarrier" stroke-width="0"/>
+                        <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"/>
+                        <g id="SVGRepo_iconCarrier"> <title>upload1</title> <path d="M29.426 15.535c0 0 0.649-8.743-7.361-9.74-6.865-0.701-8.955 5.679-8.955 5.679s-2.067-1.988-4.872-0.364c-2.511 1.55-2.067 4.388-2.067 4.388s-5.576 1.084-5.576 6.768c0.124 5.677 6.054 5.734 6.054 5.734h9.351v-6h-3l5-5 5 5h-3v6h8.467c0 0 5.52 0.006 6.295-5.395 0.369-5.906-5.336-7.070-5.336-7.070z"/> </g>
+                        </svg>
+                        <span>Thay Đổi Hình Ảnh</span>
+                    </label>
+                        <img src="/{{event.image5}}" alt="">
+                    </label>
+                    <input id="file-event__edit-content4" type="file" name="image5" hidden>
+                 {{/if}}
+                {{#if event.text4}}
+                    <textarea class="content-text" name="text4" type="text">{{event.text4}}</textarea>
+                {{/if}}
+                {{!-- content 5 --}}
+                {{#if event.image6}}
+                    <label class="select-edit__img" for="file-event__edit-content5">
+                        <label for="file-event__edit-content5" class="title-avatar">
+                        <svg fill="white" viewBox="0 -1.5 35 35" version="1.1" xmlns="http://www.w3.org/2000/svg">
+                        <g id="SVGRepo_bgCarrier" stroke-width="0"/>
+                        <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"/>
+                        <g id="SVGRepo_iconCarrier"> <title>upload1</title> <path d="M29.426 15.535c0 0 0.649-8.743-7.361-9.74-6.865-0.701-8.955 5.679-8.955 5.679s-2.067-1.988-4.872-0.364c-2.511 1.55-2.067 4.388-2.067 4.388s-5.576 1.084-5.576 6.768c0.124 5.677 6.054 5.734 6.054 5.734h9.351v-6h-3l5-5 5 5h-3v6h8.467c0 0 5.52 0.006 6.295-5.395 0.369-5.906-5.336-7.070-5.336-7.070z"/> </g>
+                        </svg>
+                        <span>Thay Đổi Hình Ảnh</span>
+                    </label>
+                        <img src="/{{event.image6}}" alt="">
+                    </label>
+                    <input id="file-event__edit-content5" type="file" name="image6" hidden>
+                 {{/if}}
+                {{#if event.text5}}
+                    <textarea class="content-text" name="text5" type="text">{{event.text5}}</textarea>
+                {{/if}}
+            </div>
+    </form>
+</div>
+<script>
+    const listTextarea = document.querySelectorAll('textarea');
+    listTextarea.forEach(textarea=>{
+        textarea.style.height = 'auto';
+        textarea.style.height = (textarea.scrollHeight) + 'px';
+    })
+    const typeEvent = document.getElementById('category-event');
+    const typeNews = document.getElementById('category-news');
+    const checkType = document.querySelector('.choose-category').getAttribute('data-type-event');
+    if(checkType === 'news'){
+        typeNews.checked = true;
+    }else{
+        typeEvent.checked = true;
+    }
+</script>

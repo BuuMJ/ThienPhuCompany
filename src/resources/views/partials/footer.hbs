@@ -62,10 +62,20 @@
       headerNavAdmin.style.display = 'none';
     }
     if(checkPage.includes('admin')){
+      const urlSegments = checkPage.split('/');
+      const lastSegment = urlSegments[urlSegments.length - 2];
+    if (lastSegment === 'editEvent') {
+        headerNav.style.display = 'none';
+        hideFooterEmail.style.display = 'none';
+        footer.style.display = 'none';
+        headerNavAdmin.style.display = 'none';
+        logger('đúng')
+    }else{
       headerNav.style.display = 'none';
       hideFooterEmail.style.display = 'none';
       footer.style.display = 'none';
       headerNavAdmin.style.display = 'flex';
+    }
     }else{
       headerNavAdmin.style.display = 'none';
     }

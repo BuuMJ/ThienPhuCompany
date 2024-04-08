@@ -20,10 +20,10 @@ class CreateEventController {
     const countEvent = await EventModel.countDocuments();
     const userWithRoles = listUsers.map(user =>{
       const userRoles = roles.filter(role => role.userId === user.id);
-      console.log(user.role)
+      const remainingRoles = userRoles.filter(userRole => userRole.role !== user.role);
       return {
         ...user,
-        roles: userRoles,
+        roles: remainingRoles,
       }
     })
     res.render("createEvent", {

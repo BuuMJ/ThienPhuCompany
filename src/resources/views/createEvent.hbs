@@ -182,7 +182,7 @@
                 </h1>
                 <div class="all-event">
                     {{#each listEvent}}
-                    <a href="/event/{{this._id}}" target="_blank" class="card-event">
+                    <a href="/event/{{this._id}}" target="_blank" class="card-event" data-edit-event="{{this._id}}">
                         <div class="status-event">
                             <span class="circle"></span>
                             <p class="status-info">Hoạt Động</p>
@@ -240,6 +240,7 @@
     </div>
     {{!-- box create event --}}
     <form class="box-create__event" action="/admin/create_event"  method="POST" enctype="multipart/form-data">
+        <input type="text" name="status" value="online" hidden>
         <div class="overlay-inform"></div>
         <div class="typing-indicator">
             <div class="typing-circle"></div>
@@ -1159,5 +1160,15 @@
     })
     clodeMSGUpdate.addEventListener('click',()=>{
         hideBox(toastMSGUpdate, overlay, body);
+    })
+    const listEvent = document.querySelectorAll('.card-event');
+    listEvent.forEach(event=>{
+        const idEvent = event.getAttribute('data-edit-event');
+        const editEvent = event.querySelector('.edit-event button');
+        editEvent.addEventListener('click',(e)=>{
+            e.preventDefault();
+            const url = `/admin/editEvent/${idEvent}`;
+            window.open(url, '_blank');
+        })
     })
 </script>

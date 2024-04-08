@@ -25,6 +25,7 @@ const Event = new Schema(
     image8: String,
     image9: String,
     image10: String,
+    status: String,
   },
   {
     timestamps: true,
