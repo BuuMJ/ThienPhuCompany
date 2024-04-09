@@ -18,14 +18,16 @@ class CreateEventController {
     const listEvent = await EventModel.find().sort({ createdAt: -1 });
     const countUser = await UserModel.countDocuments();
     const countEvent = await EventModel.countDocuments();
-    const userWithRoles = listUsers.map(user =>{
-      const userRoles = roles.filter(role => role.userId === user.id);
-      const remainingRoles = userRoles.filter(userRole => userRole.role !== user.role);
+    const userWithRoles = listUsers.map((user) => {
+      const userRoles = roles.filter((role) => role.userId === user.id);
+      const remainingRoles = userRoles.filter(
+        (userRole) => userRole.role !== user.role
+      );
       return {
         ...user,
         roles: remainingRoles,
-      }
-    })
+      };
+    });
     res.render("createEvent", {
       title: "Quản Trị Viên",
       user: user,
@@ -57,7 +59,7 @@ class CreateEventController {
     const text10 = req.body.text10;
     const title = req.body.title;
     const category = req.body.category;
-    const status = req.body.status
+    const status = req.body.status;
     if (req.files) {
       const image1 = req.files["image1"]
         ? req.files["image1"][0].filename
@@ -218,8 +220,8 @@ class CreateEventController {
   }
 
   async editEvent(req, res, next) {
+    const idEvent = req.params.id;
     const {
-      idEvent,
       text1,
       text2,
       text3,
