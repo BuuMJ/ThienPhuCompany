@@ -12,7 +12,7 @@
         </label>
         <input id="status" name="status" type="checkbox" value="{{event.status}}" hidden>
     </header>
-    <form class="main-edit__event" method="POST" action="/admin/apiEditEvent/{{event._id}}?_method=PUT" enctype="multipart/form-data">
+    <form class="main-edit__event" method="POST" action="/admin/apiEditEvent/{{event._id}}" enctype="multipart/form-data">
         <div class="select-category">
             <h2>Chọn Loại Bài Viết</h2>
                 <div class="choose-category" data-type-event="{{event.category}}">

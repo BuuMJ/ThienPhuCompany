@@ -290,7 +290,7 @@ class CreateEventController {
         image8: image8,
         image9: image9,
         image10: image10,
-        status,
+        status: status,
       });
       res.redirect("back");
     } else {
@@ -307,7 +307,7 @@ class CreateEventController {
         text8: text8,
         text9: text9,
         text10: text10,
-        status,
+        status: status,
       });
       res.redirect("back");
     }
