@@ -289,11 +289,14 @@
     color: #acaeb0;
 }
 .container-create .body-left .container-left .container__list-event .all-event .card-event .edit-event{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     width: 100%;
     padding: 12px;
     background-color: rgba(188, 188, 187, 0.15);
 }
-.container-create .body-left .container-left .container__list-event .all-event .card-event .edit-event button{
+.container-create .body-left .container-left .container__list-event .all-event .card-event .edit-event button.edit-button{
     padding: 10px 16px;
     display: flex;
     justify-content: center;
@@ -306,22 +309,76 @@
     cursor: pointer;
     border-radius: 5px;
 }
-.container-create .body-left .container-left .container__list-event .all-event .card-event .edit-event button svg{
+.container-create .body-left .container-left .container__list-event .all-event .card-event .edit-event button.edit-button svg{
     margin-left: 8px;
     width: 22px;
     height: 22px;
 }
-.container-create .body-left .container-left .container__list-event .all-event .card-event .edit-event button svg g{
+.container-create .body-left .container-left .container__list-event .all-event .card-event .edit-event button.edit-button svg g{
     transition: .3s;
 }
-.container-create .body-left .container-left .container__list-event .all-event .card-event .edit-event button:hover{
+.container-create .body-left .container-left .container__list-event .all-event .card-event .edit-event button.edit-button:hover{
     color: white;
     border: 1px solid $primarycolor;
     background-color: $primarycolor;
 }
-.container-create .body-left .container-left .container__list-event .all-event .card-event .edit-event button:hover svg g{
+.container-create .body-left .container-left .container__list-event .all-event .card-event .edit-event button.edit-button:hover svg g{
     fill: white;
 }
+.container-create .body-left .container-left .container__list-event .all-event .card-event .edit-event .delete-button {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: rgb(20, 20, 20);
+    border: none;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.164);
+    cursor: pointer;
+    transition-duration: .3s;
+    overflow: hidden;
+    position: relative;
+  }
+  
+  .container-create .body-left .container-left .container__list-event .all-event .card-event .edit-event .delete-button .svgIcon {
+    width: 12px;
+    transition-duration: .3s;
+  }
+  
+  .container-create .body-left .container-left .container__list-event .all-event .card-event .edit-event .delete-button .svgIcon path {
+    fill: white;
+  }
+  
+  .container-create .body-left .container-left .container__list-event .all-event .card-event .edit-event .delete-button:hover {
+    width: 140px;
+    border-radius: 50px;
+    transition-duration: .3s;
+    background-color: rgb(255, 69, 69);
+    align-items: center;
+  }
+  
+  .container-create .body-left .container-left .container__list-event .all-event .card-event .edit-event .delete-button:hover .svgIcon {
+    width: 50px;
+    transition-duration: .3s;
+    transform: translateY(60%);
+  }
+  
+  .container-create .body-left .container-left .container__list-event .all-event .card-event .edit-event .delete-button::before {
+    position: absolute;
+    top: -20px;
+    content: "Xoá Bài Viết";
+    color: white;
+    transition-duration: .3s;
+    font-size: 2px;
+  }
+  .container-create .body-left .container-left .container__list-event .all-event .card-event .edit-event .delete-button:hover::before {
+    font-size: 13px;
+    opacity: 1;
+    transform: translateY(30px);
+    transition-duration: .3s;
+  }
 .overlay{
     position: fixed;
     width: 100vw;
@@ -1367,11 +1424,11 @@
         font-size: 13px;
         padding: 6px 0;
     }
-    .container-create .body-left .container-left .container__list-event .all-event .card-event .edit-event button{
+    .container-create .body-left .container-left .container__list-event .all-event .card-event .edit-event button.edit-button{
         font-size: 14px;
         padding: 8px 10px;
     }
-    .container-create .body-left .container-left .container__list-event .all-event .card-event .edit-event button svg{
+    .container-create .body-left .container-left .container__list-event .all-event .card-event .edit-event button.edit-button svg{
         width: 18px;
         height: 18px;
     }
@@ -1522,10 +1579,10 @@
         font-size: 13px;
         padding: 8px 0;
     }
-    .container-create .body-left .container-left .container__list-event .all-event .card-event .edit-event button{
+    .container-create .body-left .container-left .container__list-event .all-event .card-event .edit-event button.edit-button{
         font-size: 14px;
     }
-    .container-create .body-left .container-left .container__list-event .all-event .card-event .edit-event button svg{
+    .container-create .body-left .container-left .container__list-event .all-event .card-event .edit-event button.edit-button svg{
         width: 20px;
         height: 20px;
     }

@@ -193,13 +193,16 @@
                             <p>{{moment this.createdAt format="DD/MM/YYYY"}}</p>
                         </div>
                         <div class="edit-event">
-                            <button>
+                            <button class="edit-button">
                                 Chỉnh Sửa
                                 <svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" fill="none">
                                 <g id="SVGRepo_bgCarrier" stroke-width="0"/>
                                 <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"/>
                                 <g id="SVGRepo_iconCarrier"> <g fill="black"> <path fill-rule="evenodd" d="M11.436 1.005A1.75 1.75 0 0113.902.79l.702.589a1.75 1.75 0 01.216 2.465l-5.704 6.798a4.75 4.75 0 01-1.497 1.187l-2.572 1.299a.75.75 0 01-1.056-.886l.833-2.759a4.75 4.75 0 01.908-1.68l5.704-6.798zm1.502.934a.25.25 0 00-.353.03l-.53.633 1.082.914.534-.636a.25.25 0 00-.031-.352l-.703-.59zm-.765 2.726l-1.082-.914-4.21 5.016a3.25 3.25 0 00-.621 1.15L5.933 11l1.01-.51a3.249 3.249 0 001.024-.812l4.206-5.013z" clip-rule="evenodd"/> <path d="M3.25 3.5a.75.75 0 00-.75.75v9.5c0 .414.336.75.75.75h9.5a.75.75 0 00.75-.75V9A.75.75 0 0115 9v4.75A2.25 2.25 0 0112.75 16h-9.5A2.25 2.25 0 011 13.75v-9.5A2.25 2.25 0 013.25 2H6a.75.75 0 010 1.5H3.25z"/> </g> </g>
                                 </svg>
+                            </button>
+                            <button class="delete-button">
+                                <svg viewBox="0 0 448 512" class="svgIcon"><path d="M135.2 17.7L128 32H32C14.3 32 0 46.3 0 64S14.3 96 32 96H416c17.7 0 32-14.3 32-32s-14.3-32-32-32H320l-7.2-14.3C307.4 6.8 296.3 0 284.2 0H163.8c-12.1 0-23.2 6.8-28.6 17.7zM416 128H32L53.2 467c1.6 25.3 22.6 45 47.9 45H346.9c25.3 0 46.3-19.7 47.9-45L416 128z"></path></svg>
                             </button>
                         </div>
                     </a>
@@ -852,9 +855,13 @@
         }
         if(checkTextAreaField){
             localStorage.setItem('event', 'success');
-            overlayInformEvent.style.display = 'block';
-            loadingFormEvent.style.display = 'block';
-            formEvent.submit();
+            loadingAll.style.cssText = 'z-index: 10';
+            formEvent.style.cssText = 'top: 50%; transform: translate(-50%, -50%) scale(1); z-index: 100';
+            setTimeout(()=>{
+                overlayInformEvent.style.display = 'block';
+                loadingFormEvent.style.display = 'block';
+                formEvent.submit();
+            },200);
         }
     }
     document.addEventListener('DOMContentLoaded',()=>{
@@ -1164,7 +1171,7 @@
     const listEvent = document.querySelectorAll('.card-event');
     listEvent.forEach(event=>{
         const idEvent = event.getAttribute('data-edit-event');
-        const editEvent = event.querySelector('.edit-event button');
+        const editEvent = event.querySelector('.edit-event button.edit-button');
         editEvent.addEventListener('click',(e)=>{
             e.preventDefault();
             const url = `/admin/editEvent/${idEvent}`;

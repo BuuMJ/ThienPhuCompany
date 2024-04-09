@@ -57,7 +57,7 @@ class CreateEventController {
     const text10 = req.body.text10;
     const title = req.body.title;
     const category = req.body.category;
-
+    const status = req.body.status
     if (req.files) {
       const image1 = req.files["image1"]
         ? req.files["image1"][0].filename
@@ -113,6 +113,7 @@ class CreateEventController {
         image8: image8,
         image9: image9,
         image10: image10,
+        status: status,
       });
       res.redirect("back");
     } else {
@@ -129,6 +130,7 @@ class CreateEventController {
         text8: text8,
         text9: text9,
         text10: text10,
+        status: status,
       });
       res.redirect("back");
     }
@@ -230,6 +232,7 @@ class CreateEventController {
       text10,
       title,
       category,
+      status,
     } = req.body;
 
     if (req.files) {
@@ -287,6 +290,7 @@ class CreateEventController {
         image8: image8,
         image9: image9,
         image10: image10,
+        status,
       });
       res.redirect("back");
     } else {
@@ -303,6 +307,7 @@ class CreateEventController {
         text8: text8,
         text9: text9,
         text10: text10,
+        status,
       });
       res.redirect("back");
     }
