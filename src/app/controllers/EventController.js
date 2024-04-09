@@ -7,15 +7,17 @@ const {
 class EventController {
   async event(req, res, next) {
     var PAGE_SIZE = 10;
-    const latestNews = await EventModel.find().sort({ createdAt: -1 }).limit(1);
-    const threeLatestNews = await EventModel.find()
+    const latestNews = await EventModel.find({ status: "online" })
+      .sort({ createdAt: -1 })
+      .limit(1);
+    const threeLatestNews = await EventModel.find({ status: "online" })
       .sort({ createdAt: -1 })
       .skip(1)
       .limit(3);
     //Phân trang của Remaining New
     var pageOfRemain = req.query.pageOfRemain;
     if (pageOfRemain) {
-      const count = await EventModel.countDocuments()
+      const count = await EventModel.countDocuments({ status: "online" })
         .sort({ createdAt: -1 })
         .skip(4);
       const total = Math.ceil(count / PAGE_SIZE);
@@ -25,12 +27,12 @@ class EventController {
       }
       pageOfRemain = parseInt(pageOfRemain);
       const skip = (pageOfRemain - 1) * PAGE_SIZE + 4;
-      var remainingNews = await EventModel.find()
+      var remainingNews = await EventModel.find({ status: "online" })
         .skip(skip)
         .limit(PAGE_SIZE)
         .sort({ createdAt: -1 });
     } else {
-      const count = await EventModel.countDocuments()
+      const count = await EventModel.countDocuments({ status: "online" })
         .sort({ createdAt: -1 })
         .skip(4);
       const total = Math.ceil(count / PAGE_SIZE);
@@ -40,7 +42,7 @@ class EventController {
       }
       pageOfRemain = 1;
       const skip = (pageOfRemain - 1) * PAGE_SIZE + 4;
-      var remainingNews = await EventModel.find()
+      var remainingNews = await EventModel.find({ status: "online" })
         .skip(skip)
         .limit(PAGE_SIZE)
         .sort({ createdAt: -1 });
@@ -49,7 +51,10 @@ class EventController {
     //Phân trang New
     var pageOfNew = req.query.pagesOfNew;
     if (pageOfNew) {
-      const countOfNew = await EventModel.countDocuments({ category: "new" });
+      const countOfNew = await EventModel.countDocuments({
+        status: "online",
+        category: "new",
+      });
       const total = Math.ceil(countOfNew / PAGE_SIZE);
       var pagesOfNew = [];
       for (let i = 1; i <= total; i++) {
@@ -57,12 +62,15 @@ class EventController {
       }
       pageOfNew = parseInt(pageOfNew);
       const skip = (pageOfNew - 1) * PAGE_SIZE;
-      var listNew = await EventModel.find({ category: "new" })
+      var listNew = await EventModel.find({ status: "online", category: "new" })
         .skip(skip)
         .limit(PAGE_SIZE)
         .sort({ createdAt: -1 });
     } else {
-      const countOfNew = await EventModel.countDocuments({ category: "new" });
+      const countOfNew = await EventModel.countDocuments({
+        status: "online",
+        category: "new",
+      });
       const total = Math.ceil(countOfNew / PAGE_SIZE);
       var pagesOfNew = [];
       for (let i = 1; i <= total; i++) {
@@ -70,7 +78,7 @@ class EventController {
       }
       pageOfNew = parseInt(pageOfNew);
       const skip = (pageOfNew - 1) * PAGE_SIZE;
-      var listNew = await EventModel.find({ category: "new" })
+      var listNew = await EventModel.find({ status: "online", category: "new" })
         .skip(skip)
         .limit(PAGE_SIZE)
         .sort({ createdAt: -1 });
@@ -79,7 +87,10 @@ class EventController {
     //Phân trang của Event
     var pageOfEvent = req.query.pageOfEvent;
     if (pageOfEvent) {
-      const count = await EventModel.countDocuments({ category: "event" });
+      const count = await EventModel.countDocuments({
+        status: "online",
+        category: "event",
+      });
       const total = Math.ceil(count / PAGE_SIZE);
       var pagesOfEvent = [];
       for (let i = 1; i <= total; i++) {
@@ -87,12 +98,18 @@ class EventController {
       }
       pageOfEvent = parseInt(pageOfEvent);
       const skip = (pageOfEvent - 1) * PAGE_SIZE;
-      var listEvent = await EventModel.find({ category: "event" })
+      var listEvent = await EventModel.find({
+        status: "online",
+        category: "event",
+      })
         .skip(skip)
         .limit(PAGE_SIZE)
         .sort({ prioritize: -1, createdAt: -1 });
     } else {
-      const count = await EventModel.countDocuments({ category: "event" });
+      const count = await EventModel.countDocuments({
+        status: "online",
+        category: "event",
+      });
       const total = Math.ceil(count / PAGE_SIZE);
       var pagesOfEvent = [];
       for (let i = 1; i <= total; i++) {
@@ -100,7 +117,10 @@ class EventController {
       }
       pageOfEvent = 1;
       const skip = (pageOfEvent - 1) * PAGE_SIZE;
-      var listEvent = await EventModel.find({ category: "event" })
+      var listEvent = await EventModel.find({
+        status: "online",
+        category: "event",
+      })
         .skip(skip)
         .limit(PAGE_SIZE)
         .sort({ prioritize: -1, createdAt: -1 });
@@ -125,8 +145,10 @@ class EventController {
     const category = event.category;
     const suggestEvent = await EventModel.find({
       category: category,
-      _id: {$ne: idEvent}
-    }).sort({ createdAt: -1 }).limit(3);
+      _id: { $ne: idEvent },
+    })
+      .sort({ createdAt: -1 })
+      .limit(3);
     res.render("detailEvent", {
       title: "Chi Tiết Sự Kiện",
       event: staffMongooseToObject(event),
