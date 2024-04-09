@@ -237,6 +237,11 @@ class CreateEventController {
       status,
     } = req.body;
 
+    console.log(
+      category +
+        status +
+        " ssssssssssssssssssssssssssssssssssssssssssssssssssssssss"
+    );
     if (req.files) {
       const image1 = req.files["image1"]
         ? req.files["image1"][0].filename
@@ -313,6 +318,12 @@ class CreateEventController {
       });
       res.redirect("back");
     }
+  }
+
+  async deleteEvent(req, res, next) {
+    const idEvent = req.params.id;
+    await EventModel.findByIdAndDelete(idEvent);
+    res.redirect("back");
   }
 }
 
