@@ -1178,4 +1178,11 @@
             window.open(url, '_blank');
         })
     })
+    const checkSubmit = localStorage.getItem('edit-event');
+    document.addEventListener('DOMContentLoaded',()=>{
+        if(checkSubmit === 'success'){
+            window.location.reload();
+            localStorage.setItem('edit-event', '');
+        }
+    })
 </script>
