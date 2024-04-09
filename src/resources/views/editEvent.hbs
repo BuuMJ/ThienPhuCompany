@@ -1,4 +1,5 @@
-<div class="container-edit__event" data-status-event="{{event.status}}">
+<div class="container-edit__event">
+    <div class="overlay"></div>
     <header class="edit-event">
         <h1>Chỉnh Sửa Bài Viết</h1>
         <label class="switch-button" for="switch">
@@ -10,9 +11,9 @@
                 </div>
             </div>
         </label>
-        <input id="status" name="status" type="checkbox" value="{{event.status}}" hidden>
     </header>
     <form class="main-edit__event" method="POST" action="/admin/apiEditEvent/{{event._id}}" enctype="multipart/form-data">
+    <input id="status" name="status" type="checkbox" value="{{event.status}}" hidden>
         <div class="select-category">
             <h2>Chọn Loại Bài Viết</h2>
                 <div class="choose-category" data-type-event="{{event.category}}">
@@ -138,7 +139,7 @@
                     <textarea class="content-text" name="text5" type="text">{{event.text5}}</textarea>
                 {{/if}}
                 <div class="save-changes">
-                    <button type="submit">
+                    <button type="button">
                         Lưu Thay Đổi
                         <span></span>
                     </button>
@@ -165,16 +166,31 @@
     for(let i = 0; i < listIMG.length && i < listInputFile.length; i++){
         handleFileInput(listInputFile[i], listIMG[i]);
     }
-    const checkStatusEvent = document.getElementById('status');
-    const changeStatusEvent = document.getElementById('switch');
-    if(checkStatusEvent.value === 'online'){
-        changeStatusEvent.checked = true;
-    }
-    changeStatusEvent.addEventListener('change',()=>{
-        if(changeStatusEvent.checked){
-            checkStatusEvent.value = 'online'
-        }else{
-            checkStatusEvent.value = 'offline'
+    document.addEventListener("DOMContentLoaded", function() {
+        const checkStatusEvent = document.getElementById('status');
+        const changeStatusEvent = document.getElementById('switch');
+        if(checkStatusEvent.value === 'online'){
+            changeStatusEvent.checked = true;
         }
+        changeStatusEvent.addEventListener('change',()=>{
+            if(changeStatusEvent.checked){
+                checkStatusEvent.value = 'online';
+                logger(checkStatusEvent.value);
+            }else{
+                checkStatusEvent.value = 'offline';
+                logger(checkStatusEvent.value);
+            }
+        });
     });
+    const formEditEvent = document.querySelector('.main-edit__event');
+    const submitFormEdit = document.querySelector('.save-changes button');
+    submitFormEdit.addEventListener('click',()=>{
+        formEditEvent.submit();
+        localStorage.setItem('edit-event', 'success')
+    })
+    window.addEventListener('submit', (event) => {
+        event.preventDefault();
+        window.close();
+    });
+
 </script>

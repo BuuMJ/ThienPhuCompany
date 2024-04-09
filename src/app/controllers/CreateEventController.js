@@ -270,6 +270,7 @@ class CreateEventController {
         : undefined;
 
       await EventModel.findByIdAndUpdate(idEvent, {
+        status: status,
         category: category,
         title: title,
         text1: text1,
@@ -292,11 +293,11 @@ class CreateEventController {
         image8: image8,
         image9: image9,
         image10: image10,
-        status: status,
       });
       res.redirect("back");
     } else {
       await EventModel.findByIdAndUpdate(idEvent, {
+        status: status,
         category: category,
         title: title,
         text1: text1,
@@ -309,7 +310,6 @@ class CreateEventController {
         text8: text8,
         text9: text9,
         text10: text10,
-        status: status,
       });
       res.redirect("back");
     }
