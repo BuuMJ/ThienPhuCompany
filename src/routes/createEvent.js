@@ -44,7 +44,7 @@ router.get(
   ]),
   createEventController.formEditEvent
 );
-router.put("/apiEditEvent/:id", checkAdmin, createEventController.editEvent);
+router.post("/apiEditEvent/:id", checkAdmin, createEventController.editEvent);
 router.post("/role", checkAdmin, createEventController.addRole);
 router.get("/register", checkLogin, loginController.formRegister);
 router.post(
