@@ -255,6 +255,12 @@
     color: $successcolor;
     font-weight: 600;
 }
+.container-create .body-left .container-left .container__list-event .all-event .card-event .status-event .circle.offline{
+    background-color: $errorcolor;
+}
+.container-create .body-left .container-left .container__list-event .all-event .card-event .status-event .status-info.offline{
+    color: $errorcolor;
+}
 .container-create .body-left .container-left .container__list-event .all-event .card-event .infor-event{
     display: flex;
     flex-direction: column;
@@ -326,58 +332,53 @@
     fill: white;
 }
 .container-create .body-left .container-left .container__list-event .all-event .card-event .edit-event .delete-button {
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    background-color: rgb(20, 20, 20);
-    border: none;
-    font-weight: 600;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
-    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.164);
+    padding: 10px 16px;
+    border-radius: 5px;
+    background-color: rgb(255, 95, 95);
     cursor: pointer;
-    transition-duration: .3s;
-    overflow: hidden;
+    border: 2px solid rgb(255, 201, 201);
+    transition-duration: 0.3s;
     position: relative;
+    overflow: hidden;
   }
   
-  .container-create .body-left .container-left .container__list-event .all-event .card-event .edit-event .delete-button .svgIcon {
-    width: 12px;
-    transition-duration: .3s;
+  .container-create .body-left .container-left .container__list-event .all-event .card-event .edit-event .delete-button .bin-bottom {
+    width: 15px;
+    z-index: 2;
   }
   
-  .container-create .body-left .container-left .container__list-event .all-event .card-event .edit-event .delete-button .svgIcon path {
-    fill: white;
+  .container-create .body-left .container-left .container__list-event .all-event .card-event .edit-event .delete-button .bin-top {
+    width: 17px;
+    transform-origin: right;
+    transition-duration: 0.3s;
+    z-index: 2;
+  }
+  
+  .container-create .body-left .container-left .container__list-event .all-event .card-event .edit-event .delete-button:hover .bin-top {
+    transform: rotate(45deg);
   }
   
   .container-create .body-left .container-left .container__list-event .all-event .card-event .edit-event .delete-button:hover {
-    width: 140px;
-    border-radius: 50px;
-    transition-duration: .3s;
-    background-color: rgb(255, 69, 69);
-    align-items: center;
+    background-color: rgb(255, 0, 0);
   }
   
-  .container-create .body-left .container-left .container__list-event .all-event .card-event .edit-event .delete-button:hover .svgIcon {
-    width: 50px;
-    transition-duration: .3s;
-    transform: translateY(60%);
+  .container-create .body-left .container-left .container__list-event .all-event .card-event .edit-event .delete-button:active {
+    transform: scale(0.9);
   }
-  
-  .container-create .body-left .container-left .container__list-event .all-event .card-event .edit-event .delete-button::before {
+  .container-create .body-left .container-left .container__list-event .all-event .card-event .edit-event .delete-button .garbage {
     position: absolute;
-    top: -20px;
-    content: "Xoá Bài Viết";
-    color: white;
-    transition-duration: .3s;
-    font-size: 2px;
+    width: 14px;
+    height: auto;
+    z-index: 1;
+    opacity: 0;
+    transition: all 0.3s;
   }
-  .container-create .body-left .container-left .container__list-event .all-event .card-event .edit-event .delete-button:hover::before {
-    font-size: 13px;
-    opacity: 1;
-    transform: translateY(30px);
-    transition-duration: .3s;
+  .container-create .body-left .container-left .container__list-event .all-event .card-event .edit-event .delete-button:hover .garbage{
+    animation: throw 0.4s linear;
   }
 .overlay{
     position: fixed;
@@ -385,11 +386,119 @@
     height: 100vh;
     top: -100%;
     left: 0;
-    background-color: rgba(0,0,0,0.9);
+    background-color: rgba(0,0,0,0.94);
     z-index: 11;
     transition: .3s ease;
     transform: scale(0);
     cursor: pointer;
+}
+.delete-event{
+    position: fixed;
+    top: -100%;
+    left: 50%;
+    background-color: white;
+    border-radius: 5px;
+    padding: 12px 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 13;
+    transition: .3s ease;
+    transform: translate(-50%, -50%) scale(0);
+}
+.delete-event h2{
+    padding: 12px 0;
+    border-bottom: 1px solid #949494;
+    width: 100%;
+    text-align: center;
+}
+.delete-event p{
+    padding: 20px 12px 12px;
+    line-height: 38px;
+    font-size: 20px;
+}
+.delete-event .confirm-delete{
+    padding: 12px;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    width: 100%;
+}
+.delete-event .confirm-delete .check-delete{
+    display: block;
+    position: relative;
+    padding-left: 35px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    font-size: 20px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+.delete-event .confirm-delete .check-delete input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+.delete-event .confirm-delete .check-delete .checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 25px;
+    width: 25px;
+    background-color: #eee;
+}
+.delete-event .confirm-delete .check-delete input:checked ~ .checkmark{
+    background-color: $primarycolor;
+}
+.delete-event .confirm-delete .check-delete .checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+.delete-event .confirm-delete .check-delete input:checked ~ .checkmark:after {
+    display: block;
+}
+.delete-event .confirm-delete .check-delete .checkmark:after {
+    left: 9px;
+    top: 5px;
+    width: 5px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+.delete-event .action-delete{
+    padding: 12px 0;
+}
+.delete-event .action-delete button{
+    padding: 12px 20px;
+    cursor: pointer;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    font-size: 18px;
+    font-weight: 600;
+    transition: .3s;
+}
+.delete-event .action-delete button.submit-delete{
+    background-color: $errorcolor;
+    color: white;
+    cursor: not-allowed;
+    opacity: .4;
+}
+.delete-event .action-delete button.cancle-delete{
+    color: #727275;
+}
+.delete-event .action-delete button.cancle-delete:hover{
+    background-color: #727275;
+    color: rgb(240, 240, 240);
 }
 #toast{
     top: 30px;
@@ -950,7 +1059,7 @@
 .container-create .box-create__user .body-create__user .action-user,
 .container-create .box-edit__user .body-create__user .action-user,
 .container-create .box-create__role .body-create__role .action-role{
-    padding: 12px 0;
+    padding: 12px 0 !important;
 }
 .container-create .box-create__event .body-create__event .main-info__news .action__box-content button,
 .container-create .box-create__user .body-create__user .action-user button,
@@ -1432,6 +1541,9 @@
         width: 18px;
         height: 18px;
     }
+    .container-create .box-edit__user{
+        width: 80vw;
+    }
 }
 @media screen and (max-width: 1025px) {
     .container-create .body-right{
@@ -1463,7 +1575,8 @@
     .container-create .box-create__event .body-create__event .content__review-post .review-card .review__time-news::after{
         width: 66%;
     }
-    .container-create .box-create__user{
+    .container-create .box-create__user,
+    .container-create .box-edit__user{
         width: 80vw;
     }
     .container-create .body-left .container-left .primary-page .primary-navbar{
@@ -1664,36 +1777,53 @@
     .container-create .body-left .container-left .container__list-event .all-event .card-event{
         width: 48%;
     }
+    .container-create .box-edit__user{
+        width: 90vw;
+    }
 }
 @media screen and (max-width: 601px) {
     .container-create .box-create__user{
         width: 90vw;
     }
-    .container-create .box-create__user span.title__post-news{
+    .container-create .box-create__user span.title__post-news,
+    .container-create .box-edit__user span.title__post-news{
         padding: 16px;
         font-size: 22px;
     }
-    .container-create .box-create__user .body-create__user{
+    .container-create .box-create__user .body-create__user,
+    .container-create .box-edit__user .body-create__user{
         padding: 16px;
     }
-    .container-create .box-create__user .body-create__user .user-infor .avatar-label .change-avatar{
+    .container-create .box-create__user .body-create__user .user-infor .avatar-label .change-avatar,
+    .container-create .box-edit__user .body-create__user .user-infor .avatar-label .change-avatar{
         width: 100px;
         height: 100px;
     }
-    .container-create .box-create__user .body-create__user .user-infor .avatar-label .change-avatar:hover span{
+    .container-create .box-create__user .body-create__user .user-infor .avatar-label .change-avatar:hover span,
+    .container-create .box-edit__user .body-create__user .user-infor .avatar-label .change-avatar:hover span{
         font-size: 18px;
     }
     .container-create .box-create__user .body-create__user .user-infor .user-label label, 
-    .container-create .box-create__user .body-create__user .user-infor .avatar-label .label-avatar{
+    .container-create .box-create__user .body-create__user .user-infor .avatar-label .label-avatar,
+    .container-create .box-edit__user .body-create__user .user-infor .user-label label,
+    .container-create .box-edit__user .body-create__user .user-infor .avatar-label .label-avatar{
         font-size: 16px;
     }
     .container-create .box-create__user .body-create__user .user-infor .user-label input, 
     .container-create .box-create__user .body-create__user .user-infor .user-label select,
-    .container-create .box-create__user .body-create__user .action-user button.submit-user{
+    .container-create .box-create__user .body-create__user .action-user button.submit-user,
+    .container-create .box-edit__user .body-create__user .user-infor .user-label input,
+    .container-create .box-edit__user .body-create__user .user-infor .user-label select,
+    .container-create .box-edit__user .body-create__user .action-user button.submit-user{
         font-size: 16px;
         height: 40px;
     }
-    .container-create .box-create__user .body-create__user .user-infor .user-label, .container-create .box-create__user .body-create__user .user-infor .avatar-label, .container-create .box-create__role .body-create__role .user-label{
+    .container-create .box-create__user .body-create__user .user-infor .user-label, 
+    .container-create .box-create__user .body-create__user .user-infor .avatar-label, 
+    .container-create .box-create__role .body-create__role .user-label,
+    .container-create .box-edit__user .body-create__user .user-infor .user-label,
+    .container-create .box-edit__user .body-create__user .user-infor .avatar-label,
+    .container-create .box-edit__user .body-create__user .user-label{
         padding: 10px 0;
     }
     .container-create .box-create__event span.title__post-news{
@@ -1829,36 +1959,49 @@
         width: 84%;
         padding: 30px 20px;
     }
-    .container-create .box-create__user{
+    .container-create .box-create__user,
+    .container-create .box-edit__user{
         height: 90vh;
     }
-    .container-create .box-create__user span.title__post-news{
+    .container-create .box-create__user span.title__post-news,
+    .container-create .box-edit__user span.title__post-news{
         font-size: 18px;
         padding: 12px;
         position: fixed;
         top: 0;
         left: 0;
     }
-    .container-create .box-create__user .body-create__user{
+    .container-create .box-create__user .body-create__user,
+    .container-create .box-edit__user .body-create__user{
         margin-top: 70px;
         padding: 0 12px 70px 12px;
         overflow-y: scroll;
     }
-    .container-create .box-create__user .body-create__user .user-infor .user-label, .container-create .box-create__user .body-create__user .user-infor .avatar-label, .container-create .box-create__role .body-create__role .user-label{
+    .container-create .box-create__user .body-create__user .user-infor .user-label, 
+    .container-create .box-create__user .body-create__user .user-infor .avatar-label, 
+    .container-create .box-create__role .body-create__role .user-label,
+    .container-create .box-edit__user .body-create__user .user-infor .user-label,
+    .container-create .box-edit__user .body-create__user .user-infor .avatar-label,
+    .container-create .box-edit__user .body-create__role .user-label{
         width: 100%;
         padding: 6px 0;
     }
     .container-create .box-create__user .body-create__user .user-infor .user-label input, 
     .container-create .box-create__user .body-create__user .user-infor .user-label select, 
-    .container-create .box-create__user .body-create__user .action-user button.submit-user{
+    .container-create .box-create__user .body-create__user .action-user button.submit-user,
+    .container-create .box-edit__user .body-create__user .user-infor .user-label input,
+    .container-create .box-edit__user .body-create__user .user-infor .user-label select,
+    .container-create .box-edit__user .body-create__user .action-user button.submit-user{
         height: 45px;
     }
-    .container-create .box-create__user .body-create__user .action-user{
+    .container-create .box-create__user .body-create__user .action-user,
+    .container-create .box-edit__user .body-create__user .action-user{
         position: fixed;
         left: 0;
         bottom: 0;
     }
-    .container-create .box-create__user .body-create__user .action-user button.submit-user{
+    .container-create .box-create__user .body-create__user .action-user button.submit-user,
+    .container-create .box-edit__user .body-create__user .action-user button.submit-user{
         box-shadow: rgba(0, 0, 0, 0.25) 0px 25px 50px -12px;
     }
     .container-create .box-create__event .body-create__event .content__review-post{

@@ -47,7 +47,7 @@ router.post(
 );
 router.post("/role", checkAdmin, createEventController.addRole);
 router.get("/register", checkLogin, loginController.formRegister);
-router.post("/deleteEvent", checkAdmin, createEventController.deleteEvent);
+router.post("/deleteEvent/:id", checkAdmin, createEventController.deleteEvent);
 router.post(
   "/apiRegister",
   upload.single("avatar"),

@@ -620,6 +620,26 @@
     z-index: 10;
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 }
+.container-edit__event header.edit-event .back-to-admin{
+    position: absolute;
+    left: 8px;
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #252532;
+    padding: 12px;
+}
+.container-edit__event header.edit-event .back-to-admin svg{
+    width: 40px;
+    height: 40px;
+}
+.container-edit__event header.edit-event .back-to-admin svg g path{
+    transition: .3s;
+}
+.container-edit__event header.edit-event .back-to-admin:hover svg g path{
+    fill: $primarycolor;
+}
 .container-edit__event header.edit-event h1{
     letter-spacing: 1.2px;
     word-spacing: 1.2px;
@@ -686,7 +706,7 @@
   }
   
   .container-edit__event header.edit-event .switch-button .switch-outer input[type="checkbox"]:checked + .button .button-toggle {
-    left: 58%;
+    left: 70%;
   }
   
   .container-edit__event header.edit-event .switch-button .switch-outer input[type="checkbox"]:checked + .button .button-indicator {
@@ -715,7 +735,7 @@
     border: 3px solid #ef565f;
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
-    right: 10px;
+    right: 0;
     position: relative;
   }
 .container-edit__event .main-edit__event{
@@ -890,6 +910,7 @@
     outline: none;
     overflow: hidden;
     transition: .3s;
+    text-align: justify;
 }
 .container-edit__event .main-edit__event .content-edit__event textarea.content-text{
     font-size: 20px;
@@ -974,6 +995,17 @@
     }
     .container-detail .suggest-event .card-suggest .card-text{
         bottom: 4px;
+    }
+    //edit event
+    .container-edit__event .main-edit__event .select-category,
+    .container-edit__event .main-edit__event .content-edit__event{
+        width: 100%;
+    }
+    .container-edit__event .main-edit__event .content-edit__event textarea{
+        font-size: 20px;
+    }
+    .container-edit__event .main-edit__event .content-edit__event textarea.content-text{
+        font-size: 16px;
     }
 }
 @media screen and (max-width: 1025px) {
@@ -1115,6 +1147,17 @@
     .container-detail .suggest-event .card-suggest .card-text{
         font-size: 15px;
     }
+    //edit event
+    .container-edit__event .main-edit__event .select-category,
+    .container-edit__event .main-edit__event .content-edit__event{
+        width: 100%;
+    }
+    .container-edit__event .main-edit__event .content-edit__event textarea{
+        font-size: 20px;
+    }
+    .container-edit__event .main-edit__event .content-edit__event textarea.content-text{
+        font-size: 16px;
+    }
 }
 @media screen and (max-width: 769px) {
     .container-event .main-event .news h1, 
@@ -1216,6 +1259,24 @@
         font-size: 18px;
         line-height: 36px;
     }
+    //edit event
+    .container-edit__event .main-edit__event{
+        width: 90%;
+        padding: 30px;
+    }
+    .container-edit__event .main-edit__event h2{
+        font-size: 22px;
+    }
+    .container-edit__event .main-edit__event .content-edit__event label.select-edit__img .title-avatar svg{
+        width: 100px;
+        height: 100px;
+    }
+    .container-edit__event .main-edit__event .content-edit__event label.select-edit__img:hover .title-avatar span{
+        font-size: 16px;
+    }
+    .container-edit__event .main-edit__event .content-edit__event label.select-edit__img{
+        height: 250px;
+    }
 }
 @media screen and (max-width: 601px) {
     .container-event,
@@ -1245,6 +1306,44 @@
     }
     .container-detail .main-detail .body-detail .img__detail-title{
         height: 400px;
+    }
+    //edit event
+    .container-edit__event header.edit-event{
+        flex-direction: column;
+        padding: 20px 0;
+    }
+    .container-edit__event header.edit-event h1{
+        margin-bottom: 20px;
+        font-size: 28px;
+    }
+    .container-edit__event header.edit-event .switch-button{
+        position: unset;
+        height: 35px;
+    }
+    .container-edit__event header.edit-event .switch-button .switch-outer{
+        width: 85px;
+    }
+    .container-edit__event header.edit-event .switch-button .switch-outer .button-indicator {
+        width: 18px;
+        height: 18px;
+    }
+    .switch-button .switch-outer .button-toggle{
+        width: 20px;
+        height: 20px;
+    }
+    .container-edit__event .main-edit__event .content-edit__event label.select-edit__img{
+        padding: 0 20px;
+        height: 200px;
+    }
+    .container-edit__event .main-edit__event .content-edit__event label.select-edit__img .title-avatar{
+        width: calc(100% - 40px);
+    }
+    .container-edit__event .main-edit__event .content-edit__event textarea{
+        margin: 0 20px;
+        font-size: 16px;
+    }
+    .container-edit__event .main-edit__event .content-edit__event textarea.content-text{
+        font-size: 14px;
     }
 }
 @media screen and (max-width: 415px) {
@@ -1348,6 +1447,48 @@
     .container-detail .suggest-event .card-suggest .card-text{
         font-size: 14px;
     }
+    //edit event
+    .container-edit__event .main-edit__event{
+        width: 95%;
+        padding: 20px;
+    }
+    .container-edit__event header.edit-event .back-to-admin{
+        padding: 6px;
+    }
+    .container-edit__event header.edit-event .back-to-admin svg{
+        width: 30px;
+        height: 30px;
+    }
+    .container-edit__event header.edit-event h1{
+        font-size: 24px;
+        margin-bottom: 14px;
+    }
+    .container-edit__event header.edit-event .switch-button .switch-outer{
+        width: 75px;
+    }
+    .container-edit__event .main-edit__event h2{
+        font-size: 18px;
+    }
+    .container-edit__event .main-edit__event .content-edit__event label.select-edit__img{
+        padding: unset;
+    }
+    .container-edit__event .main-edit__event .content-edit__event label.select-edit__img .title-avatar{
+        width: 100%;
+    }
+    .container-edit__event .main-edit__event .content-edit__event label.select-edit__img .title-avatar svg{
+        width: 80px;
+        height: 80px;
+    }
+    .container-edit__event .main-edit__event .content-edit__event label.select-edit__img:hover .title-avatar span{
+        font-size: 14px;
+    }
+    .container-edit__event .main-edit__event .content-edit__event textarea{
+        margin: unset;
+        font-size: 14px;
+    }
+    .container-edit__event .main-edit__event .content-edit__event textarea.content-text{
+        font-size: 12px;
+    }
 }
 @media screen and (max-width: 321px) {
     .container-event .main-event .all-news .latest-news{
@@ -1437,5 +1578,23 @@
     }
     .container-detail .suggest-event .card-suggest .card-text{
         font-size: 12px;
+    }
+    //edit event
+    .container-edit__event header.edit-event h1{
+        font-size: 18px;
+    }
+    .container-edit__event header.edit-event .switch-button {
+        height: 28px;
+    }
+    .container-edit__event header.edit-event .switch-button .switch-outer{
+        width: 60px;
+    }
+    .switch-button .switch-outer .button-toggle{
+        width: 16px;
+        height: 16px;
+    }
+    .container-edit__event header.edit-event .switch-button .switch-outer .button-indicator{
+        height: 12px;
+        width: 12px;
     }
 }

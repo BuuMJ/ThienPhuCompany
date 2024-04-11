@@ -181,7 +181,7 @@
   100% {
     opacity: 1;
     border: 3px solid #60d480;
-    left: -68%;
+    left: -70%;
   }
 }
 
@@ -197,6 +197,16 @@
   100% {
     opacity: 1;
     border: 3px solid #60d480;
-    left: -68%;
+    left: -70%;
+  }
+}
+@keyframes throw {
+  from {
+    transform: translate(-400%, -700%);
+    opacity: 0;
+  }
+  to {
+    transform: translate(0%, 0%);
+    opacity: 1;
   }
 }
