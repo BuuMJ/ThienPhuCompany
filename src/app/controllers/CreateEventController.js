@@ -13,21 +13,11 @@ class CreateEventController {
     const user = req.user;
     const role = await RoleModel.find();
     const roles = mutipleMongooseToObject(role);
-    const listUser = await UserModel.find().sort({ createdAt: -1 });
-    const listUsers = mutipleMongooseToObject(listUser);
+    // const listUser = await UserModel.find().sort({ createdAt: -1 });
     // const listEvent = await EventModel.find().sort({ createdAt: -1 });
     const countUser = await UserModel.countDocuments();
     const countEvent = await EventModel.countDocuments();
-    const userWithRoles = listUsers.map((user) => {
-      const userRoles = roles.filter((role) => role.userId === user.id);
-      const remainingRoles = userRoles.filter(
-        (userRole) => userRole.role !== user.role
-      );
-      return {
-        ...user,
-        roles: remainingRoles,
-      };
-    });
+
     const PAGE_SIZE = 10;
     var pageOfEvent = req.query.pageOfEvent;
     if (pageOfEvent) {
@@ -72,6 +62,17 @@ class CreateEventController {
         .skip(skip)
         .limit(PAGE_SIZE)
         .sort({ createdAt: -1 });
+      paginationOfUser = mutipleMongooseToObject(paginationOfUser);
+      var listUser = paginationOfUser.map((user) => {
+        const userRoles = roles.filter((role) => role.userId === user.id);
+        const remainingRoles = userRoles.filter(
+          (userRole) => userRole.role !== user.role
+        );
+        return {
+          ...user,
+          roles: remainingRoles,
+        };
+      });
     } else {
       const count = await UserModel.countDocuments();
       const total = Math.ceil(count / PAGE_SIZE);
@@ -86,23 +87,32 @@ class CreateEventController {
         .skip(skip)
         .limit(PAGE_SIZE)
         .sort({ createdAt: -1 });
+      paginationOfUser = mutipleMongooseToObject(paginationOfUser);
+      var listUser = paginationOfUser.map((user) => {
+        const userRoles = roles.filter((role) => role.userId === user.id);
+        const remainingRoles = userRoles.filter(
+          (userRole) => userRole.role !== user.role
+        );
+        return {
+          ...user,
+          roles: remainingRoles,
+        };
+      });
     }
-    console.log("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa ");
-
-    console.log(pagesOfUser);
-    console.log(userWithRoles[2].role);
-    console.log("bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb ");
+    // console.log("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa ");
+    // console.log(listUser[1].roles);
+    // console.log("bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb ");
     res.render("createEvent", {
       title: "Quản Trị Viên",
       user: user,
       countUser: countUser,
       countEvent: countEvent,
       roles: roles,
-      listUser: userWithRoles,
+      listUser: listUser,
       listEvent: mutipleMongooseToObject(listEvent),
       pagesOfEvent,
       pagesOfUser,
-      paginationOfUser: mutipleMongooseToObject(paginationOfUser),
+      // paginationOfUser: mutipleMongooseToObject(paginationOfUser),
     });
   }
 
