@@ -4393,17 +4393,31 @@
   .container-create .body-left .container-left .container__list-event .all-event .card-event .edit-event button.edit-button {
     font-size: 14px;
     padding: 8px 10px; }
+  .container-create .body-left .container-left .container__list-event .all-event .card-event .edit-event .delete-button {
+    padding: 8px 10px; }
   .container-create .body-left .container-left .container__list-event .all-event .card-event .edit-event button.edit-button svg {
     width: 18px;
     height: 18px; }
-  .container-create .box-edit__user {
-    width: 80vw; } }
+  .container-create .box-edit__user,
+  .container-create .box-create__user {
+    width: 80vw;
+    height: 98vh; }
+  .container-create .box-edit__user .body-create__user,
+  .container-create .box-create__user .body-create__user {
+    overflow-y: scroll; }
+  .container-create .body-left .container-left .container__list-user .all-user .card-user .action-user button.view-detail {
+    width: 100%;
+    font-size: 12px;
+    padding: 12px 0; } }
 
 @media screen and (max-width: 1025px) {
   .container-create .body-right {
     width: 25%; }
   .container-create .body-left {
     width: 75%; }
+  .toast-update,
+  .delete-event {
+    width: 70vw; }
   .container-create .box-create__event {
     width: 95vw; }
   .container-create .box-create__event .body-create__event {
@@ -4513,7 +4527,10 @@
     font-size: 14px; }
   .container-create .body-left .container-left .container__list-event .all-event .card-event .edit-event button.edit-button svg {
     width: 20px;
-    height: 20px; } }
+    height: 20px; }
+  .container-create .body-left .container-left .container__list-user .all-user .card-user .action-user button.view-detail {
+    font-size: 14px;
+    padding: 10px; } }
 
 @media screen and (max-width: 769px) {
   .container-create .body-right {
@@ -4522,6 +4539,9 @@
     width: 86%; }
   .container-create .box-create__event span.title__post-news {
     padding: 12px; }
+  .toast-update,
+  .delete-event {
+    width: 90vw; }
   .container-create .box-create__event .body-create__event .content__post-news, .container-create .box-create__event .body-create__event .content__review-post {
     padding: 0 12px; }
   .container-create .box-create__event .body-create__event .content__post-news .title-img .img-view .icon-title, .container-create .box-create__event .body-create__event .content__post-news .main-info__news .first__img-content .content-img .img-view .icon-title {
@@ -4575,6 +4595,9 @@
     width: 90vw; } }
 
 @media screen and (max-width: 601px) {
+  .toast-update,
+  .delete-event {
+    width: 96vw; }
   .container-create .box-create__user {
     width: 90vw; }
   .container-create .box-create__user span.title__post-news,
@@ -4703,6 +4726,20 @@
     padding-left: 12px; } }
 
 @media screen and (max-width: 415px) {
+  .toast-update h1,
+  .delete-event h2 {
+    font-size: 26px; }
+  .toast-update p,
+  .delete-event p,
+  .delete-event .confirm-delete {
+    font-size: 14px;
+    line-height: 24px;
+    padding: 12px 0 20px 0; }
+  .delete-event .confirm-delete label.check-delete,
+  .delete-event .action-delete button {
+    font-size: 14px; }
+  .toast-update .close-notification {
+    font-size: 14px; }
   .container-create .body-right {
     width: 16%; }
   .container-create .body-left {
@@ -4814,6 +4851,16 @@
     font-size: 18px; } }
 
 @media screen and (max-width: 321px) {
+  .delete-event h2 {
+    font-size: 22px; }
+  .delete-event p,
+  .delete-event .confirm-delete {
+    font-size: 12px;
+    line-height: 24px;
+    padding: 12px 0 20px 0; }
+  .delete-event .confirm-delete label.check-delete,
+  .delete-event .action-delete button {
+    font-size: 12px; }
   .container-create .box-create__event .body-create__event .main-info__news .select-category .choose-category {
     width: 100%; }
   .container-create .box-create__event .body-create__event .main-info__news .action__box-content button.add-more:hover span.note__add-more {
@@ -7330,9 +7377,8 @@ input:-webkit-autofill:active {
   height: 100vh;
   background-color: rgba(0, 0, 0, 0.95);
   position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  top: 0;
+  left: 0;
   z-index: 100; }
 
 .spinner {
@@ -7378,4 +7424,15 @@ input:-webkit-autofill:active {
   height: 100%;
   padding-left: 6px;
   color: #bc9f6e;
-  animation: cycle-words 5s infinite; }
+  animation: cycle-words 5s infinite;
+  animation-delay: .8s; }
+
+@media screen and (max-width: 415px) {
+  .loader h4,
+  .loader .word {
+    font-size: 20px; } }
+
+@media screen and (max-width: 321px) {
+  .loader h4,
+  .loader .word {
+    font-size: 16px; } }
