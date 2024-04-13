@@ -970,7 +970,11 @@
   .container-edit__event .main-edit__event .content-edit__event textarea {
     font-size: 20px; }
   .container-edit__event .main-edit__event .content-edit__event textarea.content-text {
-    font-size: 16px; } }
+    font-size: 16px; }
+  .container-event .main-event .all-news .remaining-news .card-remaining__news .time-news::after {
+    width: 66%; }
+  .container-event .main-event .all-news .latest-news .card-latest__news h1 {
+    font-size: 26px; } }
 
 @media screen and (max-width: 1025px) {
   .container-event header {
@@ -7452,6 +7456,7 @@ input:-webkit-autofill:active {
 
 .pagination {
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
   align-items: center;
   width: 100%;
@@ -7465,7 +7470,8 @@ input:-webkit-autofill:active {
   margin-right: 8px;
   border-radius: 5px;
   font-weight: 600;
-  transition: .3s; }
+  transition: .3s;
+  border: 1px solid #acaeb0; }
 
 .pagination a:hover {
   background-color: #bc9f6e;
@@ -7474,7 +7480,9 @@ input:-webkit-autofill:active {
 .pagination a.active {
   color: white;
   background-color: #bc9f6e;
-  cursor: not-allowed; }
+  border: 1px solid white;
+  cursor: not-allowed;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px; }
 
 @media screen and (max-width: 415px) {
   .loader h4,

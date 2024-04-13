@@ -31,7 +31,7 @@
                     <li><a class="link" target="_blank" data-href="contact" href="/contact"><span class="material-symbols-outlined">info</span> <span class="name-page">Liên Hệ</span></a></li>
                 </ul>
             </div>
-            <div class="container__list-user">
+            <div id="listuser" class="container__list-user">
                 <h1 class="title-user">
                     <svg fill="#bc9f6e" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 489.548 489.548" xml:space="preserve" stroke="#bc9f6e">
                     <g id="SVGRepo_bgCarrier" stroke-width="0"/>
@@ -168,8 +168,13 @@
                     </div>
                     {{/each}}
                 </div>
+                <div class="pagination">
+                  {{#each pagesOfUser}}
+                  <a href="/admin?pageOfUser={{this}}#listuser" data-page-user="{{this}}">{{this}}</a>
+                  {{/each}}
+                </div>
             </div>
-            <div class="container__list-event">
+            <div id="listevent" class="container__list-event">
                 <h1 class="title-event">
                     <svg viewBox="0 0 1024 1024" fill="#bc9f6e" class="icon" version="1.1" xmlns="http://www.w3.org/2000/svg">
                     <g id="SVGRepo_bgCarrier" stroke-width="0"/>
@@ -180,7 +185,7 @@
                     </svg>
                     Danh Sách Tin Tức ({{countEvent}})
                 </h1>
-                <div id="listevent" class="all-event">
+                <div class="all-event">
                     {{#each listEvent}}
                     <a href="/event/{{this._id}}" target="_blank" class="card-event" data-edit-event="{{this._id}}">
                         <div class="status-event">
@@ -1303,11 +1308,12 @@
             hideBox(formDeleteEvent, overlay, body);
         })
     })
-    // pagination
-    const getPaginationEvent = document.querySelectorAll('.pagination a');
-    const paginationContainerEvent = document.querySelector('.pagination');
+    // pagination event
+    const getPaginationEvent = document.querySelectorAll('.container__list-event .pagination a');
+    const paginationContainerEvent = document.querySelector('.container__list-event .pagination');
     if (getPaginationEvent.length > 0) {
         paginationContainerEvent.style.display = 'flex';
+        getPaginationEvent[0].classList.add('active');
     } else {
         paginationContainerEvent.style.display = 'none';
     }
@@ -1321,10 +1327,32 @@
         }
     });
     });
+    //pagination user
+    const getPaginationUser = document.querySelectorAll('.container__list-user .pagination a');
+    const paginationContainerUser = document.querySelector('.container__list-user .pagination');
+    if (getPaginationUser.length > 0) {
+        paginationContainerUser.style.display = 'flex';
+        getPaginationUser[0].classList.add('active');
+    } else {
+        paginationContainerUser.style.display = 'none';
+    }
+    getPaginationUser.forEach(function(pageLinkUser) {
+    pageLinkUser.addEventListener('click', function(event) {
+        if (pageLinkUser.classList.contains('active')) {
+            event.preventDefault();
+        } else {
+            const pageUser = pageLinkUser.getAttribute('data-page-user');
+            localStorage.setItem('currentPageUser', pageUser);
+        }
+    });
+    });
+    
     document.addEventListener('DOMContentLoaded', () => {
     const urlParams = new URLSearchParams(window.location.search);
     const pageFromURL = urlParams.get('pageOfEvent');
+    const pageFromURLUser = urlParams.get('pageOfUser');
     const currentPageEvent = pageFromURL || localStorage.getItem('currentPageEvent');
+    const currentPageUser = pageFromURLUser || localStorage.getItem('currentPageUser');
     if (currentPageEvent !== null) {
         getPaginationEvent.forEach(function(pageLinkEvent) {
             const pageEvent = pageLinkEvent.getAttribute('data-page-event');
@@ -1332,6 +1360,16 @@
                 pageLinkEvent.classList.add('active');
             } else {
                 pageLinkEvent.classList.remove('active');
+            }
+        });
+    }
+    if (currentPageUser !== null) {
+        getPaginationUser.forEach(function(pageLinkUser) {
+            const pageUser = pageLinkUser.getAttribute('data-page-user');
+            if (pageUser == currentPageUser) {
+                pageLinkUser.classList.add('active');
+            } else {
+                pageLinkUser.classList.remove('active');
             }
         });
     }

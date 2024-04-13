@@ -43,7 +43,7 @@
                     </a>
                 {{/each}}
             </div>
-            <div class="remaining-news">
+            <div id="eventRemaining" class="remaining-news">
                 {{#each remainingNews}}
                     <a href="/event/{{this._id}}" class="card-remaining__news">
                         {{#if this.image1}}
@@ -59,48 +59,67 @@
                         <span class="time-news">{{moment this.createdAt format="DD/MM/YYYY"}}</span>
                     </a>
                 {{/each}}
+                <div class="pagination">
+                  {{#each pagesOfRemain}}
+                  <a href="/event?pageOfRemain={{this}}#eventRemaining" data-page-remaining="{{this}}">{{this}}</a>
+                  {{/each}}
+                </div>
             </div>
         </div>
-        <div class="news">
-            <h1>
-                <img src="/img/news-title.png" alt="">
-                Tin Tức
-            </h1>
-            {{#each listNew}}
-            <a href="/event/{{this._id}}" class="card-news">
-                {{#if this.image1}}
-                    <img src="/{{this.image1}}" alt="" class="header">
-                {{else}}
-                    <img src="/{{this.image2}}" alt="" class="header">
-                {{/if}}
-                <div class="content-news">
-                    <span class="time-news">{{moment this.createdAt format="DD/MM/YYYY"}}</span>
-                    <h2>{{this.title}}</h2>
-                    <p class="desc" data-change-text="{{this.text1}}">{{this.text1}}</p>
+        {{#if listNew}}
+            <div id="new" class="news">
+                <h1>
+                    <img src="/img/news-title.png" alt="">
+                    Tin Tức
+                </h1>
+                {{#each listNew}}
+                <a href="/event/{{this._id}}" class="card-news">
+                    {{#if this.image1}}
+                        <img src="/{{this.image1}}" alt="" class="header">
+                    {{else}}
+                        <img src="/{{this.image2}}" alt="" class="header">
+                    {{/if}}
+                    <div class="content-news">
+                        <span class="time-news">{{moment this.createdAt format="DD/MM/YYYY"}}</span>
+                        <h2>{{this.title}}</h2>
+                        <p class="desc" data-change-text="{{this.text1}}">{{this.text1}}</p>
+                    </div>
+                </a>
+                {{/each}}
+                <div class="pagination">
+                  {{#each pagesOfNew}}
+                  <a href="/event?pageOfNew={{this}}#new" data-page-new="{{this}}">{{this}}</a>
+                  {{/each}}
                 </div>
-            </a>
-            {{/each}}
-        </div>
-        <div class="event">
-            <h1>
-                <img src="/img/event-title.png" alt="">
-                Sự Kiện
-            </h1>
-            {{#each listEvent}}
-            <a href="/event/{{this._id}}" class="card-news">
-                {{#if this.image1}}
-                    <img src="/{{this.image1}}" alt="" class="header">
-                {{else}}
-                    <img src="/{{this.image2}}" alt="" class="header">
-                {{/if}}
-                <div class="content-news">
-                    <span class="time-news">{{moment this.createdAt format="DD/MM/YYYY"}}</span>
-                    <h2>{{this.title}}</h2>
-                    <p class="desc" data-change-text="{{this.text1}}">{{this.text1}}</p>
+            </div>
+        {{/if}}
+        {{#if listEvent}}
+            <div id="event" class="event">
+                <h1>
+                    <img src="/img/event-title.png" alt="">
+                    Sự Kiện
+                </h1>
+                {{#each listEvent}}
+                <a href="/event/{{this._id}}" class="card-news">
+                    {{#if this.image1}}
+                        <img src="/{{this.image1}}" alt="" class="header">
+                    {{else}}
+                        <img src="/{{this.image2}}" alt="" class="header">
+                    {{/if}}
+                    <div class="content-news">
+                        <span class="time-news">{{moment this.createdAt format="DD/MM/YYYY"}}</span>
+                        <h2>{{this.title}}</h2>
+                        <p class="desc" data-change-text="{{this.text1}}">{{this.text1}}</p>
+                    </div>
+                </a>
+                {{/each}}
+                <div class="pagination">
+                  {{#each pagesOfEvent}}
+                  <a href="/event?pageOfEvent={{this}}#event" data-page-event="{{this}}">{{this}}</a>
+                  {{/each}}
                 </div>
-            </a>
-            {{/each}}
-        </div>
+            </div>
+        {{/if}}
         <div class="support">
 
         </div>
@@ -147,4 +166,100 @@
             labelRemainingNews.textContent = 'Sự Kiện';
         }
     })
+    // pagination event remaining
+    const getPagination = document.querySelectorAll('.remaining-news .pagination a');
+    const paginationContainer = document.querySelector('.remaining-news .pagination');
+    if (getPagination.length > 1) {
+        paginationContainer.style.display = 'flex';
+        getPagination[0].classList.add('active')
+    } else {
+        paginationContainer.style.display = 'none';
+    }
+    getPagination.forEach(function(pageLink) {
+        pageLink.addEventListener('click', function(event) {
+            if (pageLink.classList.contains('active')) {
+                event.preventDefault();
+            } else {
+                const page = pageLink.getAttribute('data-page-remaining');
+                localStorage.setItem('currentPageRemaining', page);
+            }
+        });
+    });
+    // pagination list new
+    const getPaginationNews = document.querySelectorAll('.news .pagination a');
+    const paginationContainerNews = document.querySelector('.news .pagination');
+    if (getPaginationNews.length > 1) {
+        paginationContainerNews.style.display = 'flex';
+        getPaginationNews[0].classList.add('active')
+    } else {
+        paginationContainerNews.style.display = 'none';
+    }
+    getPaginationNews.forEach(function(pageLinkNews) {
+        pageLinkNews.addEventListener('click', function(event) {
+            if (pageLinkNews.classList.contains('active')) {
+                event.preventDefault();
+            } else {
+                const pageNews = pageLinkNews.getAttribute('data-page-news');
+                localStorage.setItem('currentPageNews', pageNews);
+            }
+        });
+    });
+    // pagination list event
+    const getPaginationEvent = document.querySelectorAll('.event .pagination a');
+    const paginationContainerEvent = document.querySelector('.event .pagination');
+    if (getPaginationEvent.length > 1) {
+        paginationContainerEvent.style.display = 'flex';
+        getPaginationEvent[0].classList.add('active')
+    } else {
+        paginationContainerEvent.style.display = 'none';
+    }
+    getPaginationEvent.forEach(function(pageLinkEvent) {
+        pageLinkEvent.addEventListener('click', function(event) {
+            if (pageLinkEvent.classList.contains('active')) {
+                event.preventDefault();
+            } else {
+                const pageEvent = pageLinkEvent.getAttribute('data-page-Event');
+                localStorage.setItem('currentPageEvent', pageEvent);
+            }
+        });
+    });
+    document.addEventListener('DOMContentLoaded', () => {
+        const urlParams = new URLSearchParams(window.location.search);
+        const pageFromURL = urlParams.get('pageOfRemain');
+        const pageFromUrlNews = urlParams.get('pageOfNew');
+        const pageFromUrlEvent = urlParams.get('pageOfEvent');
+        const currentPage = pageFromURL || localStorage.getItem('currentPageRemaining');
+        const currentPageNews = pageFromURLNews || localStorage.getItem('currentPageNews');
+        const currentPageEvent = pageFromURLEvent || localStorage.getItem('currentPageEvent');
+        if (currentPage !== null) {
+            getPagination.forEach(function(pageLink) {
+            var page = pageLink.getAttribute('data-page-remaining');
+            if (page == currentPage) {
+                pageLink.classList.add('active');
+            } else {
+                pageLink.classList.remove('active');
+            }
+            });
+        }
+        if (currentPageNews !== null) {
+            getPaginationNews.forEach(function(pageLinkNews) {
+            const pageNews = pageLinkNews.getAttribute('data-page-news');
+            if (pageNews == currentPageNews) {
+                pageLinkNews.classList.add('active');
+            } else {
+                pageLinkNews.classList.remove('active');
+            }
+            });
+        }
+        if (currentPageEvent !== null) {
+            getPaginationEvent.forEach(function(pageLinkEvent) {
+            const pageEvent = pageLinkEvent.getAttribute('data-page-event');
+            if (pageEvent == currentPageEvent) {
+                pageLinkEvent.classList.add('active');
+            } else {
+                pageLinkEvent.classList.remove('active');
+            }
+            });
+        }
+    });
 </script>

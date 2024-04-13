@@ -1007,6 +1007,12 @@
     .container-edit__event .main-edit__event .content-edit__event textarea.content-text{
         font-size: 16px;
     }
+    .container-event .main-event .all-news .remaining-news .card-remaining__news .time-news::after{
+        width: 66%;
+    }
+    .container-event .main-event .all-news .latest-news .card-latest__news h1{
+        font-size: 26px;
+    }
 }
 @media screen and (max-width: 1025px) {
     .container-event header{
