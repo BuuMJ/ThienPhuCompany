@@ -1,8 +1,15 @@
 <div class="container-edit__event">
     <div class="overlay"></div>
     <header class="edit-event">
+        <a href="/admin" class="back-to-admin" title="quay về">
+            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <g id="SVGRepo_bgCarrier" stroke-width="0"/>
+            <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"/>
+            <g id="SVGRepo_iconCarrier"> <path d="M4 10L3.29289 10.7071L2.58579 10L3.29289 9.29289L4 10ZM21 18C21 18.5523 20.5523 19 20 19C19.4477 19 19 18.5523 19 18L21 18ZM8.29289 15.7071L3.29289 10.7071L4.70711 9.29289L9.70711 14.2929L8.29289 15.7071ZM3.29289 9.29289L8.29289 4.29289L9.70711 5.70711L4.70711 10.7071L3.29289 9.29289ZM4 9L14 9L14 11L4 11L4 9ZM21 16L21 18L19 18L19 16L21 16ZM14 9C17.866 9 21 12.134 21 16L19 16C19 13.2386 16.7614 11 14 11L14 9Z" fill="#252532"/> </g>
+            </svg>
+        </a>
         <h1>Chỉnh Sửa Bài Viết</h1>
-        <label class="switch-button" for="switch">
+        <label class="switch-button" for="switch" title="trạng thái bài viết">
             <div class="switch-outer">
                 <input id="switch" type="checkbox">
                 <div class="button">
@@ -139,7 +146,7 @@
                     <textarea class="content-text" name="text5" type="text">{{event.text5}}</textarea>
                 {{/if}}
                 <div class="save-changes">
-                    <button type="button">
+                    <button type="submit">
                         Lưu Thay Đổi
                         <span></span>
                     </button>
@@ -184,8 +191,14 @@
     });
     const formEditEvent = document.querySelector('.main-edit__event');
     const submitFormEdit = document.querySelector('.save-changes button');
-    submitFormEdit.addEventListener('click',()=>{
-        formEditEvent.submit();
-        localStorage.setItem('edit-event', 'success')
+    formEditEvent.addEventListener('submit', ()=>{
+        localStorage.setItem('edit-event', 'success');
+    });
+    window.addEventListener('load',()=>{
+        const checkSubmit = localStorage.getItem('edit-event');
+        if (checkSubmit === 'success') {
+            const url = '/admin';
+            window.location.href = url
+        }
     })
 </script>
