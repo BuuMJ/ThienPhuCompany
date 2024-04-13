@@ -4408,7 +4408,30 @@
   .container-create .body-left .container-left .container__list-user .all-user .card-user .action-user button.view-detail {
     width: 100%;
     font-size: 12px;
-    padding: 12px 0; } }
+    padding: 12px 0; }
+  .container-create .body-left .container-left .container__list-event .all-event .card-event {
+    width: 32%; }
+  .container-create .body-left .container-left .container__list-event .all-event .card-event .status-event .circle {
+    width: 10px;
+    height: 10px; }
+  .container-create .body-left .container-left .container__list-event .all-event .card-event .status-event .status-info {
+    font-size: 14px; }
+  .container-create .body-left .container-left .container__list-event .all-event .card-event .infor-event img {
+    height: 180px; }
+  .container-create .body-left .container-left .container__list-event .all-event .card-event .infor-event h4 {
+    font-size: 15px;
+    line-height: 25px; }
+  .container-create .body-left .container-left .container__list-event .all-event .card-event .infor-event p {
+    font-size: 13px;
+    padding: 8px 0; }
+  .container-create .body-left .container-left .container__list-event .all-event .card-event .edit-event button.edit-button {
+    font-size: 14px; }
+  .container-create .body-left .container-left .container__list-event .all-event .card-event .edit-event button.edit-button svg {
+    width: 20px;
+    height: 20px; }
+  .container-create .body-left .container-left .container__list-user .all-user .card-user .action-user button.view-detail {
+    font-size: 14px;
+    padding: 10px; } }
 
 @media screen and (max-width: 1025px) {
   .container-create .body-right {
@@ -7426,6 +7449,32 @@ input:-webkit-autofill:active {
   color: #bc9f6e;
   animation: cycle-words 5s infinite;
   animation-delay: .8s; }
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 12px 20px; }
+
+.pagination a {
+  text-decoration: none;
+  background-color: white;
+  color: #acaeb0;
+  padding: 10px 20px;
+  margin-right: 8px;
+  border-radius: 5px;
+  font-weight: 600;
+  transition: .3s; }
+
+.pagination a:hover {
+  background-color: #bc9f6e;
+  color: white; }
+
+.pagination a.active {
+  color: white;
+  background-color: #bc9f6e;
+  cursor: not-allowed; }
 
 @media screen and (max-width: 415px) {
   .loader h4,

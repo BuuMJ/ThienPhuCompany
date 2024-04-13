@@ -77,7 +77,7 @@
                         </div>
                         <div class="action-user infor-user">
                             <button type="button" class="view-detail">
-                                Xem Chi Tiết >
+                                Xem Chi Tiết
                             </button>
                         </div>
                         <form action="/admin/editUser/{{this._id}}" class="box-edit__user" method="POST" enctype="multipart/form-data">
@@ -180,7 +180,7 @@
                     </svg>
                     Danh Sách Tin Tức ({{countEvent}})
                 </h1>
-                <div class="all-event">
+                <div id="listevent" class="all-event">
                     {{#each listEvent}}
                     <a href="/event/{{this._id}}" target="_blank" class="card-event" data-edit-event="{{this._id}}">
                         <div class="status-event">
@@ -252,6 +252,11 @@
                         </div>
                     </a>
                     {{/each}}
+                </div>
+                <div class="pagination">
+                  {{#each pagesOfEvent}}
+                  <a href="/admin?pageOfEvent={{this}}#listevent" data-page-event="{{this}}">{{this}}</a>
+                  {{/each}}
                 </div>
             </div>
         </div>
@@ -1298,5 +1303,37 @@
             hideBox(formDeleteEvent, overlay, body);
         })
     })
-    
+    // pagination
+    const getPaginationEvent = document.querySelectorAll('.pagination a');
+    const paginationContainerEvent = document.querySelector('.pagination');
+    if (getPaginationEvent.length > 0) {
+        paginationContainerEvent.style.display = 'flex';
+    } else {
+        paginationContainerEvent.style.display = 'none';
+    }
+    getPaginationEvent.forEach(function(pageLinkEvent) {
+    pageLinkEvent.addEventListener('click', function(event) {
+        if (pageLinkEvent.classList.contains('active')) {
+            event.preventDefault();
+        } else {
+            const pageEvent = pageLinkEvent.getAttribute('data-page-event');
+            localStorage.setItem('currentPageEvent', pageEvent);
+        }
+    });
+    });
+    document.addEventListener('DOMContentLoaded', () => {
+    const urlParams = new URLSearchParams(window.location.search);
+    const pageFromURL = urlParams.get('pageOfEvent');
+    const currentPageEvent = pageFromURL || localStorage.getItem('currentPageEvent');
+    if (currentPageEvent !== null) {
+        getPaginationEvent.forEach(function(pageLinkEvent) {
+            const pageEvent = pageLinkEvent.getAttribute('data-page-event');
+            if (pageEvent == currentPageEvent) {
+                pageLinkEvent.classList.add('active');
+            } else {
+                pageLinkEvent.classList.remove('active');
+            }
+        });
+    }
+    });
 </script>

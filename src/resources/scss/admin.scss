@@ -1558,6 +1558,38 @@
         font-size: 12px;
         padding: 12px 0;
     }
+    .container-create .body-left .container-left .container__list-event .all-event .card-event{
+        width: 32%;
+    }
+    .container-create .body-left .container-left .container__list-event .all-event .card-event .status-event .circle{
+        width: 10px;
+        height: 10px;
+    }
+    .container-create .body-left .container-left .container__list-event .all-event .card-event .status-event .status-info{
+        font-size: 14px;
+    }
+    .container-create .body-left .container-left .container__list-event .all-event .card-event .infor-event img{
+        height: 180px;
+    }
+    .container-create .body-left .container-left .container__list-event .all-event .card-event .infor-event h4{
+        font-size: 15px;
+        line-height: 25px;
+    }
+    .container-create .body-left .container-left .container__list-event .all-event .card-event .infor-event p{
+        font-size: 13px;
+        padding: 8px 0;
+    }
+    .container-create .body-left .container-left .container__list-event .all-event .card-event .edit-event button.edit-button{
+        font-size: 14px;
+    }
+    .container-create .body-left .container-left .container__list-event .all-event .card-event .edit-event button.edit-button svg{
+        width: 20px;
+        height: 20px;
+    }
+    .container-create .body-left .container-left .container__list-user .all-user .card-user .action-user button.view-detail{
+        font-size: 14px;
+        padding: 10px;
+    }
 }
 @media screen and (max-width: 1025px) {
     .container-create .body-right{

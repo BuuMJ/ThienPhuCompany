@@ -96,6 +96,32 @@ input:-webkit-autofill:active{
     animation: cycle-words 5s infinite;
     animation-delay: .8s;
   }
+  .pagination{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 12px 20px;
+  }
+  .pagination a{
+    text-decoration: none;
+    background-color: white;
+    color: #acaeb0;
+    padding: 10px 20px;
+    margin-right: 8px;
+    border-radius: 5px;
+    font-weight: 600;
+    transition: .3s;
+  }
+  .pagination a:hover{
+    background-color: $primarycolor;
+    color: white;
+  }
+  .pagination a.active{
+    color: white;
+    background-color: $primarycolor;
+    cursor: not-allowed;
+  }
   @media screen and (max-width: 415px) {
     .loader h4,
     .loader .word{
