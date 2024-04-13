@@ -15,7 +15,7 @@ class CreateEventController {
     const roles = mutipleMongooseToObject(role);
     const listUser = await UserModel.find().sort({ createdAt: -1 });
     const listUsers = mutipleMongooseToObject(listUser);
-    const listEvent = await EventModel.find().sort({ createdAt: -1 });
+    // const listEvent = await EventModel.find().sort({ createdAt: -1 });
     const countUser = await UserModel.countDocuments();
     const countEvent = await EventModel.countDocuments();
     const userWithRoles = listUsers.map((user) => {
@@ -28,6 +28,70 @@ class CreateEventController {
         roles: remainingRoles,
       };
     });
+    const PAGE_SIZE = 10;
+    var pageOfEvent = req.query.pageOfEvent;
+    if (pageOfEvent) {
+      const count = await EventModel.countDocuments();
+      const total = Math.ceil(count / PAGE_SIZE);
+      var pagesOfEvent = [];
+      for (let i = 1; i <= total; i++) {
+        pagesOfEvent.push(i);
+      }
+      pageOfEvent = parseInt(pageOfEvent);
+      const skip = (pageOfEvent - 1) * 10;
+      var listEvent = await EventModel.find()
+        .skip(skip)
+        .limit(PAGE_SIZE)
+        .sort({ createdAt: -1 });
+    } else {
+      const count = await EventModel.countDocuments();
+      const total = Math.ceil(count / PAGE_SIZE);
+      var pagesOfEvent = [];
+      for (let i = 1; i <= total; i++) {
+        pagesOfEvent.push(i);
+      }
+      pageOfEvent = 1;
+      const skip = (pageOfEvent - 1) * 10;
+      var listEvent = await EventModel.find()
+        .skip(skip)
+        .limit(PAGE_SIZE)
+        .sort({ createdAt: -1 });
+    }
+
+    var pageOfUser = req.query.pageOfUser;
+    if (pageOfUser) {
+      const count = await UserModel.countDocuments();
+      const total = Math.ceil(count / PAGE_SIZE);
+      var pagesOfUser = [];
+      for (let i = 1; i <= total; i++) {
+        pagesOfUser.push(i);
+      }
+      pageOfUser = parseInt(pageOfUser);
+      const skip = (pageOfUser - 1) * 10;
+      var paginationOfUser = await UserModel.find()
+        .skip(skip)
+        .limit(PAGE_SIZE)
+        .sort({ createdAt: -1 });
+    } else {
+      const count = await UserModel.countDocuments();
+      const total = Math.ceil(count / PAGE_SIZE);
+      var pagesOfUser = [];
+      for (let i = 1; i <= total; i++) {
+        pagesOfUser.push(i);
+      }
+      pageOfUser = 1;
+      const skip = (pageOfUser - 1) * 10;
+
+      var paginationOfUser = await UserModel.find()
+        .skip(skip)
+        .limit(PAGE_SIZE)
+        .sort({ createdAt: -1 });
+    }
+    console.log("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa ");
+
+    console.log(pagesOfUser);
+    console.log(userWithRoles[2].role);
+    console.log("bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb ");
     res.render("createEvent", {
       title: "Quản Trị Viên",
       user: user,
@@ -36,6 +100,9 @@ class CreateEventController {
       roles: roles,
       listUser: userWithRoles,
       listEvent: mutipleMongooseToObject(listEvent),
+      pagesOfEvent,
+      pagesOfUser,
+      paginationOfUser: mutipleMongooseToObject(paginationOfUser),
     });
   }
 
