@@ -751,7 +751,7 @@
         addMore.addEventListener('click', () => {
             increAdd++;
             if (increAdd >= boxContent.length) {
-                logger('Đã hết, không thể thêm nữa.');
+                alert('Không Thể Thêm Được Nữa')
             }
             boxContent.forEach((box, index) => {
                 if (index === increAdd) {
@@ -1210,10 +1210,14 @@
     const genderMen = document.getElementById('men');
     const genderWomen = document.getElementById('women');
     genderMen.addEventListener('change',()=>{
-        setAvatar.src = '/img/avatar-men.png';
+        if(fileAvatar.files.length <= 0){
+            setAvatar.src = '/img/avatar-men.png';  
+        }
     })
     genderWomen.addEventListener('change',()=>{
-        setAvatar.src = '/img/avatar-women.png';
+        if(fileAvatar.files.length <= 0){
+            setAvatar.src = '/img/avatar-women.png';
+        }
     })
     const listsUser = document.querySelectorAll('.card-user');
     listsUser.forEach(user=>{

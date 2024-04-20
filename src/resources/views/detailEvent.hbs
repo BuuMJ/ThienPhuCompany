@@ -93,7 +93,7 @@
     contentNews.forEach(content=>{
         const text1 = content.getAttribute('data-change-text');
         const regex = /(^|\s)(https?:\/\/\S+)(?=\s|[,\.?!;:]|$)/g;
-        let linkifiedText = text1.replace(regex, '$1<a href="$2">$2</a>');
+        let linkifiedText = text1.replace(regex, '$1<a target="_blank" href="$2">$2</a>');
         content.innerHTML = linkifiedText;
         content.querySelectorAll('a').forEach(a => {
             const href = a.getAttribute('href');
