@@ -5003,7 +5003,7 @@
 
 .container-about header .certification .certi-box {
   width: 48%;
-  height: 150px;
+  height: 180px;
   border-radius: 5px;
   overflow: hidden;
   display: flex;
@@ -5555,7 +5555,7 @@
   .container-about header h1 {
     font-size: 60px; }
   .container-about header .certification {
-    width: 85%; }
+    width: 95%; }
   .container-about header .certification .certi-box {
     height: 160px;
     width: 49%; }
@@ -5600,7 +5600,7 @@
   .container-about header .certification {
     flex-direction: column; }
   .container-about header .certification .certi-box {
-    width: 85%;
+    width: 95%;
     height: 130px;
     transform: translateY(100%); }
   .container-about header .certification .certi-box:first-child {
@@ -5676,7 +5676,6 @@
     font-size: 40px; }
   .container-about header .certification .certi-box {
     width: 100%;
-    height: 120px;
     transform: translateY(150%); }
   .container-about header .certification .certi-box .certi-content {
     padding: 6px 8px; }
@@ -5753,8 +5752,6 @@
     width: 90%; }
   .container-about header .certification .certi-box {
     transform: translateY(220%); }
-  .container-about header .certification .certi-box .certi-content h3.title {
-    font-size: 12px; }
   .container-about header .certification .certi-box .certi-content p.content {
     line-height: 18px; }
   .container-about .main-about .about-intro {
@@ -5779,6 +5776,8 @@
     font-size: 32px; } }
 
 @media screen and (max-width: 415px) {
+  .container-about header .certification .certi-box .certi-content h3.title {
+    font-size: 12px; }
   .container-about header .certification .certi-box .certi-content p.content {
     line-height: unset; }
   .container-about .main-about .about-intro .image-intro img {
@@ -5854,6 +5853,20 @@
     font-size: 20px; } }
 
 @media screen and (max-width: 321px) {
+  .container-about header .certification {
+    width: 95%; }
+  .container-about header .certification .certi-box {
+    height: 140px; }
+  .container-about header .certification .certi-box .img-certi {
+    width: 40%; }
+  .container-about header .certification .certi-box .certi-content {
+    width: 60%; }
+  .container-about header .certification .certi-box .certi-content p.content {
+    font-size: 10px; }
+  .container-about .main-about .primary-infor .card h1 {
+    font-size: 12px; }
+  .container-about .main-about .primary-infor .card p {
+    line-height: 20px; }
   .container-about .main-about .vision-mission .right span {
     font-size: 8px;
     padding: 8px 10px;
@@ -7065,20 +7078,18 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: #171717;
-  scroll-snap-align: center;
-  scroll-snap-stop: always; }
+  background-color: #171717; }
 
 .container-footer .header-footer {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
+  align-items: start;
   width: 30%;
   padding: 0 12px; }
 
 .container-footer .header-footer img {
-  width: 100%;
+  width: 60%;
   height: 200px; }
 
 .container-footer .header-footer .name-company {
@@ -7095,7 +7106,6 @@
   justify-content: center;
   align-items: start;
   width: 100%;
-  height: 70%;
   margin-top: 18px; }
 
 .container-footer .coppy-right {
@@ -7104,7 +7114,6 @@
   justify-content: center;
   align-items: center;
   width: 100%;
-  height: 30%;
   color: white;
   font-size: 18px; }
 
@@ -7126,7 +7135,6 @@
   justify-content: start;
   align-items: center;
   width: 100%;
-  height: 100%;
   background-color: white; }
 
 .container-footer .email-contact > *,
@@ -7289,6 +7297,12 @@
   align-items: center;
   margin-bottom: 12px; }
 
+@media screen and (max-width: 1025px) {
+  .container-footer .email-contact h1::after {
+    width: 15%; }
+  .container-footer .header-footer img {
+    width: 80%; } }
+
 @media screen and (max-width: 769px) {
   .container-footer .main-footer .info-contact .address,
   .container-footer .main-footer .info-contact .hotline,
@@ -7296,7 +7310,9 @@
     width: 48%; }
   .container-footer .main-footer .info-contact .address {
     margin-top: unset !important;
-    margin-bottom: unset !important; } }
+    margin-bottom: unset !important; }
+  .container-footer .header-footer img {
+    width: 100%; } }
 
 @media screen and (max-width: 601px) {
   .footer-app {
@@ -7311,11 +7327,26 @@
     margin: unset;
     height: 30%; }
   .container-footer .header-footer img {
-    height: 150px; } }
+    height: 150px; }
+  .container-footer .email-contact h1::after {
+    width: 20%; }
+  .container-footer .email-contact .list-box {
+    justify-content: space-around; }
+  .container-footer .email-contact .list-box .box-input {
+    margin: 12px 0;
+    width: 45%; } }
 
 @media screen and (max-width: 415px) {
+  .container-footer .main-footer {
+    flex-direction: column;
+    justify-self: center;
+    align-items: center; }
   .container-footer .main-footer .info-contact {
-    width: 68%; }
+    width: 95%; }
+  .container-footer .main-footer .info-contact .address,
+  .container-footer .main-footer .info-contact .hotline,
+  .container-footer .main-footer .info-contact .email {
+    width: 100%; }
   .container-footer .main-footer .info-contact .address .title,
   .container-footer .main-footer .info-contact .hotline .title,
   .container-footer .main-footer .info-contact .email .title {
@@ -7329,13 +7360,27 @@
   .container-footer .header-footer img {
     height: 100px; }
   .container-footer .coppy-right span {
-    font-size: 14px; } }
+    font-size: 14px; }
+  .container-footer .email-contact h1.primary-text {
+    font-size: 18px; }
+  .container-footer .email-contact .list-box .box-input {
+    width: 90%; }
+  .container-footer .email-contact .list-box .box-input input {
+    height: 55px; }
+  .container-footer .email-contact button {
+    font-size: 18px; } }
 
 @media screen and (max-width: 321px) {
   .footer-app {
     margin-bottom: 70px; }
   .container-footer .coppy-right span {
-    font-size: 12px; } }
+    font-size: 12px; }
+  .container-footer .email-contact h1.primary-text {
+    font-size: 16px; }
+  .container-footer .email-contact .list-box .box-input input {
+    height: 50px; }
+  .container-footer .email-contact button {
+    font-size: 16px; } }
 
 @keyframes pulse {
   0% {

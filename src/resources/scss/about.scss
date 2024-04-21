@@ -31,7 +31,7 @@
 }
 .container-about header .certification .certi-box{
     width: 48%;
-    height: 150px;
+    height: 180px;
     border-radius: 5px;
     overflow: hidden;
     display: flex;
@@ -585,7 +585,7 @@
         font-size: 60px;
     }
     .container-about header .certification{
-        width: 85%;
+        width: 95%;
     }
     .container-about header .certification .certi-box{
         height: 160px;
@@ -647,7 +647,7 @@
         flex-direction: column;
     }
     .container-about header .certification .certi-box {
-        width: 85%;
+        width: 95%;
         height: 130px;
         transform: translateY(100%);
     }
@@ -754,7 +754,6 @@
     }
     .container-about header .certification .certi-box {
         width: 100%;
-        height: 120px;
         transform: translateY(150%);
     }
     .container-about header .certification .certi-box .certi-content{
@@ -858,9 +857,9 @@
     .container-about header .certification .certi-box{
         transform: translateY(220%);
     }
-    .container-about header .certification .certi-box .certi-content h3.title{
-        font-size: 12px;
-    }
+    // .container-about header .certification .certi-box .certi-content h3.title{
+    //     font-size: 12px;
+    // }
     .container-about header .certification .certi-box .certi-content p.content{
         line-height: 18px;
     }
@@ -895,6 +894,9 @@
     }
 }
 @media screen and (max-width: 415px) {
+    .container-about header .certification .certi-box .certi-content h3.title{
+        font-size: 12px;
+    }
     .container-about header .certification .certi-box .certi-content p.content{
         line-height: unset;
     }
@@ -1000,6 +1002,27 @@
     }
 }
 @media screen and (max-width: 321px) {
+    .container-about header .certification{
+        width: 95%;
+    }
+    .container-about header .certification .certi-box{
+        height: 140px;
+    }
+    .container-about header .certification .certi-box .img-certi{
+        width: 40%;
+    }
+    .container-about header .certification .certi-box .certi-content{
+        width: 60%;
+    }
+    .container-about header .certification .certi-box .certi-content p.content{
+        font-size: 10px;
+    }
+    .container-about .main-about .primary-infor .card h1{
+        font-size: 12px;
+    }
+    .container-about .main-about .primary-infor .card p{
+        line-height: 20px;
+    }
     .container-about .main-about .vision-mission .right span{
         font-size: 8px;
         padding: 8px 10px;
