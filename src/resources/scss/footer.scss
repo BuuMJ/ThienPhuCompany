@@ -10,7 +10,7 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: start;
+    align-items: center;
     width: 30%;
     padding: 0 12px;
 }
@@ -18,21 +18,13 @@
     width: 60%;
     height: 200px;
 }
-.container-footer .header-footer .name-company{
-    font-size: 44px;
-    letter-spacing: 1.5px;
-    word-spacing: 1.5px;
-    font-weight: 700;
-    color: $primarycolor;
-    text-transform: uppercase;
-}
 .container-footer .main-footer{
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: start;
     width: 100%;
-    margin-top: 18px;
+    padding: 20px;
 }
 .container-footer .coppy-right{
     display: flex;
@@ -182,21 +174,22 @@
     flex-wrap: wrap;
     justify-content: space-between;
     align-items: start;
-    width: 60%;
+    width: 70%;
     height: 100%;
 }
 .container-footer .main-footer .info-contact .address,
 .container-footer .main-footer .info-contact .hotline,
-.container-footer .main-footer .info-contact .email {
+.container-footer .main-footer .info-contact .email,
+.container-footer .main-footer .info-contact .group-fb {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: start;
     width: 45%;
-    height: 45%;
+    height: 160px;
 }
-.container-footer .main-footer .info-contact .address{
-    margin-right: 20%;
+.container-footer .main-footer .info-contact .group-fb{
+    justify-content: end;
 }
 .container-footer .main-footer .info-contact span.material-symbols-outlined{
     color: $primarycolor;
@@ -235,7 +228,8 @@
 @media screen and (max-width: 769px) {
     .container-footer .main-footer .info-contact .address, 
     .container-footer .main-footer .info-contact .hotline, 
-    .container-footer .main-footer .info-contact .email{
+    .container-footer .main-footer .info-contact .email,
+    .container-footer .main-footer .info-contact .group-fb{
         width: 48%;
     }
     .container-footer .main-footer .info-contact .address{
@@ -256,7 +250,8 @@
     }
     .container-footer .main-footer .info-contact .address, 
     .container-footer .main-footer .info-contact .hotline, 
-    .container-footer .main-footer .info-contact .email{
+    .container-footer .main-footer .info-contact .email,
+    .container-footer .main-footer .info-contact .group-fb{
         width: 90%;
         margin: unset;
         height: 30%;
@@ -286,7 +281,8 @@
     }
     .container-footer .main-footer .info-contact .address, 
     .container-footer .main-footer .info-contact .hotline, 
-    .container-footer .main-footer .info-contact .email{
+    .container-footer .main-footer .info-contact .email,
+    .container-footer .main-footer .info-contact .group-fb{
         width: 100%;
     }
     .container-footer .main-footer .info-contact .address .title, 
