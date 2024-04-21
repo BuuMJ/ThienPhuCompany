@@ -85,7 +85,7 @@
       <h1>Tin Tức - Khuyến Mãi</h1>
       <div class="container-event">
         {{#each event}}
-        <a href="/event" class="event">
+        <a href="/event/{{this._id}}" class="event">
           <div class="background">
             <img src="{{this.image1}}" alt="">
           </div>
@@ -96,7 +96,19 @@
             </div>
             <span class="title">{{this.title}}</span>
             <div class="content">
-              <span>{{this.text1}}</span>
+              <span>
+                {{#if this.text1}}
+                  {{this.text1}}
+                {{else if this.text2}}
+                  {{this.text2}}
+                {{else if this.text3}}
+                  {{this.text3}}
+                {{else if this.text4}}
+                  {{this.text4}}
+                {{else}}
+                  {{this.text5}}
+                {{/if}}
+              </span>
             </div>
           </div>
         </a>

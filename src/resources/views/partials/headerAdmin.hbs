@@ -1,54 +1,56 @@
-<div class="container-header__admin">
-    <div class="top-header">
-        <img class="hide-menu" src="/img/companyTPBackground.png" alt="">
-        <img class="show-menu" src="/img/companyTP.png" alt="">
-    </div>
-    <div class="body-header">
-        <ul class="admin-navbar">
-            <div class="title">
-                <img src="/img/activity-icon.png" alt="">
-                <h2>Hoạt Động</h2>
+{{#if user}}
+    <div class="container-header__admin">
+        <div class="top-header">
+            <img class="hide-menu" src="/img/companyTPBackground.png" alt="">
+            <img class="show-menu" src="/img/companyTP.png" alt="">
+        </div>
+        <div class="body-header">
+            <ul class="admin-navbar">
+                <div class="title">
+                    <img src="/img/activity-icon.png" alt="">
+                    <h2>Hoạt Động</h2>
+                </div>
+                <li>
+                    <a href="#Tạo-Sự-Kiện" class="create-news"><i class="bi bi-file-earmark-plus-fill"></i> <span class="text-indent">Tạo Sự Kiện</span></a>
+                </li>
+                <li>
+                    <a href="#Thêm-Nhân-Viên" class="create-user"><i class="bi bi-person-plus-fill"></i> <span class="text-indent">Thêm Nhân Viên</span></a>
+                </li>
+                <li>
+                    <a href="#Thêm-Chức-Vụ" class="create-role"><i class="bi bi-person-fill-gear"></i> <span class="text-indent">Thêm Chức Vụ</span></a>
+                </li>
+                <li>
+                    <a href="#" data-href="management_msg" class="management-msg"><i class="bi bi-chat-text-fill"></i> <span class="text-indent">Quản Lý Tin Nhắn</span></a>
+                </li>
+            </ul>
+            {{!-- <div class="title">
+                <img src="/img/page-icon.png" alt="">
+                <h2>Trang Chính</h2>
             </div>
-            <li>
-                <a href="#Tạo-Sự-Kiện" class="create-news"><i class="bi bi-file-earmark-plus-fill"></i> <span class="text-indent">Tạo Sự Kiện</span></a>
-            </li>
-            <li>
-                <a href="#Thêm-Nhân-Viên" class="create-user"><i class="bi bi-person-plus-fill"></i> <span class="text-indent">Thêm Nhân Viên</span></a>
-            </li>
-            <li>
-                <a href="#Thêm-Chức-Vụ" class="create-role"><i class="bi bi-person-fill-gear"></i> <span class="text-indent">Thêm Chức Vụ</span></a>
-            </li>
-            <li>
-                <a href="#" data-href="management_msg" class="management-msg"><i class="bi bi-chat-text-fill"></i> <span class="text-indent">Quản Lý Tin Nhắn</span></a>
-            </li>
+            <ul class="primary-navbar">
+                <li class="admin-nav"><a class="link" data-href="Admin" href="/"><span class="material-symbols-outlined">folder_managed</span> <span class="text-indent">Quản Trị Viên</span></a></li>
+                <li><a class="link" data-href="home" href="/"><i class="bi bi-house-door-fill"></i> <span class="text-indent">Trang Chủ</span></a></li>
+                <li><a class="link" data-href="about" href="/about"><span class="material-symbols-outlined">groups</span> <span class="text-indent">Về Chúng Tôi</span></a></li>
+                <li><a class="link" data-href="product" href="/product"><i class="bi bi-basket3-fill"></i> <span class="text-indent">Sản Phẩm</span></a></li>
+                <li><a class="link" data-href="event" href="/event"><span class="material-symbols-outlined">language</span> <span class="text-indent">Tin Tức & Sự Kiện</span></a></li>
+                <li><a class="link" data-href="contact" href="/contact"><span class="material-symbols-outlined">info</span> <span class="text-indent">Liên Hệ</span></a></li>
+            </ul> --}}
+        <ul class="bottom-navbar">
+            <div class="profile-user">
+                <img class="avatar-user__header" src="{{getAvatar user}}" alt="">
+                <h3 class="name-user text-indent">{{getFullname user}}</h3>
+                <p class="role-user text-indent">{{getRole user}}</p>
+                <p class="email-user text-indent">{{getEmail user}}</p>
+            </div>
+            <li><a href="#"><i class="bi bi-question-diamond-fill"></i> <span class="text-indent">Hỗ Trợ & Giúp Đỡ</span></a></li>
+            {{#if user}}
+                <li><a onclick="logout()" class="logout"><i class="bi bi-door-closed-fill"></i> <span class="text-indent">Đăng Xuất</span></a></li>
+            {{else}}
+            {{/if}}
         </ul>
-        {{!-- <div class="title">
-            <img src="/img/page-icon.png" alt="">
-            <h2>Trang Chính</h2>
         </div>
-        <ul class="primary-navbar">
-            <li class="admin-nav"><a class="link" data-href="Admin" href="/"><span class="material-symbols-outlined">folder_managed</span> <span class="text-indent">Quản Trị Viên</span></a></li>
-            <li><a class="link" data-href="home" href="/"><i class="bi bi-house-door-fill"></i> <span class="text-indent">Trang Chủ</span></a></li>
-            <li><a class="link" data-href="about" href="/about"><span class="material-symbols-outlined">groups</span> <span class="text-indent">Về Chúng Tôi</span></a></li>
-            <li><a class="link" data-href="product" href="/product"><i class="bi bi-basket3-fill"></i> <span class="text-indent">Sản Phẩm</span></a></li>
-            <li><a class="link" data-href="event" href="/event"><span class="material-symbols-outlined">language</span> <span class="text-indent">Tin Tức & Sự Kiện</span></a></li>
-            <li><a class="link" data-href="contact" href="/contact"><span class="material-symbols-outlined">info</span> <span class="text-indent">Liên Hệ</span></a></li>
-        </ul> --}}
-    <ul class="bottom-navbar">
-        <div class="profile-user">
-            <img class="avatar-user__header" src="{{getAvatar user}}" alt="">
-            <h3 class="name-user text-indent">{{getFullname user}}</h3>
-            <p class="role-user text-indent">{{getRole user}}</p>
-            <p class="email-user text-indent">{{getEmail user}}</p>
-        </div>
-        <li><a href="#"><i class="bi bi-question-diamond-fill"></i> <span class="text-indent">Hỗ Trợ & Giúp Đỡ</span></a></li>
-        {{#if user}}
-            <li><a onclick="logout()" class="logout"><i class="bi bi-door-closed-fill"></i> <span class="text-indent">Đăng Xuất</span></a></li>
-        {{else}}
-        {{/if}}
-    </ul>
     </div>
-</div>
+{{/if}}
 <script>
     function logout() {
     document.cookie = 'token =; Path=/; Expires=Thu, 01 Jan 1970 00:00:01 GMT;';

@@ -6,7 +6,7 @@ const {
 
 class EventController {
   async event(req, res, next) {
-    var PAGE_SIZE = 10;
+    var PAGE_SIZE = 12;
     const latestNews = await EventModel.find({ status: "online" })
       .sort({ createdAt: -1 })
       .limit(1);
@@ -53,7 +53,7 @@ class EventController {
     if (pageOfNew) {
       const countOfNew = await EventModel.countDocuments({
         status: "online",
-        category: "new",
+        category: "news",
       });
       const total = Math.ceil(countOfNew / PAGE_SIZE);
       var pagesOfNew = [];
@@ -62,14 +62,14 @@ class EventController {
       }
       pageOfNew = parseInt(pageOfNew);
       const skip = (pageOfNew - 1) * PAGE_SIZE;
-      var listNew = await EventModel.find({ status: "online", category: "new" })
+      var listNew = await EventModel.find({ status: "online", category: "news" })
         .skip(skip)
         .limit(PAGE_SIZE)
         .sort({ createdAt: -1 });
     } else {
       const countOfNew = await EventModel.countDocuments({
         status: "online",
-        category: "new",
+        category: "news",
       });
       const total = Math.ceil(countOfNew / PAGE_SIZE);
       var pagesOfNew = [];
@@ -78,7 +78,7 @@ class EventController {
       }
       pageOfNew = parseInt(pageOfNew);
       const skip = (pageOfNew - 1) * PAGE_SIZE;
-      var listNew = await EventModel.find({ status: "online", category: "new" })
+      var listNew = await EventModel.find({ status: "online", category: "news" })
         .skip(skip)
         .limit(PAGE_SIZE)
         .sort({ createdAt: -1 });
