@@ -9,20 +9,28 @@
 .container-footer .header-footer{
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
     width: 30%;
     padding: 0 12px;
+    height: 100%;
 }
-.container-footer .header-footer img{
+.container-footer .header-footer img.logo{
     width: 60%;
     height: 200px;
+}
+.container-footer .header-footer a{
+    width: 160px;
+}
+.container-footer .header-footer a img{
+    width: 100%;
+    height: 65px;
 }
 .container-footer .main-footer{
     display: flex;
     flex-direction: row;
     justify-content: center;
-    align-items: start;
+    align-items: center;
     width: 100%;
     padding: 20px;
 }
@@ -221,22 +229,26 @@
     .container-footer .email-contact h1::after{
         width: 15%;
     }
-    .container-footer .header-footer img{
+    .container-footer .header-footer img.logo{
         width: 80%;
+    }
+    .container-footer .main-footer .info-contact{
+        flex-direction: column;
+    }
+    .container-footer .main-footer .info-contact .address, 
+    .container-footer .main-footer .info-contact .hotline, 
+    .container-footer .main-footer .info-contact .email{
+        width: 100%;
+    }
+    .container-footer .main-footer .info-contact .group-fb{
+        width: unset;
     }
 }
 @media screen and (max-width: 769px) {
-    .container-footer .main-footer .info-contact .address, 
-    .container-footer .main-footer .info-contact .hotline, 
-    .container-footer .main-footer .info-contact .email,
-    .container-footer .main-footer .info-contact .group-fb{
-        width: 48%;
+    .container-footer .header-footer img.logo{
+        width: 100%;
     }
-    .container-footer .main-footer .info-contact .address{
-        margin-top: unset !important;
-        margin-bottom: unset !important;
-    }
-    .container-footer .header-footer img{
+    .container-footer .header-footer a{
         width: 100%;
     }
 }
@@ -256,7 +268,7 @@
         margin: unset;
         height: 30%;
     }
-    .container-footer .header-footer img{
+    .container-footer .header-footer img.logo{
         height: 150px;
     }
     .container-footer .email-contact h1::after{
@@ -273,7 +285,7 @@
 @media screen and (max-width: 415px) {
     .container-footer .main-footer{
         flex-direction: column;
-        justify-self: center;
+        justify-content: center;
         align-items: center;
     }
     .container-footer .main-footer .info-contact{
@@ -298,8 +310,16 @@
     .container-footer .main-footer .info-contact span.material-symbols-outlined{
         font-size: 22px;
     }
-    .container-footer .header-footer img {
+    .container-footer .header-footer{
+        width: 100%;
+    }
+    .container-footer .header-footer img.logo {
+        width: 50%;
         height: 100px;
+    }
+    .container-footer .header-footer a{
+        width: 50%;
+        padding: 12px 0;
     }
     .container-footer .coppy-right span{
         font-size: 14px;
@@ -315,6 +335,11 @@
     }
     .container-footer .email-contact button{
         font-size: 18px;
+    }
+}
+@media screen and (max-width: 376px) {
+    .container-footer .main-footer{
+        padding: 20px 0;
     }
 }
 @media screen and (max-width: 321px) {
