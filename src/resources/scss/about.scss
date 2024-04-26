@@ -253,6 +253,7 @@
     align-items: center;
     width: 80%;
     flex-wrap: wrap;
+    padding-top: 40px;
 }
 .container-about .main-about .vision-mission .left{
     display: flex;
@@ -283,26 +284,27 @@
 }
 .container-about .main-about .vision-mission .right{
     display: flex;
-    justify-content: center;
+    justify-content: end;
     align-items: center;
     width: 50%;
     position: relative;
 }
-.container-about .main-about .vision-mission .right img{
+.container-about .main-about .vision-mission .right img.avatar-ceo{
     width: 60%;
 }
 .container-about .main-about .vision-mission .right .background{
     position: absolute;
-    top: 20%;
+    top: 0;
     right: 0;
     width: 100%;
     z-index: -1;
 }
 .container-about .main-about .vision-mission .right span{
     position: absolute;
-    bottom: 10%;
+    top: 50%;
+    transform: translateY(-50%);
     left: 4%;
-    width: 270px;
+    width: 50%;
     background: linear-gradient(180deg, rgba(255,230,153,1) 17%, rgba(188,159,110,1) 73%);
     color: white;
     border-radius: 5px;
@@ -350,7 +352,7 @@
     justify-content: space-around;
     align-items: center;
     width: 100%;
-    padding: 50px;
+    padding: 40px 0;
     flex-wrap: wrap;
 }
 .container-about .main-about .vision-mission .awards .award-box .swiper {
@@ -704,12 +706,14 @@
     .container-about .main-about .vision-mission .right .background{
         top: 0;
     }
+    .container-about .main-about .vision-mission .right img.avatar-ceo{
+        width: 80%;
+        height: 350px;
+        transform: translateX(20%);
+    }
     .container-about .main-about .vision-mission .right span{
         font-size: 14px;
         padding: 12px;
-        bottom: 5%;
-        left: 2%;
-        width: 220px;
     }
     .container-about .main-about .vision-mission{
         padding-top: 50px;
@@ -719,9 +723,6 @@
     }
     .container-about .main-about .vision-mission .awards .award-box{
         padding: 50px 0 0 0;
-    }
-    .container-about .main-about .vision-mission .awards .award-box .award-card{
-        height: 350px;
     }
     .container-about .main-about .vision-mission .awards .award-box .award-card .bottom h1{
         font-size: 28px;
@@ -806,11 +807,8 @@
     }
     .container-about .main-about .vision-mission .right span{
         font-size: 16px;
-        width: 300px;
         padding: 16px 20px;
-        bottom: 25%;
-        transform: translateY(25%);
-        left: 6%;
+        transform: translateY(-40%);
     }
     .container-about .main-about .value .box-value{
         width: 90%;
@@ -883,9 +881,6 @@
     .container-about .main-about .vision-mission{
         width: 90%;
     }
-    .container-about .main-about .vision-mission .right span{
-        left: 2%;
-    }
     .container-about .main-about .value .box-value .card{
         width: 45%;
     }
@@ -932,9 +927,7 @@
         font-size: 12px;
     }
     .container-about .main-about .vision-mission .right span{
-        font-size: 10px;
-        width: 180px;
-        left: 4%;
+        font-size: 12px;
     }
     .container-about .main-about .vision-mission .awards .award-box .award-card .bottom{
         align-items: center;
@@ -1023,17 +1016,20 @@
     .container-about .main-about .primary-infor .card p{
         line-height: 20px;
     }
+    .container-about .main-about .vision-mission .right img.avatar-ceo{
+        height: 300px;
+    }
     .container-about .main-about .vision-mission .right span{
-        font-size: 8px;
         padding: 8px 10px;
-        width: 150px;
-        line-height: 18px;
     }
     .container-about .main-about .vision-mission .left p{
         font-size: 12px;
     }
     .container-about .main-about .vision-mission .left h1{
         font-size: 26px;
+    }
+    .container-about .main-about .vision-mission .awards .award-box .award-card{
+        height: 350px;
     }
     .container-about .main-about .value h1{
         font-size: 18px;
