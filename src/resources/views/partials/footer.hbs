@@ -51,7 +51,7 @@
           </div>
       </div>
       <div class="coppy-right">
-        <span>© 2023 <b>Thiên Phú</b>. Tất cả các quyền được bảo lưu.</span>
+        <span>© <span class="year-footer"></span> <b>Thiên Phú</b>. Tất cả các quyền được bảo lưu.</span>
       </div>
   </div>
   <script>
@@ -85,4 +85,8 @@
     }else{
       headerNavAdmin.style.display = 'none';
     }
+    const yearFooter = document.querySelector('.year-footer');
+    const dateFooter = new Date();
+    const textYearFooter = dateFooter.getFullYear();
+    yearFooter.innerHTML = `${textYearFooter}`;
 </script>
