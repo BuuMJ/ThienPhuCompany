@@ -3,7 +3,7 @@ const mongoose = require("mongoose");
 async function connect() {
   try {
     await mongoose.connect(
-      "mongodb+srv://duoc6694:3NquY2UnztV5myrU@cluster0.rknczji.mongodb.net/ThienPhu" 
+      "mongodb+srv://nxt03091999_db_user:5XtgHN6hMsYRlWQy@buumj.c3svo67.mongodb.net/?retryWrites=true&w=majority&appName=BuuMJ"
     );
     console.log("Truy cập DB thành công!");
   } catch (error) {
