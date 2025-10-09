@@ -4,12 +4,15 @@
     align-items: center;
     width: 100%;
     height: 110px;
-    background-color: white;
+    background-color: #f8f9fa;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
     transition: .3s;
     position: fixed;
     top: 0;
     left: 0;
     z-index: 20;
+    padding: 4px 20px;
+    margin: 0 auto ;
 }
 .navbar-responsive{
     display: none;
@@ -17,21 +20,20 @@
 }
 .navbar .navbar-inner{
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
-    width: 60%;
+    width: 80%;
     height: 100%;
 }
 .navbar .navbar-inner .navbar-right{
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
+    align-items: start;
     width: 25%;
     height: 100%;
 }
 .navbar .navbar-inner .navbar-right .logo-company{
-    width: 40%;
     height: 100%;
 }
 .navbar .navbar-inner .navbar-right .logo-company img{
@@ -42,7 +44,7 @@
     width: 75%;
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: end;
     align-items: center;
     height: 100%;
 }
@@ -52,6 +54,10 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-right: 20px;
+}
+.navbar .navbar-inner .primary-navbar li:last-of-type{
+    margin-right: unset;
 }
 .navbar .navbar-inner .primary-navbar a{
     text-decoration: none;

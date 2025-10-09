@@ -8,35 +8,55 @@
 }
 .container-home header{
   width: 100%;
-  height: 50vh;
+  height: 65vh;
+  padding: 40px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   color: white;
-  background: linear-gradient(180deg, rgba(0, 0, 0,0.6), rgba(188, 159, 110,0.4)), url('/img/homeHeader.jpg') bottom / cover no-repeat;
+  // background: linear-gradient(180deg, rgba(0, 0, 0,0.2), rgba(203 ,34, 39,0.2)), url('/img/homeHeader.jpg') bottom / cover no-repeat;
+  background: linear-gradient(45deg, $titlecolor 50%, transparent), 
+            url('/img/allproductsposter.png') right / contain no-repeat;
+
 }
 .container-home header h1{
   font-size: 70px;
-  font-weight: 700;
+  font-weight: 800;
   color: $primarycolor;
+  letter-spacing: 2px;
+  text-shadow:
+      /* regular text-shadow */
+      0 .08ch 18px white,
+      /* text-shadow highlight */
+      0 -2px 0 $titlecolor;
 }
 .container-home header span{
   font-size: 30px;
-  font-weight: 600;
+  font-weight: 500;
   margin: 12px 0;
   text-align: center;
   line-height: 1.5;
 }
-.container-home header span b{
-  color: $titlecolor;
+.container-home header p.kh{
+  color: white;
+  font-weight: 700;
   font-size: 56px;
   text-transform: uppercase;
+  // text-shadow:
+  //     /* regular text-shadow */
+  //     0 .15ch 10px $linecolor,
+  //     /* text-shadow highlight */
+  //     0 -2px 0 $primarycolor;
 }
-.container-home header p{
+.container-home header p.slogan{
   font-size: 26px;
   font-weight: 400;
   margin: unset;
+  margin-top: 40px;
+  font-style: italic;
+  transform: skew(-3deg);
+  color: #f1f1f1;
 }
 .container-home .main-home{
   display: flex;
@@ -51,12 +71,12 @@
   justify-content: center;
   align-items: center;
   width: 100%;
-  height: 40vh;
+  padding: 40px 0;
 }
 .container-home .main-home .reason-choose-us h1{
-  color: $primarycolor;
+  color: $titlecolor;
   font-weight: 700;
-  padding: 16px 0;
+  padding-bottom: 16px;
   position: relative;
   text-transform: uppercase;
 }
@@ -76,9 +96,11 @@
   background-color: $linecolor;
 }
 .container-home .main-home .reason-choose-us span{
-  margin: 16px 0;
+  margin: 20px 0;
   font-size: 20px;
-  font-weight: 500;
+  font-weight: 400;
+  padding: 20px 0;
+  color: $titlecolor;
 }
 .container-home .main-home .reason-choose-us span b{
   color: $primarycolor;
@@ -89,15 +111,20 @@
   justify-content: center;
   align-items: center;
   width: 100%;
+  align-items: stretch;
 }
 .container-home .main-home .reason-choose-us .list-card .card{
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 19%;
-  margin: 30px 8px 0 8px;
-  padding: 0 26px;
+  padding: 26px;
+  color: white;
+  background-color: $primarycolor;
+  flex: 1;
+}
+.container-home .main-home .reason-choose-us .list-card .card:nth-child(odd){
+  background-color: $titlecolor;
 }
 // .container-home .main-home .reason-choose-us .list-card .card span.material-symbols-outlined{
 //   color: $primarycolor;
@@ -105,16 +132,17 @@
 //   margin: 0 0 8px 0 ;
 // }
 .container-home .main-home .reason-choose-us .list-card .card img{
-  width: 50px;
-  height: 50px;
+  width: 80px;
+  height: 80px;
+  padding: 0 16px;
 }
 .container-home .main-home .reason-choose-us .list-card .card span.title{
   font-size: 20px;
   font-weight: 600;
   margin: 6px 0;
   text-transform: capitalize;
-  height: 24px;
-  padding: unset !important;
+  padding: 0 16px;
+  color: white;
 }
 .container-home .main-home .reason-choose-us .list-card .card span.main-info{
   font-size: 16px;
@@ -122,26 +150,81 @@
   margin: 6px 0;
   text-align: center;
   letter-spacing: 1.2px;
-  height: 56px;
-  padding: unset !important;
+  padding: 0 16px;
+  color: white;
 }
-.container-home .main-home .about-us{
+.container-home .main-home .reason-choose-us .reason-footer {
   display: flex;
   flex-direction: row;
   justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
-  width: 100%;
-  background-color: $backgroundColor;
-  padding: 20px 0;
-  height: 70vh;
+  align-items: stretch;
+  padding: 30px 0;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+  width: 80%;
+    
 }
-.container-home .main-home .about-us h1,
+.container-home .main-home .reason-choose-us .reason-footer .col {
+  padding: 20px 0px;
+}
+
+.container-home .main-home .reason-choose-us .reason-footer .left p {
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 1.8;
+  color: $primarycolor;
+  text-transform: uppercase;
+  padding-right: 65px;
+  border-right:1px solid #ececec;
+  position: relative;
+  padding-bottom: 20px;
+}
+.container-home .main-home .reason-choose-us .reason-footer .left p::after{
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  background-color: $titlecolor;
+  height: 6px;
+  width: 10%;
+}
+.container-home .main-home .reason-choose-us .reason-footer .right{
+  display: flex;
+  align-items: center;
+}
+.container-home .main-home .reason-choose-us .reason-footer .right p {
+  color: $titlecolor;
+  line-height: 1.8;
+  padding-left: 65px;
+  text-align: justify;
+}
+
+.container-home .main-home .about-us{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  background-color: $titlecolor;
+  padding: 50px 0;
+}
+.container-home .main-home .about-us h1{
+  color: white;
+  width: 100%;
+  padding: 12px 0;
+  position: relative;
+  text-align: center;
+  font-weight: 700;
+  margin-bottom: 40px;
+}
+
 .container-home .main-home .best-seller h1,
 .container-home .main-home .list-event h1{
   width: 100%;
   padding: 12px 0;
-  color: $primarycolor;
+  color: $titlecolor;
   position: relative;
   text-align: center;
   font-weight: 700;
@@ -159,76 +242,165 @@
   transform: translateX(-50%);
   background-color: $linecolor;
 }
-.container-home .main-home .about-us .introduce{
+.container-home .main-home .about-us h1::before{
+  background-color: $linecolor;
+}
+.container-home .main-home .about-us .box-introduce{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: start;
+  width: 100%;
+  padding: 20px;
+}
+
+.container-home .main-home .about-us .box-introduce .introduce{
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: start;
   width: 45%;
   padding-right: 20px;
+  color: white;
 }
-.container-home .main-home .about-us .introduce span{
+.container-home .main-home .about-us .box-introduce .introduce span{
   text-align: justify;
   margin: 20px 0;
   font-size: 18px;
   line-height: 1.5;
   letter-spacing: 1.2px;
 }
-.container-home .main-home .about-us .introduce .read-more{
-  color: $primarycolor;
+.container-home .main-home .about-us .box-introduce .introduce .read-more{
+  color: white;
   display: flex;
   justify-content: center;
   align-items: center;
   text-decoration: none;
   padding: 16px 20px;
   border: 1px solid $primarycolor;
+  background-color: $primarycolor;
   font-weight: 600;
   font-size: 20px;
   border-radius: 5px;
   position: relative;
   transition: all .5s;
   z-index: 8;
+  margin: 20px 0;
 }
-.container-home .main-home .about-us .introduce .read-more::after{
+.container-home .main-home .about-us .box-introduce .introduce .read-more::after{
   content: "";
   position: absolute;
   width: 0;
   height: 100%;
   left: 0;
-  background-color: $primarycolor;
+  background-color: $titlecolor;
   z-index: -1;
   transition: all .5s;
 }
-.container-home .main-home .about-us .introduce .read-more:hover{
+.container-home .main-home .about-us .box-introduce .introduce .read-more:hover{
   color: white;
 }
-.container-home .main-home .about-us .introduce .read-more:hover::after{
+.container-home .main-home .about-us .box-introduce .introduce .read-more:hover::after{
   width: 100%;
 }
-.container-home .main-home .about-us .img-introduce{
+.container-home .main-home .about-us .box-introduce .img-introduce{
   width: 45%;
-  padding-left: 20px;
+  border: 2px solid $primarycolor;
+  padding: 10px;
+}
+.container-home .main-home .stats {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 80px;
+  text-align: center;
+  width: 80%;
+  padding: 40px 0;
+}
+.container-home .main-home .stats .stats-header {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: stretch;
+  padding: 0 15px;
+  margin-right: auto;
+  margin-left: auto;
+    
+}
+// .container-home .main-home .stats .stats-header .col {
+//   width: 35%;
+// }
+.container-home .main-home .stats .stats-header p{
+  padding-bottom: 20px;
+  text-align: start;
+}
+.container-home .main-home .stats .stats-header .left p {
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 1.8;
+  color: $titlecolor;
+  text-transform: uppercase;
+  padding-right: 65px;
+  position: relative;
+  border-right:1px solid #ececec;
+}
+.container-home .main-home .stats .stats-header .left p::after{
+  content: "";
+  width: 10%;
+  height: 6px;
+  position: absolute;
+  background-color: $primarycolor;
+  bottom: 0;
+  left: 0;
+}
+.container-home .main-home .stats .stats-header .right{
+  display: flex;
+  align-items: center;
+}
+.container-home .main-home .stats .stats-header .right p {
+  color: $linecolor;
+  line-height: 1.8;
+  padding-left: 65px;
+  text-align: justify;
+  padding-bottom: unset;
+}
+
+.container-home .main-home .stats .stat{
+  flex: 1;
   display: flex;
   flex-direction: column;
-  justify-content: start;
-  align-items: end;
-  position: relative;
-  align-self: flex-start;
+  justify-content: center;
+  align-items: center;
+  font-size: 18px;
+  transition: transform 0.6s ease, opacity 0.6s ease;
+  padding: 20px;
+  border-radius: 8px; 
+  background-color: $titlecolor;
 }
-.container-home .main-home .about-us .img-introduce img{
-  outline: 10px solid #87663333;
-  border-radius: 5px;
+.container-home .main-home .stats .stat .counter {
+  font-size: 56px;
+  font-weight: 700;
+  color: white; /* màu chủ đạo Thiên Phú */
+  display: block;
+  line-height: 1;
 }
-.container-home .main-home .about-us .img-introduce .img-2{
-  width: 70%;
-  height: 350px;
+.container-home .main-home .stats .stat p {
+  font-size: 18px;
+  font-weight: 600;
+  color: white;
+  margin-top: 12px;
 }
-.container-home .main-home .about-us .img-introduce .img-1{
-  width: 300px;
-  height: 200px;
-  bottom: -100px;
-  left: 90px;
-  position: absolute;
+.container-home .main-home .stats .stat p.content{
+  font-weight: 400;
+  font-size: 14px;
+}
+.fade-up {
+  opacity: 0;
+  transform: translateY(40px);
+}
+.fade-up.show {
+  opacity: 1;
+  transform: translateY(0);
 }
 .container-home .main-home .best-seller{
   display: flex;
@@ -236,87 +408,95 @@
   justify-content: center;
   align-items: center;
   width: 100%;
-  padding: 20px 0;
+  padding: 50px 0;
+  background-color: $backgroundColor;
 }
 .container-home .main-home .best-seller .list-product{
     display: flex;
     flex-direction: row;
-    justify-content: start;
+    justify-content: space-around;
     align-items: center;
-    flex-wrap: wrap;
     width: 80%;
+    gap: 40px;
+    padding: 20px 0;
+    margin-bottom: 20px;
 }
 .container-home .main-home .best-seller .list-product .product{
-  width: 30%;
-  height: 550px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 450px;
+  position: relative;
+  overflow: hidden;
+}
+.container-home .main-home .best-seller .list-product .product img{
+  width: 100%;
+  height: 310px;
+}
+.container-home .main-home .best-seller .list-product .product .box-content{
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  align-items: start;
-  margin: 20px 20px 60px 20px;
-
+  align-items: center;
+  height: 230px;
+  background-color: #fdf7f7;
+  position: absolute;
+  bottom: calc(-20% + 4px);
+  padding: 45px 45px 50px;
+  box-shadow: 0 3px 13px rgba(0, 0, 0, 0.07);
+  text-align: center;
+  z-index: 4;
+  transition: 0.5s ease;
+}
+.container-home .main-home .best-seller .list-product .product .box-content::after{
+  content: "PCB40";
+  background-color: $primarycolor;
+  color: white;
+  font-size: 14px;
+  font-weight: 600;
+  padding: 12px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-bottom-right-radius: 10px;
+}
+.container-home .main-home .best-seller .list-product .product .box-content.pcb40-ms::after{
+  content: "PCB40-MS";
+}
+.container-home .main-home .best-seller .list-product .product .box-content h3{
+  color: $titlecolor;
+}
+.container-home .main-home .best-seller .list-product .product .box-content p{
+  color: $primarycolor;
+}
+.container-home .main-home .best-seller .list-product .product .box-content a{
   text-decoration: none;
 }
-.container-home .main-home .best-seller .list-product .product .background-product{
-  width: 100%;
-  height: 440px;
-  transition: .5s;
-  border-radius: 5px;
-  position: relative;
-}
-.container-home .main-home .best-seller .list-product .hatienpcb40 .background-product{
-  background: linear-gradient(to bottom, transparent, rgba(0,0,0,0.3)), url('/img/backgroundpcb40.jpg') center / cover no-repeat;
-}
-.container-home .main-home .best-seller .list-product .dadungpcb40 .background-product{
-  background: linear-gradient(to bottom, transparent, rgba(0,0,0,0.3)), url('/img/backgrounddadung.jpg') center / cover no-repeat;
-}
-.container-home .main-home .best-seller .list-product .pcb40-ms .background-product{
-  background: linear-gradient(to bottom, transparent, rgba(0,0,0,0.3)), url('/img/backgroundpcb40-ms.jpg') center / cover no-repeat;
-}
-.container-home .main-home .best-seller .list-product .product img{
-  // width: 70%;
-  // height: 60%;
-  transition: 0.5s;
+.container-home .main-home .best-seller .list-product .product::after {
+  content: "";
   position: absolute;
-  bottom: 5%;
-  left: 50%;
-  transform: translateX(-50%);
-  margin: 0 auto;
-  z-index: 2;
-}
-.container-home .main-home .best-seller .list-product .product .background-backup{
-  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
-  z-index: 1;
+  background-color: rgba(0, 0, 0, 0.6);
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+.container-home .main-home .best-seller .list-product .product:hover::after {
+  opacity: 1;
+}
+.container-home .main-home .best-seller .list-product .product:hover .box-content{
   bottom: 0;
-  left: 0;
-  transition: .5s;
-}
-.container-home .main-home .best-seller .list-product .product:hover img{
-  transform: translateX(-50%) scale(1.1);
-  filter: drop-shadow(0 10px 30px rgba(255,255,255,0.8));
-}
-.container-home .main-home .best-seller .list-product .product:hover .background-backup{
-  filter: blur(5px);
-  background-color: rgba(0, 0, 0,0.6);
-}
-.container-home .main-home .best-seller .list-product .product span{
-  font-size: 18px;
-  font-weight: 500;
-  transition: .5s;
-  color: black;
-  width: 100%;
-}
-.container-home .main-home .best-seller .list-product .product span.name-product{
-  text-transform: capitalize;
 }
 .container-home .main-home .best-seller .list-product .product span.visited-product,
 .container-home .main-home .best-seller .see-all{
   font-size: 16px;
   font-weight: 500;
-  border: 1px solid $primarycolor;
-  color: $primarycolor;
+  border: 1px solid $titlecolor;
+  color: white;
+  background-color: $titlecolor;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -346,17 +526,16 @@
   height: 100%;
   background-color: $primarycolor;
   transition: all .5s;
+  
 }
 .container-home .main-home .best-seller .list-product .product span.visited-product:hover,
 .container-home .main-home .best-seller .see-all:hover{
   color: white;
+  border: 1px solid $primarycolor;
 }
 .container-home .main-home .best-seller .list-product .product span.visited-product:hover::after,
 .container-home .main-home .best-seller .see-all:hover::after{
   width: 100%;
-}
-.container-home .main-home .best-seller .list-product .hatienpcb40 img{
-  width: 50%;
 }
 .container-home .main-home .list-event{
   display: flex;
