@@ -133,11 +133,13 @@
         <a href="/event/{{this._id}}" class="event">
           <div class="background">
             <img src="{{this.image1}}" alt="">
+            <span class="category" data-category="{{this.category}}">{{this.category}}</span>
           </div>
           <div class="content-event">
             <div class="time">
-              <span class="material-symbols-outlined">calendar_month</span> 
-              <span>{{moment this.createdAt format="DD/MM/YYYY"}}</span>
+              {{!-- <span class="material-symbols-outlined">calendar_month</span>  --}}
+              <span class="date">{{moment this.createdAt format="DD"}}</span>
+              <span>{{moment this.createdAt format="MMM"}}</span>
             </div>
             <span class="title">{{this.title}}</span>
             <div class="content">
@@ -165,9 +167,9 @@
 </div>
 
 <script>
- const counters = document.querySelectorAll('.counter');
+  const counters = document.querySelectorAll('.counter');
   const fadeElements = document.querySelectorAll('.fade-up');
-
+  const categoryHome = document.querySelectorAll('.event .category');
   const animateCounter = (counter, duration = 1500) => {
     const target = +counter.getAttribute('data-target');
     const showPlus = counter.getAttribute('data-plus') === 'true';
@@ -197,6 +199,13 @@
       }
     });
   }, { threshold: 0.5 });
-
+categoryHome.forEach(category =>{
+  const newsEvent = category.getAttribute('data-category');
+  if(newsEvent == "news"){
+    category.textContent = 'Tin Tức';
+  }else{
+    category.textContent = 'Sự Kiện';
+  }
+})
   fadeElements.forEach(el => observer.observe(el));
 </script>
