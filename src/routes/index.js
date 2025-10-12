@@ -13,7 +13,7 @@ function route(app) {
   app.use("/sitemap.xml", sitemapRouter);
   app.use("/about", aboutRouter);
   app.use("/login", loginRouter);
-  app.use("/admin", createEventRouter);
+  app.use("/admin", checkLogin, createEventRouter);
   app.use("/award", awardRouter);
   app.use("/event", eventRouter);
   app.use("/contact", contactRouter);
