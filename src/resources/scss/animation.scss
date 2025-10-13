@@ -210,3 +210,15 @@
     opacity: 1;
   }
 }
+@keyframes pulse {
+  0%,100% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+}
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(calc(-200px * 5)); /* chỉ di chuyển bằng 1 nửa track */
+  }
+}

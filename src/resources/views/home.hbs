@@ -53,6 +53,64 @@
      </div>
     </div>
     {{!-- số chạy --}}
+     <section class="honor-section">
+        <div><h1>Dấu Ấn Hợp Tác — Vinh Danh Cùng Vicem Hà Tiên</h1></div>
+        <p class="content">Hơn hai thập kỷ đồng hành cùng Xi măng Vicem Hà Tiên, Thiên Phú tự hào được vinh danh qua nhiều giải thưởng tri ân...</p>
+        <div class="swiper badge-slider">
+          <div class="swiper-wrapper slide-track" id="badgeTrack">
+            <div class="swiper-slide">
+              <img src="/img/10years.jpg" alt="Huy hiệu 1">
+              <div class="bottom">
+                <h2>Một Thập Kỷ</h2>
+                <p>Vững Chắc Cùng Hà Tiên</p>
+              </div>
+            </div>
+            <div class="swiper-slide"> 
+              <img src="/img/2023.jpg" alt="Huy hiệu 2">
+              <div class="bottom">
+                <h2>2023</h2>
+                <p>Nhà Phân Phối Xi Măng Xuất Sắc</p>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <img src="/img/2022.jpg" alt="Huy hiệu 3">
+              <div class="bottom">
+                <h2>2022</h2>
+                <p>Nhà Phân Phối Xi Măng Xuất Sắc</p>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <img src="/img/2021.jpg" alt="Huy hiệu 4">
+              <div class="bottom">
+                <h2>2021</h2>
+                <p>Nhà Phân Phối Xi Măng Xuất Sắc</p>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <img src="/img/2020.jpg" alt="Huy hiệu 5">
+              <div class="bottom">
+                <h2>2020</h2>
+                <p>Nhà Phân Phối Xi Măng Xuất Sắc</p>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <img src="/img/2019.jpg" alt="Huy hiệu 6">
+              <div class="bottom">
+                <h2>2019</h2>
+                <p>Nhà Phân Phối Xi Măng Xuất Sắc</p>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <img src="/img/2018.jpg" alt="Huy hiệu 7">
+              <div class="bottom">
+                <h2>2018</h2>
+                <p>Nhà Phân Phối Xi Măng Xuất Sắc</p>
+              </div>
+            </div>
+          </div>
+         
+        </div>
+      </section>
     <section class="stats">
       <div class="stats-header">
           <div class="col left">
@@ -90,7 +148,7 @@
     </section>
   {{!-- best seller --}}
     <div class="best-seller">
-      <h1>Sản Phẩm Tiêu Biểu</h1>
+      <h1>Sản Phẩm Nổi Bật</h1>
       <div class="list-product">
         <div class="product">
           <img src="/img/htdadung.jpg" alt="">
@@ -127,7 +185,7 @@
     </div>
     {{!-- sự kiện --}}
     <div class="list-event">
-      <h1>Tin Tức - Khuyến Mãi</h1>
+      <h1>Tin Tức - Sự Kiện</h1>
       <div class="container-event">
         {{#each event}}
         <a href="/event/{{this._id}}" class="event">
@@ -165,8 +223,21 @@
     </div>
   </div>
 </div>
-
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 <script>
+  const badgeSwiper = new Swiper('.badge-slider', {
+    slidesPerView: 4,
+    spaceBetween: 30,
+    loop: true,
+    allowTouchMove: false,
+    speed: 8000,
+    autoplay: {
+      delay: 0,
+      disableOnInteraction: false,
+    },
+    freeMode: true,
+    freeModeMomentum: false,
+  });
   const counters = document.querySelectorAll('.counter');
   const fadeElements = document.querySelectorAll('.fade-up');
   const categoryHome = document.querySelectorAll('.event .category');
