@@ -30,8 +30,8 @@ class HomeController {
     var transporter = nodemailer.createTransport({
       service: "gmail",
       auth: {
-        user: "ctythiennphu@gmail.com",
-        pass: "Daomantu151!",
+        user: "nxt03091999@gmail.com",
+        pass: "jepjoiucxskugono",
       },
     });
     const mailOptions = {

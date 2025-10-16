@@ -16,8 +16,8 @@ class ContactController {
     var transporter = nodemailer.createTransport({
       service: "gmail",
       auth: {
-        user: "ctythiennphu@gmail.com",
-        pass: "wDaomantu151!",
+        user: "nxt03091999@gmail.com",
+        pass: "jepjoiucxskugono",
       },
     });
     const mailOptions = {
