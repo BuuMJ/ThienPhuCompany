@@ -22,7 +22,7 @@ class ContactController {
     });
     const mailOptions = {
       from: `"${name}" <${mail}>`,
-      to: "duoc6694@gmail.com", // list of receivers
+      to: "nxt03091999@gmail.com", // list of receivers
       subject: "Có một yêu cầu liên hệ với khác hàng mới", // Subject line
       html: `
       <p>Thông tin khách hàng cần liên hệ như sau:</p>
