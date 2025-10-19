@@ -6002,7 +6002,7 @@
   padding: 0 16px; }
 
 .container-home .main-home .reason-choose-us .list-card .card span.title {
-  font-size: 20px;
+  font-size: 24px;
   font-weight: 600;
   margin: 6px 0;
   text-transform: capitalize;
@@ -6010,7 +6010,7 @@
   color: white; }
 
 .container-home .main-home .reason-choose-us .list-card .card span.main-info {
-  font-size: 16px;
+  font-size: 14px;
   font-weight: 400;
   margin: 6px 0;
   text-align: center;
@@ -6224,11 +6224,13 @@
   padding: 12px 20px; }
 
 .container-home .main-home .swiper-slide .bottom h2 {
+  font-size: 24px;
   color: #a08857;
   letter-spacing: 2px;
   margin-bottom: 12px; }
 
 .container-home .main-home .swiper-slide .bottom p {
+  font-size: 14px;
   color: #8C3B1A; }
 
 .container-home .main-home .stats {
@@ -6304,7 +6306,7 @@
   line-height: 1; }
 
 .container-home .main-home .stats .stat p {
-  font-size: 18px;
+  font-size: 24px;
   font-weight: 600;
   color: white;
   margin-top: 12px; }
@@ -6362,7 +6364,7 @@
   background-color: #fdf7f7;
   position: absolute;
   bottom: calc(-20% + 4px);
-  padding: 45px 45px 50px;
+  padding: 50px 45px 50px 45px;
   box-shadow: 0 3px 13px rgba(0, 0, 0, 0.07);
   text-align: center;
   z-index: 4;
@@ -6384,13 +6386,17 @@
   content: "PCB40-MS"; }
 
 .container-home .main-home .best-seller .list-product .product .box-content h3 {
+  font-size: 24px;
+  font-weight: 600;
   color: #a08857; }
 
 .container-home .main-home .best-seller .list-product .product .box-content p {
-  color: #8C3B1A; }
+  color: #8C3B1A;
+  font-size: 14px; }
 
 .container-home .main-home .best-seller .list-product .product .box-content a {
-  text-decoration: none; }
+  text-decoration: none;
+  font-size: 16px; }
 
 .container-home .main-home .best-seller .list-product .product::after {
   content: "";
@@ -6520,7 +6526,7 @@
 
 .container-home .main-home .list-event .container-event .event .background .category {
   color: white;
-  font-size: 16px;
+  font-size: 14px;
   font-weight: 600;
   position: absolute;
   top: 12px;
@@ -6574,25 +6580,24 @@
   color: #a08857; }
 
 .container-home .main-home .list-event .container-event .event .title {
-  font-size: 20px;
-  font-weight: 600;
+  font-size: 24px;
+  font-weight: 500;
   margin-bottom: 8px;
   display: -webkit-box;
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
   overflow: hidden;
   text-overflow: ellipsis;
-  height: 28%;
   color: #a08857;
   padding: 0 12px; }
 
 .container-home .main-home .list-event .container-event .event .content {
   width: 100%;
-  height: 60%;
+  flex: 1;
   padding: 0 12px; }
 
 .container-home .main-home .list-event .container-event .event .content span {
-  font-size: 16px;
+  font-size: 14px;
   line-height: 1.6;
   text-align: justify;
   display: -webkit-box;
@@ -7346,7 +7351,8 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center; }
+  align-items: center;
+  margin-top: 70px; }
 
 .container-footer .header-footer {
   display: flex;
@@ -7362,7 +7368,7 @@
 
 .container-footer .main-footer {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   width: 100%;
@@ -7371,8 +7377,13 @@
   background-color: #202020;
   background-image: url("/img/imgfooter.svg");
   background-repeat: no-repeat;
-  background-position: 50vw 18%;
-  flex-wrap: wrap; }
+  background-position: 50vw 18%; }
+
+.container-footer .main-footer .body-footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center; }
 
 .container-footer .coppy-right {
   display: flex;
@@ -7397,88 +7408,84 @@
 
 .container-footer .email-contact {
   display: flex;
-  flex-direction: column;
-  justify-content: start;
+  flex-direction: row;
+  justify-content: center;
   align-items: center;
-  width: 100%;
-  background-color: white; }
+  padding: 16px 50px;
+  background-color: #a08857;
+  transform: translateY(-50%);
+  border-radius: 10px;
+  gap: 20px;
+  width: 70%; }
 
-.container-footer .email-contact > *,
 .container-footer .info-contact > * {
   margin: 12px 0; }
 
+.container-footer .email-contact .header-box__email {
+  display: flex;
+  flex-direction: column;
+  justify-content: center; }
+
 .container-footer .email-contact h1.primary-text,
 .container-footer .info-contact span.primary-text {
-  font-size: 32px;
+  font-size: 24px;
   font-weight: 700;
   height: 15%;
   color: white; }
 
-.container-footer .email-contact h1.primary-text {
-  color: #a08857;
-  padding: 12px 0;
-  margin-bottom: 20px;
-  position: relative;
-  width: 100%;
-  text-align: center; }
+.container-footer .email-contact .header-box__email span {
+  color: white;
+  font-size: 16px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1.2px;
+  margin-bottom: 6px; }
 
-.container-footer .email-contact h1::after {
-  position: absolute;
-  content: "";
-  width: 10%;
-  height: 4px;
-  left: 50%;
-  transform: translateX(-50%);
-  bottom: 0;
-  background-color: #8C3B1A; }
+.container-footer .email-contact h1.primary-text {
+  height: unset;
+  text-transform: capitalize;
+  font-weight: 500; }
 
 .container-footer .email-contact .list-box {
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  flex-wrap: wrap;
-  width: 100%;
-  align-self: flex-end;
-  height: 60%; }
+  flex: 1; }
 
 .container-footer .email-contact .list-box .box-input {
-  width: 33%;
+  width: 100%;
   margin: 12px 20px;
   position: relative;
-  display: flex;
-  justify-content: end;
-  align-items: end; }
+  display: flex; }
 
 .container-footer .email-contact .list-box .box-input input {
   width: 100%;
   height: 60px;
   background-color: transparent;
-  border: 1px solid #b00000;
-  font-size: 14px;
+  border: unset;
+  border-bottom: 1px solid #8C3B1A;
+  font-size: 16px;
   font-weight: 600;
   padding: 4px 22px 4px 20px;
-  color: black;
-  border-radius: 5px; }
+  color: black; }
 
 .container-footer .email-contact .list-box .box-input input:-webkit-autofill {
   -webkit-background-clip: text; }
 
 .container-footer .email-contact .list-box .box-input input:focus-visible {
   border-radius: unset;
-  border: 1px solid #b00000;
   outline: unset; }
 
 .container-footer .email-contact .list-box .box-input label {
   position: absolute;
   top: 50%;
-  left: 6%;
+  left: 2%;
   transform: translateY(-50%);
-  font-size: 14px;
+  font-size: 16px;
   font-weight: 600;
   transition: .5s;
-  background-color: white;
-  color: black; }
+  color: white; }
 
 .container-footer .email-contact .list-box .box-input input:focus ~ label,
 .container-footer .email-contact .list-box .box-input input:valid ~ label {
@@ -7486,34 +7493,21 @@
   color: #b00000; }
 
 .container-footer .email-contact button {
-  background-color: transparent;
-  border: 1px solid #b00000;
-  font-size: 20px;
+  background-color: #202020;
+  border: unset;
+  font-size: 16px;
   font-weight: 700;
   padding: 12px 30px;
   text-align: center;
-  transition: .5s;
+  transition: .3s;
   border-radius: 5px;
   z-index: 8;
-  position: relative;
-  cursor: pointer; }
-
-.container-footer .email-contact button::after {
-  position: absolute;
-  content: "";
-  width: 0;
-  height: 100%;
-  left: 0;
-  top: 0;
-  background-color: #b00000;
-  z-index: -1;
-  transition: .5s; }
-
-.container-footer .email-contact button:hover {
+  cursor: pointer;
   color: white; }
 
-.container-footer .email-contact button:hover::after {
-  width: 100%; }
+.container-footer .email-contact button:hover {
+  color: white;
+  box-shadow: 0 0 0 5px rgba(255, 61, 85, 0.4); }
 
 .container-footer .main-footer .info-contact {
   display: flex;

@@ -21,17 +21,13 @@ class ContactController {
       },
     });
     const mailOptions = {
-      from: `"${name}" <${mail}>`,
+      from: `<${mail}>`,
       to: "nxt03091999@gmail.com", // list of receivers
       subject: "Có một yêu cầu liên hệ với khác hàng mới", // Subject line
       html: `
       <p>Thông tin khách hàng cần liên hệ như sau:</p>
       <ol>
-        <li>Tên khách hàng: ${name}</li>
-        <li>Email: ${mail}</li>
         <li>Số điện thoại liên hệ: ${phone}</li>
-        <li>Địa chỉ liên hệ: ${address}</li>
-        <li>Nội dung liên hệ của khác hàng: ${content}</li>
       </ol>
     `,
     };

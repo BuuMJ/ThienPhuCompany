@@ -36,15 +36,12 @@ class HomeController {
     });
     const mailOptions = {
       from: `"${name}" <${mail}>`,
-      to: "duoc6694@gmail.com", // list of receivers
+      to: "nxt03091999@gmail.com", // list of receivers
       subject: "Có một đăng kí nhận thông tin sản phẩm mới", // Subject line
       html: `
       <p>Khách hàng đã đăng ký nhận tư vấn thông tin sản phẩm với thông tin như sau:</p>
       <ol>
-        <li>Tên khách hàng: ${name}</li>
-        <li>Email: ${mail}</li>
         <li>Số điện thoại liên hệ: ${phone}</li>
-        <li>Địa chỉ liên hệ: ${address}</li>
       </ol>
     `,
     };
