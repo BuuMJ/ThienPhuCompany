@@ -7,10 +7,13 @@
     <meta name="google-site-verification" content="sfg25GUnOcT7lg7oT4yM2Vv3IsTVjYYwHcDY7EjnCPw" />
     <link rel="shortcut icon" type="image/png" href="/img/thienphutab.png" sizes="32×32"/>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    {{!-- fonts --}}
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet">
+    {{!-- icon --}}
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
     <link rel="stylesheet" href="/css/app.css">
     <link
@@ -25,6 +28,7 @@
 </head>
 <body>
     <div class="app">
+      <button id="backToTop" title="Go to top">↑</button>
       <div class="spinnerContainer">
           <div class="spinner"></div>
           <div class="loader">
@@ -52,6 +56,58 @@
     </div>
 </body>
 <script>
+  const backToTopBtn = document.getElementById("backToTop");
+  window.addEventListener("scroll", () => {
+    if (window.scrollY > 200) {
+      backToTopBtn.classList.add("show");
+    } else {
+      backToTopBtn.classList.remove("show");
+    }
+  });
+  backToTopBtn.addEventListener("click", () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth"
+    });
+  });
+const counters = document.querySelectorAll('.counter');
+const fadeElements = document.querySelectorAll('.stat.fade-up');
+const verifiedYear = 2002; 
+const currentYear = new Date().getFullYear();
+const resultYear = currentYear - verifiedYear;
+const animateCounter = (counter, duration = 1500) => {
+  // Nếu phần tử là "Năm thành lập" thì đổi target = resultYear
+  const parent = counter.closest('.stat');
+  let target = +counter.getAttribute('data-target');
+  if (parent && parent.querySelector('p')?.textContent.includes('Năm thành lập')) {
+    target = resultYear;
+  }
+  const showPlus = counter.getAttribute('data-plus') === 'true';
+  const startTime = performance.now();
+  const update = (currentTime) => {
+    const elapsed = currentTime - startTime;
+    const progress = Math.min(elapsed / duration, 1);
+    const value = Math.floor(progress * target);
+    counter.textContent = showPlus ? `${value}+` : `${value}`;
+    if (progress < 1) {
+      requestAnimationFrame(update);
+    } else {
+      counter.textContent = showPlus ? `${target}+` : `${target}`;
+    }
+  };
+  requestAnimationFrame(update);
+};
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('show');
+      entry.target.querySelectorAll('.counter').forEach(c => animateCounter(c));
+      observer.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.5 });
+fadeElements.forEach(el => observer.observe(el));
+
   document.addEventListener('DOMContentLoaded',()=>{
     const allIMG = document.querySelectorAll('img');
       allIMG.forEach(img=>{

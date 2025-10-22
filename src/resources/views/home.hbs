@@ -45,7 +45,7 @@
      <div class="box-introduce">
        <div class="introduce">
         <span>Công Ty TNHH Thiên Phú, được thành lập ngày 14/11/2002, là doanh nghiệp kế thừa hơn 20 năm kinh nghiệm trong lĩnh vực vật liệu xây dựng, đồng thời duy trì hơn 20 năm hợp tác bền vững cùng Vicem Hà Tiên – thương hiệu xi măng hàng đầu Việt Nam.</span>
-        <span>Trải qua quá trình hình thành và phát triển, Thiên Phú không ngừng khẳng định vị thế của mình trên thị trường, trở thành Nhà Phân Phối Chính Thức Xi Măng Vicem Hà Tiên tại tỉnh Khánh Hòa. Chúng tôi chuyên cung cấp các dòng sản phẩm xi măng chất lượng cao cho đại lý, đối tác xây dựng và các công trình dân dụng – công nghiệp lớn nhỏ trên toàn khu vực.</span>
+        <span>Trải qua quá trình hình thành và phát triển, Thiên Phú không ngừng khẳng định vị thế của mình trên thị trường, trở thành Nhà Phân Phối Chính Thức Xi Măng Vicem Hà Tiên tại tỉnh Khánh Hòa. Chúng tôi chuyên cung cấp các dòng sản phẩm xi măng chất lượng cao cho đại lý, đối tác xây dựng và các công trình lớn nhỏ trên toàn khu vực tỉnh Khánh Hòa.</span>
         <span>Với nền tảng vững chắc, uy tín được khẳng định cùng tinh thần tận tâm – chuyên nghiệp – hiệu quả, Thiên Phú luôn hướng tới mục tiêu mang đến sản phẩm đạt chuẩn, dịch vụ chu đáo, góp phần cùng khách hàng kiến tạo nên những công trình vững chắc và giá trị bền vững theo thời gian.</span>
         <a href="/about" class="read-more">Xem Chi Tiết</a>
       </div>
@@ -66,42 +66,42 @@
               </div>
             </div>
             <div class="swiper-slide"> 
-              <img src="/img/2023.jpg" alt="Huy hiệu 2">
+              <img src="/img/2023.png" alt="Huy hiệu 2">
               <div class="bottom">
                 <h2>2023</h2>
                 <p>Nhà Phân Phối Xi Măng Xuất Sắc</p>
               </div>
             </div>
             <div class="swiper-slide">
-              <img src="/img/2022.jpg" alt="Huy hiệu 3">
+              <img src="/img/2022.png" alt="Huy hiệu 3">
               <div class="bottom">
                 <h2>2022</h2>
                 <p>Nhà Phân Phối Xi Măng Xuất Sắc</p>
               </div>
             </div>
             <div class="swiper-slide">
-              <img src="/img/2021.jpg" alt="Huy hiệu 4">
+              <img src="/img/2021.png" alt="Huy hiệu 4">
               <div class="bottom">
                 <h2>2021</h2>
                 <p>Nhà Phân Phối Xi Măng Xuất Sắc</p>
               </div>
             </div>
             <div class="swiper-slide">
-              <img src="/img/2020.jpg" alt="Huy hiệu 5">
+              <img src="/img/2020.png" alt="Huy hiệu 5">
               <div class="bottom">
                 <h2>2020</h2>
                 <p>Nhà Phân Phối Xi Măng Xuất Sắc</p>
               </div>
             </div>
             <div class="swiper-slide">
-              <img src="/img/2019.jpg" alt="Huy hiệu 6">
+              <img src="/img/2019.png" alt="Huy hiệu 6">
               <div class="bottom">
                 <h2>2019</h2>
                 <p>Nhà Phân Phối Xi Măng Xuất Sắc</p>
               </div>
             </div>
             <div class="swiper-slide">
-              <img src="/img/2018.jpg" alt="Huy hiệu 7">
+              <img src="/img/2018.png" alt="Huy hiệu 7">
               <div class="bottom">
                 <h2>2018</h2>
                 <p>Nhà Phân Phối Xi Măng Xuất Sắc</p>
@@ -238,38 +238,8 @@
     freeMode: true,
     freeModeMomentum: false,
   });
-  const counters = document.querySelectorAll('.counter');
-  const fadeElements = document.querySelectorAll('.fade-up');
+  
   const categoryHome = document.querySelectorAll('.event .category');
-  const animateCounter = (counter, duration = 1500) => {
-    const target = +counter.getAttribute('data-target');
-    const showPlus = counter.getAttribute('data-plus') === 'true';
-    const startTime = performance.now();
-
-    const update = (currentTime) => {
-      const elapsed = currentTime - startTime;
-      const progress = Math.min(elapsed / duration, 1);
-      const value = Math.floor(progress * target);
-      counter.textContent = showPlus ? `${value}+` : `${value}`;
-      if (progress < 1) {
-        requestAnimationFrame(update);
-      } else {
-        counter.textContent = showPlus ? `${target}+` : `${target}`;
-      }
-    };
-
-    requestAnimationFrame(update);
-  };
-
-  const observer = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('show');
-        entry.target.querySelectorAll('.counter').forEach(c => animateCounter(c));
-        observer.unobserve(entry.target);
-      }
-    });
-  }, { threshold: 0.5 });
 categoryHome.forEach(category =>{
   const newsEvent = category.getAttribute('data-category');
   if(newsEvent == "news"){
@@ -278,5 +248,5 @@ categoryHome.forEach(category =>{
     category.textContent = 'Sự Kiện';
   }
 })
-  fadeElements.forEach(el => observer.observe(el));
+  
 </script>

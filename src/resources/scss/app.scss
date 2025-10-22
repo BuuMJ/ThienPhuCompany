@@ -18,7 +18,7 @@
     background-color: rgba(0, 0, 0, 0.1);
 }
 body{
-    font-family: "Montserrat", sans-serif;
+    font-family: "Space Grotesk", sans-serif;
     overflow-x: hidden;
 }
 body.modal-open{
@@ -29,6 +29,33 @@ input:-webkit-autofill:hover,
 input:-webkit-autofill:focus, 
 input:-webkit-autofill:active{
     -webkit-box-shadow: 0 0 0 30px white inset !important;
+}
+#backToTop {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background-color: $primarycolor;
+  color: white;
+  border: none;
+  outline: none;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  font-size: 22px;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  transition: opacity 0.4s ease, transform 0.3s ease;
+  opacity: 0;              /* Ẩn mờ mặc định */
+  pointer-events: none;    /* Không bấm được khi ẩn */
+  z-index: 1000;
+}
+#backToTop.show {
+  opacity: 1;           
+  pointer-events: auto;
+}
+#backToTop:hover {
+  background-color: #ff3333;
+  transform: translateY(-3px);
 }
 .animate__shakeX{
     animation: animate__shakeX .3s ease forwards;

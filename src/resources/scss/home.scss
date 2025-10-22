@@ -166,7 +166,7 @@
   padding-left: 15px;
   margin-right: auto;
   margin-left: auto;
-  width: 80%;
+  width: 90%;
     
 }
 .container-home .main-home .reason-choose-us .reason-footer .col {
@@ -210,7 +210,7 @@
   justify-content: center;
   align-items: center;
   width: 100%;
-  background-color: $titlecolor;
+  background: linear-gradient(135deg, #a08857 0%, #d1b97a 100%);
   padding: 50px 0;
 }
 .container-home .main-home .about-us h1{
@@ -251,19 +251,18 @@
 .container-home .main-home .about-us .box-introduce{
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
-  align-items: start;
-  width: 100%;
+  justify-content: space-between;
+  align-items: stretch;
+  width: 90%;
   padding: 20px;
 }
 
 .container-home .main-home .about-us .box-introduce .introduce{
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: start;
   align-items: start;
   width: 45%;
-  padding-right: 20px;
   color: white;
 }
 .container-home .main-home .about-us .box-introduce .introduce span{
@@ -272,6 +271,9 @@
   font-size: 18px;
   line-height: 1.5;
   letter-spacing: 1.2px;
+}
+.container-home .main-home .about-us .box-introduce .introduce span:first-child{
+  margin-top: unset;
 }
 .container-home .main-home .about-us .box-introduce .introduce .read-more{
   color: white;
@@ -288,7 +290,7 @@
   position: relative;
   transition: all .5s;
   z-index: 8;
-  margin: 20px 0;
+  margin-top: 20px;
 }
 .container-home .main-home .about-us .box-introduce .introduce .read-more::after{
   content: "";
@@ -362,7 +364,7 @@
 .container-home .main-home .slide-track img {
   height: 70%;
   width: 100%;
-
+  object-fit: contain;
 }
 .container-home .main-home .swiper-slide .bottom{
   display: flex;
@@ -392,7 +394,6 @@
   width: 80%;
   padding: 40px 0;
 }
-
 .container-home .main-home .stats .stats-header {
   display: flex;
   flex-direction: row;
@@ -651,6 +652,7 @@
   border: 1px solid transparent;
   transition: all .5s ease;
   box-shadow: 0 3px 13px rgba(0, 0, 0, 0.07);
+  margin-bottom: 70px;
 }
 .container-home .main-home .list-event .container-event .event .background{
   width: 100%;
