@@ -32,14 +32,11 @@
     transition: .3s;
     box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 50px;
 }
-.container-event img:hover{
-    opacity: 0.8;
-}
 .container-event .main-event .all-news{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 95%;
+    width: 90%;
     padding: 60px 0 40px 0;
     border-bottom: 2px solid rgba(0, 77, 97, 0.1);
     flex-wrap: wrap;
@@ -67,6 +64,10 @@
     height: 78%;
     margin-bottom: 12px;
     border-radius: 10px;
+}
+
+.container-event .main-event .all-news .latest-news .card-latest__news:hover img{
+    opacity: 0.8;
 }
 .container-event .main-event .all-news .latest-news .card-latest__news .label-news,
 .container-event .main-event .all-news .remaining-news .card-remaining__news .label-news{
@@ -115,8 +116,10 @@
     -webkit-line-clamp: 1;
     line-clamp: 1;
     -webkit-box-orient: vertical;
+    font-size: 24px;
+    text-transform: capitalize;
 }
-.container-event .main-event .all-news .latest-news .card-latest__news h1:hover{
+.container-event .main-event .all-news .latest-news .card-latest__news:hover h1{
     color: $primarycolor;
 }
 .container-event .main-event .all-news .latest-news .card-latest__news span.time-news{
@@ -128,9 +131,11 @@
 .container-event .main-event .all-news .content-three__latest{
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: start;
+    align-items: stretch;
     width: 38%;
     height: 575px;
+    gap: 1%;
 }
 .container-event .main-event .all-news .content-three__latest .card-three__latest{
     display: flex;
@@ -151,6 +156,9 @@
     height: 100%;
     border-radius: 10px;
     margin-bottom: 12px;
+}
+.container-event .main-event .all-news .content-three__latest .card-three__latest:hover img{
+    opacity: 0.8;
 }
 .container-event .main-event .all-news .content-three__latest .card-three__latest .main-three__latest{
     width: 63%;
@@ -175,7 +183,7 @@
     display: inline;
 }
 .container-event .main-event .all-news .content-three__latest .card-three__latest .main-three__latest h2{
-    font-size: 20px;
+    font-size: 16px;
     font-weight: 600;
     line-height: 30px;
     text-align: justify;
@@ -189,7 +197,7 @@
     text-transform: capitalize;
     transition: .3s;
 }
-.container-event .main-event .all-news .content-three__latest .card-three__latest .main-three__latest h2:hover{
+.container-event .main-event .all-news .content-three__latest .card-three__latest:hover h2{
     color: $primarycolor;
 }
 .container-event .main-event .all-news .content-three__latest .card-three__latest .main-three__latest .time-news{
@@ -244,7 +252,7 @@
     flex-wrap: wrap;
     justify-content: space-between;
     align-items: start;
-    width: 90%;
+    width: 80%;
     padding: 50px 0 30px 0;
 }
 .container-event .main-event .news{
@@ -316,6 +324,10 @@
     border-radius: 10px;
     margin-bottom: 12px;
 }
+.container-event .main-event .news .card-news:hover img,
+.container-event .main-event .event .card-news:hover img{
+    opacity: 0.8;
+}
 .container-event .main-event .news .card-news:nth-of-type(1) img,
 .container-event .main-event .event .card-news:nth-of-type(1) img{
     height: 450px;
@@ -363,6 +375,10 @@
     letter-spacing: 1.2px;
     line-height: 40px;
     transition: .3s;
+}
+.container-event .main-event .news .card-news:hover h2,
+.container-event .main-event .event .card-news:hover h2{
+    color: $primarycolor;
 }
 .container-event .main-event .news .card-news:nth-of-type(1) .content-news h2,
 .container-event .main-event .event .card-news:nth-of-type(1) .content-news h2{
