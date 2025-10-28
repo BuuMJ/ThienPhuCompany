@@ -25,7 +25,7 @@
     width: 100%;
     padding: 20px;
     padding-bottom: unset;
-    background-color: $backgroundHeadFoot;
+    background-color: $backgroundDark;
     background-image: url('/img/imgfooter.svg');
     background-repeat: no-repeat;
     background-position: 50vw 18%;
@@ -67,7 +67,7 @@
     align-items: center;
     padding: 16px 50px;
     background-color: $titlecolor;
-    transform: translateY(-50%);
+    transform: translateY(calc(-50% - 16px));
     border-radius: 10px;
     gap: 20px;
     width: 70%;
@@ -196,9 +196,9 @@
     font-size: 16px;
     font-weight: 700;
     margin: 8px 0 14px 0;
-    color: $titlecolor;
+    color: $primaryColor;
     padding-bottom: 12px;
-    border-bottom: 1px solid $linecolor;
+    border-bottom: 1px solid $hoverBorder;
     width: 100%;
     text-transform: uppercase;
 }
@@ -206,7 +206,7 @@
 .container-footer .main-footer .info-contact .hotline .content,
 .container-footer .main-footer .info-contact .email .content{
     font-size: 14px;
-    color:#c1c1c1;
+    color:$textSecondary;
     display: flex;
     justify-content: start;
     align-items: center;

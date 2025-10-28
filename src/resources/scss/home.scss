@@ -5,6 +5,7 @@
   justify-content: center;
   align-items: center;
   margin-top: 110px;
+  background-color: $backgroundLight;
 }
 .container-home header{
   width: 100%;
@@ -15,8 +16,8 @@
   justify-content: center;
   align-items: center;
   color: white;
-  // background: linear-gradient(180deg, rgba(0, 0, 0,0.2), rgba(203 ,34, 39,0.2)), url('/img/homeHeader.jpg') bottom / cover no-repeat;
-  background: linear-gradient(45deg, $titlecolor 50%, transparent), 
+  background: #A08857;
+  background: linear-gradient(90deg, rgba(160, 136, 87, 1) 0%, rgba(209, 199, 164, 1) 50%, transparent 100%), 
             url('/img/allproductsposter.png') right / contain no-repeat;
 
 }
@@ -29,7 +30,7 @@
       /* regular text-shadow */
       0 .08ch 18px white,
       /* text-shadow highlight */
-      0 -2px 0 $titlecolor;
+      0 -2px 0 $primaryColor;
 }
 .container-home header span{
   font-size: 30px;
@@ -37,9 +38,10 @@
   margin: 12px 0;
   text-align: center;
   line-height: 1.5;
+  color: $backgroundDark;
 }
 .container-home header p.kh{
-  color: white;
+  color: $backgroundDark;
   font-weight: 700;
   font-size: 56px;
   text-transform: uppercase;
@@ -56,7 +58,7 @@
   margin-top: 40px;
   font-style: italic;
   transform: skew(-3deg);
-  color: #f1f1f1;
+  color: $textPrimary;
 }
 .container-home .main-home{
   display: flex;
@@ -74,7 +76,7 @@
   padding: 40px 0;
 }
 .container-home .main-home .reason-choose-us h1{
-  color: $titlecolor;
+  color: $accentColor;
   font-weight: 700;
   padding-bottom: 16px;
   position: relative;
@@ -96,17 +98,17 @@
 .container-home .main-home .reason-choose-us h1::after,
 .container-home .main-home .honor-section h1::after{
   width: 40%;
-  background-color: $linecolor;
+  background-color: $hoverBorder;
 }
 .container-home .main-home .reason-choose-us span{
   margin: 20px 0;
   font-size: 20px;
   font-weight: 400;
   padding: 20px 0;
-  color: $titlecolor;
+  color: $textPrimary;
 }
 .container-home .main-home .reason-choose-us span b{
-  color: $primarycolor;
+  color: $accentColor;
 }
 .container-home .main-home .reason-choose-us .list-card{
   display: flex;
@@ -122,12 +124,13 @@
   justify-content: center;
   align-items: center;
   padding: 26px;
-  color: white;
-  background-color: $primarycolor;
+  background-color: $background;
   flex: 1;
+  color: $textPrimary;
 }
 .container-home .main-home .reason-choose-us .list-card .card:nth-child(odd){
-  background-color: $titlecolor;
+  background-color: $backgroundDark;
+  color: white;
 }
 // .container-home .main-home .reason-choose-us .list-card .card span.material-symbols-outlined{
 //   color: $primarycolor;
@@ -135,9 +138,16 @@
 //   margin: 0 0 8px 0 ;
 // }
 .container-home .main-home .reason-choose-us .list-card .card img{
-  width: 80px;
-  height: 80px;
+  width: 100px;
+  height: 100px;
   padding: 0 16px;
+}
+.container-home .main-home .reason-choose-us .list-card .card .box-content{
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+  flex: 1;
 }
 .container-home .main-home .reason-choose-us .list-card .card span.title{
   font-size: 24px;
@@ -145,6 +155,9 @@
   margin: 6px 0;
   text-transform: capitalize;
   padding: 0 16px;
+  color:  $textPrimary;
+}
+.container-home .main-home .reason-choose-us .list-card .card:nth-child(odd) span.title{
   color: white;
 }
 .container-home .main-home .reason-choose-us .list-card .card span.main-info{
@@ -154,6 +167,9 @@
   text-align: center;
   letter-spacing: 1.2px;
   padding: 0 16px;
+  color: $textSecondary;
+}
+.container-home .main-home .reason-choose-us .list-card .card:nth-child(odd) span.main-info{
   color: white;
 }
 .container-home .main-home .reason-choose-us .reason-footer {
@@ -161,7 +177,7 @@
   flex-direction: row;
   justify-content: center;
   align-items: stretch;
-  padding: 30px 0;
+  padding: 30px 0 0;
   padding-right: 15px;
   padding-left: 15px;
   margin-right: auto;
@@ -177,10 +193,10 @@
   font-size: 20px;
   font-weight: 700;
   line-height: 1.8;
-  color: $primarycolor;
+  color: $textPrimary;
   text-transform: uppercase;
   padding-right: 65px;
-  border-right:1px solid #ececec;
+  border-right:1px solid $hoverBorder;
   position: relative;
   padding-bottom: 20px;
 }
@@ -189,7 +205,7 @@
   position: absolute;
   bottom: 0;
   left: 0;
-  background-color: $titlecolor;
+  background-color: $hoverBorder;
   height: 6px;
   width: 10%;
 }
@@ -198,7 +214,7 @@
   align-items: center;
 }
 .container-home .main-home .reason-choose-us .reason-footer .right p {
-  color: $titlecolor;
+  color: $textSecondary;
   line-height: 1.8;
   padding-left: 65px;
   text-align: justify;
@@ -210,11 +226,12 @@
   justify-content: center;
   align-items: center;
   width: 100%;
-  background: linear-gradient(135deg, #a08857 0%, #d1b97a 100%);
-  padding: 50px 0;
+  background: #1E1E1E;
+background: linear-gradient(90deg, rgba(30, 30, 30, 1) 0%, rgba(44, 44, 44, 1) 50%);
+  padding: 40px 0;
 }
 .container-home .main-home .about-us h1{
-  color: white;
+  color: $accentColor;
   width: 100%;
   padding: 12px 0;
   position: relative;
@@ -227,7 +244,7 @@
 .container-home .main-home .list-event h1{
   width: 100%;
   padding: 12px 0;
-  color: $titlecolor;
+  color: $accentColor;
   position: relative;
   text-align: center;
   font-weight: 700;
@@ -243,10 +260,10 @@
   bottom: 0;
   left: 50%;
   transform: translateX(-50%);
-  background-color: $linecolor;
+  background-color: $hoverBorder;
 }
 .container-home .main-home .about-us h1::before{
-  background-color: $linecolor;
+  background-color: $hoverBorder;
 }
 .container-home .main-home .about-us .box-introduce{
   display: flex;
@@ -282,8 +299,8 @@
   align-items: center;
   text-decoration: none;
   padding: 16px 20px;
-  border: 1px solid $primarycolor;
-  background-color: $primarycolor;
+  border: 1px solid $accentColor;
+  background-color: $accentColor;
   font-weight: 600;
   font-size: 20px;
   border-radius: 5px;
@@ -292,25 +309,23 @@
   z-index: 8;
   margin-top: 20px;
 }
-.container-home .main-home .about-us .box-introduce .introduce .read-more::after{
-  content: "";
-  position: absolute;
-  width: 0;
-  height: 100%;
-  left: 0;
-  background-color: $titlecolor;
-  z-index: -1;
-  transition: all .5s;
-}
+// .container-home .main-home .about-us .box-introduce .introduce .read-more::after{
+//   content: "";
+//   position: absolute;
+//   width: 0;
+//   height: 100%;
+//   left: 0;
+//   background-color: $hoverBorder;
+//   z-index: -1;
+//   transition: all .5s;
+// }
 .container-home .main-home .about-us .box-introduce .introduce .read-more:hover{
-  color: white;
-}
-.container-home .main-home .about-us .box-introduce .introduce .read-more:hover::after{
-  width: 100%;
+  border: 1px solid $hoverBorder;
+  box-shadow: $shadow;
 }
 .container-home .main-home .about-us .box-introduce .img-introduce{
   width: 45%;
-  border: 2px solid $primarycolor;
+  border: 2px solid $hoverBorder;
   padding: 10px;
 }
 
@@ -323,7 +338,7 @@
 .container-home .main-home .honor-section h1 {
   display: inline-block;
   font-weight: 700;
-  color: $titlecolor;
+  color: $accentColor;
   margin-bottom: 12px;
   padding-bottom: 16px;
   position: relative;
@@ -333,13 +348,13 @@
   font-size: 20px;
   font-weight: 400;
   padding: 20px 0;
-  color: $linecolor;
+  color: $textSecondary;
 }
 
 .container-home .main-home .badge-slider {
   width: 100%;
   overflow: hidden;
-  background: #fff;
+  background: $backgroundLight;
   padding: 10px 0;
 }
 
@@ -354,9 +369,10 @@
   flex-direction: column;
   justify-content: center;
   align-items: start;
-  background-color: white;
+  background-color: $background;
   padding: 12px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+  box-shadow: $shadow;
+  border: 1px solid $hoverBorder;
   border-radius: 5px;
   height: 400px;
 }
@@ -377,13 +393,13 @@
 }
 .container-home .main-home .swiper-slide .bottom h2{
     font-size: 24px;
-    color: $titlecolor;
+    color: $textPrimary;
     letter-spacing: 2px;
     margin-bottom: 12px;
 }
 .container-home .main-home .swiper-slide .bottom p{
   font-size: 14px;
-  color: $linecolor;
+  color: $textSecondary;
 }
 .container-home .main-home .stats {
   display: flex;
@@ -415,18 +431,18 @@
   font-size: 20px;
   font-weight: 700;
   line-height: 1.8;
-  color: $titlecolor;
+  color: $textPrimary;
   text-transform: uppercase;
   padding-right: 65px;
   position: relative;
-  border-right:1px solid #ececec;
+  border-right:1px solid $hoverBorder;
 }
 .container-home .main-home .stats .stats-header .left p::after{
   content: "";
   width: 10%;
   height: 6px;
   position: absolute;
-  background-color: $primarycolor;
+  background-color: $hoverBorder;
   bottom: 0;
   left: 0;
 }
@@ -435,7 +451,7 @@
   align-items: center;
 }
 .container-home .main-home .stats .stats-header .right p {
-  color: $linecolor;
+  color: $textSecondary;
   line-height: 1.8;
   padding-left: 65px;
   text-align: justify;
@@ -452,24 +468,27 @@
   transition: transform 0.6s ease, opacity 0.6s ease;
   padding: 20px;
   border-radius: 8px; 
-  background-color: $titlecolor;
+  background-color: $background;
+  box-shadow: $shadow;
+  border: 1px solid $hoverBorder;
 }
 .container-home .main-home .stats .stat .counter {
   font-size: 56px;
   font-weight: 700;
-  color: white; /* màu chủ đạo Thiên Phú */
+  color: $textPrimary; /* màu chủ đạo Thiên Phú */
   display: block;
   line-height: 1;
 }
 .container-home .main-home .stats .stat p {
   font-size: 24px;
   font-weight: 600;
-  color: white;
+  color: $textPrimary;
   margin-top: 12px;
 }
 .container-home .main-home .stats .stat p.content{
   font-weight: 400;
   font-size: 14px;
+  color: $textSecondary;
 }
 .fade-up {
   opacity: 0;
@@ -485,8 +504,8 @@
   justify-content: center;
   align-items: center;
   width: 100%;
-  padding: 50px 0;
-  background-color: $backgroundColor;
+  padding: 40px 0;
+  background-color: $background;
 }
 .container-home .main-home .best-seller .list-product{
     display: flex;
@@ -506,6 +525,8 @@
   height: 450px;
   position: relative;
   overflow: hidden;
+  border: 1px solid $hoverBorder;
+  background-color: #FFFFFF;
 }
 .container-home .main-home .best-seller .list-product .product img{
   width: 100%;
@@ -517,7 +538,7 @@
   justify-content: space-between;
   align-items: center;
   height: 230px;
-  background-color: #fdf7f7;
+  background-color: $backgroundLight;
   position: absolute;
   bottom: calc(-20% + 4px);
   padding: 50px 45px 50px 45px;
@@ -528,7 +549,7 @@
 }
 .container-home .main-home .best-seller .list-product .product .box-content::after{
   content: "PCB40";
-  background-color: $primarycolor;
+  background-color: $accentColor;
   color: white;
   font-size: 14px;
   font-weight: 600;
@@ -544,11 +565,11 @@
 .container-home .main-home .best-seller .list-product .product .box-content h3{
   font-size: 24px;
   font-weight: 600;
-  color: $titlecolor;
+  color: $textPrimary;
   
 }
 .container-home .main-home .best-seller .list-product .product .box-content p{
-  color: $linecolor;
+  color: $textSecondary;
   font-size: 14px;
 }
 .container-home .main-home .best-seller .list-product .product .box-content a{
@@ -576,9 +597,9 @@
 .container-home .main-home .best-seller .see-all{
   font-size: 16px;
   font-weight: 500;
-  border: 1px solid $titlecolor;
+  border: 1px solid $accentColor;
   color: white;
-  background-color: $titlecolor;
+  background-color: $accentColor;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -598,26 +619,10 @@
   font-size: 22px;
   font-weight: 600;
 }
-.container-home .main-home .best-seller .list-product .product span.visited-product::after,
-.container-home .main-home .best-seller .see-all::after{
-  position: absolute;
-  z-index: -1;
-  content: "";
-  left: 0;
-  width: 0;
-  height: 100%;
-  background-color: $primarycolor;
-  transition: all .5s;
-  
-}
 .container-home .main-home .best-seller .list-product .product span.visited-product:hover,
 .container-home .main-home .best-seller .see-all:hover{
-  color: white;
-  border: 1px solid $primarycolor;
-}
-.container-home .main-home .best-seller .list-product .product span.visited-product:hover::after,
-.container-home .main-home .best-seller .see-all:hover::after{
-  width: 100%;
+  border: 1px solid $hoverBorder;
+  box-shadow: $shadow;
 }
 .container-home .main-home .list-event{
   display: flex;
@@ -625,7 +630,7 @@
   justify-content: center;
   align-items: center;
   width: 100%;
-  padding: 20px 0;
+  padding: 40px 0;
 }
 .container-home .main-home .list-event .container-event{
   display: flex;
@@ -694,13 +699,13 @@
   text-align: center;
   text-transform: uppercase;
   z-index: 3;
-  background: $primarycolor;
+  background: $accentColor;
   animation: pulse 2s infinite;
   border-radius: 5px;
 }
 .container-home .main-home .list-event .container-event .event:hover{
-  box-shadow: 0 4px 4px 8px rgba(0, 77, 97,0.1);
-  border: 1px solid $primarycolor;
+  box-shadow: 0 4px 4px 8px rgba(209, 199, 164,0.2);
+  border: 1px solid $hoverBorder;
   transform: translateY(-5px);
 }
 .container-home .main-home .list-event .container-event .event:hover img{
@@ -724,19 +729,19 @@
   position: absolute;
   top: 12px;
   right: 6px;
-  background-color: white;
-  color: $linecolor;
+  background-color: $backgroundLight;
+  color: $textPrimary;
   padding: 4px 8px;
   border-radius: 5px;
   z-index: 3;
   text-transform: uppercase;
   gap: 4px;
-  box-shadow:  3px 13px rgba(0, 0, 0, 0.07)
+  box-shadow:  $shadow;
 }
 .container-home .main-home .list-event .container-event .event .content-event .time .date{
   font-weight: 800;
   word-spacing: 4px;
-  color: $titlecolor;
+  color: $primaryColor;
 }
 // .container-home .main-home .list-event .container-event .event .content-event .time span.material-symbols-outlined{
 //   padding: 4px;
@@ -753,13 +758,13 @@
   overflow: hidden;
   text-overflow: ellipsis;
   // height: 35%;
-  color: $titlecolor;
+  color: $textPrimary;
   padding: 0 12px;
 }
 .container-home .main-home .list-event .container-event .event .content{
   width: 100%;
   flex: 1;
-  padding: 0 12px;
+  padding: 6px 12px;
 }
 .container-home .main-home .list-event .container-event .event .content span{
   font-size: 14px;
@@ -771,7 +776,7 @@
   overflow: hidden;
   text-overflow: ellipsis;
   height: 100%;
-  color: $linecolor;
+  color: $textSecondary;
 }
 //responsive macbook
 @media screen and (min-width: 1279px) and (max-width: 1441px){
