@@ -42,7 +42,7 @@
     justify-content: center;
     align-items: center;
     width: 100%;
-    color: $titlecolor;
+    color: $primaryColor;
     font-size: 18px;
     padding-top: 20px;
     // background-color: rgb(10, 10, 10);
@@ -57,7 +57,7 @@
     align-self: flex-end;
 }
 .container-footer .coppy-right span b{
-    color: $primarycolor;
+    color: $accentColor;
     text-transform: uppercase;
 }
 .container-footer .email-contact{
@@ -66,11 +66,12 @@
     justify-content: center;
     align-items: center;
     padding: 16px 50px;
-    background-color: $titlecolor;
+    background-color: $primaryColor;
     transform: translateY(calc(-50% - 16px));
     border-radius: 10px;
     gap: 20px;
     width: 70%;
+    box-shadow: $shadow;
 }
 .container-footer .info-contact > * {
     margin: 12px 0;
@@ -118,11 +119,12 @@
     height: 60px;
     background-color: transparent;
     border: unset;
-    border-bottom: 1px solid $linecolor;
+    border-bottom: 1px solid $hoverBorder;
     font-size: 16px;
     font-weight: 600;
     padding: 4px 22px 4px 20px;
     color: black;
+    transition: .5s;
 }
 .container-footer .email-contact .list-box .box-input input:-webkit-autofill { 
     -webkit-background-clip: text;
@@ -146,8 +148,12 @@
     top: 1.5%;
     color: $primarycolor;
 }
+.container-footer .email-contact .list-box .box-input input:focus ,
+.container-footer .email-contact .list-box .box-input input:valid {
+    border-bottom: 1px solid $accentColor;
+}
 .container-footer .email-contact button{
-    background-color: $backgroundHeadFoot;
+    background: $gradientDark;
     border: unset;
     font-size: 16px;
     font-weight: 700;

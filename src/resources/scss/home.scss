@@ -170,7 +170,7 @@
   color: $textSecondary;
 }
 .container-home .main-home .reason-choose-us .list-card .card:nth-child(odd) span.main-info{
-  color: white;
+  color: #ababab;
 }
 .container-home .main-home .reason-choose-us .reason-footer {
   display: flex;
@@ -226,8 +226,8 @@
   justify-content: center;
   align-items: center;
   width: 100%;
-  background: #1E1E1E;
-background: linear-gradient(90deg, rgba(30, 30, 30, 1) 0%, rgba(44, 44, 44, 1) 50%);
+  background: $backgroundDark;
+  background: $gradientDark;
   padding: 40px 0;
 }
 .container-home .main-home .about-us h1{

@@ -23,11 +23,12 @@
     width: 100%;
     overflow: hidden;
     padding: 40px 0;
+    background-color: $backgroundLight;
 }
 .container-product .main-product h1{
   font-size: 52px;
   position: relative;
-  color: $primarycolor;
+  color: $accentColor;
   padding-bottom: 16px;
 }
 .container-product .main-product h1::before{
@@ -42,7 +43,7 @@
 }
 .container-product .main-product h1::after{
     width: 40%;
-    background-color: $linecolor;
+    background-color: $hoverBorder;
     height: 4px;
     position: absolute;
     content: "";
@@ -65,13 +66,13 @@
 .feature-card{
   border-radius:5px;
   padding:22px;
-  box-shadow:0 8px 20px rgba(9,9,9,0.08);
+  box-shadow:$shadow;
   display:flex;
   flex-direction: column;
   align-items:center;
   gap:16px;
   transition:transform .28s ease, box-shadow .28s ease;
-  border: 1px solid $linecolor;
+  border: 1px solid $hoverBorder;
   flex: 1;
   text-align: center;
 }
@@ -98,12 +99,12 @@
   font-size:16px;
   font-weight:700;
   margin:0 0 6px;
-  color:#a08857;
+  color:$textPrimary;
 }
 .feature-desc{
   margin:0;
   font-size:14px;
-  color:$linecolor;
+  color:$textSecondary;
   line-height:1.45;
 }
 
@@ -142,7 +143,7 @@
     align-items: stretch;
     flex-wrap: wrap;
     width: 80%;
-    padding: 40px 0;
+    padding: 60px 0;
     gap: 20px;
 }
 
@@ -157,9 +158,10 @@
     text-decoration: none;
     border-radius: 5px;
     overflow: hidden;
-    background-color: white;
-    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    background-color: $background;
+    box-shadow: $shadow;
     padding-bottom: 20px;
+    border: 1px solid $hoverBorder;
 }
 .container-product .main-product .all-product .product .background-product{
     width: 100%;
@@ -194,7 +196,7 @@
   font-size: 24px;
   font-weight: 600;
   text-transform: capitalize;
-  background-color: $titlecolor;
+  background-color: $accentColor;
   transition: .3s;
   z-index: 2;
   border-radius: 5px;
@@ -220,9 +222,8 @@
   align-items: center;
   font-size: 24px;
   font-weight: 700;
-  color: black;
   text-transform: capitalize;
-  background-color: #c2baa5;
+  background: $gradientDark;
   color: white;
   width: 100%;
   height: 80px;
@@ -231,7 +232,7 @@
   z-index: 3;
 }
 .container-product .main-product .all-product .product:last-child .name-product{
-  background-color: $primarycolor;
+  background: $accentColor;
 }
 .container-product .main-product .all-product .product ul{
   width: 100%;
@@ -242,15 +243,15 @@
  padding: 6px 0;
  font-size: 16px;
  text-transform: capitalize;
- color: black;
+ color: $textPrimary;
  list-style-type: none;
 }
 .container-product .main-product .all-product .product span.visited-product{
   // width: 30%;
   // height: 50px;
   font-size: 16px;
-  border: 1px solid #bc9f6e;
-  color: #bc9f6e;
+  border: 1px solid $accentColor;
+  color: $accentColor;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -274,7 +275,7 @@
   left: 0;
   width: 0;
   height: 100%;
-  background-color: #bc9f6e;
+  background-color: $accentColor;
   transition: all .5s
 }
 
@@ -332,13 +333,13 @@
   }
   .container-pcb40 header span{
     font-size: 50px;
-    color: $primarycolor;
+    color: $accentColor;
     font-weight: 600;
     text-transform: uppercase;
     text-align: center;
   }
   .container-pcb40 header span .backproductpage{
-    color: $primarycolor;
+    color: $textPrimary;
     text-decoration: none;
   }
   .container-pcb40 header span .backproductpage:hover{
@@ -350,7 +351,8 @@
     justify-content: center;
     align-items: center;
     width: 100%;
-    margin-bottom: 50px;
+    padding: 60px 0;
+    background-color: $backgroundLight;
   }
   .container-pcb40 .main-pcb40 .header-pcb40{
     display: flex;
@@ -368,7 +370,7 @@
     width: 40%;
     padding: 12px;
     border-radius: 5px;
-    border: 5px solid $titlecolor;
+    border: 5px solid $hoverBorder;
     overflow: hidden;
     flex: 1;
   }
@@ -377,6 +379,7 @@
    }
   .container-pcb40 .main-pcb40 .header-pcb40 .card-pcb40 img{
     width: 100%;
+    height: 100%;
     transition: .5s;
   }
   .container-pcb40 .main-pcb40 .header-pcb40 .card-pcb40:hover img{
@@ -398,6 +401,7 @@
     font-weight: 600;
     letter-spacing: 1.2px;
     text-transform: uppercase;
+    color: $textPrimary;
   }
   .container-pcb40 .main-pcb40 .header-pcb40 .info-pcb40 .description{
     font-size: 18px;
@@ -405,23 +409,25 @@
     text-align: justify;
     letter-spacing: 1.2px;
     line-height: 30px;
+    color: $textSecondary;
   }
   .container-pcb40 .main-pcb40 .header-pcb40 .info-pcb40 .contact-pcb40{
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    box-shadow: 0 4px 12px rgba(160, 136, 87, 0.4);
+    box-shadow: $shadow;
     border-radius: 5px;
     overflow: hidden;
     padding-bottom: 12px;
+    background-color: $background;
   }
   .container-pcb40 .main-pcb40 .header-pcb40 .info-pcb40 .contact-pcb40 span.header-title{
     width: 100%;
     padding: 12px;
     font-size: 24px;
     font-weight: 600;
-    background-color: $titlecolor;
+    background: $gradientDark;
     color: white;
     text-align: center;
     margin-bottom: 12px;
@@ -430,7 +436,7 @@
     font-size: 16px;
     padding: 12px 0;
     text-align: center;
-    color: $linecolor;
+    color: $textSecondary;
     width: 90%;
   }
   .container-pcb40 .main-pcb40 .header-pcb40 .info-pcb40 .contact-pcb40 a {
@@ -450,8 +456,8 @@
     align-items: center;
     width: 100%;
     height: 40px;
-    border: 1px solid $primarycolor;
-    background-color: $primarycolor;
+    border: 1px solid $accentColor;
+    background-color: $accentColor;
     color: white;
     padding: 8px 0;
     border-radius: 5px;
@@ -460,7 +466,7 @@
   }
   .container-pcb40 .main-pcb40 .header-pcb40 .info-pcb40 .contact-pcb40 span.box-contact-us a:hover{
     background-color: transparent;
-    color: $primarycolor;
+    color: $accentColor;
   }
   .container-pcb40 .main-pcb40 .header-pcb40 .info-pcb40 .contact-pcb40 a.hotline{
     border: 1px solid #FC0404;
@@ -493,8 +499,9 @@
     font-size: 22px;
     font-weight: 500;
     padding: 8px 0;
-    border-bottom: 1px solid #dcdcdc;
+    border-bottom: 1px solid $hoverBorder;
     width: 100%;
+    color: $textPrimary;
   }
   .container-pcb40 .main-pcb40 .detail-pcb40 .application,
   .container-pcb40 .main-pcb40 .detail-pcb40 .addvantage,
@@ -519,7 +526,7 @@
   .container-pcb40 .main-pcb40 .detail-pcb40 .standard span.title{
     font-size: 20px;
     font-weight: 600;
-    color: $primarycolor;
+    color: $accentColor;
     padding: 12px 0;
   }
   .container-pcb40 .main-pcb40 .detail-pcb40 .application span.application-content,
@@ -534,6 +541,7 @@
     font-weight: 400;
     letter-spacing: 1.2px;
     margin-bottom: 12px;
+    color: $textPrimary;
   }
     .container-pcb40 .main-pcb40 .detail-pcb40 .addvantage img,
     .container-pcb40 .main-pcb40 .detail-pcb40 .receipt img,
@@ -553,6 +561,18 @@
   }
   .container-pcb40 .main-pcb40 .detail-pcb40 .standard img{
     width: 100%;
+  }
+  .container-pcb40 .main-pcb40 .detail-pcb40 .pack .box-img{
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    gap: 12px;
+    width: 100%;
+    height: 300px;
+    padding: 12px 0;
+  }
+  .container-pcb40 .main-pcb40 .detail-pcb40 .pack .box-img img{
+    height: 100%;
   }
 @media screen and(max-width: 1025px) {
   .container-product header,

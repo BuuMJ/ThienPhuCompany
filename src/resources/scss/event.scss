@@ -12,7 +12,7 @@
     align-items: center;
     width: 100%;
     height: 50vh;
-    background:  linear-gradient(to right, rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url('/img/news.avif') center / cover no-repeat;
+    background:  linear-gradient(to right, rgba(188, 159, 110,0.7) , rgba(209, 199, 164,0.7)), url('/img/news.avif') center / cover no-repeat;
 }
 .container-event header span {
     font-size: 50px;
@@ -30,7 +30,7 @@
 }
 .container-event img{
     transition: .3s;
-    box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 50px;
+    box-shadow: $shadow;
 }
 .container-event .main-event .all-news{
     display: flex;
@@ -38,7 +38,7 @@
     align-items: center;
     width: 90%;
     padding: 60px 0 40px 0;
-    border-bottom: 2px solid rgba(0, 77, 97, 0.1);
+    border-bottom: 2px solid $hoverBorder;
     flex-wrap: wrap;
 }
 .container-event .main-event .all-news .title-all__news{
@@ -49,7 +49,7 @@
     width: 60%;
     height: 575px;
     padding-right: 2%;
-    border-right: 2px solid rgba(0, 77, 97, 0.1);
+    border-right: 2px solid $hoverBorder;
 }
 .container-event .main-event .all-news .latest-news .card-latest__news{
     display: flex;
@@ -118,9 +118,10 @@
     -webkit-box-orient: vertical;
     font-size: 24px;
     text-transform: capitalize;
+    color: $textPrimary;
 }
 .container-event .main-event .all-news .latest-news .card-latest__news:hover h1{
-    color: $primarycolor;
+    color: $accentColor;
 }
 .container-event .main-event .all-news .latest-news .card-latest__news span.time-news{
     font-size: 14px;
@@ -131,31 +132,32 @@
 .container-event .main-event .all-news .content-three__latest{
     display: flex;
     flex-direction: column;
-    justify-content: start;
+    justify-content: center;
     align-items: stretch;
     width: 38%;
     height: 575px;
-    gap: 1%;
+    gap: 12px;
 }
 .container-event .main-event .all-news .content-three__latest .card-three__latest{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     width: 100%;
-    height: 30%;
+    height: calc(100% / 3 - 12px);
     text-decoration: none;
     color: black;
     padding-bottom: 12px;
-    border-bottom: 2px solid rgba(0, 77, 97, 0.1);
+    border-bottom: 2px solid $hoverBorder;
 }
 .container-event .main-event .all-news .content-three__latest .card-three__latest:last-child{
     border-bottom: unset;
+    padding-bottom: unset;
 }
 .container-event .main-event .all-news .content-three__latest .card-three__latest img{
     width: 35%;
     height: 100%;
     border-radius: 10px;
-    margin-bottom: 12px;
+    // margin-bottom: 12px;
 }
 .container-event .main-event .all-news .content-three__latest .card-three__latest:hover img{
     opacity: 0.8;
@@ -196,9 +198,10 @@
     overflow: hidden;
     text-transform: capitalize;
     transition: .3s;
+    color: $textPrimary;
 }
 .container-event .main-event .all-news .content-three__latest .card-three__latest:hover h2{
-    color: $primarycolor;
+    color: $accentColor;
 }
 .container-event .main-event .all-news .content-three__latest .card-three__latest .main-three__latest .time-news{
     margin-bottom: unset !important;
@@ -252,11 +255,11 @@
     flex-wrap: wrap;
     justify-content: space-between;
     align-items: start;
-    width: 80%;
+    width: 85%;
     padding: 50px 0 30px 0;
 }
 .container-event .main-event .news{
-    border-bottom: 2px solid rgba(0, 77, 97, .1);
+    border-bottom: 2px solid $hoverBorder;
 }
 .container-event .main-event .news h1,
 .container-event .main-event .event h1,
@@ -264,7 +267,7 @@
     padding-bottom: 20px;
     padding-right: 40px;
     font-size: 40px;
-    color: $primarycolor;
+    color: $accentColor;
     display: flex;
     justify-content: start;
     align-items: center;
@@ -287,7 +290,7 @@
     width: 100%;
     border-top-right-radius: 4px;
     height: 8px;
-    background-color: $linecolor;
+    background-color: $hoverBorder;
 }
 .container-event .main-event .news h1 img,
 .container-event .main-event .event h1 img,
@@ -309,6 +312,7 @@
     margin: 20px 0;
     text-decoration: none;
     color: black;
+    padding-left: 60px;
 }
 .container-event .main-event .news .card-news:nth-of-type(1),
 .container-event .main-event .event .card-news:nth-of-type(1){
@@ -350,7 +354,7 @@
 .container-event .main-event .all-news .remaining-news .card-remaining__news .time-news{
     font-size: 14px;
     font-weight: 700;
-    color: #7C7C7C;
+    color: $textSecondary;
     margin-bottom: 12px;
 }
 .container-event .main-event .all-news .remaining-news .card-remaining__news .time-news{
@@ -375,19 +379,21 @@
     letter-spacing: 1.2px;
     line-height: 40px;
     transition: .3s;
+    color: $textPrimary;
 }
 .container-event .main-event .news .card-news:hover h2,
 .container-event .main-event .event .card-news:hover h2{
-    color: $primarycolor;
+    color: $accentColor;
 }
 .container-event .main-event .news .card-news:nth-of-type(1) .content-news h2,
 .container-event .main-event .event .card-news:nth-of-type(1) .content-news h2{
-    font-size: 32px;
+    font-size: 24px;
     line-height: 44px;
+    color: $textPrimary;
 }
 .container-event .main-event .news .card-news .content-news h2:hover,
 .container-event .main-event .event .card-news .content-news h2:hover{
-    color: $primarycolor;
+    color: $accentColor;
 }
 .container-event .main-event .news .card-news .content-news p.desc,
 .container-event .main-event .event .card-news .content-news p.desc,
@@ -400,7 +406,7 @@
    line-height: 28px;
    text-align: justify;
    font-weight: 500;
-   color: #646464;
+   color: $textSecondary;
    white-space: pre-wrap;
    word-wrap: break-word;
 }
@@ -409,7 +415,7 @@
 }
 .container-event .main-event .news .card-news:nth-of-type(1) .content-news p.desc,
 .container-event .main-event .event .card-news:nth-of-type(1) .content-news p.desc{
-    font-size: 20px;
+    font-size: 16px;
     line-height: 32px;
     -webkit-line-clamp: 4;
     line-clamp: 4; 
