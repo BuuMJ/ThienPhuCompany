@@ -1,0 +1,19 @@
+<!-- file: icon-news-events.svg -->
+<svg xmlns="http://www.w3.org/2000/svg" width="120" height="120" viewBox="0 0 24 24" aria-labelledby="title1" role="img">
+  <title id="title1">Tổng hợp Tin tức và Sự kiện</title>
+  <g fill="none" stroke="#b00000" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+    <!-- newspaper -->
+    <rect x="1.2" y="3.2" width="13.6" height="12.8" rx="1.2" />
+    <line x1="3.2" y1="6.2" x2="12.8" y2="6.2" />
+    <line x1="3.2" y1="8.4" x2="8.8" y2="8.4" />
+    <rect x="9.8" y="9.4" width="4.6" height="4.6" rx="0.6" fill="#b00000" stroke="none" />
+
+    <!-- calendar overlapping on right -->
+    <rect x="12.6" y="1.6" width="9.8" height="9.8" rx="1" />
+    <line x1="14.4" y1="1.6" x2="14.4" y2="0.4" />
+    <line x1="19.6" y1="1.6" x2="19.6" y2="0.4" />
+    <line x1="14.6" y1="4.6" x2="21.8" y2="4.6" />
+    <!-- small dot indicating event -->
+    <circle cx="17.2" cy="7.8" r="0.9" fill="#b00000" stroke="none" />
+  </g>
+</svg>

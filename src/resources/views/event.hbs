@@ -4,18 +4,20 @@
     </header>
     <div class="main-event">
         <h1 class="primary-title">
-            <img src="/img/allnews-title.png" alt="">
+            <img src="/img/allnews-title.svg" alt="">
             Tất Cả
          </h1>
         <div class="all-news">
             <div class="latest-news">
                 {{#each latestNews}}
                     <a href="/event/{{this._id}}" class="card-latest__news">
-                        {{#if this.image1}}
-                            <img src="/{{this.image1}}" alt="">
-                        {{else}}
-                            <img src="/{{this.image2}}" alt="">
-                        {{/if}}
+                        <div class="img-latestNews">
+                            {{#if this.image1}}
+                                <img src="/{{this.image1}}" alt="">
+                            {{else}}
+                                <img src="/{{this.image2}}" alt="">
+                            {{/if}}
+                        </div>
                         <div class="label-news" >
                             <span>Mới Nhất</span>
                             <span class="check-label {{this.category}}"></span>
@@ -28,11 +30,13 @@
             <div class="content-three__latest">
                 {{#each threeLatestNews}}
                     <a href="/event/{{this._id}}" class="card-three__latest">
-                        {{#if this.image1}}
-                            <img src="/{{this.image1}}" alt="">
-                        {{else}}
-                            <img src="/{{this.image2}}" alt="">
-                        {{/if}}
+                        <div class="img-three_latest">
+                            {{#if this.image1}}
+                                <img src="/{{this.image1}}" alt="">
+                            {{else}}
+                                <img src="/{{this.image2}}" alt="">
+                            {{/if}}
+                        </div>
                         <div class="main-three__latest">
                             <div class="label-news">
                                 <span class="check-label {{this.category}}"></span>
@@ -46,15 +50,19 @@
             <div id="eventRemaining" class="remaining-news">
                 {{#each remainingNews}}
                     <a href="/event/{{this._id}}" class="card-remaining__news">
-                        {{#if this.image1}}
-                            <img src="/{{this.image1}}" alt="">
-                        {{else}}
-                            <img src="/{{this.image2}}" alt="">
-                        {{/if}}
+                        <div class="img-remaining__news">
+                            {{#if this.image1}}
+                                <img src="/{{this.image1}}" alt="">
+                            {{else}}
+                                <img src="/{{this.image2}}" alt="">
+                            {{/if}}
+                        </div>
                         <div class="label-news">
                             <span class="check-label {{this.category}}"></span>
                         </div>
-                        <h3>{{this.title}}</h3>
+                        <div class="title">
+                            <h3>{{this.title}}</h3>
+                        </div>
                         {{#if this.text1}}
                             <p class="desc" data-change-text="{{this.text1}}">{{this.text1}}</p>
                         {{else if this.text2}}
@@ -79,33 +87,37 @@
         {{#if listNew}}
             <div id="new" class="news">
                 <h1>
-                    <img src="/img/news-title.png" alt="">
+                    <img src="/img/news-title.svg" alt="">
                     Tin Tức
                 </h1>
-                {{#each listNew}}
-                <a href="/event/{{this._id}}" class="card-news">
-                    {{#if this.image1}}
-                        <img src="/{{this.image1}}" alt="" class="header">
-                    {{else}}
-                        <img src="/{{this.image2}}" alt="" class="header">
-                    {{/if}}
-                    <div class="content-news">
-                        <span class="time-news">{{moment this.createdAt format="DD/MM/YYYY"}}</span>
-                        <h2>{{this.title}}</h2>
-                        {{#if this.text1}}
-                            <p class="desc" data-change-text="{{this.text1}}">{{this.text1}}</p>
-                        {{else if this.text2}}
-                            <p class="desc" data-change-text="{{this.text2}}">{{this.text2}}</p>
-                        {{else if this.text3}}
-                            <p class="desc" data-change-text="{{this.text3}}">{{this.text3}}</p>
-                        {{else if this.text4}}
-                            <p class="desc" data-change-text="{{this.text4}}">{{this.text4}}</p>
-                        {{else}}
-                            <p class="desc" data-change-text="{{this.text5}}">{{this.text5}}</p>
-                        {{/if}}
-                    </div>
-                </a>
-                {{/each}}
+                <div class="news-container">
+                    {{#each listNew}}
+                    <a href="/event/{{this._id}}" class="card-news">
+                        <div class="img-card__news">
+                            {{#if this.image1}}
+                                <img src="/{{this.image1}}" alt="" class="header">
+                            {{else}}
+                                <img src="/{{this.image2}}" alt="" class="header">
+                            {{/if}}
+                        </div>
+                        <div class="content-news">
+                            <span class="time-news">{{moment this.createdAt format="DD/MM/YYYY"}}</span>
+                            <h2>{{this.title}}</h2>
+                            {{#if this.text1}}
+                                <p class="desc" data-change-text="{{this.text1}}">{{this.text1}}</p>
+                            {{else if this.text2}}
+                                <p class="desc" data-change-text="{{this.text2}}">{{this.text2}}</p>
+                            {{else if this.text3}}
+                                <p class="desc" data-change-text="{{this.text3}}">{{this.text3}}</p>
+                            {{else if this.text4}}
+                                <p class="desc" data-change-text="{{this.text4}}">{{this.text4}}</p>
+                            {{else}}
+                                <p class="desc" data-change-text="{{this.text5}}">{{this.text5}}</p>
+                            {{/if}}
+                        </div>
+                    </a>
+                    {{/each}}
+                </div>
                 <div class="pagination">
                   {{#each pagesOfNew}}
                   <a href="/event?pageOfNew={{this}}#new" data-page-new="{{this}}">{{this}}</a>
@@ -116,33 +128,37 @@
         {{#if listEvent}}
             <div id="event" class="event">
                 <h1>
-                    <img src="/img/event-title.png" alt="">
+                    <img src="/img/event-title.svg" alt="">
                     Sự Kiện
                 </h1>
-                {{#each listEvent}}
-                <a href="/event/{{this._id}}" class="card-news">
-                    {{#if this.image1}}
-                        <img src="/{{this.image1}}" alt="" class="header">
-                    {{else}}
-                        <img src="/{{this.image2}}" alt="" class="header">
-                    {{/if}}
-                    <div class="content-news">
-                        <span class="time-news">{{moment this.createdAt format="DD/MM/YYYY"}}</span>
-                        <h2>{{this.title}}</h2>
-                        {{#if this.text1}}
-                            <p class="desc" data-change-text="{{this.text1}}">{{this.text1}}</p>
-                        {{else if this.text2}}
-                            <p class="desc" data-change-text="{{this.text2}}">{{this.text2}}</p>
-                        {{else if this.text3}}
-                            <p class="desc" data-change-text="{{this.text3}}">{{this.text3}}</p>
-                        {{else if this.text4}}
-                            <p class="desc" data-change-text="{{this.text4}}">{{this.text4}}</p>
-                        {{else}}
-                            <p class="desc" data-change-text="{{this.text5}}">{{this.text5}}</p>
-                        {{/if}}
-                    </div>
-                </a>
-                {{/each}}
+                <div class="news-container">
+                    {{#each listEvent}}
+                    <a href="/event/{{this._id}}" class="card-news">
+                        <div class="img-card__news">
+                            {{#if this.image1}}
+                                <img src="/{{this.image1}}" alt="" class="header">
+                            {{else}}
+                                <img src="/{{this.image2}}" alt="" class="header">
+                            {{/if}}
+                        </div>
+                        <div class="content-news">
+                            <span class="time-news">{{moment this.createdAt format="DD/MM/YYYY"}}</span>
+                            <h2>{{this.title}}</h2>
+                            {{#if this.text1}}
+                                <p class="desc" data-change-text="{{this.text1}}">{{this.text1}}</p>
+                            {{else if this.text2}}
+                                <p class="desc" data-change-text="{{this.text2}}">{{this.text2}}</p>
+                            {{else if this.text3}}
+                                <p class="desc" data-change-text="{{this.text3}}">{{this.text3}}</p>
+                            {{else if this.text4}}
+                                <p class="desc" data-change-text="{{this.text4}}">{{this.text4}}</p>
+                            {{else}}
+                                <p class="desc" data-change-text="{{this.text5}}">{{this.text5}}</p>
+                            {{/if}}
+                        </div>
+                    </a>
+                    {{/each}}
+                </div>
                 <div class="pagination">
                   {{#each pagesOfEvent}}
                   <a href="/event?pageOfEvent={{this}}#event" data-page-event="{{this}}">{{this}}</a>

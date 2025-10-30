@@ -1,0 +1,14 @@
+<!-- file: icon-event.svg -->
+<svg xmlns="http://www.w3.org/2000/svg" width="120" height="120" viewBox="0 0 24 24" aria-labelledby="title3" role="img">
+  <title id="title3">Sự kiện</title>
+  <g fill="none" stroke="#b00000" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+    <rect x="2.2" y="3.2" width="19.6" height="17.2" rx="1.2" />
+    <line x1="2.2" y1="8" x2="21.8" y2="8" />
+    <line x1="7" y1="1.6" x2="7" y2="4" />
+    <line x1="17" y1="1.6" x2="17" y2="4" />
+    <!-- star / marker for event on calendar -->
+    <g transform="translate(6.5,9.5) scale(0.9)">
+      <path d="M4 0 L5.18 2.72 L8 3.09 L6 5 L6.36 7.91 L4 6.45 L1.64 7.91 L2 5 L0 3.09 L2.82 2.72 Z" fill="#b00000" stroke="none"/>
+    </g>
+  </g>
+</svg>

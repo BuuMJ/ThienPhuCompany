@@ -54,7 +54,7 @@
     const headerNavAdmin = document.querySelector('.header-app__admin');
     const checkPage = window.location.pathname;
     const hideFooterEmail = document.querySelector('.email-contact');
-    if(checkPage === '/contact' || checkPage === '/event' ){
+    if(checkPage === '/contact' || checkPage === '/event'|| checkPage.startsWith('/event/') ){
         hideFooterEmail.style.display = 'none';
     }
     if(checkPage.includes('login') || checkPage.includes('apilogin')){

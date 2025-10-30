@@ -1,0 +1,12 @@
+<!-- file: icon-news.svg -->
+<svg xmlns="http://www.w3.org/2000/svg" width="120" height="120" viewBox="0 0 24 24" aria-labelledby="title2" role="img">
+  <title id="title2">Tin tức</title>
+  <g fill="none" stroke="#b00000" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+    <rect x="2" y="3" width="15" height="14" rx="1.2" />
+    <line x1="4" y1="6" x2="14" y2="6" />
+    <line x1="4" y1="9" x2="10" y2="9" />
+    <rect x="11.2" y="10.2" width="4.6" height="4.6" rx="0.6" fill="#b00000" stroke="none" />
+    <!-- small folded corner -->
+    <path d="M17 3 L20 3 L20 6" stroke="#b00000" stroke-width="1.6" fill="none" />
+  </g>
+</svg>
