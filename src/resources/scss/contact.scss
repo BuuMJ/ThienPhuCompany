@@ -8,16 +8,43 @@
 }
 .container-contact header{
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     width: 100%;
     height: 50vh;
-    background: linear-gradient(to right, #bc9f6e33, #0080FF33), url('/img/contactheader.avif') center / cover no-repeat;
+    background: linear-gradient(to right, rgba(188, 159, 110, 0.94), rgba(209, 199, 164, 0.94)), url('/img/nvthienphu.jpg') center / cover no-repeat;
 }
-.container-contact header span {
-    font-size: 50px;
-    font-weight: 600;
+.container-contact header h1.primary-title,
+.container-contact header h1.primary-title__company{
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 1.3px;
+    position: relative;
     color: white;
+    font-size: 50px;
+}
+.container-contact header h1.primary-title{
+    color: $accentColor;
+    padding-bottom: 16px;
+    margin-top: 8px;
+}
+.container-contact header h1.primary-title::after{
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 4px;
+    background: $backgroundDark;
+    bottom: 0;
+    left: 50%;
+    right: 50%;
+    transform: translateX(-50%);
+}
+.container-contact header p{
+    font-size: 24px;
+    font-weight: 600;
+    color: $textPrimary;
+    padding: 20px;
 }
 .container-contact .main-contact{
     display: flex;
@@ -25,10 +52,12 @@
     justify-content: center;
     align-items: center;
     width: 100%;
+    padding-top: 40px;
+    background-color: $backgroundLight;
 }
 .container-contact .main-contact .header-main{
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
@@ -36,44 +65,38 @@
     font-weight: 600;
     width: 100%;
 }
-.container-contact .main-contact .header-main span.primary-title{
-    text-align: center;
-    text-transform: uppercase;
-    letter-spacing: 1.3px;
-    width: 100%;
-    margin: 30px 0;
-}
 .container-contact .main-contact .header-bottom {
     display: flex;
     flex-direction: row;
     justify-content: center;
-    align-items: center;
-    width: 100%;
-    padding: 12px 0;
+    align-items: stretch;
+    padding: 20px 0;
+    gap: 50px;
 }
 .container-contact .main-contact .header-bottom .address{
     display: flex;
     flex-direction: row;
     justify-content: start;
-    align-items: start;
-    width: 20%;
-    height: 120px;
-    margin: 0 20px;
+    align-items: stretch;
+    gap: 20px;
+    flex: 1;
 }
 
 .container-contact .main-contact .header-bottom .address i{
     font-size: 45px;
     padding-right: 16px;
+    color: $primaryColor;
 }
 .container-contact .main-contact .header-bottom .address .info-address{
     display: flex;
     flex-direction: column;
     justify-content: start;
-    align-items: start;
+    align-items: stretch;
     font-size: 18px;
     padding-left: 16px;
     position: relative;
-    height: 81px;
+    gap: 12px;
+    flex: 1;
 }
 .container-contact .main-contact .header-bottom .address .info-address::after{
     content: "";
@@ -90,38 +113,69 @@
     position: absolute;
     width: 3px;
     height: 40%;
-    background-color: $primarycolor;
+    background-color: $hoverBorder;
     top: 0;
     left: 0;
     z-index: 3;
 }
 .container-contact .main-contact .header-bottom .address .info-address .title{
+    color: $textPrimary;
     font-weight: 600;
 }
 .container-contact .main-contact .header-bottom .address .info-address .content{
     text-align: justify;
     font-weight: 400;
+    color: $textSecondary;
 }
 .container-contact .main-contact .contact-us{
     display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-shadow: $shadow;
+    padding: 20px 30px;
+    margin: 30px 0;
+    background: $backgroundDark;
+}
+.container-contact .main-contact .contact-us .container-input{
+    display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
-    flex-wrap: wrap;
-    width: 60%;
-    box-shadow: 0 15px 30px rgba(0,0,0,0.2);
-    margin-bottom: 30px;
-    padding: 20px 30px;
+    padding: 20px;
 }
-.container-contact .main-contact .contact-us > * {
+.container-contact .main-contact .contact-us .container-input > * {
     padding: 12px 0;
 }
 .container-contact .main-contact .contact-us span.title{
-    font-size: 26px;
-    font-weight: 600;
-    width: 100%;
+    font-size: 24px;
+    font-weight: 700;
     padding-top: 24px;
+    padding-bottom: 16px;
     text-align: center;
+    color: $primaryColor;
+    position: relative;
+}
+.container-contact .main-contact .contact-us span.title::after{
+    position: absolute;
+    content: "";
+    width: 40%;
+    height: 4px;
+    background: $accentColor;
+    bottom: 0;
+    left: 50%;
+    right: 50%;
+    transform: translateX(-50%);
+}
+.container-contact .main-contact .contact-us span.title::before{
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 4px;
+    background: $hoverBorder;
+    bottom: 0;
+    left: 0;
 }
 .container-contact .main-contact .contact-us .fullname{
     width: 48%;
@@ -131,24 +185,24 @@
     width: 100%;
     height: 50px;
     padding: 6px 12px 6px 8px;
-    border: 1px solid #d0d0d0;
+    border: 1px solid $hoverBorder;
     background-color: transparent;
     transition: .3s;
+    color: white;
 }
 .container-contact .main-contact .contact-us .fullname label{
     font-size: 15px;
-    color: #495057;
+    color: $hoverBorder;
     font-weight: 600;
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
     left: 2%;
-    background-color: white;
     transition: .5s;
 }
 .container-contact .main-contact .contact-us .fullname input:focus-visible{
     border-radius: unset;
-    border: 1px solid #d0d0d0;
+    border: 1px solid $accentColor;
     outline: unset;
 }
 .container-contact .main-contact .contact-us .fullname input:-webkit-autofill { 
@@ -157,7 +211,8 @@
 .container-contact .main-contact .contact-us .fullname input:focus ~ label,
 .container-contact .main-contact .contact-us .fullname input:valid ~ label{
     top: calc(0px + 11px);
-    color: black;
+    color: $accentColor;
+    background: $backgroundDark;
 }
 .container-contact .main-contact .contact-us .content-contact{
     width: 100%;
@@ -165,40 +220,49 @@
 }
 .container-contact .main-contact .contact-us .content-contact textarea{
     resize: none;
-    border: 1px solid #d0d0d0;
+    border: 1px solid $hoverBorder;
     padding: 6px 12px 6px 8px;
     width: 100%;
     height: 100%;
+    background-color: transparent;
+    color: white;
+    transition: .3s;
+}
+.container-contact .main-contact .contact-us .content-contact textarea::placeholder{
+    color: $hoverBorder;
 }
 .container-contact .main-contact .contact-us .content-contact textarea:focus-visible{
     border-radius: unset;
-    border: 1px solid #d0d0d0;
+    border: 1px solid $accentColor;
     outline: unset;
+}
+.container-contact .main-contact .contact-us .content-contact textarea:focus-visible::placeholder{
+    color: $accentColor;
 }
 .container-contact .main-contact .contact-us .fullname input:focus,
 .container-contact .main-contact .contact-us .fullname input:valid,
 .container-contact .main-contact .contact-us .content-contact textarea:focus{
-    border: 1px solid $primarycolor; 
+    border: 1px solid $accentColor; 
 }
 .container-contact .main-contact .contact-us .action-submit{
     width: 100%;
-    padding-bottom: 24px;
 }
 .container-contact .main-contact .contact-us .action-submit button{
     width: 100%;
-    height: 40px;
-    background-color: $primarycolor;
-    color: white;
-    font-weight: 600;
+    padding: 20px;
+    background-color: transparent;
+    color: $hoverBorder;
+    font-weight: 700;
     text-transform: uppercase;
-    border: 1px solid $primarycolor;
+    border: 1px solid $hoverBorder;
     outline: unset;
-    transition: .3s;
+    transition: .5s;
     cursor: pointer;
 }
 .container-contact .main-contact .contact-us .action-submit button:hover{
-    background-color: white;
-    color: $primarycolor;
+    background-color: $accentColor;
+    color: white;
+    border: 1px solid $accentColor;
 }
 //breakpoint macbook
 @media screen and (min-width: 1279px) and (max-width: 1441px){

@@ -267,7 +267,7 @@
     height: 100%;
     transition: .5s;
 }
-.container-event .main-event .all-news .remaining-news:hover .card-remaining__news{
+.container-event .main-event .all-news .remaining-news:hover .card-remaining__news:not(:hover){
     filter: blur(2px) brightness(0.7);
     transform: scale(0.98);
 }

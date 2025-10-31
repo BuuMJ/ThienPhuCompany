@@ -10,9 +10,8 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 30%;
     padding: 0 12px;
-    height: 100%;
+    flex: 1;
 }
 .container-footer .header-footer img.logo{
     height: 200px;
@@ -34,7 +33,8 @@
     display: flex;
     flex-direction: row;
     justify-content: center;
-    align-items: center;
+    align-items: stretch;
+    gap: 50px;
 }
 .container-footer .coppy-right{
     display: flex;
@@ -72,9 +72,6 @@
     gap: 20px;
     width: 70%;
     box-shadow: $shadow;
-}
-.container-footer .info-contact > * {
-    margin: 12px 0;
 }
 .container-footer .email-contact .header-box__email{
     display: flex;
@@ -171,12 +168,19 @@
 }
 .container-footer .main-footer .info-contact{
     display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: stretch;
+    gap: 50px;
+}
+.container-footer .main-footer .info-contact .content-top,
+.container-footer .main-footer .info-contact .content-bottom{
+    display: flex;
     flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    align-items: start;
-    width: 70%;
-    height: 100%;
+    justify-content: center;
+    align-items: stretch;
+    gap: 50px;
+    flex: 1;
 }
 .container-footer .main-footer .info-contact .address,
 .container-footer .main-footer .info-contact .hotline,
@@ -184,16 +188,13 @@
 .container-footer .main-footer .info-contact .group-fb {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    align-items: start;
-    width: 45%;
-    height: 160px;
-}
-.container-footer .main-footer .info-contact .group-fb{
-    justify-content: end;
+    justify-content: start;
+    align-items: stretch;
+    flex: 1;
+    gap: 12px;
 }
 .container-footer .main-footer .info-contact span.material-symbols-outlined{
-    color: $titlecolor;
+    color: $hoverBorder;
     margin-right: 6px;
 }
 .container-footer .main-footer .info-contact .address .title,
@@ -201,22 +202,23 @@
 .container-footer .main-footer .info-contact .email .title{
     font-size: 16px;
     font-weight: 700;
-    margin: 8px 0 14px 0;
     color: $primaryColor;
     padding-bottom: 12px;
     border-bottom: 1px solid $hoverBorder;
-    width: 100%;
     text-transform: uppercase;
 }
 .container-footer .main-footer .info-contact .address .content,
 .container-footer .main-footer .info-contact .hotline .content,
 .container-footer .main-footer .info-contact .email .content{
-    font-size: 14px;
+    font-size: 16px;
     color:$textSecondary;
     display: flex;
     justify-content: start;
     align-items: center;
-    margin-bottom: 12px;
+    font-weight: 700;
+}
+.container-footer .main-footer .info-contact .email .content span .content-email{
+    margin-bottom: 6px;
 }
 @media screen and (max-width: 1025px) {
     .container-footer .email-contact h1::after{

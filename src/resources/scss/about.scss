@@ -419,7 +419,15 @@
   animation: fadeInUp 1.4s ease forwards;
   opacity: 0;
 }
-.container-about .main-about .vision-mission .awards{
+.container-about .main-about .vision-mission .container-award{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    background-color: $background;
+}
+.container-about .main-about .vision-mission .container-award .awards{
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -427,13 +435,14 @@
     width: 80%;
     padding-top: 40px;
 }
-.container-about .main-about .vision-mission .awards img.award{
+.container-about .main-about .vision-mission .container-award .awards img.award{
     width: 120px;
     height: 120px;
     margin-bottom: 20px;
 }
-.container-about .main-about .vision-mission .awards h1.title,
-.container-about .main-about .value h1{
+.container-about .main-about .vision-mission .container-award .awards h1.title,
+.container-about .main-about .value h1,
+.container-about .main-about .transport-fleet h1{
     // background: -webkit-linear-gradient(45deg, #ffca69 4%, #bc9f6e 73%);
     // -webkit-background-clip: text;
     // -webkit-text-fill-color: transparent;
@@ -443,9 +452,11 @@
     letter-spacing: 1.2px;
     position: relative;
     text-transform: uppercase;
+    font-size: 32px;
 }
-.container-about .main-about .vision-mission .awards h1.title::after,
-.container-about .main-about .value h1::after{
+.container-about .main-about .vision-mission .container-award .awards h1.title::after,
+.container-about .main-about .value h1::after,
+.container-about .main-about .transport-fleet h1::after{
     position: absolute;
     content: "";
     width: 40%;
@@ -456,7 +467,12 @@
     right: 50%;
     transform: translateX(-50%);
 }
-.container-about .main-about .vision-mission .awards h1.title::before{
+.container-about .main-about .transport-fleet h1::after{
+    left: 0;
+    right: unset;
+    transform: unset;
+}
+.container-about .main-about .vision-mission .container-award .awards h1.title::before{
     content: "";
     width: 90%;
     height: 4px;
@@ -466,7 +482,7 @@
     left: 50%;
     transform: translateX(-50%);
 }
-.container-about .main-about .vision-mission .awards .award-box{
+.container-about .main-about .vision-mission .container-award .awards .award-box{
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -474,17 +490,20 @@
     padding: 40px 0;
     flex-wrap: wrap;
 }
-.container-about .main-about .vision-mission .awards .award-box .swiper {
+.container-about .main-about .vision-mission .container-award .awards .award-box .swiper {
     width: 100%;
     height: 100%;
 }
-.container-about .main-about .vision-mission .awards .award-box .swiper .swiper-slide {
+.container-about .main-about .vision-mission .container-award .awards .award-box .swiper .swiper-pagination-bullet-active{
+    background: $accentColor !important;
+}
+.container-about .main-about .vision-mission .container-award .awards .award-box .swiper .swiper-slide {
     display: flex;
     justify-content: center;
     align-items: center;
     width: 33%;
 }
-.container-about .main-about .vision-mission .awards .award-box .award-card{
+.container-about .main-about .vision-mission .container-award .awards .award-box .award-card{
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -498,7 +517,7 @@
     background-color: $background;
     box-shadow: $shadow;
 }
-.container-about .main-about .vision-mission .awards .award-box .award-card .img-award{
+.container-about .main-about .vision-mission .container-award .awards .award-box .award-card .img-award{
     width: 100%;
     height: 70%;
     overflow: hidden;
@@ -506,16 +525,16 @@
     justify-content: center;
     align-items: center;
 }
-.container-about .main-about .vision-mission .awards .award-box .award-card .img-award img{
+.container-about .main-about .vision-mission .container-award .awards .award-box .award-card .img-award img{
     width: 90%;
     height: 90%;
     transition: .5s;
     object-fit: contain;
 }
-.container-about .main-about .vision-mission .awards .award-box .award-card:hover .img-award img{
+.container-about .main-about .vision-mission .container-award .awards .award-box .award-card:hover .img-award img{
     transform: scale(1.1);
 }
-.container-about .main-about .vision-mission .awards .award-box .award-card .bottom{
+.container-about .main-about .vision-mission .container-award .awards .award-box .award-card .bottom{
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -524,16 +543,124 @@
     height: 30%;
     padding: 0 20px;
 }
-.container-about .main-about .vision-mission .awards .award-box .award-card .bottom h1{
+.container-about .main-about .vision-mission .container-award .awards .award-box .award-card .bottom h1{
     color: $textPrimary;
     font-size: 24px;
     letter-spacing: 2px;
     margin-bottom: 12px;
 }
-.container-about .main-about .vision-mission .awards .award-box .award-card .bottom p.content{
+.container-about .main-about .vision-mission .container-award .awards .award-box .award-card .bottom p.content{
     font-size: 14px;
     color: $textSecondary;
 }
+.container-about .main-about .transport-fleet{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    background-color: $background;
+    padding: 40px;
+}
+.container-about .main-about .transport-fleet span.tagline{
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 26px;
+    color: $textPrimary;
+    text-align: center;
+    margin: 12px 0;
+}
+.container-about .main-about .transport-fleet .fleet-box{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: stretch;
+    gap: 20px;
+    width: 80%;
+    padding: 20px 0;
+}
+.container-about .main-about .transport-fleet .fleet-box .fleet-content{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+    width: 40%;
+    flex: 1;
+    padding: 10px 12px 10px 0 ;
+}
+.container-about .main-about .transport-fleet .fleet-box .fleet-content h3{
+    color: $textPrimary;
+    font-size: 24px;
+    font-weight: 700;
+    text-align: justify;
+    line-height: 1.4;
+    margin: 20px 0;
+}
+.container-about .main-about .transport-fleet .fleet-box .fleet-content p{
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 26px;
+    color: $textPrimary;
+    text-align: justify;
+    margin: 20px 0;
+}
+.container-about .main-about .transport-fleet .fleet-gallery{
+    width: 40%;
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    padding: 10px;
+    position: relative;
+}
+.container-about .main-about .transport-fleet .fleet-gallery img{
+    width: 100%;
+}
+.container-about .main-about .transport-fleet .fleet-gallery span{
+    position: absolute;
+    width: 100px;
+    height: 6px;
+    background-color: $hoverBorder;
+}
+.container-about .main-about .transport-fleet .fleet-gallery span.line1{
+    top: 0;
+    left: 0;
+}
+.container-about .main-about .transport-fleet .fleet-gallery span.line2{
+    top: 0;
+    right: 0;
+}
+.container-about .main-about .transport-fleet .fleet-gallery span.line3{
+    bottom: 0;
+    left: 0;
+}
+.container-about .main-about .transport-fleet .fleet-gallery span.line4{
+    bottom: 0;
+    right: 0;
+}
+.container-about .main-about .transport-fleet .fleet-gallery span.line5,
+.container-about .main-about .transport-fleet .fleet-gallery span.line6,
+.container-about .main-about .transport-fleet .fleet-gallery span.line7,
+.container-about .main-about .transport-fleet .fleet-gallery span.line8{
+    height: 100px;
+    width: 6px;
+}
+.container-about .main-about .transport-fleet .fleet-gallery span.line5{
+    left: 0;
+    top: 0;
+}
+.container-about .main-about .transport-fleet .fleet-gallery span.line6{
+    right: 0;
+    top: 0;
+}
+.container-about .main-about .transport-fleet .fleet-gallery span.line7{
+    bottom: 0;
+    left: 0;
+}
+.container-about .main-about .transport-fleet .fleet-gallery span.line8{
+    right: 0;
+    bottom: 0;
+}
+
 
 .container-about .main-about .value{
     display: flex;
@@ -542,14 +669,12 @@
     align-items: center;
     width: 100%;
     padding: 60px 0;
-    background-color: $background;
 }
 .container-about .main-about .value span{
     font-size: 16px;
-    font-weight: 400;
+    font-weight: 700;
     line-height: 26px;
     color: $textPrimary;
-    width: 60%;
     text-align: center;
     margin: 20px 0;
 }
