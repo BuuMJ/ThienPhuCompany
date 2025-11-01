@@ -295,7 +295,7 @@
     width: 20px;
     margin-right: 10px;
     border-radius: 10px;
-    background-color: $primarycolor;
+    background-color: $accentColor;
     animation: pulse 1.5s infinite ease-in-out;
   }
   
@@ -554,7 +554,7 @@
   .container-pcb40 .main-pcb40 .detail-pcb40 .standard span.title-standard-img{
     width: 100%;
     text-align: center;
-    color: $primarycolor;
+    color: $accentColor;
     font-size: 22px;
     font-weight: 600;
     margin-bottom: 12px;
@@ -586,7 +586,7 @@
     width: 48%;
   }
   .container-product .main-product .all-product .product:nth-child(even) .name-product{
-    background-color: $primarycolor;
+    background-color: $accentColor;
   }
   .container-product .main-product .all-product .product ul{
     padding: 0 0 20px 15%;

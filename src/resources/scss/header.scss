@@ -85,7 +85,7 @@
 }
 .navbar-inner li a.touched,
 .navbar-inner li a:hover{
-    background-color: $primarycolor;
+    background-color: $accentColor;
     color: white !important;
     border-radius: 5px;
 }
@@ -138,7 +138,7 @@
     margin-bottom: 20px;
 }
 .container-header__admin .body-header .title h2{
-    color: $primarycolor;
+    color: $accentColor;
 }
 .container-header__admin .body-header .title img{
     width: 28px;
@@ -175,12 +175,12 @@
     left: 0;
     height: 100%;
     width: 4px;
-    background-color: $primarycolor;
+    background-color: $accentColor;
     display: none;
 }
 .container-header__admin .body-header .admin-navbar li:hover,
 .container-header__admin .bottom-navbar li:hover{
-    background-image: linear-gradient(90deg, $titlecolor 30%, #ffffff 70%);
+    background-image: linear-gradient(90deg, $primaryColor 30%, #ffffff 70%);
     cursor: pointer;
 }
 .container-header__admin .body-header .admin-navbar li:hover::after,
@@ -204,13 +204,13 @@
 }
 .container-header__admin .body-header .admin-navbar li:hover a,
 .container-header__admin .bottom-navbar li:hover a{
-    color: $primarycolor;
+    color: $accentColor;
 }
 .container-header__admin .bottom-navbar li a.logout{
     color: black;
 }
 .container-header__admin .bottom-navbar li a.logout i{
-    color: $primarycolor;
+    color: $accentColor;
 }
 .container-header__admin .bottom-navbar .profile-user{
     display: flex;
@@ -521,10 +521,10 @@
         cursor: default;
     }
     .primary-navbar__responsive li a.touched-responsive svg{
-        fill: $primarycolor;
+        fill: $accentColor;
     }
     .primary-navbar__responsive li a.touched-responsive span{
-        color: $primarycolor;
+        color: $accentColor;
     }
     .primary-navbar__responsive li a.event-header.touched-responsive,
     .primary-navbar__responsive li a.product-header.touched-responsive{

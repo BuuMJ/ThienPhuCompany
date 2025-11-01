@@ -19,7 +19,7 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background: url('/img/bginside.jpg') center / cover no-repeat;
+    background: url('/img/nvthienphu.jpg') center / cover no-repeat;
     z-index: 1;
 }
 .container-login .background-inside .back-drop{
@@ -32,23 +32,22 @@
 .container-login .box-login{
     z-index: 2;
     width: 70%;
-    height: 70vh;
     background-color: white;
     display: flex;
     flex-direction: row;
     justify-content: center;
-    align-items: center;
+    align-items: stretch;
     border-radius: 5px;
     overflow: hidden;
 }
 .container-login .box-login .left-box{
     width: 35%;
-    height: 100%;
     position: relative;
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
-    align-items: center;
+    justify-content: start;
+    gap: 50px;
+    align-items: stretch;
     padding: 80px 40px 80px 50px;
 }
 .container-login .box-login .left-box .background-inside__left{
@@ -58,7 +57,7 @@
     width: 100%;
     height: 100%;
     z-index: 1;
-    background: url('/img/bginsidelogin.jpg') center / cover no-repeat;
+    background: url('/img/nvthienphu.jpg') center / cover no-repeat;
 }
 .container-login .box-login .left-box .background-inside__left .back-drop__left{
     width: 100%;
@@ -66,47 +65,49 @@
     background-color: rgba(188, 159, 110, 0.95);
 }
 .container-login .box-login .left-box .top-left{
-    width: 100%;
-    height: 50%;
     display: flex;
     flex-direction: column;
     justify-content: start;
     align-items: start;
     z-index: 2;
     color: white;
+    flex: 1;
 }
 .container-login .box-login .left-box .top-left h1{
     letter-spacing: 1.2px;
     word-spacing: 2px;
     margin-bottom: 50px;
+    color: $accentColor;
 }
 .container-login .box-login .left-box .top-left p{
     letter-spacing: 1.2px;
     font-size: 20px;
     line-height: 36px;
     text-align: justify;
+    color: $textPrimary;
 }
 .container-login .box-login .left-box .bottom-left{
     width: 100%;
-    height: 50%;
     display: flex;
     justify-content: center;
     align-items: end;
     z-index: 2;
+    flex: 1;
 }
 .container-login .box-login .left-box .bottom-left img{
-    width: 40%;
-    height: 40%;
+    width: 30%;
     opacity: 0.3;
 }
 .container-login .box-login .right-box{
     width: 65%;
-    height: 100%;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: start;
     padding: 80px 60px;
+    background-color: $backgroundLight;
+    gap: 40px;
+    flex: 1;
 }
 .container-login .box-login .right-box .primary-right{
     width: 100%;
@@ -114,20 +115,18 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    // margin-bottom: 30px;
+    gap: 20px;
 }
 .container-login .box-login .right-box .primary-right img{
     width: 60%;
-    height: 80px;
-    margin-bottom: 12px;
 }
 .container-login .box-login .right-box .primary-right p{
-    font-size: 18px;
-    font-weight: 500;
-    width: 70%;
+    font-size: 16px;
+    font-weight: 600;
     text-align: center;
     line-height: 30px;
     padding: 6px 12px;
+    text-align: $textPrimary;
 }
 .container-login .box-login .right-box .login-info{
     width: 100%;
@@ -144,7 +143,7 @@
     font-size: 20px;
     font-weight: 600;
     position: absolute;
-    color: #9294a0;
+    color: $textSecondary;
     top: 50%;
     transform: translateY(-50%);
     left: 12px;
@@ -152,7 +151,7 @@
     justify-content: center;
     align-items: center;
     letter-spacing: 1.2px;
-    background-color: white;
+    background-color: $backgroundLight;
 }
 .container-login .box-login .right-box .login-info label.animation-label{
     left: 60px;
@@ -161,19 +160,20 @@
 .container-login .box-login .right-box .login-info svg{
     width: 30px;
     height: 30px;
-    fill: #9294a0;
+    fill: $hoverBorder;
     transition: .3s;
 }
 .container-login .box-login .right-box .login-info input{
     width: 100%;
     height: 100%;
     outline: none;
-    border: 1px solid $primarycolor;
+    border: 1px solid $hoverBorder;
     background: unset;
     padding: 6px 60px;
     font-size: 20px;
     font-weight: 600;
     border-radius: 5px;
+    transition: .3s;
 }
 .container-login .box-login .right-box .login-info .show-password{
     font-size: 30px;
@@ -185,7 +185,13 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    color: #9294a0;
+    color: $textSecondary;
+}
+.container-login .box-login .right-box .username input:focus,
+.container-login .box-login .right-box .password input:focus,
+.container-login .box-login .right-box .username input:valid,
+.container-login .box-login .right-box .password input:valid{
+    border: 1px solid $accentColor;
 }
 .container-login .box-login .right-box .username input:focus ~ label.animation-label__username,
 .container-login .box-login .right-box .password input:focus ~ label.animation-label__password,
@@ -193,7 +199,7 @@
 .container-login .box-login .right-box .password input:valid ~ label.animation-label__password{
     top: 0;
     transform: translateY(-50%);
-    color: $primarycolor;
+    color: $accentColor;
     font-size: 18px;
     padding: 6px;
 }
@@ -201,22 +207,25 @@
 .container-login .box-login .right-box .password input:focus ~ label.icon-login__password svg,
 .container-login .box-login .right-box .username input:valid ~ label.icon-login__username svg,
 .container-login .box-login .right-box .password input:valid ~ label.icon-login__password svg{
-    fill: $primarycolor;
+    fill: $accentColor;
 }
 .container-login .box-login .submit-login{
     align-self: center;
-    border-radius: 2px;
+    border-radius: 5px;
     outline: none;
     border: none;
     padding: 20px 40px;
     font-size: 20px;
     font-weight: 600;
-    background-color: $primarycolor;
-    color: white;
+    background-color: transparent;
+    color: $hoverBorder;
+    transition: .3s;
+    border: 1px solid $hoverBorder;
     // margin-bottom: 30px;
 }
 .container-login .box-login .submit-login:hover{
-    background-color: #bba887;
+    background-color: $accentColor;
+    color: white;
     cursor: pointer;
 }
 .container-login .box-login .support-login{
@@ -228,14 +237,15 @@
 }
 .container-login .box-login .support-login{
     font-size: 18px;
+    color: $textSecondary;
 }
 .container-login .box-login .support-login a {
     font-weight: 600;
-    color: $primarycolor;
+    color: $accentColor;
     text-decoration: none;
 }
 .container-login .box-login .support-login a:hover{
-    color: $linecolor;
+    color: $hoverBorder;
     text-decoration: underline;
 }
 //breakpoint macbook

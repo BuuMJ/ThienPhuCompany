@@ -75,7 +75,7 @@
     color: $textSecondary;
 }
 .container-about header .certification .certi-box:hover span.title{
-    color: $primarycolor;
+    color: $accentColor;
 }
 .container-about header .certification .certi-box:hover img.certi{
     transform: scale(1.1);
@@ -724,7 +724,7 @@
     width: 82px;
     height: 82px;
     border-radius: 50%;
-    background-color: $primarycolor;
+    background-color: $accentColor;
     color: white;
     font-size: 24px;
     font-weight: 700;
@@ -770,7 +770,7 @@
     border-radius: 50%;
     top: 0;
     left: 0;
-    background-color: $primarycolor;
+    background-color: $accentColor;
     background-image: linear-gradient(90deg, #b00000 0%, #ff4d4d 50%, #ff9999 100%);;
     transform: scale(0);
     transition: transform .6s ease-in-out;
@@ -788,7 +788,7 @@
     transition-property: transform;
 }
 .container-about .main-about .value .box-value .card .icon-value:hover{
-    outline: 2px dashed $primarycolor;
+    outline: 2px dashed $accentColor;
     
 }
 .container-about .main-about .value .box-value .card .icon-value:hover::before{

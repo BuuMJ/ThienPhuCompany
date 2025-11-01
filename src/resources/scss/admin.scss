@@ -4,7 +4,7 @@
     display: flex;
     flex-direction: row;
     position: relative;
-    background-color: rgba(188, 188, 187, .15);
+    background-color: $backgroundLight;
 }
 .container-create .body-right{
     width: 18%;
@@ -36,6 +36,7 @@
     justify-content: start;
     align-items: center;
     text-transform: capitalize;
+    color: $accentColor;
 }
 .container-create .body-left .container-left .welcome-admin h1.title-welcome svg{
     width: 32px;
@@ -43,7 +44,7 @@
     margin-left: 8px;
 }
 .container-create .body-left .container-left .welcome-admin p.content-welcome{
-    color: #b2bac6;
+    color: $textSecondary;
     text-transform: capitalize;
 }
 .container-create .body-left .container-left .primary-page{
@@ -52,8 +53,8 @@
 .container-create .body-left .container-left .primary-page h1.title,
 .container-create .body-left .container-left .container__list-user h1.title-user,
 .container-create .body-left .container-left .container__list-event h1.title-event{
-    color: $primarycolor;
-    padding-bottom: 12px;
+    color: $accentColor;
+    padding-bottom: 16px;
     padding-right: 20px;
     position: relative;
     display: inline-flex;
@@ -76,7 +77,7 @@
     bottom: 0;
     left: 0;
     border-top-right-radius: 5px;
-    background-color: $linecolor;
+    background-color: $hoverBorder;
 }
 .container-create .body-left .container-left .primary-page .primary-navbar{
     display: flex;
@@ -93,12 +94,12 @@
     transition: .3s;
 }
 .container-create .body-left .container-left .primary-page .primary-navbar li.admin-nav{
-    background-color: $primarycolor;
+    background-color: $accentColor;
     cursor: not-allowed;
     pointer-events: none;
 }
 .container-create .body-left .container-left .primary-page .primary-navbar li:hover{
-    background-color: $primarycolor;
+    background-color: $accentColor;
 }
 .container-create .body-left .container-left .primary-page .primary-navbar li a{
     display: flex;
@@ -111,7 +112,7 @@
     font-size: 20px;
     padding: 16px 0;
     transition: .3s;
-    color: #acaeb0;
+    color: $textSecondary;
 }
 .container-create .body-left .container-left .primary-page .primary-navbar li.admin-nav a{
     color: white;
@@ -137,7 +138,9 @@
 .container-create .body-left .container-left .container__list-event .all-event{
     flex-direction: row;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: start;
+    align-items: stretch;
+    gap: 40px;
 }
 .container-create .body-left .container-left .container__list-user .all-user .title__card-user,
 .container-create .body-left .container-left .container__list-user .all-user .card-user{
@@ -145,7 +148,7 @@
     justify-content: space-between;
     width: 100%;
     padding: 20px;
-    background-color: white;
+    background-color: $background;
     border-radius: 5px;
     margin-bottom: 20px;
 }
@@ -182,7 +185,7 @@
 }
 .container-create .body-left .container-left .container__list-user .all-user .title__card-user .content-user p,
 .container-create .body-left .container-left .container__list-user .all-user .card-user .infor-user p{
-    color: #acaeb0;
+    color: $textSecondary;
     font-weight: 600;
     margin-top: 8px;
 }
@@ -192,6 +195,7 @@
 .container-create .body-left .container-left .container__list-user .all-user .title__card-user .content-user h3,
 .container-create .body-left .container-left .container__list-user .all-user .card-user .infor-user h3{
     text-transform: capitalize;
+    color: $textPrimary;
 }
 .container-create .body-left .container-left .container__list-user .all-user .card-user .avatar-user img{
     width: 100%;
@@ -199,34 +203,35 @@
     border-radius: 5px;
 }
 .container-create .body-left .container-left .container__list-user .all-user .card-user .action-user button.view-detail{
-    border: 2px solid #727275;
+    border: 2px solid $hoverBorder;
     border-radius: 5px;
     padding: 12px;
     font-size: 18px;
     font-weight: 600;
-    color: #727275;
-    background-color: white;
+    color: $textSecondary;
+    background-color: transparent;
     transition: .3s;
     cursor: pointer;
 }
 .container-create .body-left .container-left .container__list-user .all-user .card-user .action-user button.view-detail:hover{
     color: white;
-    border: 2px solid $primarycolor;
-    background-color: $primarycolor;
+    border: 2px solid $accentColor;
+    background-color: $accentColor;
 }
 .container-create .body-left .container-left .container__list-event .all-event .card-event{
-    width: 23%;
+    width: calc(100% / 4 - 40px);
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    background-color: white;
+    background-color: $background;
     border-radius: 5px;
     margin-bottom: 40px;
     text-decoration: none;
     color: unset;
-    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    box-shadow: $shadow;
     transition: .3s;
+    border: 1px solid $hoverBorder;
 }
 .container-create .body-left .container-left .container__list-event .all-event .card-event:hover{
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
@@ -236,12 +241,12 @@
     transform: scale(1.1);
 }
 .container-create .body-left .container-left .container__list-event .all-event .card-event:hover .infor-event h4{
-    color: $primarycolor;
+    color: $accentColor;
 }
 .container-create .body-left .container-left .container__list-event .all-event .card-event .status-event{
     display: flex;
     align-items: center;
-    padding-top: 12px;
+    padding: 12px 0;
     width: 90%;
 }
 .container-create .body-left .container-left .container__list-event .all-event .card-event .status-event .circle{
@@ -266,8 +271,7 @@
     flex-direction: column;
     align-items: center;
     width: calc(100% - 12px);
-    padding: 0 0 12px 0;
-    margin-top: 12px;
+    padding: 12px 0;
     overflow: hidden;
 }
 .container-create .body-left .container-left .container__list-event .all-event .card-event .infor-event img{
@@ -287,12 +291,13 @@
     -webkit-box-orient: vertical;
     height: 52px;
     transition: .3s;
+    color: $textPrimary;
 }
 .container-create .body-left .container-left .container__list-event .all-event .card-event .infor-event p{
     font-weight: 600;
     font-size: 14px;
     padding: 12px 0;
-    color: #acaeb0;
+    color: $textSecondary;
 }
 .container-create .body-left .container-left .container__list-event .all-event .card-event .edit-event{
     display: flex;
@@ -307,8 +312,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    border: 1px solid black;
-    color: black;
+    border: 1px solid $textSecondary;
+    color: $textSecondary;
     font-weight: 600;
     font-size: 16px;
     transition: .3s;
@@ -319,14 +324,18 @@
     margin-left: 8px;
     width: 22px;
     height: 22px;
+    
+}
+.container-create .body-left .container-left .container__list-event .all-event .card-event .edit-event button.edit-button svg g{
+fill: $textSecondary;
 }
 .container-create .body-left .container-left .container__list-event .all-event .card-event .edit-event button.edit-button svg g{
     transition: .3s;
 }
 .container-create .body-left .container-left .container__list-event .all-event .card-event .edit-event button.edit-button:hover{
     color: white;
-    border: 1px solid $primarycolor;
-    background-color: $primarycolor;
+    border: 1px solid $accentColor;
+    background-color: $accentColor;
 }
 .container-create .body-left .container-left .container__list-event .all-event .card-event .edit-event button.edit-button:hover svg g{
     fill: white;
@@ -453,7 +462,7 @@
     background-color: #eee;
 }
 .delete-event .confirm-delete .check-delete input:checked ~ .checkmark{
-    background-color: $primarycolor;
+    background-color: $accentColor;
 }
 .delete-event .confirm-delete .check-delete .checkmark:after {
     content: "";
@@ -817,7 +826,7 @@
     margin-bottom: 20px;
     padding-bottom: 8px;
     padding-right: 20px;
-    color: $primarycolor;
+    color: $accentColor;
     position: relative;
 }
 .container-create .box-create__event .body-create__event .content__review-post h2.primary-title{
@@ -830,7 +839,7 @@
     left: 0;
     width: 100%;
     height: 4px;
-    background-color: $linecolor;
+    background-color: $hoverBorder;
     border-top-right-radius: 10px;
 }
 .container-create .box-create__event .body-create__event .content__post-news,
@@ -868,7 +877,7 @@
     margin-bottom: 12px;
     font-size: 20px;
     font-weight: 600;
-    color: $primarycolor;
+    color: $accentColor;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -984,7 +993,7 @@
     font-size: 20px;
     font-weight: 600;
     margin-bottom: 12px;
-    color: $primarycolor;
+    color: $accentColor;
 }
 .container-create .box-create__event .body-create__event .main-info__news .select-category .choose-category{
     display: flex;
@@ -1085,7 +1094,7 @@
     left: 0;
     top: 50%;
     transform: translateY(-50%);
-    background-color: $linecolor;
+    background-color: $hoverBorder;
     z-index: 10;
 }
 .container-create .box-create__event .body-create__event .main-info__news .action__box-content button span.note__add-more{
@@ -1111,7 +1120,7 @@
     overflow: hidden;
     transition: .3s ease-in-out;
     font-size: 20px;
-    border: 1px solid $primarycolor;
+    border: 1px solid $accentColor;
 }
 .container-create .box-create__event .body-create__event .main-info__news .action__box-content button.submit span,
 .container-create .box-create__user .body-create__user .action-user button.submit-user span,
@@ -1122,7 +1131,7 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: $primarycolor;
+    background-color: $accentColor;
     z-index: -1;
     transition: .3s ease-in-out;
 }
@@ -1130,9 +1139,9 @@
 .container-create .box-create__user .body-create__user .action-user button.submit-user:hover,
 .container-create .box-edit__user .body-create__user .action-user button.submit-user:hover,
 .container-create .box-create__role .body-create__role .action-role button:hover{
-    color: $primarycolor;
+    color: $accentColor;
     background-color: white;
-    border: 1px solid $primarycolor;
+    border: 1px solid $accentColor;
 }
 .container-create .box-create__event .body-create__event .main-info__news .action__box-content button.submit:hover span,
 .container-create .box-create__user .body-create__user .action-user button.submit-user:hover span,
@@ -1341,7 +1350,7 @@
     left: 0;
     width: 50%;
     height: 100%;
-    background-color: $primarycolor;
+    background-color: $accentColor;
     z-index: 1;
     transition: .5s;
     border-top-left-radius: 3px;
@@ -1458,7 +1467,7 @@
 .container-create .box-edit__user .body-create__user .user-infor .user-label input:valid,
 .container-create .box-edit__user .body-create__user .user-infor .user-label select:valid,
 .container-create .box-create__user .body-create__user .user-infor .user-label select:valid{
-    border: 1px solid $primarycolor;
+    border: 1px solid $accentColor;
 }
 .container-create .box-create__user .body-create__user .user-infor .user-label input:focus + label,
 .container-create .box-create__user .body-create__user .user-infor .user-label select:focus + label,
@@ -1466,7 +1475,7 @@
 .container-create .box-create__role .body-create__role .user-label input:valid + label,
 .container-create .box-edit__user .body-create__user .user-infor .user-label input:valid + label,
 .container-create .box-edit__user .body-create__user .user-infor .user-label select:valid + label{
-    color: $primarycolor;
+    color: $accentColor;
 }
 //break point macbook
 @media screen and (min-width: 1279px) and (max-width: 1441px){
