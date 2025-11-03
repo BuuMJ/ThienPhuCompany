@@ -862,29 +862,59 @@
     text-align: center;
     padding: 0 100px;
   }
-  .container-home .main-home .reason-choose-us{
-    height: 40vh;
-  }
   .container-home .main-home .reason-choose-us span{
     text-align: center;
     font-size: 18px;
     padding: 0 100px;
   }
-  .container-home .main-home .reason-choose-us .list-card{
-    flex-wrap: wrap;
+  .container-home .main-home .reason-choose-us .list-card .card span.title{
+    font-size: 16px;
   }
-  .container-home .main-home .reason-choose-us .list-card .card{
-    width: 30%;
+  .container-home .main-home .reason-choose-us .list-card .card img{
+    width: 90px;
+    height: 90px;
   }
-  .container-home .main-home .reason-choose-us .list-card .card:nth-child(2) span.title,
-  .container-home .main-home .reason-choose-us .list-card .card:nth-child(5) span.title {
-    height: 46px;
+  .container-home .main-home .reason-choose-us .list-card .card span.main-info{
+    font-size: 13px;
   }
-  .container-home .main-home .reason-choose-us .list-card .card:nth-child(2){
-    order: 4;
+  .container-home .main-home .reason-choose-us .reason-footer .left p{
+    font-size: 16px;
+    padding-right: 35px;
   }
-  .container-home .main-home .about-us{
-    height: 60vh;
+  .container-home .main-home .reason-choose-us .reason-footer .right p{
+    font-size: 13px;
+    padding-left: 35px;
+  }
+  .container-home .main-home .reason-choose-us .reason-footer .left p::after{
+    width: 35%;
+  }
+  .container-home .main-home .about-us h1{
+    font-size: 24px;
+  }
+  .container-home .main-home .about-us .box-introduce{
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+  }
+  .container-home .main-home .about-us .box-introduce .introduce{
+    width: 100%;
+    order: 2;
+    align-items: center;
+  }
+  .container-home .main-home .about-us .box-introduce .img-introduce{
+    width: 90%;
+    order: 1;
+  }
+  .container-home .main-home .about-us .box-introduce .introduce span{
+    font-size: 14px;
+  }
+  .container-home .main-home .about-us .box-introduce .introduce span{
+    margin: 12px 0;
+  }
+  .container-home .main-home .about-us .box-introduce .introduce .read-more{
+    font-size: 16px;
+    padding: 12px 18px;
   }
   .container-home .main-home .best-seller .list-product{
     width: 90%;

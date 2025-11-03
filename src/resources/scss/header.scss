@@ -291,12 +291,7 @@
 }
 //responsive macbook
 @media screen and (min-width: 1279px) and (max-width: 1441px) {
-    .navbar .navbar-inner{
-        width: 70%;
-    }
-    .navbar .navbar-inner .navbar-right .logo-company{
-        width: 50%;
-    }
+
     //header admin
     .container-header__admin .top-header{
         padding: 0 12px;
@@ -345,7 +340,7 @@
         font-size: 12px;
     }
     .navbar .navbar-inner{
-        width: 80%;
+        width: unset;
     }
     .container-header__admin{
         width: 25%;
@@ -366,6 +361,18 @@
     }
     .container-header__admin .top-header{
         height: 6%;
+    }
+}
+@media screen and (max-width: 901px) {
+    
+    .navbar .navbar-inner .navbar-right {
+        width: 20%;
+    }
+    .navbar .navbar-inner .primary-navbar li{
+        margin-right: 12px;
+    }
+    .navbar .navbar-inner .primary-navbar li a{
+        font-size: 10px;
     }
 }
 @media screen and (max-width: 769px) {
@@ -495,7 +502,7 @@
         display: flex;
         justify-content: space-around;
         align-items: center;
-        padding: 0 12px;
+        padding: unset;
     }
     .primary-navbar__responsive li{
         width: 18%;
