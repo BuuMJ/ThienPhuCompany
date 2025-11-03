@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24">
+  <defs>
+    <linearGradient id="hoatdong-gradient" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#b00000"/>
+      <stop offset="100%" stop-color="#a08857"/>
+    </linearGradient>
+  </defs>
+  <path fill="url(#hoatdong-gradient)" d="M13 2L3 14h7v8l10-12h-7z"/>
+</svg>

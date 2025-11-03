@@ -1,5 +1,18 @@
 const moment = require('moment');
+const momentVN = require("moment-timezone");
+momentVN.locale("vi");
 module.exports = {
+   formatDateGlobal: function (date) {
+    if (!date) return "";
+    return moment(date).format("YYYY-MM-DD HH:mm:ss");
+  },
+  // Helper 2: moment giờ Việt Nam
+  formatDateVN: function (date) {
+    if (!date) return "";
+    return momentVN(date)
+      .tz("Asia/Ho_Chi_Minh")
+      .format("LLLL");
+  },
     getName: function (user) {
       if(user && user.username){
         return user.username

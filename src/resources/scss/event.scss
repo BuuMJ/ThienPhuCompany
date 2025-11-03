@@ -515,17 +515,17 @@ font-family: "Momo Trust Sans", sans-serif !important;
     flex-direction: row;
     justify-content: space-around;
     align-items: start;
-    flex-wrap: wrap;
+    // flex-wrap: wrap;
     width: 100%;
     margin-top: 110px;
-    padding: 40px 60px;
+    padding: 40px 40px;
     background-color: $background;
 }
 .container-detail .suggest-event{
     width: 25%;
     display: flex;
     flex-direction: column;
-    background-color: $accentColor;
+    background: linear-gradient(135deg, #fff8d6 0%, #f1d168 20%, #d4af37 50%, #b88a44 80%, #fff5c0 100%);
     border-radius: 5px;
     padding: 40px 30px;
     position: sticky;
@@ -533,6 +533,7 @@ font-family: "Momo Trust Sans", sans-serif !important;
     z-index: 10;
     overflow: hidden;
     left: 20px;
+    gap: 20px;
 }
 .container-detail .suggest-event .bg {
     position: absolute;
@@ -556,14 +557,13 @@ font-family: "Momo Trust Sans", sans-serif !important;
     width: calc(100% - 50px);
     height: calc(100% - 50px);
     border-radius: 50%;
-    background-color: $primaryColor;
+    background: linear-gradient(135deg, $primaryColor 0%, $hoverBorder 100%);
     opacity: 1;
     filter: blur(12px);
     animation: blob-bounce 5s infinite linear;
   }
   .container-detail .suggest-event .title-suggest{
     display: flex;
-    margin-bottom: 20px;
     z-index: 3;
   }
 .container-detail .suggest-event .title-suggest h2{
@@ -590,7 +590,7 @@ font-family: "Momo Trust Sans", sans-serif !important;
     z-index: 3;
     width: 100%;
     gap: 6px;
-    padding: 12px 10px;
+    padding: 20px 12px;
     box-shadow: $shadow;
     transition: all ease-in-out 0.3s;
     overflow: hidden;
@@ -601,9 +601,9 @@ font-family: "Momo Trust Sans", sans-serif !important;
     text-decoration: none;
     color: black;
 }
-.container-detail .suggest-event .card-suggest:nth-of-type(1){
-    margin-bottom: 12px;
-}
+// .container-detail .suggest-event .card-suggest:nth-of-type(1){
+//     margin-bottom: 12px;
+// }
 .container-detail .suggest-event .card-suggest:hover{
     box-shadow: rgba(188, 159, 110, 0.19) 0px 10px 20px,
     rgba(188, 159, 110, 0.23) 0px 6px 6px,
@@ -617,7 +617,7 @@ font-family: "Momo Trust Sans", sans-serif !important;
     color: $textSecondary;
 }
 .container-detail .suggest-event .card-suggest .card-title{
-    font-size: 18px;
+    font-size: 16px;
     line-height: 28px;
     -webkit-box-orient: vertical;
     overflow: hidden;
@@ -635,13 +635,12 @@ font-family: "Momo Trust Sans", sans-serif !important;
     display: -webkit-box;
     -webkit-line-clamp: 2;
     line-clamp: 2;
-    margin-bottom: 24px;
     text-align: justify;
     color: $textSecondary;
 }
 .container-detail .suggest-event .card-suggest .card-text {
     position: absolute;
-    font-size: 16px;
+    font-size: 14px;
     font-weight: 500;
     right: 20px;
     bottom: 10px;
@@ -664,6 +663,8 @@ font-family: "Momo Trust Sans", sans-serif !important;
 .container-detail .main-detail{
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
     width: 70%;
     background-color: $backgroundLight;
     border-radius: 5px;
@@ -672,33 +673,37 @@ font-family: "Momo Trust Sans", sans-serif !important;
 .container-detail .main-detail .title-detail{
     display: flex;
     flex-direction: column;
-    width: 100%;
 }
 .container-detail .main-detail .title-detail h1{
     color: $textPrimary;
     line-height: 42px;
 }
-.container-detail .main-detail .title-detail .time-detail{
+.container-detail .main-detail .title-detail .time-detail,
+.container-detail .main-detail .title-detail .category-detail{
     color: $textSecondary;
     font-weight: 500;
-    padding: 12px 0;
-}
-.container-detail .main-detail .title-detail .time-detail span{
+    padding: 16px 0;
+    text-align: center;
     text-transform: capitalize;
+    font-size: 16px;
+}
+.container-detail .main-detail .title-detail .category-detail{
+    font-size: 24px;
 }
 .container-detail .main-detail .body-detail{
     display: flex;
     flex-direction: column;
-    width: 100%;
+    width: 80%;
     padding: 20px 0;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
 }
 .container-detail .main-detail .body-detail .img__detail-title{
     width: 100%;
-    height: 650px;
-    margin-top: 20px;
-}
-.container-detail .main-detail .body-detail .img__detail-title:first-child{
-    margin-top: unset;
+    height: auto;
+    max-height: 500px; 
+    border-radius: 5px;
 }
 .container-detail .main-detail .body-detail p.desc{
     font-size: 22px;
@@ -707,8 +712,9 @@ font-family: "Momo Trust Sans", sans-serif !important;
     text-align: justify;
     white-space: pre-wrap;
     word-wrap: break-word;
-    margin-top: 20px;
     color: $textSecondary;
+    width: 100%;
+    padding: 0 5% 20px 5% ;
 }
 //edit event
 .container-edit__event{

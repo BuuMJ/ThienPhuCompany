@@ -463,7 +463,7 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
+  align-items: stretch;
   font-size: 18px;
   transition: transform 0.6s ease, opacity 0.6s ease;
   padding: 20px;
@@ -478,17 +478,20 @@
   color: $textPrimary; /* màu chủ đạo Thiên Phú */
   display: block;
   line-height: 1;
+  flex: 1;
 }
 .container-home .main-home .stats .stat p {
   font-size: 24px;
   font-weight: 600;
   color: $textPrimary;
   margin-top: 12px;
+  flex: 1;
 }
 .container-home .main-home .stats .stat p.content{
   font-weight: 400;
   font-size: 14px;
   color: $textSecondary;
+  flex: 1;
 }
 .fade-up {
   opacity: 0;
@@ -521,7 +524,7 @@
   flex: 1;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: stretch;
   height: 450px;
   position: relative;
   overflow: hidden;
@@ -535,17 +538,24 @@
 .container-home .main-home .best-seller .list-product .product .box-content{
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
-  height: 230px;
   background-color: $backgroundLight;
   position: absolute;
-  bottom: calc(-20% + 4px);
-  padding: 50px 45px 50px 45px;
+  bottom: calc(450px / 2 - 310px);
+  height: 50%;
+  transform: translateY(0);
+  padding: 50px 45px 25px 45px;
   box-shadow: 0 3px 13px rgba(0, 0, 0, 0.07);
   text-align: center;
   z-index: 4;
   transition: 0.5s ease;
+  overflow: hidden;
+  gap: 20px;
+  flex: 1;
+}
+.container-home .main-home .best-seller .list-product .product:hover .box-content{
+  bottom: 0;
 }
 .container-home .main-home .best-seller .list-product .product .box-content::after{
   content: "PCB40";
@@ -566,15 +576,17 @@
   font-size: 24px;
   font-weight: 600;
   color: $textPrimary;
-  
+  text-align: center;
 }
 .container-home .main-home .best-seller .list-product .product .box-content p{
   color: $textSecondary;
   font-size: 14px;
+  flex: 1;
 }
 .container-home .main-home .best-seller .list-product .product .box-content a{
   text-decoration: none;
   font-size: 16px;
+  
 }
 .container-home .main-home .best-seller .list-product .product::after {
   content: "";
@@ -590,13 +602,10 @@
 .container-home .main-home .best-seller .list-product .product:hover::after {
   opacity: 1;
 }
-.container-home .main-home .best-seller .list-product .product:hover .box-content{
-  bottom: 0;
-}
+
 .container-home .main-home .best-seller .list-product .product span.visited-product,
 .container-home .main-home .best-seller .see-all{
   font-size: 16px;
-  font-weight: 500;
   border: 1px solid $accentColor;
   color: white;
   background-color: $accentColor;
@@ -794,37 +803,54 @@
     width: 80%;
     font-size: 26px;
   }
-  .container-home .main-home .reason-choose-us{
-    height: 80vh;
-  }
   .container-home .main-home .reason-choose-us span{
     text-align: center;
     font-size: 18px;
     padding: 0 100px;
   }
-  .container-home .main-home .reason-choose-us .list-card{
-    flex-wrap: wrap;
+  .container-home .main-home .reason-choose-us .list-card .card span.title{
+    font-size: 22px;
   }
-  .container-home .main-home .reason-choose-us .list-card .card{
-    width: 30%;
-  }
+  // .container-home .main-home .reason-choose-us .list-card{
+  //   flex-wrap: wrap;
+  // }
+  // .container-home .main-home .reason-choose-us .list-card .card{
+  //   width: 30%;
+  // }
   // .container-home .main-home .reason-choose-us .list-card .card:nth-child(2) span.title,
   // .container-home .main-home .reason-choose-us .list-card .card:nth-child(5) span.title {
   //   height: 46px;
   // }
-  .container-home .main-home .reason-choose-us .list-card .card:nth-child(2){
-    order: 4;
+  // .container-home .main-home .reason-choose-us .list-card .card:nth-child(2){
+  //   order: 4;
+  // }
+  // .container-home .main-home .about-us{
+  //   height: 100vh;
+  // }
+  .container-home .main-home .about-us .box-introduce .introduce span{
+    margin: 16px 0;
+    font-size: 16px;
   }
-  .container-home .main-home .about-us{
-    height: 100vh;
+  .container-home .main-home .about-us .box-introduce .img-introduce{
+    width: 50%;
   }
-  .container-home .main-home .best-seller .list-product{
-    width: 90%;
-    justify-content: space-around;
+  .container-home .main-home .about-us .box-introduce .introduce .read-more{
+    font-size: 16px;
   }
-  .container-home .main-home .best-seller .list-product .product{
-    margin: unset;
-    margin-bottom: 60px;
+  .container-home .main-home .stats .stat .counter{
+    font-size: 46px;
+  }
+  .container-home .main-home .best-seller .list-product .product .box-content{
+    padding: 50px 30px 25px;
+    gap: 14px;
+  }
+  .container-home .main-home .best-seller .list-product .product .box-content h3{
+    font-size: 20px;
+    
+  }
+  .container-home .main-home .list-event .container-event__home .event .title{
+    font-size: 20px;
+    margin-bottom: 0;
   }
 }
 //responsive all devices

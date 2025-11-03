@@ -42,12 +42,13 @@
     <div class="main-detail">
         <div class="header-detail">
             <div class="title-detail">
-                <h1>{{event.title}}</h1>
                 {{#ifeq event "news"}}
-                    <span class="time-detail"> <span>Tin Tức</span> | {{moment event.createdAt format="DD/MM/YYYY"}}</span>
+                    <span class="category-detail"> Tin Tức</span>
                 {{else}}
-                    <span class="time-detail"> <span>Sự Kiện</span> | {{moment event.createdAt format="DD/MM/YYYY"}}</span>
+                    <span class="category-detail"> Sự Kiện</span>
                 {{/ifeq}}
+                <h1>{{event.title}}</h1>
+                <span class="time-detail">{{formatDateVN event.createdAt}}</span>
             </div>
         </div>
         <div class="body-detail">

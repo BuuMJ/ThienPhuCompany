@@ -33,7 +33,7 @@
     "jsonwebtoken": "^9.0.1",
     "method-override": "^3.0.0",
     "moment": "^2.29.4",
-    "moment-timezone": "^0.5.43",
+    "moment-timezone": "^0.5.48",
     "mongodb": "^6.20.0",
     "mongoose": "^7.6.7",
     "morgan": "^1.10.0",
