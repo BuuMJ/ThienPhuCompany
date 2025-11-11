@@ -33,7 +33,7 @@
     <div class="main-about">
         <div class="about-intro">
             <div class="image-intro">
-                <img class="img-intro__first" src="/img/about-us.png" alt="">
+                <img class="img-intro__first" src="/img/nvthienphu.jpg" alt="">
                 <span class="line1"></span>
                 <span class="line2"></span>
                 <span class="line3"></span>
@@ -132,6 +132,22 @@
                                     </div>
                                 </div>
                             </div>
+                            <div class="swiper mySwiper">
+                                <div class="swiper-wrapper">
+                                <div class="swiper-slide">Slide 1</div>
+                                <div class="swiper-slide">Slide 2</div>
+                                <div class="swiper-slide">Slide 3</div>
+                                <div class="swiper-slide">Slide 4</div>
+                                <div class="swiper-slide">Slide 5</div>
+                                <div class="swiper-slide">Slide 6</div>
+                                <div class="swiper-slide">Slide 7</div>
+                                <div class="swiper-slide">Slide 8</div>
+                                <div class="swiper-slide">Slide 9</div>
+                                </div>
+                                <div class="swiper-button-next"></div>
+                                <div class="swiper-button-prev"></div>
+                                <div class="swiper-pagination"></div>
+                            </div>
                             <div class="swiper-slide">
                                 <div class="award-card">
                                     <div class="img-award">
@@ -202,6 +218,89 @@
                         </div>
                     </div>
             </div>
+            </div>
+            <div class="container-project">
+                    <div class="projects">
+                        <h1>Dự Án Tiêu Biểu</h1>
+                        <span class="tagline">Chất lượng vững chắc, thành công bền lâu</span>
+                        <div class="swiper mySwiper">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide hdc">
+                                    <img src="/img/hdc.jpg" alt="">
+                                    <div class="content">
+                                        <h3>Hầm Đèo Cả</h3>
+                                        <p>Địa điểm: Tỉnh Khánh Hoà</p>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide nvhtn">
+                                    <img src="/img/nvhtn.jpg" alt="">
+                                    <div class="content">
+                                        <h3>Nhà Văn Hoá Thiếu Nhi</h3>
+                                        <p>Địa điểm: Nha Trang - Khánh Hoà</p>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide ubnd">
+                                    <img src="/img/ubnd.jpg" alt="">
+                                    <div class="content">
+                                        <h3>Uỷ Ban Nhân Dân</h3>
+                                        <p>Địa điểm: Tỉnh Khánh Hoà</p>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide tdsg">
+                                    <img src="/img/tdsg.jpg" alt="">
+                                    <div class="content">
+                                        <h3>Đập Thuỷ Điện Sông Giang</h3>
+                                        <p>Địa điểm: Khánh Trung - Khánh Hoà</p>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide cnsc">
+                                    <img src="/img/cnsc.png" alt="">
+                                    <div class="content">
+                                        <h3>Cụm Công Nghiệp Sông Cầu</h3>
+                                        <p>Địa điểm: Khánh Vĩnh - Khánh Hoà</p>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide vgct">
+                                    <img src="/img/vgct.jpg" alt="">
+                                    <div class="content">
+                                        <h3>Vega City Bãi Tiên</h3>
+                                        <p>Địa điểm: Nha Trang - Khánh Hoà</p>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide kncr">
+                                    <img src="/img/kncr.jpg" alt="">
+                                    <div class="content">
+                                        <h3>Khu KN Cam Ranh</h3>
+                                        <p>Địa điểm: Cam Ranh - Khánh Hoà</p>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide rsbd">
+                                    <img src="/img/rscl.jpg" alt="">
+                                    <div class="content">
+                                        <h3>Các Resort Bãi Dài</h3>
+                                        <p>Địa điểm: Cam Lâm - Khánh Hoà</p>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide ld">
+                                    <img src="/img/ld.jpg" alt="">
+                                    <div class="content">
+                                        <h3>Đoạn Đường Lê Duẩn</h3>
+                                        <p>Địa điểm: Cam Ranh - Khánh Hoà</p>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide kv">
+                                    <img src="/img/kv.jpg" alt="">
+                                    <div class="content">
+                                        <h3>Đoạn Đường Khánh Vĩnh</h3>
+                                        <p>Địa điểm: Khánh Vĩnh - Khánh Hoà</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-button-next"></div>
+                            <div class="swiper-button-prev"></div>
+                            <div class="swiper-pagination"></div>
+                        </div>
+                    </div>
             </div>
         </div>
         <section class="transport-fleet">
@@ -286,7 +385,7 @@
     }else if(innerWidth <= 415){
         slidesPerViewRP = 1;
     }
-    var swiper = new Swiper(".mySwiper", {
+    var swiper = new Swiper(".awards .mySwiper", {
       slidesPerView: slidesPerViewRP,
       spaceBetween: 30,
       loop: true,
@@ -297,6 +396,21 @@
       pagination: {
         el: ".swiper-pagination",
         clickable: true,
+      },
+    });
+    var swiper = new Swiper(".projects .mySwiper", {
+      pagination: {
+        el: ".swiper-pagination",
+        type: "progressbar",
+      },
+      loop: true,
+      autoplay: {
+        delay: 3000, // thời gian giữa các lần chuyển (ms) – 3000 = 3 giây
+        disableOnInteraction: false, // vẫn auto chạy sau khi người dùng thao tác
+      },
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
       },
     });
 </script>
