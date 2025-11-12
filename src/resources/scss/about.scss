@@ -616,18 +616,18 @@
     gap: 16px;
     width: 100%;
     padding: 12px;
-    background-color: #2c2c2cd5;
+    background-color: #ece8e1ce;
     border-top: 2px solid $hoverBorder;
 }
 .container-about .main-about .vision-mission .container-project .projects .swiper-slide .content h3{
     font-size: 48px;
     font-weight: 700;
-    color: $accentColor;
+    color: $textPrimary;
 }
 .container-about .main-about .vision-mission .container-project .projects .swiper-slide .content p{
     font-size: 18px;
     font-weight: 500;
-    color: $hoverBorder;
+    color: $textSecondary;
 }
 .container-about .main-about .vision-mission .container-project .projects .swiper-slide img{
     display: block;  
@@ -697,7 +697,7 @@
     width: 40%;
     display: flex;
     justify-content: center;
-    align-items: start;
+    align-items: stretch;
     padding: 10px;
     position: relative;
 }
