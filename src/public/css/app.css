@@ -5803,18 +5803,18 @@
   gap: 16px;
   width: 100%;
   padding: 12px;
-  background-color: #ece8e1ce;
-  border-top: 2px solid #d1c7a4; }
+  background: #b00000;
+  background: -webkit-linear-gradient(bottom, #b00000, rgba(255, 255, 255, 0)); }
 
 .container-about .main-about .vision-mission .container-project .projects .swiper-slide .content h3 {
   font-size: 48px;
   font-weight: 700;
-  color: #2c2c2c; }
+  color: white; }
 
 .container-about .main-about .vision-mission .container-project .projects .swiper-slide .content p {
   font-size: 18px;
   font-weight: 500;
-  color: #6b6b6b; }
+  color: #d1c7a4; }
 
 .container-about .main-about .vision-mission .container-project .projects .swiper-slide img {
   display: block;

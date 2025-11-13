@@ -616,18 +616,18 @@
     gap: 16px;
     width: 100%;
     padding: 12px;
-    background-color: #ece8e1ce;
-    border-top: 2px solid $hoverBorder;
+    background: $accentColor;
+    background: -webkit-linear-gradient(bottom, $accentColor, rgba(255, 255, 255, 0));
 }
 .container-about .main-about .vision-mission .container-project .projects .swiper-slide .content h3{
     font-size: 48px;
     font-weight: 700;
-    color: $textPrimary;
+    color: white;
 }
 .container-about .main-about .vision-mission .container-project .projects .swiper-slide .content p{
     font-size: 18px;
     font-weight: 500;
-    color: $textSecondary;
+    color: $hoverBorder;
 }
 .container-about .main-about .vision-mission .container-project .projects .swiper-slide img{
     display: block;  
